@@ -101,10 +101,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
                   문의하기
                 </a>
               </div>
-              <button id="mobile-menu-button" class="lg:hidden text-gold-400 hover:text-gold-300 transition">
-                <i class="fas fa-bars text-2xl"></i>
-              </button>
-              <button id="mobile-menu-button" class="md:hidden text-gold-400 hover:text-gold-300 transition">
+              <button id="mobile-menu-button" class="lg:hidden text-gold-400 hover:text-gold-300 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
                 <i class="fas fa-bars text-2xl"></i>
               </button>
             </div>
@@ -168,16 +165,16 @@ export const renderer = jsxRenderer(({ children, title }) => {
                   전문 강사진과 함께하는 최고급 음악 교육
                 </p>
                 <div class="flex space-x-3">
-                  <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                  <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
                     <i class="fas fa-blog text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                  <a href="#" aria-label="인스타그램" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
                     <i class="fab fa-instagram text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                  <a href="#" aria-label="유튜브" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
                     <i class="fab fa-youtube text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                  <a href="#" aria-label="페이스북" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
                     <i class="fab fa-facebook text-gray-300 group-hover:text-white"></i>
                   </a>
                 </div>

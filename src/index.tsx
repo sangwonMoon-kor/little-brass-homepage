@@ -582,13 +582,13 @@ app.get('/location', (c) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* 지도 영역 */}
             <div>
-              <div class="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-                <div class="text-center text-gray-500">
-                  <i class="fas fa-map-marked-alt text-6xl mb-4"></i>
-                  <p class="text-lg">지도 영역</p>
-                  <p class="text-sm">(카카오맵 또는 네이버맵 연동 예정)</p>
-                </div>
-              </div>
+              <iframe 
+                src="https://map.naver.com/p/entry/place/1094694626" 
+                class="w-full h-96 rounded-lg border-0"
+                loading="lazy"
+                allowfullscreen
+                title="Little Brass 위치 지도"
+              ></iframe>
             </div>
 
             {/* 위치 정보 */}
@@ -2503,12 +2503,14 @@ app.get('/contact', (c) => {
 app.post('/api/contact', async (c) => {
   try {
     const body = await c.req.json()
+    const { name, phone, email, type, message } = body
+    
     // 여기에 이메일 전송 또는 DB 저장 로직 추가 예정
-    console.log('Contact form submission:', body)
+    console.log('Contact form submission:', { name, phone, email, type, message })
     
     return c.json({ 
       success: true, 
-      message: '문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.' 
+      message: '문의가 접수되었습니다.' 
     })
   } catch (error) {
     return c.json({ 
@@ -2645,27 +2647,18 @@ app.get('/api/blog/rss', async (c) => {
       })
     }
 
-    // 고정 글과 최신 글 조합
-    const result = []
-    
-    if (config.showPinned && config.pinnedPost.enabled) {
-      result.push({
-        ...config.pinnedPost,
-        isPinned: true
-      })
-    }
-
-    // 고정 글 제외한 최신 글 추가
-    const remainingCount = config.displayCount - (result.length > 0 ? 1 : 0)
-    result.push(...items.slice(0, remainingCount).map(item => ({ ...item, isPinned: false })))
+    // 최신 글 3개만 반환
+    const latestPosts = items.slice(0, 3).map(item => ({
+      title: item.title,
+      link: item.link,
+      description: item.description,
+      category: item.category,
+      isPinned: false
+    }))
 
     return c.json({
       success: true,
-      posts: result.slice(0, config.displayCount),
-      config: {
-        displayCount: config.displayCount,
-        showPinned: config.showPinned
-      }
+      posts: latestPosts
     })
   } catch (error) {
     console.error('RSS 파싱 오류:', error)

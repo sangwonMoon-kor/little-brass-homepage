@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', function() {
+      const isHidden = mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
     });
   }
 
