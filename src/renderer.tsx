@@ -1,13 +1,43 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 
 export const renderer = jsxRenderer(({ children, title }) => {
+  const pageTitle = title || 'Little Brass - 프리미엄 금관악기 교육'
+  const description = 'Little Brass 음악학원 - 전문 금관악기 교육과 온라인 레슨을 제공하는 프리미엄 음악 학원입니다.'
+  const siteUrl = 'https://littlebrass.com'
+  const ogImage = `${siteUrl}/og-image.jpg`
+  
   return (
     <html lang="ko">
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title || 'Little Brass - 프리미엄 금관악기 교육'}</title>
-        <meta name="description" content="Little Brass 음악학원 - 전문 금관악기 교육과 온라인 레슨을 제공하는 프리미엄 음악 학원입니다." />
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content="Little Brass, 리틀브라스, 음악학원, 금관악기, 트럼펫, 혼, 트롬본, 튜바, 음악 레슨, 온라인 레슨, 강남 음악학원, 예고 입시, 음대 입시" />
+        <meta name="author" content="Little Brass" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Little Brass" />
+        <meta property="og:locale" content="ko_KR" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImage} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={siteUrl} />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="/static/tailwind-config.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />

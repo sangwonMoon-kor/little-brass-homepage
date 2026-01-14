@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://littlebrass.com/sitemap.xml
+
+# Disallow admin or private pages (if any in future)
+# Disallow: /admin/
+
+# Crawl-delay (optional, adjust if needed)
+Crawl-delay: 1
