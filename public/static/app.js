@@ -340,10 +340,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const response = await fetch('/api/blog/rss');
       const data = await response.json();
 
-      if (data.success && data.posts.length > 0) {
+      if (data.success && data.posts && data.posts.length > 0) {
+        // 기존 내용 제거
         blogContainer.innerHTML = '';
         
         data.posts.forEach((post, index) => {
+          // URL 검증
+          const safeLink = isValidUrl(post.link) ? post.link : 'https://blog.naver.com/little_brass';
+          
           const bgColors = [
             'from-gold-400 to-gold-600',
             'from-navy-600 to-navy-800', 
@@ -354,66 +358,151 @@ document.addEventListener('DOMContentLoaded', function () {
           const bgColor = bgColors[index % 3];
           const icon = icons[index % 3];
           
+          // DOM API를 사용하여 안전하게 요소 생성
           const postCard = document.createElement('a');
-          postCard.href = post.link;
+          postCard.href = safeLink;
           postCard.target = '_blank';
           postCard.rel = 'noopener noreferrer';
           postCard.className = 'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2';
           
-          postCard.innerHTML = `
-            <div class="h-48 bg-gradient-to-br ${bgColor} flex items-center justify-center relative">
-              ${post.isPinned ? '<div class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1"><i class="fas fa-thumbtack"></i> 고정</div>' : ''}
-              <i class="fas ${icon} text-white text-6xl opacity-50"></i>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                <i class="fas fa-calendar-alt"></i>
-                <span>${post.category}</span>
-              </div>
-              <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition line-clamp-2">
-                ${escapeHtml(post.title)}
-              </h3>
-              <p class="text-gray-600 mb-4 line-clamp-3">
-                ${escapeHtml(post.description)}
-              </p>
-              <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
-                <span>자세히 보기</span>
-                <i class="fas fa-arrow-right ml-2"></i>
-              </div>
-            </div>
-          `;
+          // 헤더 영역
+          const headerDiv = document.createElement('div');
+          headerDiv.className = `h-48 bg-gradient-to-br ${bgColor} flex items-center justify-center relative`;
           
+          // 고정 배지 (isPinned이 true일 때만)
+          if (post.isPinned) {
+            const pinnedBadge = document.createElement('div');
+            pinnedBadge.className = 'absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1';
+            const thumbtackIcon = document.createElement('i');
+            thumbtackIcon.className = 'fas fa-thumbtack';
+            const pinnedText = document.createTextNode(' 고정');
+            pinnedBadge.appendChild(thumbtackIcon);
+            pinnedBadge.appendChild(pinnedText);
+            headerDiv.appendChild(pinnedBadge);
+          }
+          
+          // 아이콘
+          const iconElement = document.createElement('i');
+          iconElement.className = `fas ${icon} text-white text-6xl opacity-50`;
+          headerDiv.appendChild(iconElement);
+          postCard.appendChild(headerDiv);
+          
+          // 본문 영역
+          const contentDiv = document.createElement('div');
+          contentDiv.className = 'p-6';
+          
+          // 카테고리
+          const categoryDiv = document.createElement('div');
+          categoryDiv.className = 'flex items-center gap-2 text-sm text-gray-500 mb-3';
+          const calendarIcon = document.createElement('i');
+          calendarIcon.className = 'fas fa-calendar-alt';
+          categoryDiv.appendChild(calendarIcon);
+          const categorySpan = document.createElement('span');
+          categorySpan.textContent = escapeHtml(post.category || '일반');
+          categoryDiv.appendChild(categorySpan);
+          contentDiv.appendChild(categoryDiv);
+          
+          // 제목
+          const titleH3 = document.createElement('h3');
+          titleH3.className = 'text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition line-clamp-2';
+          titleH3.textContent = escapeHtml(post.title || '제목 없음');
+          contentDiv.appendChild(titleH3);
+          
+          // 설명
+          const descP = document.createElement('p');
+          descP.className = 'text-gray-600 mb-4 line-clamp-3';
+          descP.textContent = escapeHtml(post.description || '');
+          contentDiv.appendChild(descP);
+          
+          // 자세히 보기 링크
+          const linkDiv = document.createElement('div');
+          linkDiv.className = 'flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all';
+          const linkSpan = document.createTextNode('자세히 보기');
+          linkDiv.appendChild(linkSpan);
+          const arrowIcon = document.createElement('i');
+          arrowIcon.className = 'fas fa-arrow-right ml-2';
+          linkDiv.appendChild(arrowIcon);
+          contentDiv.appendChild(linkDiv);
+          
+          postCard.appendChild(contentDiv);
           blogContainer.appendChild(postCard);
         });
       } else {
-        blogContainer.innerHTML = `
-          <div class="col-span-3 text-center py-12">
-            <i class="fas fa-exclamation-circle text-gray-400 text-5xl mb-4"></i>
-            <p class="text-gray-600">최신 소식을 불러올 수 없습니다.</p>
-            <a href="https://blog.naver.com/little_brass" target="_blank" class="inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium">
-              블로그 직접 방문하기 <i class="fas fa-external-link-alt ml-1"></i>
-            </a>
-          </div>
-        `;
+        // 에러 메시지도 DOM API로 생성
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'col-span-3 text-center py-12';
+        
+        const errorIcon = document.createElement('i');
+        errorIcon.className = 'fas fa-exclamation-circle text-gray-400 text-5xl mb-4';
+        errorDiv.appendChild(errorIcon);
+        
+        const errorP = document.createElement('p');
+        errorP.className = 'text-gray-600';
+        errorP.textContent = '최신 소식을 불러올 수 없습니다.';
+        errorDiv.appendChild(errorP);
+        
+        const errorLink = document.createElement('a');
+        errorLink.href = 'https://blog.naver.com/little_brass';
+        errorLink.target = '_blank';
+        errorLink.rel = 'noopener noreferrer';
+        errorLink.className = 'inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium';
+        const linkText = document.createTextNode('블로그 직접 방문하기 ');
+        errorLink.appendChild(linkText);
+        const externalIcon = document.createElement('i');
+        externalIcon.className = 'fas fa-external-link-alt ml-1';
+        errorLink.appendChild(externalIcon);
+        errorDiv.appendChild(errorLink);
+        
+        blogContainer.appendChild(errorDiv);
       }
     } catch (error) {
       console.error('블로그 RSS 로딩 오류:', error);
-      blogContainer.innerHTML = `
-        <div class="col-span-3 text-center py-12">
-          <i class="fas fa-exclamation-circle text-gray-400 text-5xl mb-4"></i>
-          <p class="text-gray-600">최신 소식을 불러오는 중 오류가 발생했습니다.</p>
-          <a href="https://blog.naver.com/little_brass" target="_blank" class="inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium">
-            블로그 직접 방문하기 <i class="fas fa-external-link-alt ml-1"></i>
-          </a>
-        </div>
-      `;
+      
+      // 에러 메시지도 DOM API로 생성
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'col-span-3 text-center py-12';
+      
+      const errorIcon = document.createElement('i');
+      errorIcon.className = 'fas fa-exclamation-circle text-gray-400 text-5xl mb-4';
+      errorDiv.appendChild(errorIcon);
+      
+      const errorP = document.createElement('p');
+      errorP.className = 'text-gray-600';
+      errorP.textContent = '최신 소식을 불러오는 중 오류가 발생했습니다.';
+      errorDiv.appendChild(errorP);
+      
+      const errorLink = document.createElement('a');
+      errorLink.href = 'https://blog.naver.com/little_brass';
+      errorLink.target = '_blank';
+      errorLink.rel = 'noopener noreferrer';
+      errorLink.className = 'inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium';
+      const linkText = document.createTextNode('블로그 직접 방문하기 ');
+      errorLink.appendChild(linkText);
+      const externalIcon = document.createElement('i');
+      externalIcon.className = 'fas fa-external-link-alt ml-1';
+      errorLink.appendChild(externalIcon);
+      errorDiv.appendChild(errorLink);
+      
+      blogContainer.appendChild(errorDiv);
     }
   }
 
   function escapeHtml(text) {
+    if (text == null) return '';
     const div = document.createElement('div');
-    div.textContent = text;
+    div.textContent = String(text);
     return div.innerHTML;
+  }
+
+  function isValidUrl(url) {
+    if (!url || typeof url !== 'string') return false;
+    try {
+      const urlObj = new URL(url);
+      // 허용된 도메인만 허용 (네이버 블로그)
+      return urlObj.hostname === 'blog.naver.com' || urlObj.hostname === 'm.blog.naver.com';
+    } catch {
+      return false;
+    }
   }
 
   // 공지사항 검색 기능
