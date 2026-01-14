@@ -268,6 +268,93 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.transform = 'translateY(0) scale(1)';
     });
   });
+
+  // 네이버 블로그 RSS 로딩
+  const blogContainer = document.getElementById('blog-posts-container');
+  if (blogContainer) {
+    loadBlogPosts();
+  }
+
+  async function loadBlogPosts() {
+    try {
+      const response = await fetch('/api/blog/rss');
+      const data = await response.json();
+
+      if (data.success && data.posts.length > 0) {
+        blogContainer.innerHTML = '';
+        
+        data.posts.forEach((post, index) => {
+          const bgColors = [
+            'from-gold-400 to-gold-600',
+            'from-navy-600 to-navy-800', 
+            'from-amber-500 to-orange-600'
+          ];
+          const icons = ['fa-music', 'fa-trophy', 'fa-lightbulb'];
+          
+          const bgColor = bgColors[index % 3];
+          const icon = icons[index % 3];
+          
+          const postCard = document.createElement('a');
+          postCard.href = post.link;
+          postCard.target = '_blank';
+          postCard.rel = 'noopener noreferrer';
+          postCard.className = 'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2';
+          
+          postCard.innerHTML = `
+            <div class="h-48 bg-gradient-to-br ${bgColor} flex items-center justify-center relative">
+              ${post.isPinned ? '<div class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1"><i class="fas fa-thumbtack"></i> 고정</div>' : ''}
+              <i class="fas ${icon} text-white text-6xl opacity-50"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                <i class="fas fa-calendar-alt"></i>
+                <span>${post.category}</span>
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition line-clamp-2">
+                ${escapeHtml(post.title)}
+              </h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                ${escapeHtml(post.description)}
+              </p>
+              <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
+                <span>자세히 보기</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+              </div>
+            </div>
+          `;
+          
+          blogContainer.appendChild(postCard);
+        });
+      } else {
+        blogContainer.innerHTML = `
+          <div class="col-span-3 text-center py-12">
+            <i class="fas fa-exclamation-circle text-gray-400 text-5xl mb-4"></i>
+            <p class="text-gray-600">최신 소식을 불러올 수 없습니다.</p>
+            <a href="https://blog.naver.com/little_brass" target="_blank" class="inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium">
+              블로그 직접 방문하기 <i class="fas fa-external-link-alt ml-1"></i>
+            </a>
+          </div>
+        `;
+      }
+    } catch (error) {
+      console.error('블로그 RSS 로딩 오류:', error);
+      blogContainer.innerHTML = `
+        <div class="col-span-3 text-center py-12">
+          <i class="fas fa-exclamation-circle text-gray-400 text-5xl mb-4"></i>
+          <p class="text-gray-600">최신 소식을 불러오는 중 오류가 발생했습니다.</p>
+          <a href="https://blog.naver.com/little_brass" target="_blank" class="inline-block mt-4 text-gold-600 hover:text-gold-700 font-medium">
+            블로그 직접 방문하기 <i class="fas fa-external-link-alt ml-1"></i>
+          </a>
+        </div>
+      `;
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
 });
 
 

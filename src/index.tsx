@@ -95,78 +95,13 @@ app.get('/', (c) => {
             <p class="text-gray-600 text-lg">학원의 최신 소식과 유용한 음악 정보를 확인하세요</p>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Blog Post 1 */}
-            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" 
-               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div class="h-48 bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
-                <i class="fas fa-music text-white text-6xl opacity-50"></i>
-              </div>
-              <div class="p-6">
-                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                  <i class="fas fa-calendar-alt"></i>
-                  <span>최신 소식</span>
-                </div>
-                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
-                  2026년 신규 수강생 모집
-                </h3>
-                <p class="text-gray-600 mb-4 line-clamp-3">
-                  Little Brass와 함께 새로운 음악 여정을 시작하세요. 체계적인 커리큘럼과 전문 강사진이 여러분을 기다립니다.
-                </p>
-                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
-                  <span>자세히 보기</span>
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </div>
-              </div>
-            </a>
-
-            {/* Blog Post 2 */}
-            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div class="h-48 bg-gradient-to-br from-navy-600 to-navy-800 flex items-center justify-center">
-                <i class="fas fa-trophy text-white text-6xl opacity-50"></i>
-              </div>
-              <div class="p-6">
-                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                  <i class="fas fa-calendar-alt"></i>
-                  <span>행사 소식</span>
-                </div>
-                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
-                  겨울 발표회 성황리 종료
-                </h3>
-                <p class="text-gray-600 mb-4 line-clamp-3">
-                  학생들의 멋진 연주로 가득했던 2025 겨울 발표회. 모든 학생들이 열심히 준비한 결과를 보여주었습니다.
-                </p>
-                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
-                  <span>자세히 보기</span>
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </div>
-              </div>
-            </a>
-
-            {/* Blog Post 3 */}
-            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div class="h-48 bg-gradient-to-br from-bronze to-bronze-light flex items-center justify-center">
-                <i class="fas fa-lightbulb text-white text-6xl opacity-50"></i>
-              </div>
-              <div class="p-6">
-                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                  <i class="fas fa-calendar-alt"></i>
-                  <span>연습 팁</span>
-                </div>
-                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
-                  초보자를 위한 악기 연습법
-                </h3>
-                <p class="text-gray-600 mb-4 line-clamp-3">
-                  효과적인 연습 방법과 초보자가 주의해야 할 점들을 알아봅니다. 올바른 자세부터 시작하세요.
-                </p>
-                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
-                  <span>자세히 보기</span>
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </div>
-              </div>
-            </a>
+          {/* 블로그 카드 - 동적 RSS 로딩 */}
+          <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* 로딩 중 표시 */}
+            <div class="col-span-3 text-center py-12">
+              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-600 mx-auto mb-4"></div>
+              <p class="text-gray-600">최신 소식을 불러오는 중...</p>
+            </div>
           </div>
 
           <div class="text-center">
@@ -2196,6 +2131,79 @@ app.notFound((c) => {
     </div>,
     { title: '404 - 페이지를 찾을 수 없습니다 | Little Brass' }
   )
+})
+
+// API: 네이버 블로그 RSS 피드
+app.get('/api/blog/rss', async (c) => {
+  try {
+    // blog-config.json 읽기
+    const configResponse = await fetch(`${c.req.url.split('/api')[0]}/blog-config.json`)
+    const config = await configResponse.json()
+
+    // RSS 피드 가져오기
+    const rssResponse = await fetch(config.rssUrl)
+    const rssText = await rssResponse.text()
+
+    // RSS 파싱 (간단한 정규식 방식)
+    const items: any[] = []
+    const itemRegex = /<item>([\s\S]*?)<\/item>/g
+    let match
+
+    while ((match = itemRegex.exec(rssText)) !== null && items.length < 10) {
+      const itemContent = match[1]
+      
+      const title = (itemContent.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || [])[1] || ''
+      const link = (itemContent.match(/<link><!\[CDATA\[(.*?)\]\]><\/link>/) || [])[1] || ''
+      const category = (itemContent.match(/<category><!\[CDATA\[(.*?)\]\]><\/category>/) || [])[1] || '일반'
+      const description = (itemContent.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/) || [])[1] || ''
+      const pubDate = (itemContent.match(/<pubDate>(.*?)<\/pubDate>/) || [])[1] || ''
+
+      // 설명 텍스트 추출 (HTML 태그 제거)
+      const cleanDescription = description
+        .replace(/<img[^>]*>/g, '')
+        .replace(/<[^>]+>/g, '')
+        .substring(0, 100)
+        .trim()
+
+      items.push({
+        title: title.trim(),
+        link: link.trim(),
+        category: category.trim(),
+        description: cleanDescription || '최신 소식을 확인하세요',
+        pubDate: pubDate.trim()
+      })
+    }
+
+    // 고정 글과 최신 글 조합
+    const result = []
+    
+    if (config.showPinned && config.pinnedPost.enabled) {
+      result.push({
+        ...config.pinnedPost,
+        isPinned: true
+      })
+    }
+
+    // 고정 글 제외한 최신 글 추가
+    const remainingCount = config.displayCount - (result.length > 0 ? 1 : 0)
+    result.push(...items.slice(0, remainingCount).map(item => ({ ...item, isPinned: false })))
+
+    return c.json({
+      success: true,
+      posts: result.slice(0, config.displayCount),
+      config: {
+        displayCount: config.displayCount,
+        showPinned: config.showPinned
+      }
+    })
+  } catch (error) {
+    console.error('RSS 파싱 오류:', error)
+    return c.json({
+      success: false,
+      message: 'RSS 피드를 가져오는데 실패했습니다.',
+      posts: []
+    }, 500)
+  }
 })
 
 export default app
