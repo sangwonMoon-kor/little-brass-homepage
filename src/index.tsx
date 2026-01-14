@@ -572,6 +572,7 @@ app.get('/online', (c) => {
 })
 
 // 위치 페이지
+// 위치 페이지
 app.get('/location', (c) => {
   return c.render(
     <div>
@@ -582,13 +583,30 @@ app.get('/location', (c) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* 지도 영역 */}
             <div>
-              <iframe 
-                src="https://map.naver.com/p/entry/place/1094694626" 
-                class="w-full h-96 rounded-lg border-0"
-                loading="lazy"
-                allowfullscreen
-                title="Little Brass 위치 지도"
-              ></iframe>
+              <div class="bg-gray-100 rounded-lg flex flex-col items-center justify-center p-8" style="height: 400px;">
+                <i class="fas fa-map-marked-alt text-6xl text-amber-600 mb-6"></i>
+                <p class="text-lg font-semibold text-gray-700 mb-6 text-center">Little Brass 위치</p>
+                
+                {/* 웹 링크 버튼 */}
+                <a 
+                  href="https://map.naver.com/p/entry/place/1094694626"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors flex items-center gap-3 no-underline mb-4"
+                >
+                  <i class="fas fa-map"></i>
+                  네이버 지도에서 보기
+                </a>
+                
+                {/* 앱 링크 버튼 - 모바일만 */}
+                <a 
+                  href="nmap://place?id=1094694626"
+                  class="lg:hidden bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 no-underline text-sm"
+                >
+                  <i class="fas fa-mobile-alt"></i>
+                  네이버 지도 앱으로 열기
+                </a>
+              </div>
             </div>
 
             {/* 위치 정보 */}
@@ -627,43 +645,17 @@ app.get('/location', (c) => {
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
                     <i class="fas fa-car text-amber-700 mr-3"></i>주차 안내
                   </h3>
-                  <p class="text-gray-700 ml-9">건물 지하 주차장 이용 가능</p>
-                  <p class="text-gray-700 ml-9">2시간 무료 (이후 10분당 1,000원)</p>
+                  <p class="text-gray-700 ml-9">건물 내 지하 주차장 이용 가능</p>
+                  <p class="text-gray-700 ml-9">2시간 무료 주차</p>
                 </div>
 
-                <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-700">
+                <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
                     <i class="fas fa-phone text-amber-700 mr-3"></i>연락처
                   </h3>
-                  <p class="text-gray-700 ml-9 mb-2">
-                    <strong>전화:</strong> 02-1234-5678
-                  </p>
-                  <p class="text-gray-700 ml-9 mb-2">
-                    <strong>이메일:</strong> info@littlebrass.com
-                  </p>
-                  <p class="text-gray-700 ml-9">
-                    <strong>운영시간:</strong> 평일 10:00 - 22:00, 주말 10:00 - 18:00
-                  </p>
+                  <p class="text-gray-700 ml-9">전화: 02-1234-5678</p>
+                  <p class="text-gray-700 ml-9">이메일: info@littlebrass.com</p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 주변 랜드마크 */}
-          <div class="mt-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">주변 랜드마크</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <i class="fas fa-building text-amber-700 text-2xl mb-2"></i>
-                <p class="font-semibold">강남역 CGV 앞</p>
-              </div>
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <i class="fas fa-coffee text-amber-700 text-2xl mb-2"></i>
-                <p class="font-semibold">스타벅스 강남점 옆</p>
-              </div>
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <i class="fas fa-store text-amber-700 text-2xl mb-2"></i>
-                <p class="font-semibold">강남 교보문고 근처</p>
               </div>
             </div>
           </div>

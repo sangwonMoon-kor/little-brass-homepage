@@ -1,16 +1,74 @@
 // 모바일 메뉴 토글
-document.addEventListener('DOMContentLoaded', function() {
+function initMobileMenu() {
+  console.log('[모바일 메뉴] 초기화 시작');
+  
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', function() {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      mobileMenuButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+  console.log('[모바일 메뉴] 버튼 요소:', mobileMenuButton);
+  console.log('[모바일 메뉴] 메뉴 요소:', mobileMenu);
+  
+  if (!mobileMenuButton) {
+    console.error('[모바일 메뉴] 버튼 요소를 찾을 수 없습니다! (id="mobile-menu-button")');
+    return;
+  }
+  
+  if (!mobileMenu) {
+    console.error('[모바일 메뉴] 메뉴 요소를 찾을 수 없습니다! (id="mobile-menu")');
+    return;
+  }
+  
+  // 기존 이벤트 리스너 제거 (중복 방지)
+  const newButton = mobileMenuButton.cloneNode(true);
+  mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
+  
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  console.log('[모바일 메뉴] 이벤트 리스너 등록 시작');
+  
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('[모바일 메뉴] 버튼 클릭 이벤트 발생');
+    const isHidden = menu.classList.contains('hidden');
+    console.log('[모바일 메뉴] 현재 상태 (hidden):', isHidden);
+    console.log('[모바일 메뉴] 메뉴 요소 클래스:', menu.className);
+    
+    menu.classList.toggle('hidden');
+    const newState = !menu.classList.contains('hidden');
+    button.setAttribute('aria-expanded', newState ? 'true' : 'false');
+    
+    console.log('[모바일 메뉴] 토글 후 상태 (hidden):', menu.classList.contains('hidden'));
+    console.log('[모바일 메뉴] 토글 후 메뉴 요소 클래스:', menu.className);
+    console.log('[모바일 메뉴] aria-expanded:', button.getAttribute('aria-expanded'));
+  });
+  
+  // 버튼 내부 아이콘 클릭도 처리
+  const icon = button.querySelector('i');
+  if (icon) {
+    icon.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('[모바일 메뉴] 아이콘 클릭 이벤트 발생');
+      button.click();
     });
   }
+  
+  console.log('[모바일 메뉴] 이벤트 리스너 등록 완료');
+}
 
+// DOMContentLoaded 또는 이미 로드된 경우 즉시 실행
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+} else {
+  // DOM이 이미 로드된 경우
+  initMobileMenu();
+}
+
+// 나머지 페이지 스크립트는 DOMContentLoaded 이후에 실행
+document.addEventListener('DOMContentLoaded', function () {
   // 스크롤 진행 바
   const scrollProgress = document.getElementById('scroll-progress');
   if (scrollProgress) {
@@ -562,4 +620,3 @@ document.addEventListener('DOMContentLoaded', function() {
     el.classList.add('fade-in');
     observer.observe(el);
   });
-});

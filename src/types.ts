@@ -14,3 +14,4 @@ export interface BlogPost {
   isPinned?: boolean;
 }
 
+
