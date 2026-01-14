@@ -14,9 +14,13 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 class="text-5xl font-bold mb-6">음악이 흐르는 공간, Little Brass</h1>
           <p class="text-xl mb-8">전문 강사진과 함께하는 프리미엄 음악 교육</p>
-          <div class="flex justify-center space-x-4">
-            <a href="/curriculum" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="/curriculum" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
               커리큘럼 보기
+            </a>
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-8 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-amber-600 transition shadow-lg flex items-center gap-2">
+              <i class="fas fa-calendar-check"></i>
+              네이버 예약하기
             </a>
             <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-amber-700 transition">
               문의하기
