@@ -112,8 +112,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 네비게이션 스타일 */
 nav {
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
-  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.15);
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -139,7 +139,7 @@ nav a:hover::after {
 }
 
 nav a:hover {
-  color: var(--gold-light) !important;
+  color: var(--gold-primary) !important;
 }
 
 /* 프리미엄 카드 스타일 */
@@ -469,7 +469,7 @@ details[open] {
 
 /* 푸터 스타일 */
 footer {
-  background: linear-gradient(135deg, var(--navy-dark) 0%, #0a1628 100%);
+  background: #f3f4f6;
 }
 
 footer a:hover {
