@@ -1451,6 +1451,539 @@ app.get('/faq', (c) => {
   )
 })
 
+// 학생 성과 페이지
+app.get('/achievements', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern id=\"grid\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"%3E%3Cpath d=\"M 100 0 L 0 0 0 100\" fill=\"none\" stroke=\"white\" stroke-width=\"1\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\"100\" height=\"100\" fill=\"url(%23grid)\"/%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
+            <i class="fas fa-trophy mr-2"></i>ACHIEVEMENTS
+          </div>
+          <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">학생 성과</h1>
+          <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Little Brass 학생들의 빛나는 성과와 성장 스토리를 만나보세요
+          </p>
+          
+          {/* 통계 카드 */}
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div class="text-4xl font-bold text-gold-400 mb-2">150+</div>
+              <div class="text-sm text-gray-300">콩쿠르 입상</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div class="text-4xl font-bold text-gold-400 mb-2">45+</div>
+              <div class="text-sm text-gray-300">예고/음대 합격</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div class="text-4xl font-bold text-gold-400 mb-2">98%</div>
+              <div class="text-sm text-gray-300">학생 만족도</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div class="text-4xl font-bold text-gold-400 mb-2">500+</div>
+              <div class="text-sm text-gray-300">졸업생</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 콩쿠르 입상 실적 타임라인 */}
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-medal mr-2"></i>AWARDS
+            </div>
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">콩쿠르 입상 실적</h2>
+            <p class="text-gray-600 text-lg">학생들의 노력과 실력이 만들어낸 빛나는 결과들</p>
+          </div>
+
+          <div class="space-y-8">
+            {/* 2025년 */}
+            <div class="relative">
+              <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg">
+                  2025년
+                </div>
+                <div class="flex-1 h-1 bg-gradient-to-r from-gold-400 to-transparent ml-4"></div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-0 md:ml-8">
+                {/* 성과 카드 1 */}
+                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                      1
+                    </div>
+                    <span class="text-xs bg-gold-100 text-gold-800 px-3 py-1 rounded-full font-semibold">대상</span>
+                  </div>
+                  <h3 class="font-bold text-navy-900 text-lg mb-2">서울 청소년 음악 콩쿠르</h3>
+                  <p class="text-gray-600 text-sm mb-3">트럼펫 부문</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-user mr-2 text-gold-500"></i>
+                    <span>김○○ 학생</span>
+                  </div>
+                </div>
+
+                {/* 성과 카드 2 */}
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                      2
+                    </div>
+                    <span class="text-xs bg-gray-200 text-gray-800 px-3 py-1 rounded-full font-semibold">금상</span>
+                  </div>
+                  <h3 class="font-bold text-navy-900 text-lg mb-2">전국 관악기 경연대회</h3>
+                  <p class="text-gray-600 text-sm mb-3">혼 부문</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-user mr-2 text-gold-500"></i>
+                    <span>이○○ 학생</span>
+                  </div>
+                </div>
+
+                {/* 성과 카드 3 */}
+                <div class="bg-gradient-to-br from-bronze-50 to-white rounded-2xl p-6 border border-bronze-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="bg-gradient-to-r from-bronze to-bronze-light text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                      3
+                    </div>
+                    <span class="text-xs bg-bronze-100 text-bronze-800 px-3 py-1 rounded-full font-semibold">은상</span>
+                  </div>
+                  <h3 class="font-bold text-navy-900 text-lg mb-2">강남구 청소년 예술제</h3>
+                  <p class="text-gray-600 text-sm mb-3">트롬본 부문</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-user mr-2 text-gold-500"></i>
+                    <span>박○○ 학생</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2024년 */}
+            <div class="relative">
+              <div class="flex items-center mb-6">
+                <div class="bg-gradient-to-r from-navy-600 to-navy-700 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg">
+                  2024년
+                </div>
+                <div class="flex-1 h-1 bg-gradient-to-r from-navy-400 to-transparent ml-4"></div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-0 md:ml-8">
+                {/* 2024 성과 카드들 */}
+                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                      1
+                    </div>
+                    <span class="text-xs bg-gold-100 text-gold-800 px-3 py-1 rounded-full font-semibold">대상</span>
+                  </div>
+                  <h3 class="font-bold text-navy-900 text-lg mb-2">한국 청소년 음악제</h3>
+                  <p class="text-gray-600 text-sm mb-3">튜바 부문</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-user mr-2 text-gold-500"></i>
+                    <span>최○○ 학생</span>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                      2
+                    </div>
+                    <span class="text-xs bg-gray-200 text-gray-800 px-3 py-1 rounded-full font-semibold">금상</span>
+                  </div>
+                  <h3 class="font-bold text-navy-900 text-lg mb-2">서울시 학생 관악 경연</h3>
+                  <p class="text-gray-600 text-sm mb-3">트럼펫 부문</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-user mr-2 text-gold-500"></i>
+                    <span>정○○ 학생</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 예고/음대 합격 사례 */}
+      <section class="py-20 bg-gradient-to-br from-navy-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <div class="inline-block bg-gradient-to-r from-navy-600 to-navy-700 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-graduation-cap mr-2"></i>ADMISSIONS
+            </div>
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">예고/음대 합격 실적</h2>
+            <p class="text-gray-600 text-lg">꿈을 이룬 학생들의 진학 성공 스토리</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 합격 카드 1 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-gold-400 to-gold-600 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-school text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2025</span>
+                </div>
+                <h3 class="text-2xl font-bold">선화예고</h3>
+                <p class="text-gold-100 text-sm">관악과 트럼펫 전공</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-gold-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">김○○</h4>
+                    <p class="text-sm text-gray-600">3년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  체계적인 입시 준비 과정을 통해 선화예고에 합격했습니다. 꾸준한 연습과 선생님의 지도 덕분입니다.
+                </p>
+              </div>
+            </div>
+
+            {/* 합격 카드 2 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-navy-600 to-navy-800 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-university text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2025</span>
+                </div>
+                <h3 class="text-2xl font-bold">서울대학교</h3>
+                <p class="text-navy-100 text-sm">음악대학 관악과</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-navy-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-navy-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">이○○</h4>
+                    <p class="text-sm text-gray-600">4년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Little Brass에서 기초부터 입시까지 함께했습니다. 실력과 음악성을 모두 키울 수 있었습니다.
+                </p>
+              </div>
+            </div>
+
+            {/* 합격 카드 3 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-bronze to-bronze-light p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-school text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold">예원학교</h3>
+                <p class="text-bronze-100 text-sm">관악과 혼 전공</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-bronze-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-bronze text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">박○○</h4>
+                    <p class="text-sm text-gray-600">2년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  단기간에 실력이 크게 향상되어 예원학교에 합격할 수 있었습니다. 감사합니다!
+                </p>
+              </div>
+            </div>
+
+            {/* 합격 카드 4 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-university text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold">한국예술종합학교</h3>
+                <p class="text-indigo-100 text-sm">음악원 관현악과</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-indigo-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">최○○</h4>
+                    <p class="text-sm text-gray-600">5년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  오랜 시간 함께하며 음악적 성장을 이루었고, 목표했던 학교에 합격했습니다.
+                </p>
+              </div>
+            </div>
+
+            {/* 합격 카드 5 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-rose-500 to-pink-600 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-university text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold">연세대학교</h3>
+                <p class="text-rose-100 text-sm">음악대학 관악과</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-rose-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">정○○</h4>
+                    <p class="text-sm text-gray-600">3년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  전공 실기와 부전공 준비를 병행하며 연세대 음대에 합격했습니다.
+                </p>
+              </div>
+            </div>
+
+            {/* 합격 카드 6 */}
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+              <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <i class="fas fa-school text-4xl opacity-80"></i>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                </div>
+                <h3 class="text-2xl font-bold">서울예고</h3>
+                <p class="text-emerald-100 text-sm">관악과 트롬본 전공</p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-emerald-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-navy-900">강○○</h4>
+                    <p class="text-sm text-gray-600">3년 수강</p>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  체계적인 입시 준비와 전공 실기 지도로 서울예고에 합격했습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 학생 후기 */}
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-comment-dots mr-2"></i>REVIEWS
+            </div>
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">학생 & 학부모 후기</h2>
+            <p class="text-gray-600 text-lg">Little Brass와 함께한 분들의 생생한 이야기</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 후기 1 */}
+            <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-8 border border-gold-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">김○○ 학생</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "선생님의 세심한 지도 덕분에 트럼펫 실력이 크게 향상되었습니다. 
+                콩쿠르 대상을 받을 수 있어서 정말 기뻤어요!"
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-trophy text-gold-500 mr-2"></i>
+                서울 청소년 음악 콩쿠르 대상
+              </div>
+            </div>
+
+            {/* 후기 2 */}
+            <div class="bg-gradient-to-br from-navy-50 to-white rounded-2xl p-8 border border-navy-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">이○○ 학부모</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "체계적인 커리큘럼과 전문적인 강사진 덕분에 아이가 서울대 음대에 합격할 수 있었습니다. 
+                진심으로 감사드립니다."
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-graduation-cap text-navy-600 mr-2"></i>
+                서울대학교 음악대학 합격
+              </div>
+            </div>
+
+            {/* 후기 3 */}
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">박○○ 학생</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "온라인 레슨도 오프라인만큼 효과적이에요. 
+                집에서 편하게 배울 수 있어서 좋고, 실력도 많이 늘었습니다!"
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-video text-purple-600 mr-2"></i>
+                온라인 레슨 수강생
+              </div>
+            </div>
+
+            {/* 후기 4 */}
+            <div class="bg-gradient-to-br from-rose-50 to-white rounded-2xl p-8 border border-rose-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-rose-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">최○○ 학부모</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "아이가 음악을 진정으로 사랑하게 되었습니다. 
+                선생님들의 열정과 사랑이 느껴지는 학원이에요."
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-heart text-rose-600 mr-2"></i>
+                3년 수강 학부모
+              </div>
+            </div>
+
+            {/* 후기 5 */}
+            <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 border border-emerald-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">정○○ 학생</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "처음에는 악기가 낯설었는데, 지금은 제일 좋아하는 취미가 되었어요. 
+                선생님 감사합니다!"
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-music text-emerald-600 mr-2"></i>
+                2년 수강생
+              </div>
+            </div>
+
+            {/* 후기 6 */}
+            <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-navy-900">강○○ 학부모</h4>
+                  <div class="flex text-gold-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "시설도 깨끗하고 선생님들도 친절하세요. 
+                아이가 매 수업을 즐겁게 기다립니다."
+              </p>
+              <div class="text-sm text-gray-500">
+                <i class="fas fa-smile text-amber-600 mr-2"></i>
+                4년 수강 학부모
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section class="py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern id=\"grid\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"%3E%3Cpath d=\"M 100 0 L 0 0 0 100\" fill=\"none\" stroke=\"white\" stroke-width=\"1\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\"100\" height=\"100\" fill=\"url(%23grid)\"/%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 class="text-4xl font-display font-bold mb-6">당신도 성공 스토리의 주인공이 될 수 있습니다</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Little Brass와 함께 음악의 꿈을 이루세요
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold hover:from-green-400 hover:to-green-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+              <i class="fas fa-calendar-check text-xl"></i>
+              <span>네이버 예약하기</span>
+            </a>
+            <a href="/contact"
+               class="inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+              <i class="fas fa-envelope text-xl"></i>
+              <span>무료 상담 신청</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: '학생 성과 - Little Brass' }
+  )
+})
+
 // 문의하기 페이지
 app.get('/contact', (c) => {
   return c.render(
