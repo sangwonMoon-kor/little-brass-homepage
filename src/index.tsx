@@ -9,22 +9,36 @@ app.use(renderer)
 app.get('/', (c) => {
   return c.render(
     <div>
-      {/* Hero Section - 큰 비주얼 이미지 스타일 */}
-      <section class="relative bg-cover bg-center text-white py-32" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80'); min-height: 600px; display: flex; align-items: center;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
-          <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
-            <i class="fas fa-trumpet mr-2"></i>금관악기 전문 교육
+      {/* Hero Section - 영상 공간 (추후 영상 삽입 예정) */}
+      <section class="relative bg-gray-900 text-white py-0">
+        {/* 영상 영역 - 추후 실제 영상으로 교체 */}
+        <div class="relative w-full" style="min-height: 600px;">
+          {/* 임시 배경 이미지 (영상으로 교체 예정) */}
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80');">
+            {/* 
+              추후 영상 삽입 방법:
+              <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/static/academy-intro.mp4" type="video/mp4" />
+              </video>
+            */}
           </div>
-          <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">리틀브라스 음악학원</h1>
-          <p class="text-2xl mb-8 drop-shadow-md">O2O 교육 서비스로 합리적인 가격과 최상의 교육 퀄리티를 제공합니다</p>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="/curriculum" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-yellow-300 transition shadow-xl text-lg">
-              커리큘럼 보기
-            </a>
-            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl text-lg flex items-center gap-2">
-              <i class="fas fa-calendar-check"></i>
-              원데이 클래스 예약
-            </a>
+          
+          {/* 오버레이 콘텐츠 */}
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style="padding-top: 120px; padding-bottom: 120px;">
+            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
+              <i class="fas fa-trumpet mr-2"></i>금관악기 전문 교육
+            </div>
+            <h1 class="text-6xl font-bold mb-6 drop-shadow-2xl">리틀브라스 음악학원</h1>
+            <p class="text-2xl mb-10 drop-shadow-xl">O2O 교육 서비스로 합리적인 가격과 최상의 교육 퀄리티를 제공합니다</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <a href="/curriculum" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-yellow-300 transition shadow-xl text-lg">
+                커리큘럼 보기
+              </a>
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl text-lg flex items-center gap-2">
+                <i class="fas fa-calendar-check"></i>
+                원데이 클래스 예약
+              </a>
+            </div>
           </div>
         </div>
       </section>

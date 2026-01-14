@@ -47,89 +47,89 @@ export const renderer = jsxRenderer(({ children, title }) => {
         {/* 스크롤 진행 바 */}
         <div class="scroll-progress" id="scroll-progress"></div>
         
-        <nav class="sticky top-0 z-50 backdrop-blur-sm bg-navy-900/95 shadow-lg">
+        <nav class="sticky top-0 z-50 bg-white shadow-md">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
               <div class="flex items-center">
                 <a href="/" class="flex items-center space-x-3 group">
-                  <div class="bg-gradient-to-br from-gold-400 to-gold-600 p-2 rounded-lg shadow-gold group-hover:shadow-xl transition-all duration-300">
+                  <div class="bg-gradient-to-br from-yellow-400 to-orange-400 p-2 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <i class="fas fa-trumpet text-white text-xl"></i>
                   </div>
                   <div>
-                    <span class="text-2xl font-display font-bold text-white block leading-tight">Little Brass</span>
-                    <span class="text-xs text-gold-400 font-medium">Premium Music Academy</span>
+                    <span class="text-2xl font-display font-bold text-gray-800 block leading-tight">Little Brass</span>
+                    <span class="text-xs text-yellow-600 font-medium">Premium Music Academy</span>
                   </div>
                 </a>
               </div>
               <div class="hidden lg:flex items-center space-x-1">
-                <a href="/" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">홈</a>
-                <a href="/curriculum" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">커리큘럼</a>
-                <a href="/online" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">온라인과정</a>
-                <a href="/teachers" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">강사진</a>
-                <a href="/gallery" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">갤러리</a>
-                <a href="/achievements" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">학생성과</a>
+                <a href="/" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">홈</a>
+                <a href="/curriculum" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">커리큘럼</a>
+                <a href="/online" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">온라인과정</a>
+                <a href="/teachers" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">강사진</a>
+                <a href="/gallery" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">갤러리</a>
+                <a href="/achievements" class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm">학생성과</a>
                 
                 {/* 더보기 드롭다운 */}
                 <div class="relative group">
-                  <button class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm flex items-center gap-1">
+                  <button class="text-gray-700 hover:text-yellow-600 px-3 py-2 rounded-lg transition font-medium text-sm flex items-center gap-1">
                     더보기
                     <i class="fas fa-chevron-down text-xs"></i>
                   </button>
-                  <div class="absolute top-full left-0 mt-2 w-48 bg-navy-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
                     <div class="py-2">
-                      <a href="/about" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">학원소개</a>
-                      <a href="/faq" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">FAQ</a>
-                      <a href="/notice" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">
+                      <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">학원소개</a>
+                      <a href="/faq" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">FAQ</a>
+                      <a href="/notice" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">
                         <i class="fas fa-bullhorn mr-2 text-xs"></i>공지사항
                       </a>
-                      <a href="/events" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">
+                      <a href="/events" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">
                         <i class="fas fa-gift mr-2 text-xs"></i>이벤트
                       </a>
-                      <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">
+                      <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">
                         <i class="fas fa-blog mr-2 text-xs"></i>블로그
                       </a>
-                      <a href="/location" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">오시는길</a>
+                      <a href="/location" class="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition text-sm">오시는길</a>
                     </div>
                   </div>
                 </div>
                 
-                <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full hover:from-green-400 hover:to-green-500 transition font-bold shadow-lg flex items-center gap-2 text-sm ml-2">
+                <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-full hover:from-yellow-300 hover:to-orange-300 transition font-bold shadow-lg flex items-center gap-2 text-sm ml-2">
                   <i class="fas fa-ticket-alt"></i>
                   원데이 클래스
                 </a>
-                <a href="/contact" class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-4 py-2 rounded-full hover:from-gold-400 hover:to-gold-500 transition font-bold shadow-gold text-sm">
+                <a href="/contact" class="bg-gradient-to-r from-orange-400 to-amber-500 text-white px-4 py-2 rounded-full hover:from-orange-300 hover:to-amber-400 transition font-bold shadow-lg text-sm">
                   문의하기
                 </a>
               </div>
-              <button id="mobile-menu-button" class="lg:hidden text-gold-400 hover:text-gold-300 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+              <button id="mobile-menu-button" class="lg:hidden text-yellow-600 hover:text-yellow-700 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
                 <i class="fas fa-bars text-2xl"></i>
               </button>
             </div>
           </div>
-          <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-navy-700">
+          <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
             <div class="px-4 py-3 space-y-2">
-              <a href="/" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">홈</a>
-              <a href="/about" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">학원소개</a>
-              <a href="/teachers" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">강사소개</a>
-              <a href="/curriculum" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">커리큘럼</a>
-              <a href="/gallery" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">갤러리</a>
-              <a href="/achievements" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">학생성과</a>
-              <a href="/faq" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">FAQ</a>
-              <a href="/notice" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+              <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">홈</a>
+              <a href="/about" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">학원소개</a>
+              <a href="/teachers" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">강사소개</a>
+              <a href="/curriculum" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">커리큘럼</a>
+              <a href="/gallery" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">갤러리</a>
+              <a href="/achievements" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">학생성과</a>
+              <a href="/faq" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">FAQ</a>
+              <a href="/notice" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">
                 <i class="fas fa-bullhorn mr-2"></i>공지사항
               </a>
-              <a href="/events" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+              <a href="/events" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">
                 <i class="fas fa-gift mr-2"></i>이벤트
               </a>
-              <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+              <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">
                 <i class="fas fa-blog mr-2"></i>블로그
               </a>
-              <a href="/online" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">온라인과정</a>
-              <a href="/location" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">오시는길</a>
-              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-bold text-center shadow-lg">
+              <a href="/online" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">온라인과정</a>
+              <a href="/location" class="block px-4 py-3 text-gray-700 hover:bg-yellow-50 rounded-lg transition">오시는길</a>
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-lg font-bold text-center shadow-lg">
                 <i class="fas fa-ticket-alt mr-2"></i>원데이 클래스
               </a>
-              <a href="/contact" class="block px-4 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg font-bold text-center shadow-gold">문의하기</a>
+              <a href="/contact" class="block px-4 py-3 bg-gradient-to-r from-orange-400 to-amber-500 text-white rounded-lg font-bold text-center shadow-lg">문의하기</a>
             </div>
           </div>
         </nav>
@@ -140,7 +140,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
           href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-4 rounded-full shadow-2xl hover:from-purple-400 hover:to-pink-500 hover:scale-110 transition-all duration-300 z-50 flex items-center gap-3 font-bold animate-bounce-slow"
+          class="fixed bottom-6 right-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-4 rounded-full shadow-2xl hover:from-yellow-300 hover:to-orange-300 hover:scale-110 transition-all duration-300 z-50 flex items-center gap-3 font-bold animate-bounce-slow"
           id="floating-oneday-button"
         >
           <i class="fas fa-ticket-alt text-xl"></i>
