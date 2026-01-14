@@ -1,6 +1,7 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 
-export const renderer = jsxRenderer(({ children, title }) => {
+export const renderer = jsxRenderer(
+  ({ children, title }: { children?: any; title?: string; [key: string]: any }) => {
   const pageTitle = title || 'Little Brass - 프리미엄 금관악기 교육'
   const description = 'Little Brass 음악학원 - 전문 금관악기 교육과 온라인 레슨을 제공하는 프리미엄 음악 학원입니다.'
   const siteUrl = 'https://littlebrass.com'
@@ -153,7 +154,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <div class="md:col-span-2">
                 <div class="flex items-center space-x-3 mb-4">
                   <div class="bg-gradient-to-br from-yellow-400 to-orange-400 p-3 rounded-xl shadow-lg">
-                    <i class="fas fa-trumpet text-white text-2xl"></i>
+                    <i class="fas fa-trumpet text-gray-700 text-2xl"></i>
                   </div>
                   <div>
                     <h3 class="text-2xl font-display font-bold text-gray-800">Little Brass</h3>
@@ -166,16 +167,16 @@ export const renderer = jsxRenderer(({ children, title }) => {
                 </p>
                 <div class="flex space-x-3">
                   <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fas fa-blog text-gray-600 group-hover:text-white"></i>
+                    <i class="fas fa-blog text-gray-600 group-hover:text-gray-700"></i>
                   </a>
                   <a href="#" aria-label="인스타그램" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-instagram text-gray-600 group-hover:text-white"></i>
+                    <i class="fab fa-instagram text-gray-600 group-hover:text-gray-700"></i>
                   </a>
                   <a href="#" aria-label="유튜브" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-youtube text-gray-600 group-hover:text-white"></i>
+                    <i class="fab fa-youtube text-gray-600 group-hover:text-gray-700"></i>
                   </a>
                   <a href="#" aria-label="페이스북" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-facebook text-gray-600 group-hover:text-white"></i>
+                    <i class="fab fa-facebook text-gray-600 group-hover:text-gray-700"></i>
                   </a>
                 </div>
               </div>
@@ -221,4 +222,5 @@ export const renderer = jsxRenderer(({ children, title }) => {
       </body>
     </html>
   )
-})
+  }
+)
