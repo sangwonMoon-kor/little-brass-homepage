@@ -9,32 +9,42 @@ app.use(renderer)
 app.get('/', (c) => {
   return c.render(
     <div>
-      {/* Hero Section - 영상 공간 (추후 영상 삽입 예정) */}
-      <section class="relative bg-gray-900 text-white py-0">
-        {/* 영상 영역 - 추후 실제 영상으로 교체 */}
-        <div class="relative w-full" style="min-height: 600px;">
-          {/* 임시 배경 이미지 (영상으로 교체 예정) */}
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80');">
-            {/* 
-              추후 영상 삽입 방법:
-              <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-                <source src="/static/academy-intro.mp4" type="video/mp4" />
-              </video>
-            */}
-          </div>
-          
-          {/* 오버레이 콘텐츠 */}
-          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style="padding-top: 120px; padding-bottom: 120px;">
-            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
-              <i class="fas fa-trumpet mr-2"></i>금관악기 전문 교육
+      {/* Hero Section - 영상 공간 */}
+      <section class="relative bg-white py-0">
+        {/* 영상 영역 */}
+        <div class="relative w-full" style="height: 70vh;">
+          {/* 영상 placeholder */}
+          <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="display: none;">
+              {/* 추후 영상 src 추가 예정 */}
+            </video>
+            {/* Placeholder 텍스트 */}
+            <div class="relative z-10 text-center">
+              <i class="fas fa-video text-6xl text-gray-500 mb-4"></i>
+              <p class="text-2xl text-gray-600 font-medium">영상 준비 중</p>
             </div>
-            <h1 class="text-6xl font-bold mb-6 drop-shadow-2xl">리틀브라스 음악학원</h1>
-            <p class="text-2xl mb-10 drop-shadow-xl">O2O 교육 서비스로 합리적인 가격과 최상의 교육 퀄리티를 제공합니다</p>
+          </div>
+        </div>
+        
+        {/* 영상 아래 텍스트 */}
+        <div class="bg-white py-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-2xl md:text-3xl text-gray-800 font-medium italic">
+              <i class="fas fa-quote-left text-yellow-500 mr-3"></i>
+              금관악기로 여는 새로운 음악
+              <i class="fas fa-quote-right text-yellow-500 ml-3"></i>
+            </p>
+          </div>
+        </div>
+        
+        {/* 버튼 섹션 */}
+        <div class="bg-white py-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <a href="/curriculum" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-yellow-300 transition shadow-xl text-lg">
+              <a href="/curriculum" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition shadow-lg text-lg">
                 커리큘럼 보기
               </a>
-              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl text-lg flex items-center gap-2">
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition shadow-lg text-lg flex items-center gap-2">
                 <i class="fas fa-calendar-check"></i>
                 원데이 클래스 예약
               </a>
