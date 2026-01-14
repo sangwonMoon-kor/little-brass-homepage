@@ -93,9 +93,9 @@ export const renderer = jsxRenderer(({ children, title }) => {
                   </div>
                 </div>
                 
-                <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full hover:from-green-400 hover:to-green-500 transition font-bold shadow-lg flex items-center gap-2 text-sm ml-2">
-                  <i class="fas fa-calendar-check"></i>
-                  네이버 예약
+                <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full hover:from-green-400 hover:to-green-500 transition font-bold shadow-lg flex items-center gap-2 text-sm ml-2">
+                  <i class="fas fa-ticket-alt"></i>
+                  원데이 클래스
                 </a>
                 <a href="/contact" class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-4 py-2 rounded-full hover:from-gold-400 hover:to-gold-500 transition font-bold shadow-gold text-sm">
                   문의하기
@@ -129,8 +129,8 @@ export const renderer = jsxRenderer(({ children, title }) => {
               </a>
               <a href="/online" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">온라인과정</a>
               <a href="/location" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">오시는길</a>
-              <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-bold text-center shadow-lg">
-                <i class="fas fa-calendar-check mr-2"></i>네이버 예약
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-bold text-center shadow-lg">
+                <i class="fas fa-ticket-alt mr-2"></i>원데이 클래스
               </a>
               <a href="/contact" class="block px-4 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg font-bold text-center shadow-gold">문의하기</a>
             </div>
@@ -138,16 +138,16 @@ export const renderer = jsxRenderer(({ children, title }) => {
         </nav>
         <main>{children}</main>
         
-        {/* 플로팅 네이버 예약 버튼 */}
+        {/* 플로팅 원데이 클래스 버튼 */}
         <a 
-          href="https://naver.me/xLsaIlQK" 
+          href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 rounded-full shadow-2xl hover:from-green-400 hover:to-green-500 hover:scale-110 transition-all duration-300 z-50 flex items-center gap-3 font-bold animate-bounce-slow"
-          id="floating-naver-button"
+          class="fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-4 rounded-full shadow-2xl hover:from-purple-400 hover:to-pink-500 hover:scale-110 transition-all duration-300 z-50 flex items-center gap-3 font-bold animate-bounce-slow"
+          id="floating-oneday-button"
         >
-          <i class="fas fa-calendar-check text-xl"></i>
-          <span class="hidden sm:inline">네이버 예약하기</span>
+          <i class="fas fa-ticket-alt text-xl"></i>
+          <span class="hidden sm:inline">원데이 클래스</span>
         </a>
         
         <footer class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white mt-20">

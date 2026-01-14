@@ -118,10 +118,11 @@ app.get('/', (c) => {
       {/* CTA Section */}
       <section class="py-16 bg-amber-700 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl font-bold mb-4">지금 바로 시작하세요!</h2>
-          <p class="text-xl mb-8">무료 체험 레슨을 신청하고 음악의 즐거움을 경험해보세요</p>
-          <a href="/contact" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
-            무료 체험 신청하기
+          <h2 class="text-3xl font-bold mb-4">음악의 첫 걸음을 시작하세요!</h2>
+          <p class="text-xl mb-8">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+            <i class="fas fa-ticket-alt mr-2"></i>
+            원데이 클래스 예약하기
           </a>
         </div>
       </section>
@@ -541,7 +542,7 @@ app.get('/online', (c) => {
           {/* CTA */}
           <div class="text-center mt-12">
             <a href="/contact" class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition inline-block">
-              무료 체험 레슨 신청하기
+              원데이 클래스 예약하기
             </a>
           </div>
 
@@ -987,7 +988,7 @@ app.get('/gallery', (c) => {
             다음 발표회와 이벤트의 주인공은 바로 여러분입니다
           </p>
           <a href="/contact" class="inline-block bg-gradient-to-r from-gold-500 to-gold-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:from-gold-400 hover:to-gold-500 transition shadow-gold">
-            무료 체험 레슨 신청하기
+            원데이 클래스 예약하기
           </a>
         </div>
       </section>
@@ -1070,14 +1071,24 @@ app.get('/faq', (c) => {
               입학 관련
             </h2>
             <div class="space-y-4">
-              <details class="faq-item bg-white" data-keywords="체험 무료 레슨 신청">
+              <details class="faq-item bg-white" data-keywords="원데이 클래스 체험 레슨 예약">
                 <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
-                  무료 체험 레슨이 있나요?
+                  <i class="fas fa-ticket-alt text-gold-600 mr-2"></i>
+                  원데이 클래스는 어떻게 예약하나요?
                 </summary>
                 <div class="px-6 pb-6 text-gray-700 leading-relaxed">
-                  네, Little Brass에서는 30분 무료 체험 레슨을 제공하고 있습니다. 
-                  체험 레슨을 통해 학원 시설과 강사진의 수업 방식을 미리 경험하실 수 있습니다. 
-                  문의하기 페이지나 전화로 신청해주세요.
+                  <p class="mb-3">Little Brass는 30분 원데이 클래스를 운영하고 있습니다.</p>
+                  <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li><strong>비용:</strong> 20,000원 (30분)</li>
+                    <li><strong>선예약금:</strong> 10,000원 (노쇼 방지)</li>
+                    <li><strong>특별 혜택:</strong> 악기 대여 무료, 신체 사이즈에 맞는 악기 제공</li>
+                    <li><strong>정규 수강 시:</strong> 원데이 클래스 비용 20,000원 차감</li>
+                  </ul>
+                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" 
+                     class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-lg">
+                    <i class="fas fa-ticket-alt"></i>
+                    네이버 플레이스에서 예약하기
+                  </a>
                 </div>
               </details>
 
@@ -1106,12 +1117,12 @@ app.get('/faq', (c) => {
                   등록 절차가 어떻게 되나요?
                 </summary>
                 <div class="px-6 pb-6 text-gray-700 leading-relaxed">
-                  1. 무료 체험 레슨 신청<br/>
+                  1. 원데이 클래스 예약 (네이버 플레이스)<br/>
                   2. 레벨 테스트 및 상담<br/>
                   3. 수강 과목 및 시간 선택<br/>
-                  4. 등록 및 수강료 납부<br/>
-                  5. 레슨 시작<br/>
-                  전화나 문의하기를 통해 간편하게 신청하실 수 있습니다.
+                  4. 등록 및 수강료 납부 (원데이 클래스 비용 차감)<br/>
+                  5. 정규 레슨 시작<br/>
+                  네이버 플레이스 또는 전화/문의하기를 통해 간편하게 신청하실 수 있습니다.
                 </div>
               </details>
             </div>
@@ -1943,7 +1954,7 @@ app.get('/notice', (c) => {
       type: 'notice',
       title: '2026년 3월 신규 수강생 모집',
       date: '2026-01-10',
-      content: '새 학기를 맞아 신규 수강생을 모집합니다. 무료 체험 레슨 신청 가능하며, 3월 등록 시 등록비 50% 할인 혜택을 드립니다.',
+      content: '새 학기를 맞아 신규 수강생을 모집합니다. 원데이 클래스(20,000원/30분)로 먼저 체험해보세요. 정규 등록 시 원데이 클래스 비용 차감 및 등록비 50% 할인 혜택을 드립니다.',
       views: 312
     },
     {
@@ -2125,7 +2136,7 @@ app.get('/events', (c) => {
       dday: '15',
       benefits: [
         '등록비 50% 할인 (50,000원 → 25,000원)',
-        '무료 체험 레슨 1회 제공',
+        '원데이 클래스 1회 무료 (20,000원 상당)',
         '악기 대여 1개월 무료',
         '온라인 레슨 병행 가능'
       ],
@@ -2456,8 +2467,18 @@ app.get('/contact', (c) => {
                 <h3 class="text-xl font-bold text-gray-800 mb-4">자주 묻는 질문</h3>
                 <div class="space-y-3">
                   <details class="bg-gray-50 p-4 rounded-lg">
-                    <summary class="font-semibold cursor-pointer">무료 체험 레슨이 있나요?</summary>
-                    <p class="mt-2 text-gray-600 text-sm">네, 30분 무료 체험 레슨을 제공합니다. 문의하기를 통해 신청해주세요.</p>
+                    <summary class="font-semibold cursor-pointer">
+                      <i class="fas fa-ticket-alt text-purple-600 mr-2"></i>
+                      원데이 클래스는 어떻게 예약하나요?
+                    </summary>
+                    <p class="mt-2 text-gray-600 text-sm">
+                      30분 원데이 클래스(20,000원)를 네이버 플레이스에서 예약하실 수 있습니다. 
+                      정규 수강 등록 시 원데이 클래스 비용이 차감됩니다.
+                      <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" 
+                         class="text-purple-600 hover:text-purple-700 font-bold ml-2">
+                        지금 예약하기 →
+                      </a>
+                    </p>
                   </details>
                   <details class="bg-gray-50 p-4 rounded-lg">
                     <summary class="font-semibold cursor-pointer">악기를 준비하지 못했는데 괜찮을까요?</summary>
