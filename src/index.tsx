@@ -108,7 +108,7 @@ app.get('/', (c) => {
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
             <div class="md:w-1/2">
               <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="온라인 레슨" class="rounded-2xl shadow-2xl w-full" />
             </div>
@@ -125,17 +125,60 @@ app.get('/', (c) => {
               </p>
             </div>
           </div>
+
+          <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="md:w-1/2">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt="학원 시설" class="rounded-2xl shadow-2xl w-full" />
+            </div>
+            <div class="md:w-1/2">
+              <div class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                POINT 04
+              </div>
+              <h3 class="text-3xl font-bold mb-4">최적의 연습 환경</h3>
+              <p class="text-gray-600 text-lg mb-4">
+                쾌적하고 전문적인 연습실과 최신 음향 시설을 갖추고 있습니다.
+              </p>
+              <p class="text-gray-600">
+                1:1 맞춤형 레슨실과 합주실을 통해 최상의 학습 환경을 제공합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 학원 갤러리 섹션 */}
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-images mr-2"></i>GALLERY
+            </div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">깨끗하고 쾌적한 학원 시설</h2>
+            <p class="text-gray-600 text-lg">리틀브라스의 아름답고 전문적인 교육 공간을 만나보세요</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실1" class="w-full h-64 object-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="레슨실2" class="w-full h-64 object-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="대기실" class="w-full h-64 object-cover" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Latest Blog Posts Section */}
-      <section class="py-16 bg-gradient-to-br from-navy-50 to-white">
+      <section class="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-4">
               <i class="fas fa-blog mr-2"></i>BLOG
             </div>
-            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">Little Brass 소식</h2>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">리틀브라스 소식</h2>
             <p class="text-gray-600 text-lg">학원의 최신 소식과 유용한 음악 정보를 확인하세요</p>
           </div>
           
@@ -143,14 +186,14 @@ app.get('/', (c) => {
           <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* 로딩 중 표시 */}
             <div class="col-span-3 text-center py-12">
-              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-600 mx-auto mb-4"></div>
+              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto mb-4"></div>
               <p class="text-gray-600">최신 소식을 불러오는 중...</p>
             </div>
           </div>
 
           <div class="text-center">
             <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-navy-600 to-navy-800 text-white px-8 py-4 rounded-full font-bold hover:from-navy-500 hover:to-navy-700 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
               <i class="fas fa-blog text-xl"></i>
               <span>블로그 전체 보기</span>
               <i class="fas fa-external-link-alt"></i>
