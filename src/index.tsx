@@ -2136,9 +2136,20 @@ app.notFound((c) => {
 // API: 네이버 블로그 RSS 피드
 app.get('/api/blog/rss', async (c) => {
   try {
-    // blog-config.json 읽기
-    const configResponse = await fetch(`${c.req.url.split('/api')[0]}/blog-config.json`)
-    const config = await configResponse.json()
+    // 설정 (하드코딩)
+    const config = {
+      pinnedPost: {
+        enabled: true,
+        title: "[강동 강명초 예비 초등 트럼펫]3월 신학기 적응, '예체능'은 선택이 아닌 '생존 체력' 준비하기!",
+        category: "중요 공지",
+        description: "신학기 시작 전 예체능 준비의 중요성! 강명초 예비 초등 학부모님들을 위한 특별 안내",
+        link: "https://blog.naver.com/little_brass/224143518011",
+        date: "2026-01-12"
+      },
+      rssUrl: "https://rss.blog.naver.com/little_brass.xml",
+      displayCount: 3,
+      showPinned: true
+    }
 
     // RSS 피드 가져오기
     const rssResponse = await fetch(config.rssUrl)
