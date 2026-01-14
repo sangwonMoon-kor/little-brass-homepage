@@ -1,21 +1,210 @@
-```txt
+# Little Brass 음악학원 홈페이지
+
+## 프로젝트 개요
+- **이름**: Little Brass 홈페이지
+- **목적**: 음악학원 소개 및 온라인/오프라인 레슨 홍보
+- **주요 특징**: 반응형 디자인, 모바일 최적화, 빠른 로딩 속도
+
+## 공개 URL
+- **개발 서버**: https://3000-ikusdu22r9pv151368eh4-2e77fc33.sandbox.novita.ai
+- **프로덕션**: (Cloudflare Pages 배포 예정)
+
+## 완성된 페이지
+
+### ✅ 구현 완료
+1. **메인 페이지** (`/`)
+   - 히어로 섹션: 메인 비주얼과 CTA 버튼
+   - 특징 소개: 전문 강사진, 맞춤형 교육, 온라인 레슨
+   - 제공 악기: 피아노, 바이올린, 플루트, 첼로
+   - CTA 섹션: 무료 체험 레슨 신청
+
+2. **학원 소개** (`/about`)
+   - 학원 소개 및 철학
+   - 교육 방향 (개인 맞춤형, 체계적 커리큘럼, 전문 강사진, 최신 시설)
+   - 차별화 포인트 5가지
+
+3. **강사 소개** (`/teachers`)
+   - 3명의 강사 프로필 (피아노, 바이올린, 플루트)
+   - 학력, 경력, 수상 이력
+   - 강사 한마디
+
+4. **커리큘럼** (`/curriculum`)
+   - 피아노 과정 (입문/초급/중급/고급)
+   - 바이올린 과정 (입문/초급/중급/고급)
+   - 개인 레슨/그룹 레슨 안내
+   - 수강료 정보
+
+5. **온라인 과정** (`/online`)
+   - 온라인 레슨 소개 및 장점
+   - Zoom 레슨 진행 방식 (3단계)
+   - 수업 가능 악기
+   - 필요 장비 안내
+   - 수강료 (개인 레슨, 체험 레슨)
+   - FAQ
+
+6. **오시는 길** (`/location`)
+   - 지도 영역 (카카오맵/네이버맵 연동 예정)
+   - 주소 및 상세 위치
+   - 지하철/버스 정보
+   - 주차 안내
+   - 주변 랜드마크
+
+7. **문의하기** (`/contact`)
+   - 문의 폼 (이름, 연락처, 이메일, 문의 유형, 내용)
+   - 연락처 정보
+   - 운영 시간
+   - 카카오톡 상담 링크
+   - FAQ
+
+## API 엔드포인트
+
+### POST /api/contact
+문의 폼 제출 API
+- **요청 본문**: `{ name, phone, email, type, message }`
+- **응답**: `{ success: boolean, message: string }`
+
+## 데이터 아키텍처
+- **현재**: 정적 데이터 (샘플)
+- **향후**: Cloudflare D1 데이터베이스 연동 예정
+  - 문의 내역 저장
+  - 강사 정보 관리
+  - 커리큘럼 관리
+
+## 기술 스택
+- **프레임워크**: Hono (Cloudflare Workers)
+- **스타일링**: Tailwind CSS (CDN)
+- **아이콘**: Font Awesome 6.4.0
+- **폰트**: Noto Sans KR (Google Fonts)
+- **빌드 도구**: Vite
+- **배포**: Cloudflare Pages
+- **버전 관리**: Git
+
+## 프로젝트 구조
+```
+webapp/
+├── src/
+│   ├── index.tsx          # 메인 애플리케이션 (모든 페이지 라우트)
+│   └── renderer.tsx       # 공통 레이아웃 (네비게이션, 푸터)
+├── public/
+│   └── static/
+│       ├── app.js         # 프론트엔드 JavaScript
+│       └── style.css      # 커스텀 CSS
+├── dist/                  # 빌드 결과물
+├── ecosystem.config.cjs   # PM2 설정
+├── package.json          # 의존성 및 스크립트
+├── vite.config.ts        # Vite 설정
+├── wrangler.jsonc        # Cloudflare 설정
+└── README.md            # 프로젝트 문서
+```
+
+## 개발 가이드
+
+### 로컬 개발
+```bash
+# 의존성 설치
 npm install
-npm run dev
+
+# 빌드
+npm run build
+
+# 개발 서버 시작 (PM2)
+pm2 start ecosystem.config.cjs
+
+# 로그 확인
+pm2 logs little-brass --nostream
+
+# 서버 중지
+pm2 stop little-brass
 ```
 
-```txt
-npm run deploy
+### 빌드 및 배포
+```bash
+# 프로덕션 빌드
+npm run build
+
+# Cloudflare Pages 배포
+npm run deploy:prod
 ```
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+## 주요 기능
 
-```txt
-npm run cf-typegen
-```
+### 반응형 디자인
+- 모바일, 태블릿, 데스크톱 최적화
+- 모바일 메뉴 토글 기능
+- Touch-friendly UI
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+### 사용자 경험
+- 스크롤 애니메이션
+- 호버 효과
+- 부드러운 페이지 전환
+- 로딩 상태 표시
 
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+### 접근성
+- 시맨틱 HTML
+- ARIA 레이블
+- 키보드 네비게이션 지원
+- 적절한 색상 대비
+
+## 향후 개발 계획
+
+### 2단계 기능
+- [ ] 갤러리 페이지 (수업 사진, 발표회 사진)
+- [ ] 후기/리뷰 페이지
+- [ ] 공지사항/블로그
+- [ ] 관리자 페이지
+
+### 데이터베이스 연동
+- [ ] Cloudflare D1 설정
+- [ ] 문의 내역 저장
+- [ ] 강사 정보 동적 관리
+- [ ] 커리큘럼 동적 관리
+
+### 추가 기능
+- [ ] 카카오맵/네이버맵 연동
+- [ ] 카카오톡 채널 연동
+- [ ] 이메일 알림 (문의 접수 시)
+- [ ] 예약 시스템
+- [ ] 온라인 결제 연동
+
+## 비용 절감 효과
+
+### 연간 비용 비교
+| 구분 | 캠페이너스 | 자체 제작 | 절약 금액 |
+|------|-----------|----------|----------|
+| 1년 | 50만원 | 2만원 | **48만원** |
+| 5년 | 250만원 | 10만원 | **240만원** |
+| 10년 | 500만원 | 20만원 | **480만원** |
+
+### 자체 제작의 장점
+- ✅ 연간 48만원 절약
+- ✅ 자유로운 수정 및 확장
+- ✅ 플랫폼 종속성 제거
+- ✅ 무제한 콘텐츠 추가
+- ✅ SEO 최적화 가능
+
+## 유지보수
+
+### 정기 점검 사항
+- [ ] SSL 인증서 갱신 (자동)
+- [ ] 도메인 갱신 (연 1회)
+- [ ] 보안 업데이트
+- [ ] 콘텐츠 업데이트
+
+### 문제 해결
+- **서버 재시작**: `pm2 restart little-brass`
+- **포트 충돌**: `fuser -k 3000/tcp`
+- **빌드 오류**: `rm -rf dist && npm run build`
+
+## 연락처
+- **이메일**: info@littlebrass.com
+- **전화**: 02-1234-5678
+- **주소**: 서울특별시 강남구 테헤란로 123
+
+## 라이선스
+© 2026 Little Brass. All rights reserved.
+
+---
+
+**최종 업데이트**: 2026년 1월 14일
+**버전**: 1.0.0
+**상태**: ✅ 개발 완료
