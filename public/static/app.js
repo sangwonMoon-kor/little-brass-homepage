@@ -355,6 +355,188 @@ document.addEventListener('DOMContentLoaded', function() {
     div.textContent = text;
     return div.innerHTML;
   }
+
+  // 공지사항 검색 기능
+  const noticeSearch = document.getElementById('notice-search');
+  if (noticeSearch) {
+    noticeSearch.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const noticeItems = document.querySelectorAll('.notice-item');
+      const noResults = document.getElementById('no-results');
+      let visibleCount = 0;
+      
+      noticeItems.forEach(item => {
+        const keywords = item.getAttribute('data-keywords') || '';
+        
+        if (keywords.toLowerCase().includes(searchTerm)) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0 && searchTerm.length > 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    });
+  }
+
+  // 공지사항 카테고리 필터
+  const noticeFilters = document.querySelectorAll('.notice-filter');
+  if (noticeFilters.length > 0) {
+    noticeFilters.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // 버튼 스타일 업데이트
+        noticeFilters.forEach(btn => {
+          btn.classList.remove('bg-gold-500', 'text-white', 'shadow-md');
+          btn.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+        });
+        this.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+        this.classList.add('bg-gold-500', 'text-white', 'shadow-md');
+        
+        // 검색 초기화
+        if (noticeSearch) {
+          noticeSearch.value = '';
+        }
+        
+        // 카테고리 필터링
+        const noticeItems = document.querySelectorAll('.notice-item');
+        const noResults = document.getElementById('no-results');
+        let visibleCount = 0;
+
+        if (category === 'all') {
+          noticeItems.forEach(item => {
+            item.style.display = 'block';
+            visibleCount++;
+          });
+        } else {
+          noticeItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            if (itemCategory === category) {
+              item.style.display = 'block';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  // 이미지 갤러리 라이트박스
+  const galleryImages = document.querySelectorAll('.gallery-item');
+  if (galleryImages.length > 0) {
+    // 라이트박스 HTML 생성
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.className = 'fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4';
+    lightbox.innerHTML = `
+      <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gold-400 transition z-10">
+        <i class="fas fa-times text-3xl"></i>
+      </button>
+      <button id="lightbox-prev" class="absolute left-6 text-white hover:text-gold-400 transition z-10">
+        <i class="fas fa-chevron-left text-4xl"></i>
+      </button>
+      <button id="lightbox-next" class="absolute right-6 text-white hover:text-gold-400 transition z-10">
+        <i class="fas fa-chevron-right text-4xl"></i>
+      </button>
+      <div class="max-w-6xl w-full">
+        <img id="lightbox-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl">
+        <div id="lightbox-caption" class="text-white text-center mt-4 text-lg"></div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    let currentImageIndex = 0;
+    const visibleImages = [];
+
+    function updateVisibleImages() {
+      visibleImages.length = 0;
+      galleryImages.forEach((item, index) => {
+        if (item.style.display !== 'none') {
+          visibleImages.push({ element: item, originalIndex: index });
+        }
+      });
+    }
+
+    function showImage(index) {
+      if (visibleImages.length === 0) return;
+      
+      currentImageIndex = index;
+      if (currentImageIndex < 0) currentImageIndex = visibleImages.length - 1;
+      if (currentImageIndex >= visibleImages.length) currentImageIndex = 0;
+
+      const imageData = visibleImages[currentImageIndex].element;
+      const imgElement = imageData.querySelector('img');
+      const caption = imageData.querySelector('h3').textContent;
+
+      document.getElementById('lightbox-image').src = imgElement.src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // 이미지 클릭 이벤트
+    galleryImages.forEach((item, index) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', function() {
+        updateVisibleImages();
+        const visibleIndex = visibleImages.findIndex(img => img.originalIndex === index);
+        if (visibleIndex !== -1) {
+          showImage(visibleIndex);
+        }
+      });
+    });
+
+    // 닫기 버튼
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+
+    // 이전/다음 버튼
+    document.getElementById('lightbox-prev').addEventListener('click', function(e) {
+      e.stopPropagation();
+      showImage(currentImageIndex - 1);
+    });
+
+    document.getElementById('lightbox-next').addEventListener('click', function(e) {
+      e.stopPropagation();
+      showImage(currentImageIndex + 1);
+    });
+
+    // 배경 클릭 시 닫기
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // 키보드 단축키
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showImage(currentImageIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentImageIndex + 1);
+      }
+    });
+  }
 });
 
 

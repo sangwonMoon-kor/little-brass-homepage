@@ -69,6 +69,14 @@ export const renderer = jsxRenderer(({ children, title }) => {
                 <a href="/gallery" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">갤러리</a>
                 <a href="/achievements" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">학생성과</a>
                 <a href="/faq" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">FAQ</a>
+                <a href="/notice" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium flex items-center gap-1">
+                  <i class="fas fa-bullhorn text-sm"></i>
+                  공지사항
+                </a>
+                <a href="/events" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium flex items-center gap-1">
+                  <i class="fas fa-gift text-sm"></i>
+                  이벤트
+                </a>
                 <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium flex items-center gap-1">
                   <i class="fas fa-blog text-sm"></i>
                   블로그
@@ -97,6 +105,12 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <a href="/gallery" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">갤러리</a>
               <a href="/achievements" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">학생성과</a>
               <a href="/faq" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">FAQ</a>
+              <a href="/notice" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+                <i class="fas fa-bullhorn mr-2"></i>공지사항
+              </a>
+              <a href="/events" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+                <i class="fas fa-gift mr-2"></i>이벤트
+              </a>
               <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
                 <i class="fas fa-blog mr-2"></i>블로그
               </a>

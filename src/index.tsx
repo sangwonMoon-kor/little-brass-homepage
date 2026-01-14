@@ -1919,6 +1919,445 @@ app.get('/achievements', (c) => {
   )
 })
 
+// 공지사항 페이지
+app.get('/notice', (c) => {
+  const notices = [
+    {
+      id: 1,
+      type: 'important',
+      title: '[중요] 설 연휴 휴원 안내',
+      date: '2026-01-20',
+      content: '2026년 1월 28일(화)부터 1월 30일(목)까지 설 연휴로 인해 휴원합니다. 1월 31일(금)부터 정상 운영됩니다.',
+      views: 245
+    },
+    {
+      id: 2,
+      type: 'event',
+      title: '2026 봄 정기 발표회 안내',
+      date: '2026-01-15',
+      content: '오는 3월 15일(토) 오후 2시, 강동아트센터 소극장에서 봄 정기 발표회가 열립니다. 참가를 희망하시는 학생은 2월 15일까지 신청해주세요.',
+      views: 189
+    },
+    {
+      id: 3,
+      type: 'notice',
+      title: '2026년 3월 신규 수강생 모집',
+      date: '2026-01-10',
+      content: '새 학기를 맞아 신규 수강생을 모집합니다. 무료 체험 레슨 신청 가능하며, 3월 등록 시 등록비 50% 할인 혜택을 드립니다.',
+      views: 312
+    },
+    {
+      id: 4,
+      type: 'notice',
+      title: '온라인 레슨 시간표 변경 안내',
+      date: '2026-01-05',
+      content: '1월 15일부터 온라인 레슨 시간표가 일부 변경됩니다. 자세한 시간표는 카카오톡 채널 또는 전화 문의 바랍니다.',
+      views: 156
+    },
+    {
+      id: 5,
+      type: 'event',
+      title: '겨울방학 특별 단기반 모집',
+      date: '2025-12-20',
+      content: '겨울방학 동안 진행되는 4주 특별 단기반을 모집합니다. 악기 대여 가능하며, 초보자도 환영합니다.',
+      views: 278
+    },
+    {
+      id: 6,
+      type: 'notice',
+      title: '주차장 이용 안내',
+      date: '2025-12-10',
+      content: '학원 건물 지하 주차장 이용이 가능합니다. 2시간 무료 주차 가능하며, 주차권은 데스크에서 받으실 수 있습니다.',
+      views: 134
+    }
+  ]
+
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="relative bg-gradient-to-r from-navy-700 to-navy-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+            <i class="fas fa-bullhorn mr-2"></i>NOTICE
+          </div>
+          <h1 class="text-5xl font-display font-bold mb-4">공지사항</h1>
+          <p class="text-xl text-gray-300">Little Brass의 최신 소식과 중요한 안내사항을 확인하세요</p>
+        </div>
+      </section>
+
+      {/* 검색 섹션 */}
+      <section class="py-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+            {/* 검색창 */}
+            <div class="relative flex-1 max-w-md">
+              <input 
+                type="text" 
+                id="notice-search"
+                placeholder="공지사항 검색..." 
+                class="w-full px-4 py-3 pl-12 border-2 border-gray-300 rounded-xl focus:border-gold-500 focus:outline-none transition"
+              />
+              <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+
+            {/* 카테고리 필터 */}
+            <div class="flex gap-2 flex-wrap">
+              <button class="notice-filter bg-gold-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-gold-600 transition shadow-md" data-category="all">
+                전체 <span class="ml-1 text-sm">({notices.length})</span>
+              </button>
+              <button class="notice-filter bg-white text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition border-2 border-gray-200" data-category="important">
+                중요 공지 <span class="ml-1 text-sm">({notices.filter(n => n.type === 'important').length})</span>
+              </button>
+              <button class="notice-filter bg-white text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition border-2 border-gray-200" data-category="event">
+                행사 안내 <span class="ml-1 text-sm">({notices.filter(n => n.type === 'event').length})</span>
+              </button>
+              <button class="notice-filter bg-white text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition border-2 border-gray-200" data-category="notice">
+                일반 공지 <span class="ml-1 text-sm">({notices.filter(n => n.type === 'notice').length})</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 공지사항 리스트 */}
+      <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="space-y-4">
+            {notices.map((notice) => {
+              const typeConfig = {
+                important: { icon: 'fa-exclamation-circle', color: 'red', label: '중요', bg: 'bg-red-50', border: 'border-red-200' },
+                event: { icon: 'fa-calendar-star', color: 'blue', label: '행사', bg: 'bg-blue-50', border: 'border-blue-200' },
+                notice: { icon: 'fa-bell', color: 'gray', label: '공지', bg: 'bg-gray-50', border: 'border-gray-200' }
+              }
+              const config = typeConfig[notice.type]
+
+              return (
+                <div 
+                  class={`notice-item bg-white border-2 ${config.border} rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer group`}
+                  data-category={notice.type}
+                  data-keywords={`${notice.title} ${notice.content}`}
+                >
+                  <div class="flex items-start gap-4">
+                    {/* 아이콘 */}
+                    <div class={`${config.bg} w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition`}>
+                      <i class={`fas ${config.icon} text-${config.color}-600 text-xl`}></i>
+                    </div>
+
+                    {/* 내용 */}
+                    <div class="flex-1">
+                      <div class="flex items-start justify-between mb-2">
+                        <div class="flex items-center gap-3">
+                          <span class={`bg-${config.color}-100 text-${config.color}-700 px-3 py-1 rounded-full text-xs font-bold`}>
+                            {config.label}
+                          </span>
+                          <h3 class="text-xl font-bold text-navy-900 group-hover:text-gold-600 transition">
+                            {notice.title}
+                          </h3>
+                        </div>
+                      </div>
+                      
+                      <p class="text-gray-600 mb-3 line-clamp-2">
+                        {notice.content}
+                      </p>
+
+                      <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <span class="flex items-center gap-1">
+                          <i class="far fa-calendar"></i>
+                          {notice.date}
+                        </span>
+                        <span class="flex items-center gap-1">
+                          <i class="far fa-eye"></i>
+                          {notice.views} 조회
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 화살표 */}
+                    <div class="text-gray-400 group-hover:text-gold-600 group-hover:translate-x-2 transition">
+                      <i class="fas fa-chevron-right text-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* 빈 검색 결과 */}
+          <div id="no-results" class="hidden text-center py-12">
+            <i class="fas fa-search text-gray-300 text-6xl mb-4"></i>
+            <p class="text-gray-500 text-lg">검색 결과가 없습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA 섹션 */}
+      <section class="py-16 bg-gradient-to-r from-gold-500 to-gold-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold mb-4">더 궁금한 사항이 있으신가요?</h2>
+          <p class="text-xl mb-8 text-white/90">언제든지 문의해주세요. 친절하게 안내해드리겠습니다.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-white text-gold-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-block">
+              <i class="fas fa-envelope mr-2"></i>
+              문의하기
+            </a>
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition shadow-lg inline-block">
+              <i class="fas fa-calendar-check mr-2"></i>
+              네이버 예약
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: '공지사항 - Little Brass' }
+  )
+})
+
+// 이벤트/프로모션 페이지
+app.get('/events', (c) => {
+  const currentEvents = [
+    {
+      id: 1,
+      title: '2026 봄학기 신규 수강생 등록 할인',
+      subtitle: '3월 한정 특별 프로모션',
+      description: '새 학기를 맞아 신규 수강생 등록 시 특별 할인 혜택을 드립니다.',
+      discount: '등록비 50% 할인',
+      period: '2026.03.01 ~ 2026.03.31',
+      dday: '15',
+      benefits: [
+        '등록비 50% 할인 (50,000원 → 25,000원)',
+        '무료 체험 레슨 1회 제공',
+        '악기 대여 1개월 무료',
+        '온라인 레슨 병행 가능'
+      ],
+      conditions: [
+        '3월 31일까지 등록 완료',
+        '3개월 이상 수강 시',
+        '타 할인과 중복 불가'
+      ],
+      image: 'spring-promotion',
+      color: 'from-pink-500 to-rose-600',
+      icon: 'fa-gift'
+    },
+    {
+      id: 2,
+      title: '가족 할인 이벤트',
+      subtitle: '가족과 함께 음악을',
+      description: '가족 구성원 2명 이상 등록 시 추가 할인 혜택을 드립니다.',
+      discount: '수강료 10~20% 추가 할인',
+      period: '상시 진행',
+      dday: null,
+      benefits: [
+        '2인 등록 시: 각 10% 할인',
+        '3인 이상 등록 시: 각 20% 할인',
+        '가족 발표회 우선 참가',
+        '가족 레슨 시간 조율 가능'
+      ],
+      conditions: [
+        '동일 주소 거주 확인',
+        '동시 등록 시에만 적용',
+        '최대 4인까지'
+      ],
+      image: 'family-discount',
+      color: 'from-blue-500 to-indigo-600',
+      icon: 'fa-users'
+    },
+    {
+      id: 3,
+      title: '친구 소개 이벤트',
+      subtitle: '소개하고 모두 혜택 받기',
+      description: '친구를 소개하시면 소개자와 피소개자 모두에게 특별 혜택을 드립니다.',
+      discount: '스타벅스 기프티콘 증정',
+      period: '2026.01.01 ~ 2026.12.31',
+      dday: null,
+      benefits: [
+        '소개자: 스타벅스 아메리카노 2잔',
+        '피소개자: 첫 달 수강료 10% 할인',
+        '소개 인원 제한 없음',
+        '누적 혜택 가능'
+      ],
+      conditions: [
+        '피소개자가 3개월 이상 수강 시',
+        '등록 시 소개자 이름 기재',
+        '신규 학생에 한함'
+      ],
+      image: 'referral',
+      color: 'from-green-500 to-emerald-600',
+      icon: 'fa-handshake'
+    }
+  ]
+
+  const endedEvents = [
+    {
+      id: 4,
+      title: '겨울방학 특별 단기반',
+      period: '2025.12.20 ~ 2026.02.28',
+      status: '종료'
+    },
+    {
+      id: 5,
+      title: '크리스마스 특별 이벤트',
+      period: '2025.12.01 ~ 2025.12.25',
+      status: '종료'
+    }
+  ]
+
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="relative bg-gradient-to-r from-purple-700 to-pink-600 text-white py-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+          <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
+          <div class="absolute bottom-20 right-20 w-24 h-24 bg-white rounded-full animate-pulse delay-1000"></div>
+          <div class="absolute top-1/2 left-1/3 w-16 h-16 bg-white rounded-full animate-pulse delay-500"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+            <i class="fas fa-star mr-2"></i>SPECIAL EVENTS
+          </div>
+          <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">이벤트 & 프로모션</h1>
+          <p class="text-xl md:text-2xl text-white/90">Little Brass의 특별한 혜택을 만나보세요</p>
+        </div>
+      </section>
+
+      {/* 진행 중 이벤트 */}
+      <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-fire mr-2"></i>진행 중
+            </div>
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">현재 진행 중인 이벤트</h2>
+            <p class="text-gray-600 text-lg">놓치지 마세요! 지금 바로 혜택을 받으실 수 있습니다</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {currentEvents.map((event) => (
+              <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+                {/* 헤더 */}
+                <div class={`bg-gradient-to-r ${event.color} p-6 text-white relative`}>
+                  {event.dday && (
+                    <div class="absolute top-4 right-4 bg-white text-red-600 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      D-{event.dday}
+                    </div>
+                  )}
+                  <div class="text-6xl mb-4 opacity-80">
+                    <i class={`fas ${event.icon}`}></i>
+                  </div>
+                  <h3 class="text-2xl font-bold mb-2">{event.title}</h3>
+                  <p class="text-white/80 text-sm">{event.subtitle}</p>
+                </div>
+
+                {/* 내용 */}
+                <div class="p-6">
+                  <p class="text-gray-600 mb-4">{event.description}</p>
+
+                  {/* 할인 정보 */}
+                  <div class="bg-gold-50 border-2 border-gold-200 rounded-lg p-4 mb-4">
+                    <div class="flex items-center gap-2 text-gold-700 font-bold text-lg">
+                      <i class="fas fa-tag"></i>
+                      <span>{event.discount}</span>
+                    </div>
+                  </div>
+
+                  {/* 기간 */}
+                  <div class="flex items-center gap-2 text-gray-500 mb-4 pb-4 border-b">
+                    <i class="far fa-calendar"></i>
+                    <span class="text-sm">{event.period}</span>
+                  </div>
+
+                  {/* 혜택 */}
+                  <div class="mb-4">
+                    <h4 class="font-bold text-navy-900 mb-2 flex items-center gap-2">
+                      <i class="fas fa-check-circle text-green-600"></i>
+                      혜택
+                    </h4>
+                    <ul class="space-y-2">
+                      {event.benefits.map((benefit) => (
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                          <i class="fas fa-chevron-right text-gold-500 mt-1 flex-shrink-0"></i>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* 조건 */}
+                  <div class="mb-4">
+                    <h4 class="font-bold text-navy-900 mb-2 flex items-center gap-2">
+                      <i class="fas fa-info-circle text-blue-600"></i>
+                      조건
+                    </h4>
+                    <ul class="space-y-2">
+                      {event.conditions.map((condition) => (
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                          <i class="fas fa-minus text-gray-400 mt-1 flex-shrink-0"></i>
+                          <span>{condition}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* 버튼 */}
+                  <a href="/contact" class="block w-full bg-gradient-to-r from-navy-600 to-navy-800 text-white text-center py-3 rounded-lg font-bold hover:from-navy-500 hover:to-navy-700 transition group-hover:shadow-lg">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    지금 신청하기
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 종료된 이벤트 */}
+      <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-700 mb-2">종료된 이벤트</h3>
+            <p class="text-gray-500">다음 이벤트를 기대해주세요!</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {endedEvents.map((event) => (
+              <div class="bg-white rounded-lg p-4 opacity-60">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="font-bold text-gray-700 mb-1">{event.title}</h4>
+                    <p class="text-sm text-gray-500">{event.period}</p>
+                  </div>
+                  <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">
+                    {event.status}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA 섹션 */}
+      <section class="py-16 bg-gradient-to-r from-gold-500 to-amber-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <i class="fas fa-bell text-6xl mb-6 opacity-80"></i>
+          <h2 class="text-4xl font-bold mb-4">이벤트 알림 받기</h2>
+          <p class="text-xl mb-8 text-white/90">네이버 예약 또는 카카오톡 채널을 추가하시면<br/>새로운 이벤트 소식을 가장 먼저 받아보실 수 있습니다!</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition shadow-lg inline-flex items-center justify-center gap-2">
+              <i class="fas fa-calendar-check text-xl"></i>
+              네이버 예약
+            </a>
+            <a href="/contact" class="bg-white text-gold-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-flex items-center justify-center gap-2">
+              <i class="fas fa-envelope text-xl"></i>
+              문의하기
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: '이벤트 & 프로모션 - Little Brass' }
+  )
+})
+
 // 문의하기 페이지
 app.get('/contact', (c) => {
   return c.render(
