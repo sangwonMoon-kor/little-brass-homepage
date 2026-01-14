@@ -84,6 +84,102 @@ app.get('/', (c) => {
         </div>
       </section>
 
+      {/* Latest Blog Posts Section */}
+      <section class="py-16 bg-gradient-to-br from-navy-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <div class="inline-block bg-gradient-to-r from-gold-400 to-gold-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+              <i class="fas fa-blog mr-2"></i>BLOG
+            </div>
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">Little Brass 소식</h2>
+            <p class="text-gray-600 text-lg">학원의 최신 소식과 유용한 음악 정보를 확인하세요</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Blog Post 1 */}
+            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" 
+               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+                <i class="fas fa-music text-white text-6xl opacity-50"></i>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>최신 소식</span>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
+                  2026년 신규 수강생 모집
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  Little Brass와 함께 새로운 음악 여정을 시작하세요. 체계적인 커리큘럼과 전문 강사진이 여러분을 기다립니다.
+                </p>
+                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
+                  <span>자세히 보기</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 2 */}
+            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
+               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-gradient-to-br from-navy-600 to-navy-800 flex items-center justify-center">
+                <i class="fas fa-trophy text-white text-6xl opacity-50"></i>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>행사 소식</span>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
+                  겨울 발표회 성황리 종료
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  학생들의 멋진 연주로 가득했던 2025 겨울 발표회. 모든 학생들이 열심히 준비한 결과를 보여주었습니다.
+                </p>
+                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
+                  <span>자세히 보기</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 3 */}
+            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
+               class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div class="h-48 bg-gradient-to-br from-bronze to-bronze-light flex items-center justify-center">
+                <i class="fas fa-lightbulb text-white text-6xl opacity-50"></i>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>연습 팁</span>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition">
+                  초보자를 위한 악기 연습법
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  효과적인 연습 방법과 초보자가 주의해야 할 점들을 알아봅니다. 올바른 자세부터 시작하세요.
+                </p>
+                <div class="flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all">
+                  <span>자세히 보기</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="text-center">
+            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-navy-600 to-navy-800 text-white px-8 py-4 rounded-full font-bold hover:from-navy-500 hover:to-navy-700 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+              <i class="fas fa-blog text-xl"></i>
+              <span>블로그 전체 보기</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section class="py-16 bg-amber-700 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

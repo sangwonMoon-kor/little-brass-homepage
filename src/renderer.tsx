@@ -38,6 +38,10 @@ export const renderer = jsxRenderer(({ children, title }) => {
                 <a href="/curriculum" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">커리큘럼</a>
                 <a href="/gallery" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">갤러리</a>
                 <a href="/faq" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">FAQ</a>
+                <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium flex items-center gap-1">
+                  <i class="fas fa-blog text-sm"></i>
+                  블로그
+                </a>
                 <a href="/online" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">온라인과정</a>
                 <a href="/location" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">오시는길</a>
                 <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2 rounded-full hover:from-green-400 hover:to-green-500 transition font-bold shadow-lg flex items-center gap-2">
@@ -61,6 +65,9 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <a href="/curriculum" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">커리큘럼</a>
               <a href="/gallery" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">갤러리</a>
               <a href="/faq" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">FAQ</a>
+              <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">
+                <i class="fas fa-blog mr-2"></i>블로그
+              </a>
               <a href="/online" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">온라인과정</a>
               <a href="/location" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">오시는길</a>
               <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-bold text-center shadow-lg">
@@ -102,6 +109,9 @@ export const renderer = jsxRenderer(({ children, title }) => {
                   전문 강사진과 함께하는 최고급 음악 교육
                 </p>
                 <div class="flex space-x-3">
+                  <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i class="fas fa-blog text-gray-300 group-hover:text-white"></i>
+                  </a>
                   <a href="#" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
                     <i class="fab fa-instagram text-gray-300 group-hover:text-white"></i>
                   </a>
