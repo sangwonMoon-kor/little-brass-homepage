@@ -47,7 +47,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
         {/* 스크롤 진행 바 */}
         <div class="scroll-progress" id="scroll-progress"></div>
         
-        <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
               <div class="flex items-center">
@@ -147,72 +147,72 @@ export const renderer = jsxRenderer(({ children, title }) => {
           <span class="hidden sm:inline">원데이 클래스</span>
         </a>
         
-        <footer class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white mt-20">
+        <footer class="bg-gray-100 text-gray-700 mt-20 border-t border-gray-200">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
               <div class="md:col-span-2">
                 <div class="flex items-center space-x-3 mb-4">
-                  <div class="bg-gradient-to-br from-gold-400 to-gold-600 p-3 rounded-xl shadow-gold">
+                  <div class="bg-gradient-to-br from-yellow-400 to-orange-400 p-3 rounded-xl shadow-lg">
                     <i class="fas fa-trumpet text-white text-2xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-2xl font-display font-bold">Little Brass</h3>
-                    <p class="text-gold-400 text-sm font-medium">Premium Music Academy</p>
+                    <h3 class="text-2xl font-display font-bold text-gray-800">Little Brass</h3>
+                    <p class="text-yellow-600 text-sm font-medium">Premium Music Academy</p>
                   </div>
                 </div>
-                <p class="text-gray-300 leading-relaxed mb-4">
+                <p class="text-gray-600 leading-relaxed mb-4">
                   프리미엄 금관악기 교육의 새로운 기준<br/>
                   전문 강사진과 함께하는 최고급 음악 교육
                 </p>
                 <div class="flex space-x-3">
-                  <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fas fa-blog text-gray-300 group-hover:text-white"></i>
+                  <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i class="fas fa-blog text-gray-600 group-hover:text-white"></i>
                   </a>
-                  <a href="#" aria-label="인스타그램" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-instagram text-gray-300 group-hover:text-white"></i>
+                  <a href="#" aria-label="인스타그램" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i class="fab fa-instagram text-gray-600 group-hover:text-white"></i>
                   </a>
-                  <a href="#" aria-label="유튜브" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-youtube text-gray-300 group-hover:text-white"></i>
+                  <a href="#" aria-label="유튜브" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i class="fab fa-youtube text-gray-600 group-hover:text-white"></i>
                   </a>
-                  <a href="#" aria-label="페이스북" class="w-10 h-10 bg-navy-700 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i class="fab fa-facebook text-gray-300 group-hover:text-white"></i>
+                  <a href="#" aria-label="페이스북" class="w-10 h-10 bg-gray-200 hover:bg-yellow-400 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i class="fab fa-facebook text-gray-600 group-hover:text-white"></i>
                   </a>
                 </div>
               </div>
               <div>
-                <h3 class="text-lg font-bold mb-4 text-gold-400">바로가기</h3>
+                <h3 class="text-lg font-bold mb-4 text-yellow-600">바로가기</h3>
                 <ul class="space-y-2">
-                  <li><a href="/about" class="text-gray-300 hover:text-gold-400 transition">학원소개</a></li>
-                  <li><a href="/teachers" class="text-gray-300 hover:text-gold-400 transition">강사소개</a></li>
-                  <li><a href="/curriculum" class="text-gray-300 hover:text-gold-400 transition">커리큘럼</a></li>
-                  <li><a href="/gallery" class="text-gray-300 hover:text-gold-400 transition">갤러리</a></li>
-                  <li><a href="/achievements" class="text-gray-300 hover:text-gold-400 transition">학생성과</a></li>
-                  <li><a href="/faq" class="text-gray-300 hover:text-gold-400 transition">FAQ</a></li>
-                  <li><a href="/online" class="text-gray-300 hover:text-gold-400 transition">온라인과정</a></li>
+                  <li><a href="/about" class="text-gray-600 hover:text-yellow-600 transition">학원소개</a></li>
+                  <li><a href="/teachers" class="text-gray-600 hover:text-yellow-600 transition">강사소개</a></li>
+                  <li><a href="/curriculum" class="text-gray-600 hover:text-yellow-600 transition">커리큘럼</a></li>
+                  <li><a href="/gallery" class="text-gray-600 hover:text-yellow-600 transition">갤러리</a></li>
+                  <li><a href="/achievements" class="text-gray-600 hover:text-yellow-600 transition">학생성과</a></li>
+                  <li><a href="/faq" class="text-gray-600 hover:text-yellow-600 transition">FAQ</a></li>
+                  <li><a href="/online" class="text-gray-600 hover:text-yellow-600 transition">온라인과정</a></li>
                 </ul>
               </div>
               <div>
-                <h3 class="text-lg font-bold mb-4 text-gold-400">연락처</h3>
-                <ul class="space-y-3 text-gray-300">
+                <h3 class="text-lg font-bold mb-4 text-yellow-600">연락처</h3>
+                <ul class="space-y-3 text-gray-600">
                   <li class="flex items-start">
-                    <i class="fas fa-phone text-gold-500 mt-1 mr-3"></i>
+                    <i class="fas fa-phone text-yellow-500 mt-1 mr-3"></i>
                     <span>02-1234-5678</span>
                   </li>
                   <li class="flex items-start">
-                    <i class="fas fa-envelope text-gold-500 mt-1 mr-3"></i>
+                    <i class="fas fa-envelope text-yellow-500 mt-1 mr-3"></i>
                     <span>info@littlebrass.com</span>
                   </li>
                   <li class="flex items-start">
-                    <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                    <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3"></i>
                     <span>서울특별시 강남구<br/>테헤란로 123</span>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="border-t border-navy-700 pt-8">
-              <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <div class="border-t border-gray-300 pt-8">
+              <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                 <p>&copy; 2026 Little Brass. All rights reserved.</p>
-                <p class="mt-2 md:mt-0">Designed with <i class="fas fa-heart text-gold-500"></i> for music lovers</p>
+                <p class="mt-2 md:mt-0">Designed with <i class="fas fa-heart text-yellow-500"></i> for music lovers</p>
               </div>
             </div>
           </div>
