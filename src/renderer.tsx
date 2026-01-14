@@ -64,6 +64,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <div class="hidden lg:flex items-center space-x-1">
                 <a href="/" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">홈</a>
                 <a href="/curriculum" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">커리큘럼</a>
+                <a href="/online" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">온라인과정</a>
                 <a href="/teachers" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">강사진</a>
                 <a href="/gallery" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">갤러리</a>
                 <a href="/achievements" class="text-white hover:text-gold-400 px-3 py-2 rounded-lg transition font-medium text-sm">학생성과</a>
@@ -87,7 +88,6 @@ export const renderer = jsxRenderer(({ children, title }) => {
                       <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">
                         <i class="fas fa-blog mr-2 text-xs"></i>블로그
                       </a>
-                      <a href="/online" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">온라인과정</a>
                       <a href="/location" class="block px-4 py-2 text-white hover:bg-navy-700 hover:text-gold-400 transition text-sm">오시는길</a>
                     </div>
                   </div>
