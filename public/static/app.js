@@ -19,6 +19,67 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // 갤러리 필터 기능
+  const galleryFilters = document.querySelectorAll('.gallery-filter');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const photoGallery = document.getElementById('photo-gallery');
+  
+  if (galleryFilters.length > 0) {
+    galleryFilters.forEach(filter => {
+      filter.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // 버튼 스타일 업데이트
+        galleryFilters.forEach(btn => {
+          btn.classList.remove('bg-gold-500', 'text-white', 'shadow-gold');
+          btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        this.classList.remove('bg-gray-100', 'text-gray-700');
+        this.classList.add('bg-gold-500', 'text-white', 'shadow-gold');
+        
+        // 영상 섹션 표시/숨김
+        const videoSection = document.querySelector('section[data-category="video"]');
+        if (videoSection) {
+          if (category === 'all' || category === 'video') {
+            videoSection.style.display = 'block';
+          } else {
+            videoSection.style.display = 'none';
+          }
+        }
+        
+        // 사진 갤러리 필터링
+        if (category === 'all') {
+          galleryItems.forEach(item => {
+            item.style.display = 'block';
+            item.style.animation = 'fadeIn 0.5s ease-out';
+          });
+          if (photoGallery) {
+            photoGallery.parentElement.style.display = 'block';
+          }
+        } else if (category === 'video') {
+          // 영상만 보기
+          if (photoGallery) {
+            photoGallery.parentElement.style.display = 'none';
+          }
+        } else {
+          // 특정 카테고리만 표시
+          if (photoGallery) {
+            photoGallery.parentElement.style.display = 'block';
+          }
+          galleryItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            if (itemCategory === category) {
+              item.style.display = 'block';
+              item.style.animation = 'fadeIn 0.5s ease-out';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+  }
+
   // 페이지 로드 시 fade-in 애니메이션
   const observerOptions = {
     threshold: 0.1,

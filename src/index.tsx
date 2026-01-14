@@ -638,6 +638,329 @@ app.get('/location', (c) => {
   )
 })
 
+// 갤러리 페이지
+app.get('/gallery', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span class="inline-block px-4 py-2 bg-gold-500/20 text-gold-400 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
+            Gallery
+          </span>
+          <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">갤러리</h1>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Little Brass의 생동감 넘치는 순간들<br/>
+            수업, 발표회, 학원 시설을 한눈에
+          </p>
+        </div>
+      </section>
+
+      {/* 카테고리 필터 */}
+      <section class="py-8 bg-white border-b border-gray-200 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-wrap justify-center gap-3">
+            <button class="gallery-filter px-6 py-2 bg-gold-500 text-white rounded-full font-semibold shadow-gold hover:bg-gold-600 transition" data-category="all">
+              전체보기
+            </button>
+            <button class="gallery-filter px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition" data-category="performance">
+              발표회
+            </button>
+            <button class="gallery-filter px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition" data-category="lesson">
+              수업 현장
+            </button>
+            <button class="gallery-filter px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition" data-category="facility">
+              시설
+            </button>
+            <button class="gallery-filter px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition" data-category="video">
+              영상
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube 영상 섹션 */}
+      <section class="py-16 bg-gradient-to-b from-gray-50 to-white" data-category="video">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">연주 영상</h2>
+            <p class="text-gray-600 text-lg">학생들의 멋진 연주와 발표회 하이라이트</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* YouTube 영상 1 */}
+            <div class="premium-card overflow-hidden">
+              <div class="aspect-video bg-gray-900 relative group cursor-pointer">
+                <div class="absolute inset-0 flex items-center justify-center bg-navy-900/90 group-hover:bg-navy-900/70 transition">
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition shadow-gold">
+                      <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-semibold">2024 겨울 발표회</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-bold text-lg text-navy-900 mb-2">2024 겨울 발표회 하이라이트</h3>
+                <p class="text-gray-600 text-sm">학생들의 1년 간의 연습 성과를 담은 멋진 연주</p>
+                <div class="flex items-center mt-4 text-sm text-gray-500">
+                  <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
+                  <span>2024.12.20</span>
+                </div>
+              </div>
+            </div>
+
+            {/* YouTube 영상 2 */}
+            <div class="premium-card overflow-hidden">
+              <div class="aspect-video bg-gray-900 relative group cursor-pointer">
+                <div class="absolute inset-0 flex items-center justify-center bg-navy-900/90 group-hover:bg-navy-900/70 transition">
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition shadow-gold">
+                      <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-semibold">트럼펫 마스터클래스</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-bold text-lg text-navy-900 mb-2">특별 마스터클래스</h3>
+                <p class="text-gray-600 text-sm">유명 연주자 초청 특별 레슨</p>
+                <div class="flex items-center mt-4 text-sm text-gray-500">
+                  <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
+                  <span>2024.10.15</span>
+                </div>
+              </div>
+            </div>
+
+            {/* YouTube 영상 3 */}
+            <div class="premium-card overflow-hidden">
+              <div class="aspect-video bg-gray-900 relative group cursor-pointer">
+                <div class="absolute inset-0 flex items-center justify-center bg-navy-900/90 group-hover:bg-navy-900/70 transition">
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition shadow-gold">
+                      <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-semibold">학원 소개 영상</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-bold text-lg text-navy-900 mb-2">Little Brass 소개</h3>
+                <p class="text-gray-600 text-sm">최고의 시설과 전문 강사진을 만나보세요</p>
+                <div class="flex items-center mt-4 text-sm text-gray-500">
+                  <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
+                  <span>2024.09.01</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 사진 갤러리 */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-display font-bold text-navy-900 mb-4">포토 갤러리</h2>
+            <p class="text-gray-600 text-lg">Little Brass의 다양한 모습</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-gallery">
+            {/* 발표회 사진 1 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="performance">
+              <div class="aspect-square bg-gradient-to-br from-navy-100 to-gold-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-music text-6xl text-gold-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">2024 발표회</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-gold-100 text-gold-800 rounded-full text-xs font-semibold">발표회</span>
+                <h3 class="font-semibold text-navy-900 mt-2">2024 겨울 발표회</h3>
+              </div>
+            </div>
+
+            {/* 수업 사진 1 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="lesson">
+              <div class="aspect-square bg-gradient-to-br from-blue-100 to-purple-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-chalkboard-teacher text-6xl text-blue-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">1:1 레슨</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">수업</span>
+                <h3 class="font-semibold text-navy-900 mt-2">개인 맞춤 레슨</h3>
+              </div>
+            </div>
+
+            {/* 시설 사진 1 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="facility">
+              <div class="aspect-square bg-gradient-to-br from-green-100 to-teal-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-door-open text-6xl text-green-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">연습실 A</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">시설</span>
+                <h3 class="font-semibold text-navy-900 mt-2">프리미엄 연습실</h3>
+              </div>
+            </div>
+
+            {/* 발표회 사진 2 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="performance">
+              <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-trophy text-6xl text-pink-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">시상식</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-semibold">발표회</span>
+                <h3 class="font-semibold text-navy-900 mt-2">우수 연주자 시상</h3>
+              </div>
+            </div>
+
+            {/* 수업 사진 2 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="lesson">
+              <div class="aspect-square bg-gradient-to-br from-amber-100 to-yellow-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-users text-6xl text-amber-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">그룹 레슨</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">수업</span>
+                <h3 class="font-semibold text-navy-900 mt-2">앙상블 수업</h3>
+              </div>
+            </div>
+
+            {/* 시설 사진 2 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="facility">
+              <div class="aspect-square bg-gradient-to-br from-indigo-100 to-blue-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-couch text-6xl text-indigo-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">대기실</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-semibold">시설</span>
+                <h3 class="font-semibold text-navy-900 mt-2">편안한 휴게 공간</h3>
+              </div>
+            </div>
+
+            {/* 발표회 사진 3 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="performance">
+              <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-microphone text-6xl text-purple-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">무대</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">발표회</span>
+                <h3 class="font-semibold text-navy-900 mt-2">솔로 퍼포먼스</h3>
+              </div>
+            </div>
+
+            {/* 수업 사진 3 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="lesson">
+              <div class="aspect-square bg-gradient-to-br from-teal-100 to-cyan-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-book-open text-6xl text-teal-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">이론 수업</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-semibold">수업</span>
+                <h3 class="font-semibold text-navy-900 mt-2">음악 이론 교육</h3>
+              </div>
+            </div>
+
+            {/* 시설 사진 3 */}
+            <div class="premium-card overflow-hidden cursor-pointer gallery-item" data-category="facility">
+              <div class="aspect-square bg-gradient-to-br from-orange-100 to-red-50 relative group overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center">
+                    <i class="fas fa-building text-6xl text-orange-500 mb-4 opacity-30"></i>
+                    <p class="text-navy-900 font-semibold">외관</p>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl"></i>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="inline-block px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold">시설</span>
+                <h3 class="font-semibold text-navy-900 mt-2">학원 전경</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section class="py-20 bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <i class="fas fa-camera text-5xl text-gold-400 mb-6"></i>
+          <h2 class="text-4xl font-display font-bold mb-4">여러분도 주인공이 되어보세요!</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            다음 발표회와 이벤트의 주인공은 바로 여러분입니다
+          </p>
+          <a href="/contact" class="inline-block bg-gradient-to-r from-gold-500 to-gold-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:from-gold-400 hover:to-gold-500 transition shadow-gold">
+            무료 체험 레슨 신청하기
+          </a>
+        </div>
+      </section>
+    </div>,
+    { title: '갤러리 - Little Brass' }
+  )
+})
+
 // 문의하기 페이지
 app.get('/contact', (c) => {
   return c.render(
