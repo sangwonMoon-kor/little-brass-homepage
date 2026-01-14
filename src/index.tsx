@@ -120,7 +120,7 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl font-bold mb-4">음악의 첫 걸음을 시작하세요!</h2>
           <p class="text-xl mb-8">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
-          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
             <i class="fas fa-ticket-alt mr-2"></i>
             원데이 클래스 예약하기
           </a>
@@ -1084,7 +1084,7 @@ app.get('/faq', (c) => {
                     <li><strong>특별 혜택:</strong> 악기 대여 무료, 신체 사이즈에 맞는 악기 제공</li>
                     <li><strong>정규 수강 시:</strong> 원데이 클래스 비용 20,000원 차감</li>
                   </ul>
-                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" rel="noopener noreferrer" 
+                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" 
                      class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-lg">
                     <i class="fas fa-ticket-alt"></i>
                     네이버 플레이스에서 예약하기
@@ -2474,7 +2474,7 @@ app.get('/contact', (c) => {
                     <p class="mt-2 text-gray-600 text-sm">
                       30분 원데이 클래스(20,000원)를 네이버 플레이스에서 예약하실 수 있습니다. 
                       정규 수강 등록 시 원데이 클래스 비용이 차감됩니다.
-                      <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket" target="_blank" 
+                      <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" 
                          class="text-purple-600 hover:text-purple-700 font-bold ml-2">
                         지금 예약하기 →
                       </a>
