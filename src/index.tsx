@@ -961,6 +961,396 @@ app.get('/gallery', (c) => {
   )
 })
 
+// FAQ 페이지
+app.get('/faq', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span class="inline-block px-4 py-2 bg-gold-500/20 text-gold-400 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
+            FAQ
+          </span>
+          <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">자주 묻는 질문</h1>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Little Brass에 대해 궁금하신 점을 확인해보세요
+          </p>
+        </div>
+      </section>
+
+      {/* 검색 바 */}
+      <section class="py-8 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="relative">
+            <input 
+              type="text" 
+              id="faq-search" 
+              placeholder="궁금한 내용을 검색해보세요..." 
+              class="w-full px-6 py-4 pl-14 border-2 border-gray-300 rounded-full focus:border-gold-500 focus:outline-none text-lg"
+            />
+            <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></i>
+          </div>
+        </div>
+      </section>
+
+      {/* 카테고리 버튼 */}
+      <section class="py-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-wrap justify-center gap-3">
+            <button class="faq-category px-6 py-2 bg-gold-500 text-white rounded-full font-semibold shadow-gold hover:bg-gold-600 transition" data-category="all">
+              전체
+            </button>
+            <button class="faq-category px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 transition border-2 border-gray-200" data-category="admission">
+              입학 관련
+            </button>
+            <button class="faq-category px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 transition border-2 border-gray-200" data-category="lesson">
+              수업 관련
+            </button>
+            <button class="faq-category px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 transition border-2 border-gray-200" data-category="cost">
+              비용 관련
+            </button>
+            <button class="faq-category px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 transition border-2 border-gray-200" data-category="online">
+              온라인 레슨
+            </button>
+            <button class="faq-category px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 transition border-2 border-gray-200" data-category="facility">
+              시설 관련
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ 아코디언 */}
+      <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* 입학 관련 */}
+          <div class="mb-12" data-faq-category="admission">
+            <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
+              <div class="w-10 h-10 bg-gold-100 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-door-open text-gold-600"></i>
+              </div>
+              입학 관련
+            </h2>
+            <div class="space-y-4">
+              <details class="faq-item bg-white" data-keywords="체험 무료 레슨 신청">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  무료 체험 레슨이 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, Little Brass에서는 30분 무료 체험 레슨을 제공하고 있습니다. 
+                  체험 레슨을 통해 학원 시설과 강사진의 수업 방식을 미리 경험하실 수 있습니다. 
+                  문의하기 페이지나 전화로 신청해주세요.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="나이 연령 제한 성인 아이">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  나이 제한이 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  나이 제한은 없습니다. 초등학생부터 성인까지 누구나 레슨을 받으실 수 있습니다. 
+                  각 연령대와 수준에 맞는 맞춤형 커리큘럼을 제공하고 있습니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="악기 준비 구매 없어도">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  악기를 준비하지 못했는데 괜찮을까요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  걱정하지 마세요! 초기에는 학원 악기를 대여해드리며, 악기 구매 시기와 적합한 악기 선택에 대해 상담해드립니다. 
+                  체험 레슨 시에도 학원 악기를 사용하실 수 있습니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="등록 절차 방법 신청">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  등록 절차가 어떻게 되나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  1. 무료 체험 레슨 신청<br/>
+                  2. 레벨 테스트 및 상담<br/>
+                  3. 수강 과목 및 시간 선택<br/>
+                  4. 등록 및 수강료 납부<br/>
+                  5. 레슨 시작<br/>
+                  전화나 문의하기를 통해 간편하게 신청하실 수 있습니다.
+                </div>
+              </details>
+            </div>
+          </div>
+
+          {/* 수업 관련 */}
+          <div class="mb-12" data-faq-category="lesson">
+            <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-chalkboard-teacher text-blue-600"></i>
+              </div>
+              수업 관련
+            </h2>
+            <div class="space-y-4">
+              <details class="faq-item bg-white" data-keywords="개인 그룹 레슨 차이">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  개인 레슨과 그룹 레슨의 차이는 무엇인가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  <strong>개인 레슨:</strong> 1:1 맞춤 수업으로 학생의 수준과 목표에 맞춰 진행됩니다. 주 1회 40분, 더 집중적인 지도가 가능합니다.<br/><br/>
+                  <strong>그룹 레슨:</strong> 2-4명 소그룹으로 진행되며, 앙상블 연습과 협주 경험을 쌓을 수 있습니다. 주 1회 60분 진행됩니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="결석 보강 휴강">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  결석 시 보강 수업이 가능한가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 사전에 알려주시면 보강 수업이 가능합니다. 
+                  단, 당일 취소는 보강이 어려울 수 있으니 최소 1일 전에 연락 부탁드립니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="시간 변경 조정">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  수업 시간 변경이 가능한가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 강사와 상담 후 시간 조정이 가능합니다. 
+                  학기 중에도 스케줄 변경이 필요하시면 언제든 말씀해주세요.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="교재 교구 준비물">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  교재는 별도로 구매해야 하나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 교재는 학생 수준에 맞춰 선정하며 별도 구매입니다. 
+                  첫 수업 시 강사가 적합한 교재를 추천해드리며, 온라인이나 서점에서 구매하실 수 있습니다.
+                </div>
+              </details>
+            </div>
+          </div>
+
+          {/* 비용 관련 */}
+          <div class="mb-12" data-faq-category="cost">
+            <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-won-sign text-green-600"></i>
+              </div>
+              비용 관련
+            </h2>
+            <div class="space-y-4">
+              <details class="faq-item bg-white" data-keywords="수강료 비용 가격 얼마">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  수강료는 얼마인가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  <strong>개인 레슨:</strong> 월 20만원~ (주 1회 40분)<br/>
+                  <strong>그룹 레슨:</strong> 월 15만원~ (주 1회 60분)<br/>
+                  <strong>온라인 레슨:</strong> 월 18만원 (오프라인 대비 10% 할인)<br/><br/>
+                  ※ 악기 및 레벨에 따라 차이가 있을 수 있습니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="결제 방법 카드 계좌이체">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  결제 방법은 어떻게 되나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  계좌이체 또는 카드 결제가 가능합니다. 
+                  매월 초 또는 등록 시점에 월 단위로 결제하실 수 있습니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="할인 이벤트 프로모션">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  할인 혜택이 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  형제/자매 등록 시 10% 할인, 3개월 이상 선결제 시 5% 할인 혜택이 있습니다. 
+                  또한 정기적으로 시즌별 프로모션을 진행하고 있으니 문의해주세요.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="환불 규정 정책">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  환불 규정은 어떻게 되나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  수강 시작 전: 전액 환불<br/>
+                  수강 1/3 경과 전: 2/3 환불<br/>
+                  수강 1/2 경과 전: 1/2 환불<br/>
+                  수강 1/2 경과 후: 환불 불가<br/><br/>
+                  ※ 평생교육법 시행령 제23조에 따릅니다.
+                </div>
+              </details>
+            </div>
+          </div>
+
+          {/* 온라인 레슨 */}
+          <div class="mb-12" data-faq-category="online">
+            <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
+              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-video text-purple-600"></i>
+              </div>
+              온라인 레슨
+            </h2>
+            <div class="space-y-4">
+              <details class="faq-item bg-white" data-keywords="줌 zoom 화상 온라인">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  Zoom을 처음 사용하는데 어렵지 않을까요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  걱정 마세요! 처음 수업 전에 Zoom 사용법을 자세히 안내해드리며, 테스트 접속도 가능합니다. 
+                  간단한 클릭 몇 번으로 쉽게 수업에 참여하실 수 있습니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="녹화 녹음 복습">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  온라인 수업 녹화가 가능한가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 학생의 복습을 위해 수업 녹화가 가능합니다. 
+                  단, 강사와 사전 협의가 필요하며, 녹화 파일은 개인 학습 목적으로만 사용 가능합니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="장비 준비 필요 카메라 마이크">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  필요한 장비가 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  PC, 노트북, 태블릿 중 하나와 안정적인 인터넷 연결만 있으면 됩니다. 
+                  내장 카메라와 마이크로 충분하며, 더 좋은 음질을 원하시면 외장 마이크를 권장합니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="오프라인 전환 병행">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  온라인에서 오프라인으로 전환할 수 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  물론입니다! 언제든 오프라인 레슨으로 전환 가능하며, 
+                  온라인과 오프라인을 번갈아가며 병행하는 것도 가능합니다. 유연하게 조정 가능합니다.
+                </div>
+              </details>
+            </div>
+          </div>
+
+          {/* 시설 관련 */}
+          <div class="mb-12" data-faq-category="facility">
+            <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
+              <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-building text-orange-600"></i>
+              </div>
+              시설 관련
+            </h2>
+            <div class="space-y-4">
+              <details class="faq-item bg-white" data-keywords="주차 주차장 차">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  주차가 가능한가요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 건물 지하 주차장을 이용하실 수 있습니다. 
+                  2시간 무료 주차가 가능하며, 이후에는 10분당 1,000원입니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="연습실 대여 개인연습">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  연습실을 개인적으로 사용할 수 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  수강생에 한해 연습실 대여가 가능합니다. 
+                  시간당 5,000원으로 예약제로 운영되며, 사전에 전화로 예약해주시면 됩니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="운영시간 영업시간 휴무">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  학원 운영 시간은 어떻게 되나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  <strong>평일:</strong> 10:00 - 22:00<br/>
+                  <strong>주말:</strong> 10:00 - 18:00<br/>
+                  <strong>휴무:</strong> 매주 월요일<br/><br/>
+                  ※ 공휴일은 별도 공지합니다.
+                </div>
+              </details>
+
+              <details class="faq-item bg-white" data-keywords="대기실 휴게실 편의시설">
+                <summary class="cursor-pointer p-6 font-semibold text-lg text-navy-900 hover:text-gold-600 transition">
+                  대기 공간이 있나요?
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  네, 편안한 대기실이 마련되어 있습니다. 
+                  무료 음료와 간식이 제공되며, 보호자분들께서 편하게 기다리실 수 있습니다.
+                </div>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 네이버 예약 CTA */}
+      <section class="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <i class="fas fa-calendar-check text-5xl mb-6"></i>
+          <h2 class="text-4xl font-display font-bold mb-4">간편하게 예약하세요</h2>
+          <p class="text-xl text-green-100 mb-8">
+            네이버 플레이스에서 체험 레슨을 바로 예약하실 수 있습니다
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition shadow-lg">
+              <i class="fab fa-neos mr-3"></i>
+              네이버 예약하기
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-700 transition">
+              <i class="fas fa-comments mr-3"></i>
+              문의하기
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 여전히 궁금하신가요 */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-display font-bold text-navy-900 mb-4">여전히 궁금하신가요?</h2>
+          <p class="text-gray-600 text-lg mb-8">
+            찾으시는 답변이 없다면 언제든 연락주세요
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <i class="fas fa-phone text-3xl text-gold-500 mb-3"></i>
+              <h3 class="font-bold text-lg mb-2">전화 문의</h3>
+              <p class="text-gray-600 text-sm mb-3">평일 10:00 - 22:00</p>
+              <a href="tel:02-1234-5678" class="text-gold-600 font-semibold hover:text-gold-700">02-1234-5678</a>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <i class="fas fa-envelope text-3xl text-gold-500 mb-3"></i>
+              <h3 class="font-bold text-lg mb-2">이메일 문의</h3>
+              <p class="text-gray-600 text-sm mb-3">24시간 접수</p>
+              <a href="mailto:info@littlebrass.com" class="text-gold-600 font-semibold hover:text-gold-700">info@littlebrass.com</a>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <i class="fas fa-comments text-3xl text-gold-500 mb-3"></i>
+              <h3 class="font-bold text-lg mb-2">카카오톡 상담</h3>
+              <p class="text-gray-600 text-sm mb-3">실시간 답변</p>
+              <a href="#" class="text-gold-600 font-semibold hover:text-gold-700">카톡 상담하기</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: 'FAQ - Little Brass' }
+  )
+})
+
 // 문의하기 페이지
 app.get('/contact', (c) => {
   return c.render(

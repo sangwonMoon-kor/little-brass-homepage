@@ -37,6 +37,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
                 <a href="/teachers" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">강사소개</a>
                 <a href="/curriculum" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">커리큘럼</a>
                 <a href="/gallery" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">갤러리</a>
+                <a href="/faq" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">FAQ</a>
                 <a href="/online" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">온라인과정</a>
                 <a href="/location" class="text-white hover:text-gold-400 px-4 py-2 rounded-lg transition font-medium">오시는길</a>
                 <a href="/contact" class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-2 rounded-full hover:from-gold-400 hover:to-gold-500 transition font-bold shadow-gold">
@@ -55,6 +56,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <a href="/teachers" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">강사소개</a>
               <a href="/curriculum" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">커리큘럼</a>
               <a href="/gallery" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">갤러리</a>
+              <a href="/faq" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">FAQ</a>
               <a href="/online" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">온라인과정</a>
               <a href="/location" class="block px-4 py-3 text-white hover:bg-navy-800 rounded-lg transition">오시는길</a>
               <a href="/contact" class="block px-4 py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg font-bold text-center shadow-gold">문의하기</a>
@@ -98,6 +100,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
                   <li><a href="/teachers" class="text-gray-300 hover:text-gold-400 transition">강사소개</a></li>
                   <li><a href="/curriculum" class="text-gray-300 hover:text-gold-400 transition">커리큘럼</a></li>
                   <li><a href="/gallery" class="text-gray-300 hover:text-gold-400 transition">갤러리</a></li>
+                  <li><a href="/faq" class="text-gray-300 hover:text-gold-400 transition">FAQ</a></li>
                   <li><a href="/online" class="text-gray-300 hover:text-gold-400 transition">온라인과정</a></li>
                 </ul>
               </div>

@@ -19,6 +19,86 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // FAQ 검색 기능
+  const faqSearch = document.getElementById('faq-search');
+  if (faqSearch) {
+    faqSearch.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const summary = item.querySelector('summary').textContent.toLowerCase();
+        const content = item.querySelector('div').textContent.toLowerCase();
+        const keywords = item.getAttribute('data-keywords') || '';
+        
+        if (summary.includes(searchTerm) || content.includes(searchTerm) || keywords.includes(searchTerm)) {
+          item.style.display = 'block';
+          if (searchTerm.length > 0) {
+            item.setAttribute('open', '');
+          }
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // 카테고리 섹션 표시/숨김
+      document.querySelectorAll('[data-faq-category]').forEach(section => {
+        const visibleItems = section.querySelectorAll('.faq-item[style*="display: block"]');
+        if (visibleItems.length === 0 && searchTerm.length > 0) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = 'block';
+        }
+      });
+    });
+  }
+
+  // FAQ 카테고리 필터
+  const faqCategoryButtons = document.querySelectorAll('.faq-category');
+  if (faqCategoryButtons.length > 0) {
+    faqCategoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // 버튼 스타일 업데이트
+        faqCategoryButtons.forEach(btn => {
+          btn.classList.remove('bg-gold-500', 'text-white', 'shadow-gold');
+          btn.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+        });
+        this.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+        this.classList.add('bg-gold-500', 'text-white', 'shadow-gold');
+        
+        // 검색 초기화
+        if (faqSearch) {
+          faqSearch.value = '';
+        }
+        
+        // 카테고리 필터링
+        const sections = document.querySelectorAll('[data-faq-category]');
+        if (category === 'all') {
+          sections.forEach(section => {
+            section.style.display = 'block';
+            section.querySelectorAll('.faq-item').forEach(item => {
+              item.style.display = 'block';
+            });
+          });
+        } else {
+          sections.forEach(section => {
+            const sectionCategory = section.getAttribute('data-faq-category');
+            if (sectionCategory === category) {
+              section.style.display = 'block';
+              section.querySelectorAll('.faq-item').forEach(item => {
+                item.style.display = 'block';
+              });
+            } else {
+              section.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+  }
+
   // 갤러리 필터 기능
   const galleryFilters = document.querySelectorAll('.gallery-filter');
   const galleryItems = document.querySelectorAll('.gallery-item');
