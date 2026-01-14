@@ -9,76 +9,120 @@ app.use(renderer)
 app.get('/', (c) => {
   return c.render(
     <div>
-      {/* Hero Section */}
-      <section class="relative bg-gradient-to-r from-amber-700 to-amber-900 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 class="text-5xl font-bold mb-6">음악이 흐르는 공간, Little Brass</h1>
-          <p class="text-xl mb-8">전문 강사진과 함께하는 프리미엄 음악 교육</p>
+      {/* Hero Section - 큰 비주얼 이미지 스타일 */}
+      <section class="relative bg-cover bg-center text-white py-32" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1920&q=80'); min-height: 600px; display: flex; align-items: center;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+          <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
+            <i class="fas fa-trumpet mr-2"></i>금관악기 전문 교육
+          </div>
+          <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">리틀브라스 음악학원</h1>
+          <p class="text-2xl mb-8 drop-shadow-md">O2O 교육 서비스로 합리적인 가격과 최상의 교육 퀄리티를 제공합니다</p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="/curriculum" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+            <a href="/curriculum" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-yellow-300 transition shadow-xl text-lg">
               커리큘럼 보기
             </a>
-            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-8 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-amber-600 transition shadow-lg flex items-center gap-2">
+            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl text-lg flex items-center gap-2">
               <i class="fas fa-calendar-check"></i>
-              네이버 예약하기
-            </a>
-            <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-amber-700 transition">
-              문의하기
+              원데이 클래스 예약
             </a>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section class="py-16 bg-white">
+      {/* 4개 원형 아이콘 섹션 */}
+      <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">왜 Little Brass일까요?</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center p-6">
-              <div class="text-amber-700 text-5xl mb-4">
-                <i class="fas fa-award"></i>
+          <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-8 mx-auto block text-center w-fit">
+            <i class="fas fa-star mr-2"></i>리틀브라스만의 특별함
+          </div>
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">금관악기 전문 교육의 리더</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="bg-yellow-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+                <i class="fas fa-trumpet text-white text-5xl"></i>
               </div>
-              <h3 class="text-xl font-bold mb-3">전문 강사진</h3>
-              <p class="text-gray-600">음악 전공 및 풍부한 교육 경험을 갖춘 최고의 강사진</p>
+              <h3 class="text-lg font-bold mb-2">트럼펫</h3>
+              <p class="text-gray-600 text-sm">전문 트럼펫 교육</p>
             </div>
-            <div class="text-center p-6">
-              <div class="text-amber-700 text-5xl mb-4">
-                <i class="fas fa-users"></i>
+            <div class="text-center">
+              <div class="bg-orange-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+                <i class="fas fa-music text-white text-5xl"></i>
               </div>
-              <h3 class="text-xl font-bold mb-3">맞춤형 교육</h3>
-              <p class="text-gray-600">학생 개개인의 수준과 목표에 맞춘 1:1 레슨</p>
+              <h3 class="text-lg font-bold mb-2">호른</h3>
+              <p class="text-gray-600 text-sm">프렌치 호른 레슨</p>
             </div>
-            <div class="text-center p-6">
-              <div class="text-amber-700 text-5xl mb-4">
-                <i class="fas fa-video"></i>
+            <div class="text-center">
+              <div class="bg-amber-500 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+                <i class="fas fa-drum text-white text-5xl"></i>
               </div>
-              <h3 class="text-xl font-bold mb-3">온라인 레슨</h3>
-              <p class="text-gray-600">Zoom을 통한 언제 어디서나 가능한 온라인 음악 레슨</p>
+              <h3 class="text-lg font-bold mb-2">트롬본</h3>
+              <p class="text-gray-600 text-sm">트롬본 전문 교육</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-yellow-500 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+                <i class="fas fa-guitar text-white text-5xl"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2">튜바</h3>
+              <p class="text-gray-600 text-sm">튜바 개인 레슨</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Courses Section */}
-      <section class="py-16 bg-gray-50">
+      {/* POINT 섹션 01 - 좌우 교차 레이아웃 */}
+      <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">제공 악기</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-lg transition">
-              <i class="fas fa-music text-amber-700 text-4xl mb-3"></i>
-              <h3 class="font-bold">피아노</h3>
+          <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+            <div class="md:w-1/2">
+              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="금관악기 레슨" class="rounded-2xl shadow-2xl w-full" />
             </div>
-            <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-lg transition">
-              <i class="fas fa-music text-amber-700 text-4xl mb-3"></i>
-              <h3 class="font-bold">바이올린</h3>
+            <div class="md:w-1/2">
+              <div class="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                POINT 01
+              </div>
+              <h3 class="text-3xl font-bold mb-4">전문 금관악기 교육</h3>
+              <p class="text-gray-600 text-lg mb-4">
+                트럼펫, 호른, 트롬본, 튜바 등 모든 금관악기를 전문적으로 교육합니다.
+              </p>
+              <p class="text-gray-600">
+                입문부터 전문가 수준까지 체계적인 커리큘럼으로 진행됩니다.
+              </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-lg transition">
-              <i class="fas fa-music text-amber-700 text-4xl mb-3"></i>
-              <h3 class="font-bold">플루트</h3>
+          </div>
+
+          <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
+            <div class="md:w-1/2">
+              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="악기 대여" class="rounded-2xl shadow-2xl w-full" />
             </div>
-            <div class="bg-white p-6 rounded-lg shadow text-center hover:shadow-lg transition">
-              <i class="fas fa-music text-amber-700 text-4xl mb-3"></i>
-              <h3 class="font-bold">첼로</h3>
+            <div class="md:w-1/2">
+              <div class="inline-block bg-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                POINT 02
+              </div>
+              <h3 class="text-3xl font-bold mb-4">합리적인 악기 대여</h3>
+              <p class="text-gray-600 text-lg mb-4">
+                고가의 금관악기를 합리적인 가격으로 대여할 수 있습니다.
+              </p>
+              <p class="text-gray-600">
+                초보자도 부담 없이 시작할 수 있도록 다양한 옵션을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="온라인 레슨" class="rounded-2xl shadow-2xl w-full" />
+            </div>
+            <div class="md:w-1/2">
+              <div class="inline-block bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                POINT 03
+              </div>
+              <h3 class="text-3xl font-bold mb-4">온라인 & 오프라인</h3>
+              <p class="text-gray-600 text-lg mb-4">
+                원하는 방식으로 수업을 선택할 수 있습니다.
+              </p>
+              <p class="text-gray-600">
+                시간과 장소의 제약 없이 언제 어디서나 레슨이 가능합니다.
+              </p>
             </div>
           </div>
         </div>
@@ -116,11 +160,14 @@ app.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-amber-700 text-white">
+      <section class="py-20 bg-gradient-to-br from-yellow-400 via-orange-400 to-amber-500 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl font-bold mb-4">음악의 첫 걸음을 시작하세요!</h2>
-          <p class="text-xl mb-8">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
-          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-amber-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+          <div class="inline-block bg-white text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
+            <i class="fas fa-gift mr-2"></i>첫 수업 특별 혜택
+          </div>
+          <h2 class="text-4xl font-bold mb-4 drop-shadow-lg">지금 바로 시작하세요!</h2>
+          <p class="text-2xl mb-8 drop-shadow-md">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition inline-block shadow-2xl text-lg">
             <i class="fas fa-ticket-alt mr-2"></i>
             원데이 클래스 예약하기
           </a>
