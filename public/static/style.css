@@ -16,6 +16,11 @@
   
   /* Neutral Colors */
   --white: #FFFFFF;
+  --cream: #FFFBF7;
+  --text-title: #1a1a1a;
+  --text-body: #4a4a4a;
+  --text-sub: #888888;
+  --border-warm: #f0ebe4;
   --gray-light: #F8F9FA;
   --gray-medium: #E9ECEF;
   --gray-dark: #6C757D;
@@ -34,17 +39,17 @@
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1.7;
-  color: var(--black);
-  background-color: var(--white);
+  line-height: 1.6;
+  color: var(--text-body);
+  background-color: var(--cream);
 }
 
 /* 고급스러운 헤딩 폰트 */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', 'Noto Sans KR', serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--navy-primary);
+  color: var(--text-title);
 }
 
 /* 고급스러운 스크롤바 */
@@ -112,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 네비게이션 스타일 */
 nav {
-  background: #ffffff;
+  background: var(--cream);
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -469,7 +474,7 @@ details[open] {
 
 /* 푸터 스타일 */
 footer {
-  background: #ffffff;
+  background: var(--cream);
 }
 
 footer a:hover {
@@ -618,4 +623,58 @@ footer a:hover {
 
 
 /* Ensure minimalist sections */
-section { background-color: #ffffff; }
+section { background-color: var(--cream); }
+
+
+/* Warm Minimalist Utilities */
+.card-warm {
+  background: var(--white);
+  border: 1px solid var(--border-warm);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease-out;
+}
+.card-warm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+.btn-primary-warm {
+  background-color: var(--gold-primary);
+  color: var(--white);
+  border-radius: 9999px;
+  padding: 16px 32px;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-primary-warm:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+}
+.btn-outline-warm {
+  background-color: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  border-radius: 9999px;
+  padding: 16px 32px;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-outline-warm:hover {
+  background-color: var(--gold-primary);
+  color: var(--white);
+}
+.tag-warm {
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
