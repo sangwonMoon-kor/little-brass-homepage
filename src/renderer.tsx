@@ -45,11 +45,11 @@ export const renderer = jsxRenderer(
         <link href="/static/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;600&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
       </head>
-      <body class="bg-[#FFFDF9] text-[#555555]">
+      <body class="bg-[#FFFFFF] text-[#555555]">
         {/* 스크롤 진행 바 */}
         <div class="scroll-progress" id="scroll-progress"></div>
         
-        <nav class="sticky top-0 z-50 bg-[#FFFDF9] shadow-sm border-b border-[#E8E0D5]">
+        <nav class="sticky top-0 z-50 bg-[#FFFFFF] shadow-sm border-b border-[#EEEEEE]">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
               <div class="flex items-center">
@@ -79,18 +79,18 @@ export const renderer = jsxRenderer(
                   </button>
                   <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-sm hover:shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
                     <div class="py-2">
-                      <a href="/about" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">학원소개</a>
-                      <a href="/faq" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">FAQ</a>
-                      <a href="/notice" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">
+                      <a href="/about" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">학원소개</a>
+                      <a href="/faq" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">FAQ</a>
+                      <a href="/notice" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">
                         <i class="fas fa-bullhorn mr-2 text-xs"></i>공지사항
                       </a>
-                      <a href="/events" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">
+                      <a href="/events" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">
                         <i class="fas fa-gift mr-2 text-xs"></i>이벤트
                       </a>
-                      <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">
+                      <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">
                         <i class="fas fa-blog mr-2 text-xs"></i>블로그
                       </a>
-                      <a href="/location" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFDF9] hover:text-[#C9A227] transition text-sm">오시는길</a>
+                      <a href="/location" class="block px-4 py-2 text-[#555555] hover:bg-[#FFFFFF] hover:text-[#C9A227] transition text-sm">오시는길</a>
                     </div>
                   </div>
                 </div>
@@ -108,26 +108,26 @@ export const renderer = jsxRenderer(
               </button>
             </div>
           </div>
-          <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFDF9] border-t border-[#E8E0D5]">
+          <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFFFF] border-t border-[#EEEEEE]">
             <div class="px-4 py-3 space-y-2">
-              <a href="/" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">홈</a>
-              <a href="/about" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">학원소개</a>
-              <a href="/teachers" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">강사소개</a>
-              <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">커리큘럼</a>
-              <a href="/gallery" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">갤러리</a>
-              <a href="/achievements" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">학생성과</a>
-              <a href="/faq" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">FAQ</a>
-              <a href="/notice" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">
+              <a href="/" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">홈</a>
+              <a href="/about" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">학원소개</a>
+              <a href="/teachers" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">강사소개</a>
+              <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">커리큘럼</a>
+              <a href="/gallery" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">갤러리</a>
+              <a href="/achievements" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">학생성과</a>
+              <a href="/faq" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">FAQ</a>
+              <a href="/notice" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">
                 <i class="fas fa-bullhorn mr-2"></i>공지사항
               </a>
-              <a href="/events" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">
+              <a href="/events" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">
                 <i class="fas fa-gift mr-2"></i>이벤트
               </a>
-              <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">
+              <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">
                 <i class="fas fa-blog mr-2"></i>블로그
               </a>
-              <a href="/online" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">온라인과정</a>
-              <a href="/location" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFDF9] rounded-lg transition">오시는길</a>
+              <a href="/online" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">온라인과정</a>
+              <a href="/location" class="block px-4 py-3 text-[#555555] hover:bg-[#FFFFFF] rounded-lg transition">오시는길</a>
               <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white rounded-lg font-bold text-center shadow-sm">
                 <i class="fas fa-ticket-alt mr-2"></i>원데이 클래스
               </a>
@@ -149,7 +149,7 @@ export const renderer = jsxRenderer(
           <span class="hidden sm:inline">원데이 클래스</span>
         </a>
         
-        <footer class="bg-[#FAF8F5] text-[#555555] mt-24 border-t border-[#E8E0D5]">
+        <footer class="bg-[#F9F9F9] text-[#555555] mt-24 border-t border-[#EEEEEE]">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
               <div class="md:col-span-2">

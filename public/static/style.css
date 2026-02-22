@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --ivory: #FFFDF9;
+  --ivory: #FFFFFF;
   --white: #FFFFFF;
   --classic-gold: #C9A227;
   --charcoal: #2C2C2C;
   --body-text: #555555;
-  --brown-label: #8B7355;
-  --beige-border: #E8E0D5;
-  --footer-beige: #FAF8F5;
+  --brown-label: #C9A227; /* Gold label is cleaner on white than brown */
+  --beige-border: #EEEEEE;
+  --footer-beige: #F9F9F9;
 }
 
 * {
@@ -612,7 +612,7 @@ section { background-color: var(--ivory); }
 .section-label {
   font-family: 'Dancing Script', cursive;
   color: var(--brown-label);
-  font-size: 1.25rem; /* 20px */
+  font-size:  14px; /* 20px */
   margin-bottom: 0.5rem;
   text-align: center;
 }
