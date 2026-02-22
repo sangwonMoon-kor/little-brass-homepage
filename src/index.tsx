@@ -14,14 +14,14 @@ app.get('/', (c) => {
         {/* 영상 영역 */}
         <div class="relative w-full" style="height: 70vh;">
           {/* 영상 placeholder */}
-          <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+          <div class="absolute inset-0 bg-gray-100 flex items-center justify-center">
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="display: none;">
               {/* 추후 영상 src 추가 예정 */}
             </video>
             {/* Placeholder 텍스트 */}
             <div class="relative z-10 text-center">
-              <i class="fas fa-video text-6xl text-gray-500 mb-4"></i>
-              <p class="text-2xl text-gray-600 font-medium">영상 준비 중</p>
+              <i class="fas fa-video text-6xl text-gray-400 mb-4"></i>
+              <p class="text-2xl text-gray-400 font-medium">영상 준비 중</p>
             </div>
           </div>
         </div>
@@ -41,10 +41,10 @@ app.get('/', (c) => {
         <div class="bg-white py-8">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <a href="/curriculum" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition shadow-lg text-lg">
+              <a href="/curriculum" class="bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition shadow-sm hover:shadow-md text-lg">
                 커리큘럼 보기
               </a>
-              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition shadow-lg text-lg flex items-center gap-2">
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition shadow-sm hover:shadow-md text-lg flex items-center gap-2">
                 <i class="fas fa-calendar-check"></i>
                 원데이 클래스 예약
               </a>
@@ -56,34 +56,34 @@ app.get('/', (c) => {
       {/* 4개 원형 아이콘 섹션 */}
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-8 mx-auto block text-center w-fit">
+          <div class="inline-block bg-yellow-400 text-gray-800 px-6 py-2 rounded-full text-sm font-bold mb-8 mx-auto block text-center w-fit">
             <i class="fas fa-star mr-2"></i>리틀브라스만의 특별함
           </div>
           <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">금관악기 전문 교육의 리더</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center">
-              <div class="bg-yellow-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+              <div class="bg-yellow-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
                 <i class="fas fa-trumpet text-white text-5xl"></i>
               </div>
               <h3 class="text-lg font-bold mb-2">트럼펫</h3>
               <p class="text-gray-600 text-sm">전문 트럼펫 교육</p>
             </div>
             <div class="text-center">
-              <div class="bg-orange-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+              <div class="bg-orange-400 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
                 <i class="fas fa-music text-white text-5xl"></i>
               </div>
               <h3 class="text-lg font-bold mb-2">호른</h3>
               <p class="text-gray-600 text-sm">프렌치 호른 레슨</p>
             </div>
             <div class="text-center">
-              <div class="bg-amber-500 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+              <div class="bg-white border border-gray-1000 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
                 <i class="fas fa-drum text-white text-5xl"></i>
               </div>
               <h3 class="text-lg font-bold mb-2">트롬본</h3>
               <p class="text-gray-600 text-sm">트롬본 전문 교육</p>
             </div>
             <div class="text-center">
-              <div class="bg-yellow-500 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-xl hover:scale-110 transition">
+              <div class="bg-gray-500 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
                 <i class="fas fa-guitar text-white text-5xl"></i>
               </div>
               <h3 class="text-lg font-bold mb-2">튜바</h3>
@@ -98,10 +98,10 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
             <div class="md:w-1/2">
-              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="금관악기 레슨" class="rounded-2xl shadow-2xl w-full" />
+              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="금관악기 레슨" class="rounded-2xl shadow-md w-full" />
             </div>
             <div class="md:w-1/2">
-              <div class="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <div class="inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
                 POINT 01
               </div>
               <h3 class="text-3xl font-bold mb-4">전문 금관악기 교육</h3>
@@ -116,7 +116,7 @@ app.get('/', (c) => {
 
           <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
             <div class="md:w-1/2">
-              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="악기 대여" class="rounded-2xl shadow-2xl w-full" />
+              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="악기 대여" class="rounded-2xl shadow-md w-full" />
             </div>
             <div class="md:w-1/2">
               <div class="inline-block bg-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
@@ -134,10 +134,10 @@ app.get('/', (c) => {
 
           <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
             <div class="md:w-1/2">
-              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="온라인 레슨" class="rounded-2xl shadow-2xl w-full" />
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="온라인 레슨" class="rounded-2xl shadow-md w-full" />
             </div>
             <div class="md:w-1/2">
-              <div class="inline-block bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <div class="inline-block bg-white border border-gray-1000 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
                 POINT 03
               </div>
               <h3 class="text-3xl font-bold mb-4">온라인 & 오프라인</h3>
@@ -152,10 +152,10 @@ app.get('/', (c) => {
 
           <div class="flex flex-col md:flex-row-reverse items-center gap-12">
             <div class="md:w-1/2">
-              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt="학원 시설" class="rounded-2xl shadow-2xl w-full" />
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt="학원 시설" class="rounded-2xl shadow-md w-full" />
             </div>
             <div class="md:w-1/2">
-              <div class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <div class="inline-block bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
                 POINT 04
               </div>
               <h3 class="text-3xl font-bold mb-4">최적의 연습 환경</h3>
@@ -174,7 +174,7 @@ app.get('/', (c) => {
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-4">
+            <div class="inline-block bg-yellow-400 text-gray-800 px-6 py-2 rounded-full text-sm font-bold mb-4">
               <i class="fas fa-images mr-2"></i>GALLERY
             </div>
             <h2 class="text-4xl font-bold text-gray-800 mb-4">깨끗하고 쾌적한 학원 시설</h2>
@@ -182,13 +182,13 @@ app.get('/', (c) => {
           </div>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
               <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실1" class="w-full h-64 object-cover" />
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
               <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="레슨실2" class="w-full h-64 object-cover" />
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition">
+            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
               <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="대기실" class="w-full h-64 object-cover" />
             </div>
           </div>
@@ -196,10 +196,10 @@ app.get('/', (c) => {
       </section>
 
       {/* Latest Blog Posts Section */}
-      <section class="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50">
+      <section class="py-20 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-4">
+            <div class="inline-block bg-yellow-400 text-gray-800 px-6 py-2 rounded-full text-sm font-bold mb-4">
               <i class="fas fa-blog mr-2"></i>BLOG
             </div>
             <h2 class="text-4xl font-bold text-gray-800 mb-4">리틀브라스 소식</h2>
@@ -217,7 +217,7 @@ app.get('/', (c) => {
 
           <div class="text-center">
             <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-10 py-4 rounded-full font-bold hover:from-yellow-300 hover:to-orange-300 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-gray-800 px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-blog text-xl"></i>
               <span>블로그 전체 보기</span>
               <i class="fas fa-external-link-alt"></i>
@@ -227,14 +227,14 @@ app.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-20 bg-gradient-to-br from-yellow-400 via-orange-400 to-amber-500 text-white">
+      <section class="py-20 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div class="inline-block bg-white text-gray-900 px-6 py-2 rounded-full text-sm font-bold mb-6">
+          <div class="inline-block bg-gray-50 text-yellow-700 border border-yellow-200 px-6 py-2 rounded-full text-sm font-bold mb-6">
             <i class="fas fa-gift mr-2"></i>첫 수업 특별 혜택
           </div>
-          <h2 class="text-4xl font-bold mb-4 drop-shadow-lg">지금 바로 시작하세요!</h2>
-          <p class="text-2xl mb-8 drop-shadow-md">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
-          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition inline-block shadow-2xl text-lg">
+          <h2 class="text-4xl font-bold mb-4 drop-shadow-sm">지금 바로 시작하세요!</h2>
+          <p class="text-2xl text-gray-600 mb-8">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white px-10 py-4 rounded-lg font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition inline-block shadow-sm hover:shadow-md text-lg">
             <i class="fas fa-ticket-alt mr-2"></i>
             원데이 클래스 예약하기
           </a>
@@ -255,7 +255,7 @@ app.get('/about', (c) => {
           
           <div class="prose prose-lg max-w-none">
             <div class="mb-12">
-              <h2 class="text-2xl font-bold text-amber-700 mb-4">Little Brass를 소개합니다</h2>
+              <h2 class="text-2xl font-bold text-[#B8941C] mb-4">Little Brass를 소개합니다</h2>
               <p class="text-gray-700 leading-relaxed mb-4">
                 Little Brass는 음악을 사랑하는 모든 이들을 위한 프리미엄 음악 교육 공간입니다. 
                 2020년 설립 이래, 우리는 학생 개개인의 음악적 재능을 발견하고 발전시키는 데 헌신해왔습니다.
@@ -267,21 +267,21 @@ app.get('/about', (c) => {
             </div>
 
             <div class="mb-12">
-              <h2 class="text-2xl font-bold text-amber-700 mb-4">교육 철학</h2>
+              <h2 class="text-2xl font-bold text-[#B8941C] mb-4">교육 철학</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-amber-50 p-6 rounded-lg">
+                <div class="bg-white border border-gray-100 p-6 rounded-lg">
                   <h3 class="font-bold text-lg mb-2">개인 맞춤형 교육</h3>
                   <p class="text-gray-700">학생 개개인의 수준과 목표에 맞춘 1:1 맞춤 레슨</p>
                 </div>
-                <div class="bg-amber-50 p-6 rounded-lg">
+                <div class="bg-white border border-gray-100 p-6 rounded-lg">
                   <h3 class="font-bold text-lg mb-2">체계적인 커리큘럼</h3>
                   <p class="text-gray-700">단계별로 설계된 과학적인 교육 프로그램</p>
                 </div>
-                <div class="bg-amber-50 p-6 rounded-lg">
+                <div class="bg-white border border-gray-100 p-6 rounded-lg">
                   <h3 class="font-bold text-lg mb-2">전문 강사진</h3>
                   <p class="text-gray-700">음악 전공 및 풍부한 교육 경험을 갖춘 강사진</p>
                 </div>
-                <div class="bg-amber-50 p-6 rounded-lg">
+                <div class="bg-white border border-gray-100 p-6 rounded-lg">
                   <h3 class="font-bold text-lg mb-2">최신 시설</h3>
                   <p class="text-gray-700">쾌적하고 현대적인 연습실 및 교육 환경</p>
                 </div>
@@ -289,26 +289,26 @@ app.get('/about', (c) => {
             </div>
 
             <div class="mb-12">
-              <h2 class="text-2xl font-bold text-amber-700 mb-4">차별화 포인트</h2>
+              <h2 class="text-2xl font-bold text-[#B8941C] mb-4">차별화 포인트</h2>
               <ul class="space-y-3">
                 <li class="flex items-start">
-                  <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                  <i class="fas fa-check-circle text-[#B8941C] mt-1 mr-3"></i>
                   <span class="text-gray-700">음악대학 출신 전문 강사진의 체계적인 지도</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                  <i class="fas fa-check-circle text-[#B8941C] mt-1 mr-3"></i>
                   <span class="text-gray-700">학생 수준에 맞춘 개인별 맞춤 커리큘럼</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                  <i class="fas fa-check-circle text-[#B8941C] mt-1 mr-3"></i>
                   <span class="text-gray-700">온라인 레슨 병행으로 시간과 장소의 제약 없음</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                  <i class="fas fa-check-circle text-[#B8941C] mt-1 mr-3"></i>
                   <span class="text-gray-700">정기 발표회 및 연주회를 통한 실전 경험 제공</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                  <i class="fas fa-check-circle text-[#B8941C] mt-1 mr-3"></i>
                   <span class="text-gray-700">소수 정예 수업으로 밀착 케어</span>
                 </li>
               </ul>
@@ -332,13 +332,13 @@ app.get('/teachers', (c) => {
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 강사 1 */}
-            <div class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-              <div class="bg-amber-100 h-48 flex items-center justify-center">
-                <i class="fas fa-user-circle text-amber-700 text-8xl"></i>
+            <div class="bg-white border border border-gray-100 rounded-lg shadow-sm hover:shadow-md overflow-hidden hover:shadow-sm hover:shadow-md transition">
+              <div class="bg-gray-50 h-48 flex items-center justify-center">
+                <i class="fas fa-user-circle text-[#B8941C] text-8xl"></i>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">김지현 강사</h3>
-                <p class="text-amber-700 font-semibold mb-4">피아노 전공</p>
+                <p class="text-[#B8941C] font-semibold mb-4">피아노 전공</p>
                 <div class="text-sm text-gray-600 space-y-2 mb-4">
                   <p><i class="fas fa-graduation-cap mr-2"></i>서울대학교 음악대학 피아노과 졸업</p>
                   <p><i class="fas fa-trophy mr-2"></i>국제 피아노 콩쿨 입상</p>
@@ -349,13 +349,13 @@ app.get('/teachers', (c) => {
             </div>
 
             {/* 강사 2 */}
-            <div class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-              <div class="bg-amber-100 h-48 flex items-center justify-center">
-                <i class="fas fa-user-circle text-amber-700 text-8xl"></i>
+            <div class="bg-white border border border-gray-100 rounded-lg shadow-sm hover:shadow-md overflow-hidden hover:shadow-sm hover:shadow-md transition">
+              <div class="bg-gray-50 h-48 flex items-center justify-center">
+                <i class="fas fa-user-circle text-[#B8941C] text-8xl"></i>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">박민수 강사</h3>
-                <p class="text-amber-700 font-semibold mb-4">바이올린 전공</p>
+                <p class="text-[#B8941C] font-semibold mb-4">바이올린 전공</p>
                 <div class="text-sm text-gray-600 space-y-2 mb-4">
                   <p><i class="fas fa-graduation-cap mr-2"></i>한국예술종합학교 바이올린 전공</p>
                   <p><i class="fas fa-trophy mr-2"></i>전국 바이올린 콩쿨 대상</p>
@@ -366,13 +366,13 @@ app.get('/teachers', (c) => {
             </div>
 
             {/* 강사 3 */}
-            <div class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-              <div class="bg-amber-100 h-48 flex items-center justify-center">
-                <i class="fas fa-user-circle text-amber-700 text-8xl"></i>
+            <div class="bg-white border border border-gray-100 rounded-lg shadow-sm hover:shadow-md overflow-hidden hover:shadow-sm hover:shadow-md transition">
+              <div class="bg-gray-50 h-48 flex items-center justify-center">
+                <i class="fas fa-user-circle text-[#B8941C] text-8xl"></i>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">이수정 강사</h3>
-                <p class="text-amber-700 font-semibold mb-4">플루트 전공</p>
+                <p class="text-[#B8941C] font-semibold mb-4">플루트 전공</p>
                 <div class="text-sm text-gray-600 space-y-2 mb-4">
                   <p><i class="fas fa-graduation-cap mr-2"></i>이화여자대학교 음악대학 플루트과 졸업</p>
                   <p><i class="fas fa-trophy mr-2"></i>아시아 플루트 페스티벌 금상</p>
@@ -400,58 +400,58 @@ app.get('/curriculum', (c) => {
           
           {/* 피아노 커리큘럼 */}
           <div class="mb-12">
-            <h2 class="text-2xl font-bold text-amber-700 mb-6 flex items-center">
+            <h2 class="text-2xl font-bold text-[#B8941C] mb-6 flex items-center">
               <i class="fas fa-music mr-3"></i>피아노 과정
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-700">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-2">입문 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">악보 읽기, 기본 자세, 손가락 운지법</p>
-                <p class="text-xs text-gray-500">4주 과정</p>
+                <p class="text-xs text-gray-600">4주 과정</p>
               </div>
-              <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-600">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#B8941C]">
                 <h3 class="font-bold text-lg mb-2">초급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">스케일, 아르페지오, 간단한 곡 연주</p>
-                <p class="text-xs text-gray-500">12주 과정</p>
+                <p class="text-xs text-gray-600">12주 과정</p>
               </div>
-              <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#B8941C]">
                 <h3 class="font-bold text-lg mb-2">중급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">다양한 장르, 리듬 패턴, 표현력 향상</p>
-                <p class="text-xs text-gray-500">24주 과정</p>
+                <p class="text-xs text-gray-600">24주 과정</p>
               </div>
-              <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-400">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#B8941C]">
                 <h3 class="font-bold text-lg mb-2">고급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">클래식 명곡, 콩쿨 준비, 입시 대비</p>
-                <p class="text-xs text-gray-500">48주 이상</p>
+                <p class="text-xs text-gray-600">48주 이상</p>
               </div>
             </div>
           </div>
 
           {/* 바이올린 커리큘럼 */}
           <div class="mb-12">
-            <h2 class="text-2xl font-bold text-amber-700 mb-6 flex items-center">
+            <h2 class="text-2xl font-bold text-[#B8941C] mb-6 flex items-center">
               <i class="fas fa-music mr-3"></i>바이올린 과정
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-700">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#B8941C]">
                 <h3 class="font-bold text-lg mb-2">입문 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">악기 다루기, 활 사용법, 기본 음계</p>
-                <p class="text-xs text-gray-500">4주 과정</p>
+                <p class="text-xs text-gray-600">4주 과정</p>
               </div>
-              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-2">초급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">1st 포지션, 간단한 멜로디 연주</p>
-                <p class="text-xs text-gray-500">12주 과정</p>
+                <p class="text-xs text-gray-600">12주 과정</p>
               </div>
-              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-blue-500">
                 <h3 class="font-bold text-lg mb-2">중급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">3rd 포지션, 비브라토, 다양한 곡</p>
-                <p class="text-xs text-gray-500">24주 과정</p>
+                <p class="text-xs text-gray-600">24주 과정</p>
               </div>
-              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
+              <div class="bg-white border border-gray-100 p-6 rounded-lg border-l-4 border-blue-400">
                 <h3 class="font-bold text-lg mb-2">고급 과정</h3>
                 <p class="text-sm text-gray-600 mb-3">협주곡, 실내악, 오케스트라 참여</p>
-                <p class="text-xs text-gray-500">48주 이상</p>
+                <p class="text-xs text-gray-600">48주 이상</p>
               </div>
             </div>
           </div>
@@ -462,7 +462,7 @@ app.get('/curriculum', (c) => {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-user text-amber-700 mr-2"></i>개인 레슨
+                  <i class="fas fa-user text-[#B8941C] mr-2"></i>개인 레슨
                 </h3>
                 <ul class="space-y-2 text-gray-700">
                   <li>• 주 1회 (40분/회)</li>
@@ -472,7 +472,7 @@ app.get('/curriculum', (c) => {
               </div>
               <div>
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-users text-amber-700 mr-2"></i>그룹 레슨
+                  <i class="fas fa-users text-[#B8941C] mr-2"></i>그룹 레슨
                 </h3>
                 <ul class="space-y-2 text-gray-700">
                   <li>• 주 1회 (60분/회)</li>
@@ -481,9 +481,9 @@ app.get('/curriculum', (c) => {
                 </ul>
               </div>
             </div>
-            <div class="mt-6 p-4 bg-amber-50 rounded border-l-4 border-amber-700">
+            <div class="mt-6 p-4 bg-white border border-gray-100 rounded border-l-4 border-[#D4AF37]">
               <p class="text-sm text-gray-700">
-                <i class="fas fa-info-circle text-amber-700 mr-2"></i>
+                <i class="fas fa-info-circle text-[#B8941C] mr-2"></i>
                 <strong>참고:</strong> 수강료는 악기 및 레벨에 따라 상이할 수 있습니다. 자세한 상담은 문의 페이지를 이용해주세요.
               </p>
             </div>
@@ -499,7 +499,7 @@ app.get('/curriculum', (c) => {
 app.get('/online', (c) => {
   return c.render(
     <div>
-      <section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+      <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">온라인 레슨</h1>
@@ -507,10 +507,10 @@ app.get('/online', (c) => {
           </div>
 
           {/* Hero Banner */}
-          <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-12 mb-12 text-center">
-            <i class="fas fa-video text-6xl mb-6"></i>
-            <h2 class="text-3xl font-bold mb-4">집에서도, 출장지에서도, 언제 어디서나!</h2>
-            <p class="text-xl">Zoom을 통한 실시간 1:1 온라인 레슨</p>
+          <div class="bg-white border border-gray-100 rounded-2xl p-12 mb-12 text-center shadow-sm">
+            <i class="fas fa-video text-6xl text-[#D4AF37] mb-6"></i>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">집에서도, 출장지에서도, 언제 어디서나!</h2>
+            <p class="text-xl text-gray-600">Zoom을 통한 실시간 1:1 온라인 레슨</p>
           </div>
 
           {/* 진행 방식 */}
@@ -518,22 +518,22 @@ app.get('/online', (c) => {
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">레슨 진행 방식</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="text-center">
-                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-3xl font-bold text-blue-700">1</span>
+                <div class="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl font-bold text-[#B8941C]">1</span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">수강 신청</h3>
                 <p class="text-gray-600">원하시는 악기와 시간을 선택하여 온라인 레슨을 신청해주세요</p>
               </div>
               <div class="text-center">
-                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-3xl font-bold text-blue-700">2</span>
+                <div class="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl font-bold text-[#B8941C]">2</span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Zoom 링크 전송</h3>
                 <p class="text-gray-600">수업 전 이메일 또는 카카오톡으로 Zoom 링크를 보내드립니다</p>
               </div>
               <div class="text-center">
-                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-3xl font-bold text-blue-700">3</span>
+                <div class="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span class="text-3xl font-bold text-[#B8941C]">3</span>
                 </div>
                 <h3 class="text-xl font-bold mb-3">실시간 레슨</h3>
                 <p class="text-gray-600">전문 강사와 1:1 실시간 화상 레슨을 받으세요</p>
@@ -545,20 +545,20 @@ app.get('/online', (c) => {
           <div class="mb-12">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">온라인 레슨 가능 악기</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
-                <i class="fas fa-music text-blue-600 text-4xl mb-3"></i>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md text-center hover:shadow-sm hover:shadow-md transition">
+                <i class="fas fa-music text-[#D4AF37] text-4xl mb-3"></i>
                 <h3 class="font-bold text-lg">피아노</h3>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
-                <i class="fas fa-music text-blue-600 text-4xl mb-3"></i>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md text-center hover:shadow-sm hover:shadow-md transition">
+                <i class="fas fa-music text-[#D4AF37] text-4xl mb-3"></i>
                 <h3 class="font-bold text-lg">바이올린</h3>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
-                <i class="fas fa-music text-blue-600 text-4xl mb-3"></i>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md text-center hover:shadow-sm hover:shadow-md transition">
+                <i class="fas fa-music text-[#D4AF37] text-4xl mb-3"></i>
                 <h3 class="font-bold text-lg">플루트</h3>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition">
-                <i class="fas fa-music text-blue-600 text-4xl mb-3"></i>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md text-center hover:shadow-sm hover:shadow-md transition">
+                <i class="fas fa-music text-[#D4AF37] text-4xl mb-3"></i>
                 <h3 class="font-bold text-lg">보컬</h3>
               </div>
             </div>
@@ -568,27 +568,27 @@ app.get('/online', (c) => {
           <div class="mb-12">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">온라인 레슨의 장점</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-600">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-clock text-blue-600 mr-3"></i>시간 절약
+                  <i class="fas fa-clock text-[#D4AF37] mr-3"></i>시간 절약
                 </h3>
                 <p class="text-gray-600">이동 시간 없이 집에서 편안하게 수업을 받을 수 있습니다</p>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-600">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>장소 제약 없음
+                  <i class="fas fa-map-marker-alt text-[#D4AF37] mr-3"></i>장소 제약 없음
                 </h3>
                 <p class="text-gray-600">어디에 계시든 인터넷만 있으면 수업이 가능합니다</p>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-600">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-calendar-alt text-blue-600 mr-3"></i>유연한 스케줄
+                  <i class="fas fa-calendar-alt text-[#D4AF37] mr-3"></i>유연한 스케줄
                 </h3>
                 <p class="text-gray-600">바쁜 일정에 맞춰 시간을 조정할 수 있습니다</p>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-600">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow border-l-4 border-[#D4AF37]">
                 <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-video text-blue-600 mr-3"></i>녹화 가능
+                  <i class="fas fa-video text-[#D4AF37] mr-3"></i>녹화 가능
                 </h3>
                 <p class="text-gray-600">수업 내용을 녹화하여 복습할 수 있습니다 (선택사항)</p>
               </div>
@@ -600,21 +600,21 @@ app.get('/online', (c) => {
             <h2 class="text-2xl font-bold text-gray-800 mb-6">필요한 장비</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div class="flex items-start">
-                <i class="fas fa-laptop text-blue-600 text-2xl mr-4 mt-1"></i>
+                <i class="fas fa-laptop text-[#D4AF37] text-2xl mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-bold mb-2">컴퓨터/태블릿</h3>
                   <p class="text-sm text-gray-600">PC, 노트북, 태블릿 등</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-wifi text-blue-600 text-2xl mr-4 mt-1"></i>
+                <i class="fas fa-wifi text-[#D4AF37] text-2xl mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-bold mb-2">안정적인 인터넷</h3>
                   <p class="text-sm text-gray-600">화상 통화 가능한 인터넷 환경</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-headphones text-blue-600 text-2xl mr-4 mt-1"></i>
+                <i class="fas fa-headphones text-[#D4AF37] text-2xl mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-bold mb-2">웹캠/마이크</h3>
                   <p class="text-sm text-gray-600">내장 또는 외장 카메라/마이크</p>
@@ -624,11 +624,11 @@ app.get('/online', (c) => {
           </div>
 
           {/* 수강료 */}
-          <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200">
+          <div class="bg-white border border-gray-100 p-8 rounded-lg border-2 border-gray-200">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">온라인 레슨 수강료</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-bold mb-4 text-blue-700">개인 레슨 (1:1)</h3>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-4 text-[#B8941C]">개인 레슨 (1:1)</h3>
                 <p class="text-3xl font-bold text-gray-800 mb-2">월 18만원</p>
                 <p class="text-sm text-gray-600 mb-4">주 1회 (40분/회)</p>
                 <ul class="text-sm text-gray-700 space-y-2">
@@ -637,8 +637,8 @@ app.get('/online', (c) => {
                   <li>✓ 연습 피드백</li>
                 </ul>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-bold mb-4 text-blue-700">체험 레슨</h3>
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-4 text-[#B8941C]">체험 레슨</h3>
                 <p class="text-3xl font-bold text-gray-800 mb-2">무료</p>
                 <p class="text-sm text-gray-600 mb-4">1회 (30분)</p>
                 <ul class="text-sm text-gray-700 space-y-2">
@@ -664,15 +664,15 @@ app.get('/online', (c) => {
           <div class="mt-16">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">자주 묻는 질문</h2>
             <div class="space-y-4 max-w-3xl mx-auto">
-              <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow">
                 <h3 class="font-bold text-lg mb-2">Q. Zoom을 처음 사용하는데 괜찮을까요?</h3>
                 <p class="text-gray-600">A. 걱정 마세요! 처음 수업 전에 Zoom 사용법을 자세히 안내해드리며, 테스트 접속도 가능합니다.</p>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow">
                 <h3 class="font-bold text-lg mb-2">Q. 녹화가 가능한가요?</h3>
                 <p class="text-gray-600">A. 네, 학생의 복습을 위해 수업 녹화가 가능합니다. (강사와 사전 협의 필요)</p>
               </div>
-              <div class="bg-white p-6 rounded-lg shadow">
+              <div class="bg-white p-6 border border-gray-100 rounded-lg shadow">
                 <h3 class="font-bold text-lg mb-2">Q. 악기가 없어도 수업이 가능한가요?</h3>
                 <p class="text-gray-600">A. 실습이 필요한 악기 레슨은 악기가 필수입니다. 악기 구매 전 상담을 통해 적합한 악기를 추천해드립니다.</p>
               </div>
@@ -728,7 +728,7 @@ app.get('/location', (c) => {
               <div class="space-y-6">
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <i class="fas fa-map-marker-alt text-amber-700 mr-3"></i>주소
+                    <i class="fas fa-map-marker-alt text-[#B8941C] mr-3"></i>주소
                   </h3>
                   <p class="text-gray-700 ml-9">서울특별시 강남구 테헤란로 123</p>
                   <p class="text-gray-700 ml-9">Little Brass 빌딩 3층</p>
@@ -736,7 +736,7 @@ app.get('/location', (c) => {
 
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <i class="fas fa-subway text-amber-700 mr-3"></i>지하철
+                    <i class="fas fa-subway text-[#B8941C] mr-3"></i>지하철
                   </h3>
                   <ul class="text-gray-700 ml-9 space-y-2">
                     <li>• 2호선 강남역 3번 출구 (도보 5분)</li>
@@ -746,7 +746,7 @@ app.get('/location', (c) => {
 
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <i class="fas fa-bus text-amber-700 mr-3"></i>버스
+                    <i class="fas fa-bus text-[#B8941C] mr-3"></i>버스
                   </h3>
                   <ul class="text-gray-700 ml-9 space-y-2">
                     <li>• 간선버스: 146, 740, 341</li>
@@ -757,7 +757,7 @@ app.get('/location', (c) => {
 
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <i class="fas fa-car text-amber-700 mr-3"></i>주차 안내
+                    <i class="fas fa-car text-[#B8941C] mr-3"></i>주차 안내
                   </h3>
                   <p class="text-gray-700 ml-9">건물 내 지하 주차장 이용 가능</p>
                   <p class="text-gray-700 ml-9">2시간 무료 주차</p>
@@ -765,7 +765,7 @@ app.get('/location', (c) => {
 
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                    <i class="fas fa-phone text-amber-700 mr-3"></i>연락처
+                    <i class="fas fa-phone text-[#B8941C] mr-3"></i>연락처
                   </h3>
                   <p class="text-gray-700 ml-9">전화: 02-1234-5678</p>
                   <p class="text-gray-700 ml-9">이메일: info@littlebrass.com</p>
@@ -785,16 +785,16 @@ app.get('/gallery', (c) => {
   return c.render(
     <div>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20">
+      <section class="relative bg-white py-20 border-b border-gray-100">
         <div class="absolute inset-0 opacity-10">
-          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+          
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span class="inline-block px-4 py-2 bg-gold-500/20 text-gold-400 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
+          <span class="inline-block px-4 py-2 bg-gray-50 text-yellow-700 border border-yellow-200 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
             Gallery
           </span>
-          <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">갤러리</h1>
-          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          <h1 class="text-5xl md:text-6xl text-gray-800 font-display font-bold mb-6">갤러리</h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Little Brass의 생동감 넘치는 순간들<br/>
             수업, 발표회, 학원 시설을 한눈에
           </p>
@@ -848,7 +848,7 @@ app.get('/gallery', (c) => {
               <div class="p-6">
                 <h3 class="font-bold text-lg text-navy-900 mb-2">2024 겨울 발표회 하이라이트</h3>
                 <p class="text-gray-600 text-sm">학생들의 1년 간의 연습 성과를 담은 멋진 연주</p>
-                <div class="flex items-center mt-4 text-sm text-gray-500">
+                <div class="flex items-center mt-4 text-sm text-gray-600">
                   <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
                   <span>2024.12.20</span>
                 </div>
@@ -870,7 +870,7 @@ app.get('/gallery', (c) => {
               <div class="p-6">
                 <h3 class="font-bold text-lg text-navy-900 mb-2">특별 마스터클래스</h3>
                 <p class="text-gray-600 text-sm">유명 연주자 초청 특별 레슨</p>
-                <div class="flex items-center mt-4 text-sm text-gray-500">
+                <div class="flex items-center mt-4 text-sm text-gray-600">
                   <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
                   <span>2024.10.15</span>
                 </div>
@@ -892,7 +892,7 @@ app.get('/gallery', (c) => {
               <div class="p-6">
                 <h3 class="font-bold text-lg text-navy-900 mb-2">Little Brass 소개</h3>
                 <p class="text-gray-600 text-sm">최고의 시설과 전문 강사진을 만나보세요</p>
-                <div class="flex items-center mt-4 text-sm text-gray-500">
+                <div class="flex items-center mt-4 text-sm text-gray-600">
                   <i class="fas fa-calendar-alt mr-2 text-gold-500"></i>
                   <span>2024.09.01</span>
                 </div>
@@ -944,7 +944,7 @@ app.get('/gallery', (c) => {
                 </div>
               </div>
               <div class="p-4">
-                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">수업</span>
+                <span class="inline-block px-3 py-1 bg-gray-50 text-blue-800 rounded-full text-xs font-semibold">수업</span>
                 <h3 class="font-semibold text-navy-900 mt-2">개인 맞춤 레슨</h3>
               </div>
             </div>
@@ -1001,7 +1001,7 @@ app.get('/gallery', (c) => {
                 </div>
               </div>
               <div class="p-4">
-                <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">수업</span>
+                <span class="inline-block px-3 py-1 bg-gray-50 text-amber-800 rounded-full text-xs font-semibold">수업</span>
                 <h3 class="font-semibold text-navy-900 mt-2">앙상블 수업</h3>
               </div>
             </div>
@@ -1108,16 +1108,16 @@ app.get('/faq', (c) => {
   return c.render(
     <div>
       {/* Hero Section */}
-      <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-20">
+      <section class="relative bg-white py-20 border-b border-gray-100">
         <div class="absolute inset-0 opacity-10">
-          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+          
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span class="inline-block px-4 py-2 bg-gold-500/20 text-gold-400 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
+          <span class="inline-block px-4 py-2 bg-gray-50 text-yellow-700 border border-yellow-200 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
             FAQ
           </span>
           <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">자주 묻는 질문</h1>
-          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Little Brass에 대해 궁금하신 점을 확인해보세요
           </p>
         </div>
@@ -1191,7 +1191,7 @@ app.get('/faq', (c) => {
                     <li><strong>정규 수강 시:</strong> 원데이 클래스 비용 20,000원 차감</li>
                   </ul>
                   <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" 
-                     class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-lg">
+                     class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-sm hover:shadow-md">
                     <i class="fas fa-ticket-alt"></i>
                     네이버 플레이스에서 예약하기
                   </a>
@@ -1237,8 +1237,8 @@ app.get('/faq', (c) => {
           {/* 수업 관련 */}
           <div class="mb-12" data-faq-category="lesson">
             <h2 class="text-2xl font-display font-bold text-navy-900 mb-6 flex items-center">
-              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                <i class="fas fa-chalkboard-teacher text-blue-600"></i>
+              <div class="w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-chalkboard-teacher text-[#D4AF37]"></i>
               </div>
               수업 관련
             </h2>
@@ -1457,7 +1457,7 @@ app.get('/faq', (c) => {
             네이버 플레이스에서 체험 레슨을 바로 예약하실 수 있습니다
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition shadow-lg">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition shadow-sm hover:shadow-md">
               <i class="fab fa-neos mr-3"></i>
               네이버 예약하기
             </a>
@@ -1477,19 +1477,19 @@ app.get('/faq', (c) => {
             찾으시는 답변이 없다면 언제든 연락주세요
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="bg-white p-6 border border-gray-100 rounded-xl shadow-md">
               <i class="fas fa-phone text-3xl text-gold-500 mb-3"></i>
               <h3 class="font-bold text-lg mb-2">전화 문의</h3>
               <p class="text-gray-600 text-sm mb-3">평일 10:00 - 22:00</p>
               <a href="tel:02-1234-5678" class="text-gold-600 font-semibold hover:text-gold-700">02-1234-5678</a>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="bg-white p-6 border border-gray-100 rounded-xl shadow-md">
               <i class="fas fa-envelope text-3xl text-gold-500 mb-3"></i>
               <h3 class="font-bold text-lg mb-2">이메일 문의</h3>
               <p class="text-gray-600 text-sm mb-3">24시간 접수</p>
               <a href="mailto:info@littlebrass.com" class="text-gold-600 font-semibold hover:text-gold-700">info@littlebrass.com</a>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="bg-white p-6 border border-gray-100 rounded-xl shadow-md">
               <i class="fas fa-comments text-3xl text-gold-500 mb-3"></i>
               <h3 class="font-bold text-lg mb-2">카카오톡 상담</h3>
               <p class="text-gray-600 text-sm mb-3">실시간 답변</p>
@@ -1523,19 +1523,19 @@ app.get('/achievements', (c) => {
           
           {/* 통계 카드 */}
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div class="bg-white/10 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 border border-white/20">
               <div class="text-4xl font-bold text-gold-400 mb-2">150+</div>
               <div class="text-sm text-gray-300">콩쿠르 입상</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div class="bg-white/10 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 border border-white/20">
               <div class="text-4xl font-bold text-gold-400 mb-2">45+</div>
               <div class="text-sm text-gray-300">예고/음대 합격</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div class="bg-white/10 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 border border-white/20">
               <div class="text-4xl font-bold text-gold-400 mb-2">98%</div>
               <div class="text-sm text-gray-300">학생 만족도</div>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <div class="bg-white/10 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 border border-white/20">
               <div class="text-4xl font-bold text-gold-400 mb-2">500+</div>
               <div class="text-sm text-gray-300">졸업생</div>
             </div>
@@ -1558,55 +1558,55 @@ app.get('/achievements', (c) => {
             {/* 2025년 */}
             <div class="relative">
               <div class="flex items-center mb-6">
-                <div class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg">
+                <div class="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-2 rounded-full font-bold text-lg shadow-sm hover:shadow-md">
                   2025년
                 </div>
                 <div class="flex-1 h-1 bg-gradient-to-r from-gold-400 to-transparent ml-4"></div>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-0 md:ml-8">
                 {/* 성과 카드 1 */}
-                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <div class="flex items-start justify-between mb-4">
-                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm hover:shadow-md">
                       1
                     </div>
                     <span class="text-xs bg-gold-100 text-gold-800 px-3 py-1 rounded-full font-semibold">대상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">서울 청소년 음악 콩쿠르</h3>
                   <p class="text-gray-600 text-sm mb-3">트럼펫 부문</p>
-                  <div class="flex items-center text-sm text-gray-500">
+                  <div class="flex items-center text-sm text-gray-600">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>김○○ 학생</span>
                   </div>
                 </div>
 
                 {/* 성과 카드 2 */}
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <div class="flex items-start justify-between mb-4">
-                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm hover:shadow-md">
                       2
                     </div>
                     <span class="text-xs bg-gray-200 text-gray-800 px-3 py-1 rounded-full font-semibold">금상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">전국 관악기 경연대회</h3>
                   <p class="text-gray-600 text-sm mb-3">혼 부문</p>
-                  <div class="flex items-center text-sm text-gray-500">
+                  <div class="flex items-center text-sm text-gray-600">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>이○○ 학생</span>
                   </div>
                 </div>
 
                 {/* 성과 카드 3 */}
-                <div class="bg-gradient-to-br from-bronze-50 to-white rounded-2xl p-6 border border-bronze-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-bronze-50 to-white rounded-2xl p-6 border border-bronze-200 hover:shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <div class="flex items-start justify-between mb-4">
-                    <div class="bg-gradient-to-r from-bronze to-bronze-light text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-bronze to-bronze-light text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm hover:shadow-md">
                       3
                     </div>
                     <span class="text-xs bg-bronze-100 text-bronze-800 px-3 py-1 rounded-full font-semibold">은상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">강남구 청소년 예술제</h3>
                   <p class="text-gray-600 text-sm mb-3">트롬본 부문</p>
-                  <div class="flex items-center text-sm text-gray-500">
+                  <div class="flex items-center text-sm text-gray-600">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>박○○ 학생</span>
                   </div>
@@ -1617,38 +1617,38 @@ app.get('/achievements', (c) => {
             {/* 2024년 */}
             <div class="relative">
               <div class="flex items-center mb-6">
-                <div class="bg-gradient-to-r from-navy-600 to-navy-700 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg">
+                <div class="bg-gradient-to-r from-navy-600 to-navy-700 text-white px-6 py-2 rounded-full font-bold text-lg shadow-sm hover:shadow-md">
                   2024년
                 </div>
                 <div class="flex-1 h-1 bg-gradient-to-r from-navy-400 to-transparent ml-4"></div>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-0 md:ml-8">
                 {/* 2024 성과 카드들 */}
-                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-200 hover:shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <div class="flex items-start justify-between mb-4">
-                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-gold-400 to-gold-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm hover:shadow-md">
                       1
                     </div>
                     <span class="text-xs bg-gold-100 text-gold-800 px-3 py-1 rounded-full font-semibold">대상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">한국 청소년 음악제</h3>
                   <p class="text-gray-600 text-sm mb-3">튜바 부문</p>
-                  <div class="flex items-center text-sm text-gray-500">
+                  <div class="flex items-center text-sm text-gray-600">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>최○○ 학생</span>
                   </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                   <div class="flex items-start justify-between mb-4">
-                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div class="bg-gradient-to-r from-gray-400 to-gray-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-sm hover:shadow-md">
                       2
                     </div>
                     <span class="text-xs bg-gray-200 text-gray-800 px-3 py-1 rounded-full font-semibold">금상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">서울시 학생 관악 경연</h3>
                   <p class="text-gray-600 text-sm mb-3">트럼펫 부문</p>
-                  <div class="flex items-center text-sm text-gray-500">
+                  <div class="flex items-center text-sm text-gray-600">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>정○○ 학생</span>
                   </div>
@@ -1672,11 +1672,11 @@ app.get('/achievements', (c) => {
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 합격 카드 1 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-gold-400 to-gold-600 p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-school text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2025</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2025</span>
                 </div>
                 <h3 class="text-2xl font-bold">선화예고</h3>
                 <p class="text-gold-100 text-sm">관악과 트럼펫 전공</p>
@@ -1698,11 +1698,11 @@ app.get('/achievements', (c) => {
             </div>
 
             {/* 합격 카드 2 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-navy-600 to-navy-800 p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-university text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2025</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2025</span>
                 </div>
                 <h3 class="text-2xl font-bold">서울대학교</h3>
                 <p class="text-navy-100 text-sm">음악대학 관악과</p>
@@ -1724,11 +1724,11 @@ app.get('/achievements', (c) => {
             </div>
 
             {/* 합격 카드 3 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-bronze to-bronze-light p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-school text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2024</span>
                 </div>
                 <h3 class="text-2xl font-bold">예원학교</h3>
                 <p class="text-bronze-100 text-sm">관악과 혼 전공</p>
@@ -1750,11 +1750,11 @@ app.get('/achievements', (c) => {
             </div>
 
             {/* 합격 카드 4 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-university text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2024</span>
                 </div>
                 <h3 class="text-2xl font-bold">한국예술종합학교</h3>
                 <p class="text-indigo-100 text-sm">음악원 관현악과</p>
@@ -1776,11 +1776,11 @@ app.get('/achievements', (c) => {
             </div>
 
             {/* 합격 카드 5 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-rose-500 to-pink-600 p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-university text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2024</span>
                 </div>
                 <h3 class="text-2xl font-bold">연세대학교</h3>
                 <p class="text-rose-100 text-sm">음악대학 관악과</p>
@@ -1802,11 +1802,11 @@ app.get('/achievements', (c) => {
             </div>
 
             {/* 합격 카드 6 */}
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 border border-gray-100">
               <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white">
                 <div class="flex items-center justify-between mb-4">
                   <i class="fas fa-school text-4xl opacity-80"></i>
-                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold">2024</span>
+                  <span class="bg-white/20 backdrop-blur-sm px-3 py-1 border border-gray-100 rounded-full text-sm font-semibold">2024</span>
                 </div>
                 <h3 class="text-2xl font-bold">서울예고</h3>
                 <p class="text-emerald-100 text-sm">관악과 트롬본 전공</p>
@@ -1843,9 +1843,9 @@ app.get('/achievements', (c) => {
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 후기 1 */}
-            <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-8 border border-gold-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-8 border border-gold-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1863,16 +1863,16 @@ app.get('/achievements', (c) => {
                 "선생님의 세심한 지도 덕분에 트럼펫 실력이 크게 향상되었습니다. 
                 콩쿠르 대상을 받을 수 있어서 정말 기뻤어요!"
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-trophy text-gold-500 mr-2"></i>
                 서울 청소년 음악 콩쿠르 대상
               </div>
             </div>
 
             {/* 후기 2 */}
-            <div class="bg-gradient-to-br from-navy-50 to-white rounded-2xl p-8 border border-navy-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-navy-50 to-white rounded-2xl p-8 border border-navy-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-navy-600 to-navy-800 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1890,16 +1890,16 @@ app.get('/achievements', (c) => {
                 "체계적인 커리큘럼과 전문적인 강사진 덕분에 아이가 서울대 음대에 합격할 수 있었습니다. 
                 진심으로 감사드립니다."
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-graduation-cap text-navy-600 mr-2"></i>
                 서울대학교 음악대학 합격
               </div>
             </div>
 
             {/* 후기 3 */}
-            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1917,16 +1917,16 @@ app.get('/achievements', (c) => {
                 "온라인 레슨도 오프라인만큼 효과적이에요. 
                 집에서 편하게 배울 수 있어서 좋고, 실력도 많이 늘었습니다!"
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-video text-purple-600 mr-2"></i>
                 온라인 레슨 수강생
               </div>
             </div>
 
             {/* 후기 4 */}
-            <div class="bg-gradient-to-br from-rose-50 to-white rounded-2xl p-8 border border-rose-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-rose-50 to-white rounded-2xl p-8 border border-rose-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-rose-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-rose-700 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1944,16 +1944,16 @@ app.get('/achievements', (c) => {
                 "아이가 음악을 진정으로 사랑하게 되었습니다. 
                 선생님들의 열정과 사랑이 느껴지는 학원이에요."
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-heart text-rose-600 mr-2"></i>
                 3년 수강 학부모
               </div>
             </div>
 
             {/* 후기 5 */}
-            <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 border border-emerald-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 border border-emerald-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1971,16 +1971,16 @@ app.get('/achievements', (c) => {
                 "처음에는 악기가 낯설었는데, 지금은 제일 좋아하는 취미가 되었어요. 
                 선생님 감사합니다!"
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-music text-emerald-600 mr-2"></i>
                 2년 수강생
               </div>
             </div>
 
             {/* 후기 6 */}
-            <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200 hover:shadow-sm hover:shadow-md transition-all duration-300">
               <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center mr-4 shadow-sm hover:shadow-md">
                   <i class="fas fa-user text-white text-xl"></i>
                 </div>
                 <div>
@@ -1998,7 +1998,7 @@ app.get('/achievements', (c) => {
                 "시설도 깨끗하고 선생님들도 친절하세요. 
                 아이가 매 수업을 즐겁게 기다립니다."
               </p>
-              <div class="text-sm text-gray-500">
+              <div class="text-sm text-gray-600">
                 <i class="fas fa-smile text-amber-600 mr-2"></i>
                 4년 수강 학부모
               </div>
@@ -2019,12 +2019,12 @@ app.get('/achievements', (c) => {
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold hover:from-green-400 hover:to-green-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold hover:from-green-400 hover:to-green-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-calendar-check text-xl"></i>
               <span>네이버 예약하기</span>
             </a>
             <a href="/contact"
-               class="inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-envelope text-xl"></i>
               <span>무료 상담 신청</span>
             </a>
@@ -2143,14 +2143,14 @@ app.get('/notice', (c) => {
             {notices.map((notice) => {
               const typeConfig = {
                 important: { icon: 'fa-exclamation-circle', color: 'red', label: '중요', bg: 'bg-red-50', border: 'border-red-200' },
-                event: { icon: 'fa-calendar-star', color: 'blue', label: '행사', bg: 'bg-blue-50', border: 'border-blue-200' },
+                event: { icon: 'fa-calendar-star', color: 'blue', label: '행사', bg: 'bg-white border border-gray-100', border: 'border-gray-200' },
                 notice: { icon: 'fa-bell', color: 'gray', label: '공지', bg: 'bg-gray-50', border: 'border-gray-200' }
               }
               const config = typeConfig[notice.type]
 
               return (
                 <div 
-                  class={`notice-item bg-white border-2 ${config.border} rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer group`}
+                  class={`notice-item bg-white border-2 ${config.border} rounded-xl p-6 hover:shadow-sm hover:shadow-md transition-all cursor-pointer group`}
                   data-category={notice.type}
                   data-keywords={`${notice.title} ${notice.content}`}
                 >
@@ -2177,7 +2177,7 @@ app.get('/notice', (c) => {
                         {notice.content}
                       </p>
 
-                      <div class="flex items-center gap-4 text-sm text-gray-500">
+                      <div class="flex items-center gap-4 text-sm text-gray-600">
                         <span class="flex items-center gap-1">
                           <i class="far fa-calendar"></i>
                           {notice.date}
@@ -2202,7 +2202,7 @@ app.get('/notice', (c) => {
           {/* 빈 검색 결과 */}
           <div id="no-results" class="hidden text-center py-12">
             <i class="fas fa-search text-gray-300 text-6xl mb-4"></i>
-            <p class="text-gray-500 text-lg">검색 결과가 없습니다.</p>
+            <p class="text-gray-600 text-lg">검색 결과가 없습니다.</p>
           </div>
         </div>
       </section>
@@ -2213,11 +2213,11 @@ app.get('/notice', (c) => {
           <h2 class="text-3xl font-bold mb-4">더 궁금한 사항이 있으신가요?</h2>
           <p class="text-xl mb-8 text-white/90">언제든지 문의해주세요. 친절하게 안내해드리겠습니다.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="bg-white text-gold-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-block">
+            <a href="/contact" class="bg-white text-gold-600 px-8 py-3 border border-gray-100 rounded-full font-bold hover:bg-gray-100 transition shadow-sm hover:shadow-md inline-block">
               <i class="fas fa-envelope mr-2"></i>
               문의하기
             </a>
-            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition shadow-lg inline-block">
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition shadow-sm hover:shadow-md inline-block">
               <i class="fas fa-calendar-check mr-2"></i>
               네이버 예약
             </a>
@@ -2349,11 +2349,11 @@ app.get('/events', (c) => {
 
           <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {currentEvents.map((event) => (
-              <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+              <div class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-2 group">
                 {/* 헤더 */}
                 <div class={`bg-gradient-to-r ${event.color} p-6 text-white relative`}>
                   {event.dday && (
-                    <div class="absolute top-4 right-4 bg-white text-red-600 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div class="absolute top-4 right-4 bg-white text-red-600 px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:shadow-md">
                       D-{event.dday}
                     </div>
                   )}
@@ -2377,7 +2377,7 @@ app.get('/events', (c) => {
                   </div>
 
                   {/* 기간 */}
-                  <div class="flex items-center gap-2 text-gray-500 mb-4 pb-4 border-b">
+                  <div class="flex items-center gap-2 text-gray-400 mb-4 pb-4 border-b">
                     <i class="far fa-calendar"></i>
                     <span class="text-sm">{event.period}</span>
                   </div>
@@ -2401,7 +2401,7 @@ app.get('/events', (c) => {
                   {/* 조건 */}
                   <div class="mb-4">
                     <h4 class="font-bold text-navy-900 mb-2 flex items-center gap-2">
-                      <i class="fas fa-info-circle text-blue-600"></i>
+                      <i class="fas fa-info-circle text-[#D4AF37]"></i>
                       조건
                     </h4>
                     <ul class="space-y-2">
@@ -2415,7 +2415,7 @@ app.get('/events', (c) => {
                   </div>
 
                   {/* 버튼 */}
-                  <a href="/contact" class="block w-full bg-gradient-to-r from-navy-600 to-navy-800 text-white text-center py-3 rounded-lg font-bold hover:from-navy-500 hover:to-navy-700 transition group-hover:shadow-lg">
+                  <a href="/contact" class="block w-full bg-gradient-to-r from-navy-600 to-navy-800 text-white text-center py-3 rounded-lg font-bold hover:from-navy-500 hover:to-navy-700 transition group-hover:shadow-sm hover:shadow-md">
                     <i class="fas fa-paper-plane mr-2"></i>
                     지금 신청하기
                   </a>
@@ -2431,16 +2431,16 @@ app.get('/events', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-8">
             <h3 class="text-2xl font-bold text-gray-700 mb-2">종료된 이벤트</h3>
-            <p class="text-gray-500">다음 이벤트를 기대해주세요!</p>
+            <p class="text-gray-600">다음 이벤트를 기대해주세요!</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {endedEvents.map((event) => (
-              <div class="bg-white rounded-lg p-4 opacity-60">
+              <div class="bg-white border border-gray-100 rounded-lg p-4 opacity-60">
                 <div class="flex items-center justify-between">
                   <div>
                     <h4 class="font-bold text-gray-700 mb-1">{event.title}</h4>
-                    <p class="text-sm text-gray-500">{event.period}</p>
+                    <p class="text-sm text-gray-600">{event.period}</p>
                   </div>
                   <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">
                     {event.status}
@@ -2459,11 +2459,11 @@ app.get('/events', (c) => {
           <h2 class="text-4xl font-bold mb-4">이벤트 알림 받기</h2>
           <p class="text-xl mb-8 text-white/90">네이버 예약 또는 카카오톡 채널을 추가하시면<br/>새로운 이벤트 소식을 가장 먼저 받아보실 수 있습니다!</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition shadow-lg inline-flex items-center justify-center gap-2">
+            <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2">
               <i class="fas fa-calendar-check text-xl"></i>
               네이버 예약
             </a>
-            <a href="/contact" class="bg-white text-gold-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-flex items-center justify-center gap-2">
+            <a href="/contact" class="bg-white text-gold-600 px-8 py-4 border border-gray-100 rounded-full font-bold hover:bg-gray-100 transition shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2">
               <i class="fas fa-envelope text-xl"></i>
               문의하기
             </a>
@@ -2523,25 +2523,25 @@ app.get('/contact', (c) => {
 
             {/* 연락처 정보 */}
             <div>
-              <div class="bg-amber-50 p-8 rounded-lg mb-6">
+              <div class="bg-white border border-gray-100 p-8 rounded-lg mb-6">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6">연락처 정보</h3>
                 <div class="space-y-4">
                   <div class="flex items-start">
-                    <i class="fas fa-phone text-amber-700 text-xl mr-4 mt-1"></i>
+                    <i class="fas fa-phone text-[#B8941C] text-xl mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-gray-800">전화</p>
                       <p class="text-gray-700">02-1234-5678</p>
                     </div>
                   </div>
                   <div class="flex items-start">
-                    <i class="fas fa-envelope text-amber-700 text-xl mr-4 mt-1"></i>
+                    <i class="fas fa-envelope text-[#B8941C] text-xl mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-gray-800">이메일</p>
                       <p class="text-gray-700">info@littlebrass.com</p>
                     </div>
                   </div>
                   <div class="flex items-start">
-                    <i class="fas fa-clock text-amber-700 text-xl mr-4 mt-1"></i>
+                    <i class="fas fa-clock text-[#B8941C] text-xl mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-gray-800">운영 시간</p>
                       <p class="text-gray-700">평일: 10:00 - 22:00</p>
@@ -2550,7 +2550,7 @@ app.get('/contact', (c) => {
                     </div>
                   </div>
                   <div class="flex items-start">
-                    <i class="fas fa-map-marker-alt text-amber-700 text-xl mr-4 mt-1"></i>
+                    <i class="fas fa-map-marker-alt text-[#B8941C] text-xl mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-gray-800">주소</p>
                       <p class="text-gray-700">서울특별시 강남구 테헤란로 123</p>
@@ -2560,10 +2560,10 @@ app.get('/contact', (c) => {
                 </div>
               </div>
 
-              <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200">
+              <div class="bg-white border border-gray-100 p-8 rounded-lg border-2 border-gray-200">
                 <h3 class="text-xl font-bold text-gray-800 mb-4">빠른 상담</h3>
                 <p class="text-gray-700 mb-4">카카오톡으로 더 빠른 상담을 받아보세요!</p>
-                <a href="#" class="block bg-yellow-400 text-gray-800 py-3 px-6 rounded-lg font-bold text-center hover:bg-yellow-500 transition">
+                <a href="#" class="block bg-yellow-400 text-gray-800 py-3 px-6 rounded-lg font-bold text-center hover:bg-gray-500 transition">
                   <i class="fab fa-kickstarter-k mr-2"></i>카카오톡 상담하기
                 </a>
               </div>
@@ -2661,12 +2661,12 @@ app.notFound((c) => {
           {/* 버튼 그룹 */}
           <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <a href="/" 
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-8 py-4 rounded-full font-bold hover:from-gold-400 hover:to-gold-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-8 py-4 rounded-full font-bold hover:from-gold-400 hover:to-gold-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-home text-xl"></i>
               <span>홈으로 돌아가기</span>
             </a>
             <a href="/contact" 
-               class="inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+               class="inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-envelope text-xl"></i>
               <span>문의하기</span>
             </a>
@@ -2676,19 +2676,19 @@ app.notFound((c) => {
           <div class="border-t border-white/20 pt-12">
             <p class="text-gray-400 mb-6">또는 인기 페이지를 방문해보세요</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/curriculum" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/curriculum" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-gray-100 rounded-xl p-4 transition-all hover:-translate-y-1">
                 <i class="fas fa-book text-gold-400 text-2xl mb-2"></i>
                 <p class="text-sm font-semibold">커리큘럼</p>
               </a>
-              <a href="/achievements" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/achievements" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-gray-100 rounded-xl p-4 transition-all hover:-translate-y-1">
                 <i class="fas fa-trophy text-gold-400 text-2xl mb-2"></i>
                 <p class="text-sm font-semibold">학생성과</p>
               </a>
-              <a href="/gallery" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/gallery" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-gray-100 rounded-xl p-4 transition-all hover:-translate-y-1">
                 <i class="fas fa-images text-gold-400 text-2xl mb-2"></i>
                 <p class="text-sm font-semibold">갤러리</p>
               </a>
-              <a href="/faq" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/faq" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-gray-100 rounded-xl p-4 transition-all hover:-translate-y-1">
                 <i class="fas fa-question-circle text-gold-400 text-2xl mb-2"></i>
                 <p class="text-sm font-semibold">FAQ</p>
               </a>

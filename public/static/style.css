@@ -19,7 +19,7 @@
   --gray-light: #F8F9FA;
   --gray-medium: #E9ECEF;
   --gray-dark: #6C757D;
-  --black: #212529;
+  --black: #333333;
   
   /* Bronze Accent */
   --bronze: #CD7F32;
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 네비게이션 스타일 */
 nav {
   background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -169,7 +169,7 @@ nav a:hover {
 
 .premium-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
   border-color: var(--gold-primary);
 }
 
@@ -429,7 +429,7 @@ details[open] {
 }
 
 .shadow-premium {
-  box-shadow: 0 10px 40px rgba(30, 58, 95, 0.1), 0 2px 8px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03), 0 2px 8px rgba(212, 175, 55, 0.1);
 }
 
 /* 호버 시 골드 글로우 */
@@ -469,7 +469,7 @@ details[open] {
 
 /* 푸터 스타일 */
 footer {
-  background: #f3f4f6;
+  background: #ffffff;
 }
 
 footer a:hover {
@@ -530,7 +530,7 @@ footer a:hover {
 .info-card:hover {
   border-color: var(--gold-primary);
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(30, 58, 95, 0.1);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.03);
 }
 
 /* 프리미엄 텍스처 */
@@ -615,3 +615,7 @@ footer a:hover {
 .fade-in:nth-child(4) { transition-delay: 300ms; }
 .fade-in:nth-child(5) { transition-delay: 400ms; }
 .fade-in:nth-child(6) { transition-delay: 500ms; }
+
+
+/* Ensure minimalist sections */
+section { background-color: #ffffff; }
