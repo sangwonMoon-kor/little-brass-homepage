@@ -24,8 +24,8 @@ tailwind.config = {
           500: '#1E3A5F',
           600: '#2C5F8D',
           700: '#173050',
-          800: '#0F1E3A',
-          900: '#0A1628',
+          800: '#1E3A5F',
+          900: '#0F1E3A',
         },
         bronze: {
           400: '#E09856',
@@ -36,6 +36,8 @@ tailwind.config = {
       fontFamily: {
         display: ['Playfair Display', 'Noto Sans KR', 'serif'],
         sans: ['Noto Sans KR', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+        cursive: ['Dancing Script', 'cursive'],
       },
       boxShadow: {
         'gold': '0 4px 20px rgba(212, 175, 55, 0.2)',

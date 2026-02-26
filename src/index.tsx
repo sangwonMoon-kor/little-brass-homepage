@@ -9,37 +9,42 @@ app.use(renderer)
 app.get('/', (c) => {
   return c.render(
     <div>
-      {/* Hero Section */}
-      <section class="relative bg-[#FFFFFF] py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 pb-24">
-          <p class="section-label">Premium Brass Education</p>
-          <h1 class="section-title font-bold mb-6 text-[56px] leading-[1.2]">리틀브라스 음악학원</h1>
-          <p class="section-desc max-w-2xl mx-auto">
-            금관악기 전문 교육의 새로운 기준.<br/>
-            전문 강사진과 함께하는 최고급 음악 교육을 경험하세요.
+      {/* Fullscreen Hero Section */}
+      <section class="hero-container relative flex min-h-screen flex-col items-center justify-end overflow-hidden pb-16 sm:pb-20 lg:pb-24" style="background: linear-gradient(135deg, #1E3A5F 0%, #0F1E3A 100%);">
+        {/* Text content */}
+        <div class="max-w-[600px] px-6 text-center">
+          {/* Subtitle */}
+          <p class="hero-subtitle text-lg sm:text-xl lg:text-2xl" style="font-family: 'Dancing Script', cursive; color: #D4AF37;">
+            Premium Brass Education
           </p>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-            <a href="/curriculum" class="btn-primary-classic text-lg px-10 py-4">
-              커리큘럼 안내
+
+          {/* Main heading */}
+          <h1 class="hero-title mt-2 font-medium leading-[1.1] text-white text-4xl sm:text-5xl md:text-6xl lg:text-[70px] lg:mt-3" style="font-family: 'Playfair Display', serif;">
+            금관악기로 여는<br />새로운 음악
+          </h1>
+
+          {/* Description */}
+          <p class="hero-description mt-4 text-base lg:text-lg text-white/70">
+            전문 강사진과 함께하는 최고급 음악 교육
+          </p>
+
+          {/* CTA buttons */}
+          <div class="hero-buttons mt-6 flex items-center justify-center gap-4 flex-col sm:flex-row">
+            <a href="/curriculum" class="rounded-full bg-[#C9A227] text-white h-12 px-8 hover:bg-[#B8941C] transition-colors font-medium flex items-center justify-center">
+              커리큘럼 보기
             </a>
-            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="btn-outline-classic text-lg flex items-center gap-2 px-10 py-4">
-              <i class="fas fa-calendar-check"></i>
+            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white text-white h-12 px-8 hover:bg-white/10 transition-colors font-medium flex items-center justify-center">
               원데이 클래스 예약
             </a>
           </div>
         </div>
-        
-        {/* 영상 영역 */}
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
-          <div class="relative bg-[#FFFFFF] flex items-center justify-center rounded-xl shadow-lg border border-[#EEEEEE] overflow-hidden" style="height: 50vh;">
-            <div class="relative z-10 text-center">
-              <i class="fas fa-play-circle text-5xl text-[#C9A227] mb-4 opacity-80"></i>
-              <p class="text-[18px] text-[#C9A227] font-medium tracking-wide">Brand Video Coming Soon</p>
-            </div>
-          </div>
+
+        {/* Scroll indicator */}
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+          <i class="fas fa-chevron-down text-white/40 text-xl"></i>
         </div>
       </section>
-      
+
       {/* 대학 로고 섹션 */}
       <section class="py-20 bg-[#FFFFFF] border-b border-[#EEEEEE]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -190,7 +195,7 @@ app.get('/', (c) => {
             <h2 class="section-title">깨끗하고 쾌적한 학원 시설</h2>
             <p class="text-[#555555] text-lg">리틀브라스의 아름답고 전문적인 교육 공간을 만나보세요</p>
           </div>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition card-classic">
               <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실1" class="w-full h-64 object-cover" />
@@ -215,7 +220,7 @@ app.get('/', (c) => {
             <h2 class="section-title">리틀브라스 소식</h2>
             <p class="text-[#555555] text-lg">학원의 최신 소식과 유용한 음악 정보를 확인하세요</p>
           </div>
-          
+
           {/* 블로그 카드 - 동적 RSS 로딩 */}
           <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* 로딩 중 표시 */}
@@ -227,7 +232,7 @@ app.get('/', (c) => {
 
           <div class="text-center">
             <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-[#2C2C2C] px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition-all shadow-sm hover:shadow-md hover:scale-105">
+              class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-[#2C2C2C] px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-blog text-[20px] leading-[1.6] font-normal"></i>
               <span>블로그 전체 보기</span>
               <i class="fas fa-external-link-alt"></i>
@@ -262,16 +267,16 @@ app.get('/about', (c) => {
       <section class="py-24 bg-[#FFFFFF]">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-12">학원 소개</h1>
-          
+
           <div class="prose prose-lg max-w-none">
             <div class="mb-12">
               <h2 class="text-[24px] leading-[1.4] font-bold text-[#C9A227] mb-4">Little Brass를 소개합니다</h2>
               <p class="text-[#555555] leading-relaxed mb-4">
-                Little Brass는 음악을 사랑하는 모든 이들을 위한 프리미엄 음악 교육 공간입니다. 
+                Little Brass는 음악을 사랑하는 모든 이들을 위한 프리미엄 음악 교육 공간입니다.
                 2020년 설립 이래, 우리는 학생 개개인의 음악적 재능을 발견하고 발전시키는 데 헌신해왔습니다.
               </p>
               <p class="text-[#555555] leading-relaxed">
-                전문적인 강사진과 체계적인 커리큘럼, 그리고 최신 시설을 갖춘 Little Brass에서 
+                전문적인 강사진과 체계적인 커리큘럼, 그리고 최신 시설을 갖춘 Little Brass에서
                 음악의 진정한 즐거움을 경험하실 수 있습니다.
               </p>
             </div>
@@ -339,7 +344,7 @@ app.get('/teachers', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-4">강사 소개</h1>
           <p class="text-center text-[#555555] mb-12">음악 전공 및 풍부한 교육 경험을 갖춘 전문 강사진을 소개합니다</p>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 강사 1 */}
             <div class="bg-[#FFFFFF] border border border-[#EEEEEE] rounded-lg shadow-sm hover:shadow-md overflow-hidden hover:shadow-sm hover:shadow-md transition">
@@ -407,7 +412,7 @@ app.get('/curriculum', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-4">커리큘럼</h1>
           <p class="text-center text-[#555555] mb-12">체계적이고 단계적인 교육 프로그램</p>
-          
+
           {/* 피아노 커리큘럼 */}
           <div class="mb-12">
             <h2 class="text-[24px] leading-[1.4] font-bold text-[#C9A227] mb-6 flex items-center">
@@ -703,16 +708,16 @@ app.get('/location', (c) => {
       <section class="py-24 bg-[#FFFFFF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-12">오시는 길</h1>
-          
+
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* 지도 영역 */}
             <div>
               <div class="bg-gray-100 rounded-lg flex flex-col items-center justify-center p-8" style="height: 400px;">
                 <i class="fas fa-map-marked-alt text-6xl text-amber-600 mb-6"></i>
                 <p class="text-lg font-semibold text-[#555555] mb-6 text-center">Little Brass 위치</p>
-                
+
                 {/* 웹 링크 버튼 */}
-                <a 
+                <a
                   href="https://map.naver.com/p/entry/place/1094694626"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -721,9 +726,9 @@ app.get('/location', (c) => {
                   <i class="fas fa-map"></i>
                   네이버 지도에서 보기
                 </a>
-                
+
                 {/* 앱 링크 버튼 - 모바일만 */}
-                <a 
+                <a
                   href="nmap://place?id=1094694626"
                   class="lg:hidden bg-gray-200 hover:bg-gray-300 text-[#555555] px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 no-underline text-sm"
                 >
@@ -797,7 +802,7 @@ app.get('/gallery', (c) => {
       {/* Hero Section */}
       <section class="relative bg-[#FFFFFF] py-24 border-b border-[#EEEEEE]">
         <div class="absolute inset-0 opacity-10">
-          
+
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span class="inline-block px-4 py-2 bg-[#FFFFFF] text-yellow-700 border border-yellow-200 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
@@ -805,7 +810,7 @@ app.get('/gallery', (c) => {
           </span>
           <h1 class="text-5xl md:text-6xl text-[#2C2C2C] font-display font-bold mb-6">갤러리</h1>
           <p class="text-[20px] leading-[1.6] font-normal text-[#555555] max-w-2xl mx-auto">
-            Little Brass의 생동감 넘치는 순간들<br/>
+            Little Brass의 생동감 넘치는 순간들<br />
             수업, 발표회, 학원 시설을 한눈에
           </p>
         </div>
@@ -841,7 +846,7 @@ app.get('/gallery', (c) => {
             <h2 class="section-title">연주 영상</h2>
             <p class="text-[#555555] text-lg">학생들의 멋진 연주와 발표회 하이라이트</p>
           </div>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* YouTube 영상 1 */}
             <div class="premium-card overflow-hidden">
@@ -1120,7 +1125,7 @@ app.get('/faq', (c) => {
       {/* Hero Section */}
       <section class="relative bg-[#FFFFFF] py-24 border-b border-[#EEEEEE]">
         <div class="absolute inset-0 opacity-10">
-          
+
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span class="inline-block px-4 py-2 bg-[#FFFFFF] text-yellow-700 border border-yellow-200 rounded-full text-sm font-semibold mb-4 border border-gold-500/30">
@@ -1137,10 +1142,10 @@ app.get('/faq', (c) => {
       <section class="py-8 bg-[#FFFFFF]">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="relative">
-            <input 
-              type="text" 
-              id="faq-search" 
-              placeholder="궁금한 내용을 검색해보세요..." 
+            <input
+              type="text"
+              id="faq-search"
+              placeholder="궁금한 내용을 검색해보세요..."
               class="w-full px-6 py-4 pl-14 border-2 border-gray-300 rounded-full focus:border-gold-500 focus:outline-none text-lg"
             />
             <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-[20px] leading-[1.6] font-normal"></i>
@@ -1177,7 +1182,7 @@ app.get('/faq', (c) => {
       {/* FAQ 아코디언 */}
       <section class="py-24 bg-[#FFFFFF]">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* 입학 관련 */}
           <div class="mb-12" data-faq-category="admission">
             <h2 class="text-[24px] leading-[1.4] font-display font-bold text-navy-900 mb-6 flex items-center">
@@ -1200,8 +1205,8 @@ app.get('/faq', (c) => {
                     <li><strong>특별 혜택:</strong> 악기 대여 무료, 신체 사이즈에 맞는 악기 제공</li>
                     <li><strong>정규 수강 시:</strong> 원데이 클래스 비용 20,000원 차감</li>
                   </ul>
-                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" 
-                     class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-sm hover:shadow-md">
+                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-lg font-bold hover:from-purple-600 hover:to-pink-700 transition shadow-sm hover:shadow-md">
                     <i class="fas fa-ticket-alt"></i>
                     네이버 플레이스에서 예약하기
                   </a>
@@ -1213,7 +1218,7 @@ app.get('/faq', (c) => {
                   나이 제한이 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  나이 제한은 없습니다. 초등학생부터 성인까지 누구나 레슨을 받으실 수 있습니다. 
+                  나이 제한은 없습니다. 초등학생부터 성인까지 누구나 레슨을 받으실 수 있습니다.
                   각 연령대와 수준에 맞는 맞춤형 커리큘럼을 제공하고 있습니다.
                 </div>
               </details>
@@ -1223,7 +1228,7 @@ app.get('/faq', (c) => {
                   악기를 준비하지 못했는데 괜찮을까요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  걱정하지 마세요! 초기에는 학원 악기를 대여해드리며, 악기 구매 시기와 적합한 악기 선택에 대해 상담해드립니다. 
+                  걱정하지 마세요! 초기에는 학원 악기를 대여해드리며, 악기 구매 시기와 적합한 악기 선택에 대해 상담해드립니다.
                   체험 레슨 시에도 학원 악기를 사용하실 수 있습니다.
                 </div>
               </details>
@@ -1233,11 +1238,11 @@ app.get('/faq', (c) => {
                   등록 절차가 어떻게 되나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  1. 원데이 클래스 예약 (네이버 플레이스)<br/>
-                  2. 레벨 테스트 및 상담<br/>
-                  3. 수강 과목 및 시간 선택<br/>
-                  4. 등록 및 수강료 납부 (원데이 클래스 비용 차감)<br/>
-                  5. 정규 레슨 시작<br/>
+                  1. 원데이 클래스 예약 (네이버 플레이스)<br />
+                  2. 레벨 테스트 및 상담<br />
+                  3. 수강 과목 및 시간 선택<br />
+                  4. 등록 및 수강료 납부 (원데이 클래스 비용 차감)<br />
+                  5. 정규 레슨 시작<br />
                   네이버 플레이스 또는 전화/문의하기를 통해 간편하게 신청하실 수 있습니다.
                 </div>
               </details>
@@ -1258,7 +1263,7 @@ app.get('/faq', (c) => {
                   개인 레슨과 그룹 레슨의 차이는 무엇인가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  <strong>개인 레슨:</strong> 1:1 맞춤 수업으로 학생의 수준과 목표에 맞춰 진행됩니다. 주 1회 40분, 더 집중적인 지도가 가능합니다.<br/><br/>
+                  <strong>개인 레슨:</strong> 1:1 맞춤 수업으로 학생의 수준과 목표에 맞춰 진행됩니다. 주 1회 40분, 더 집중적인 지도가 가능합니다.<br /><br />
                   <strong>그룹 레슨:</strong> 2-4명 소그룹으로 진행되며, 앙상블 연습과 협주 경험을 쌓을 수 있습니다. 주 1회 60분 진행됩니다.
                 </div>
               </details>
@@ -1268,7 +1273,7 @@ app.get('/faq', (c) => {
                   결석 시 보강 수업이 가능한가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 사전에 알려주시면 보강 수업이 가능합니다. 
+                  네, 사전에 알려주시면 보강 수업이 가능합니다.
                   단, 당일 취소는 보강이 어려울 수 있으니 최소 1일 전에 연락 부탁드립니다.
                 </div>
               </details>
@@ -1278,7 +1283,7 @@ app.get('/faq', (c) => {
                   수업 시간 변경이 가능한가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 강사와 상담 후 시간 조정이 가능합니다. 
+                  네, 강사와 상담 후 시간 조정이 가능합니다.
                   학기 중에도 스케줄 변경이 필요하시면 언제든 말씀해주세요.
                 </div>
               </details>
@@ -1288,7 +1293,7 @@ app.get('/faq', (c) => {
                   교재는 별도로 구매해야 하나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 교재는 학생 수준에 맞춰 선정하며 별도 구매입니다. 
+                  네, 교재는 학생 수준에 맞춰 선정하며 별도 구매입니다.
                   첫 수업 시 강사가 적합한 교재를 추천해드리며, 온라인이나 서점에서 구매하실 수 있습니다.
                 </div>
               </details>
@@ -1309,9 +1314,9 @@ app.get('/faq', (c) => {
                   수강료는 얼마인가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  <strong>개인 레슨:</strong> 월 20만원~ (주 1회 40분)<br/>
-                  <strong>그룹 레슨:</strong> 월 15만원~ (주 1회 60분)<br/>
-                  <strong>온라인 레슨:</strong> 월 18만원 (오프라인 대비 10% 할인)<br/><br/>
+                  <strong>개인 레슨:</strong> 월 20만원~ (주 1회 40분)<br />
+                  <strong>그룹 레슨:</strong> 월 15만원~ (주 1회 60분)<br />
+                  <strong>온라인 레슨:</strong> 월 18만원 (오프라인 대비 10% 할인)<br /><br />
                   ※ 악기 및 레벨에 따라 차이가 있을 수 있습니다.
                 </div>
               </details>
@@ -1321,7 +1326,7 @@ app.get('/faq', (c) => {
                   결제 방법은 어떻게 되나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  계좌이체 또는 카드 결제가 가능합니다. 
+                  계좌이체 또는 카드 결제가 가능합니다.
                   매월 초 또는 등록 시점에 월 단위로 결제하실 수 있습니다.
                 </div>
               </details>
@@ -1331,7 +1336,7 @@ app.get('/faq', (c) => {
                   할인 혜택이 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  형제/자매 등록 시 10% 할인, 3개월 이상 선결제 시 5% 할인 혜택이 있습니다. 
+                  형제/자매 등록 시 10% 할인, 3개월 이상 선결제 시 5% 할인 혜택이 있습니다.
                   또한 정기적으로 시즌별 프로모션을 진행하고 있으니 문의해주세요.
                 </div>
               </details>
@@ -1341,10 +1346,10 @@ app.get('/faq', (c) => {
                   환불 규정은 어떻게 되나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  수강 시작 전: 전액 환불<br/>
-                  수강 1/3 경과 전: 2/3 환불<br/>
-                  수강 1/2 경과 전: 1/2 환불<br/>
-                  수강 1/2 경과 후: 환불 불가<br/><br/>
+                  수강 시작 전: 전액 환불<br />
+                  수강 1/3 경과 전: 2/3 환불<br />
+                  수강 1/2 경과 전: 1/2 환불<br />
+                  수강 1/2 경과 후: 환불 불가<br /><br />
                   ※ 평생교육법 시행령 제23조에 따릅니다.
                 </div>
               </details>
@@ -1365,7 +1370,7 @@ app.get('/faq', (c) => {
                   Zoom을 처음 사용하는데 어렵지 않을까요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  걱정 마세요! 처음 수업 전에 Zoom 사용법을 자세히 안내해드리며, 테스트 접속도 가능합니다. 
+                  걱정 마세요! 처음 수업 전에 Zoom 사용법을 자세히 안내해드리며, 테스트 접속도 가능합니다.
                   간단한 클릭 몇 번으로 쉽게 수업에 참여하실 수 있습니다.
                 </div>
               </details>
@@ -1375,7 +1380,7 @@ app.get('/faq', (c) => {
                   온라인 수업 녹화가 가능한가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 학생의 복습을 위해 수업 녹화가 가능합니다. 
+                  네, 학생의 복습을 위해 수업 녹화가 가능합니다.
                   단, 강사와 사전 협의가 필요하며, 녹화 파일은 개인 학습 목적으로만 사용 가능합니다.
                 </div>
               </details>
@@ -1385,7 +1390,7 @@ app.get('/faq', (c) => {
                   필요한 장비가 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  PC, 노트북, 태블릿 중 하나와 안정적인 인터넷 연결만 있으면 됩니다. 
+                  PC, 노트북, 태블릿 중 하나와 안정적인 인터넷 연결만 있으면 됩니다.
                   내장 카메라와 마이크로 충분하며, 더 좋은 음질을 원하시면 외장 마이크를 권장합니다.
                 </div>
               </details>
@@ -1395,7 +1400,7 @@ app.get('/faq', (c) => {
                   온라인에서 오프라인으로 전환할 수 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  물론입니다! 언제든 오프라인 레슨으로 전환 가능하며, 
+                  물론입니다! 언제든 오프라인 레슨으로 전환 가능하며,
                   온라인과 오프라인을 번갈아가며 병행하는 것도 가능합니다. 유연하게 조정 가능합니다.
                 </div>
               </details>
@@ -1416,7 +1421,7 @@ app.get('/faq', (c) => {
                   주차가 가능한가요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 건물 지하 주차장을 이용하실 수 있습니다. 
+                  네, 건물 지하 주차장을 이용하실 수 있습니다.
                   2시간 무료 주차가 가능하며, 이후에는 10분당 1,000원입니다.
                 </div>
               </details>
@@ -1426,7 +1431,7 @@ app.get('/faq', (c) => {
                   연습실을 개인적으로 사용할 수 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  수강생에 한해 연습실 대여가 가능합니다. 
+                  수강생에 한해 연습실 대여가 가능합니다.
                   시간당 5,000원으로 예약제로 운영되며, 사전에 전화로 예약해주시면 됩니다.
                 </div>
               </details>
@@ -1436,9 +1441,9 @@ app.get('/faq', (c) => {
                   학원 운영 시간은 어떻게 되나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  <strong>평일:</strong> 10:00 - 22:00<br/>
-                  <strong>주말:</strong> 10:00 - 18:00<br/>
-                  <strong>휴무:</strong> 매주 월요일<br/><br/>
+                  <strong>평일:</strong> 10:00 - 22:00<br />
+                  <strong>주말:</strong> 10:00 - 18:00<br />
+                  <strong>휴무:</strong> 매주 월요일<br /><br />
                   ※ 공휴일은 별도 공지합니다.
                 </div>
               </details>
@@ -1448,7 +1453,7 @@ app.get('/faq', (c) => {
                   대기 공간이 있나요?
                 </summary>
                 <div class="px-6 pb-6 text-[#555555] leading-relaxed">
-                  네, 편안한 대기실이 마련되어 있습니다. 
+                  네, 편안한 대기실이 마련되어 있습니다.
                   무료 음료와 간식이 제공되며, 보호자분들께서 편하게 기다리실 수 있습니다.
                 </div>
               </details>
@@ -1530,7 +1535,7 @@ app.get('/achievements', (c) => {
           <p class="text-[20px] leading-[1.6] font-normal text-gray-300 mb-12 max-w-3xl mx-auto">
             Little Brass 학생들의 빛나는 성과와 성장 스토리를 만나보세요
           </p>
-          
+
           {/* 통계 카드 */}
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div class="bg-[#FFFFFF]/10 backdrop-blur-sm border border-[#EEEEEE] rounded-2xl p-6 border border-white/20">
@@ -1870,7 +1875,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "선생님의 세심한 지도 덕분에 트럼펫 실력이 크게 향상되었습니다. 
+                "선생님의 세심한 지도 덕분에 트럼펫 실력이 크게 향상되었습니다.
                 콩쿠르 대상을 받을 수 있어서 정말 기뻤어요!"
               </p>
               <div class="text-sm text-[#555555]">
@@ -1897,7 +1902,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "체계적인 커리큘럼과 전문적인 강사진 덕분에 아이가 서울대 음대에 합격할 수 있었습니다. 
+                "체계적인 커리큘럼과 전문적인 강사진 덕분에 아이가 서울대 음대에 합격할 수 있었습니다.
                 진심으로 감사드립니다."
               </p>
               <div class="text-sm text-[#555555]">
@@ -1924,7 +1929,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "온라인 레슨도 오프라인만큼 효과적이에요. 
+                "온라인 레슨도 오프라인만큼 효과적이에요.
                 집에서 편하게 배울 수 있어서 좋고, 실력도 많이 늘었습니다!"
               </p>
               <div class="text-sm text-[#555555]">
@@ -1951,7 +1956,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "아이가 음악을 진정으로 사랑하게 되었습니다. 
+                "아이가 음악을 진정으로 사랑하게 되었습니다.
                 선생님들의 열정과 사랑이 느껴지는 학원이에요."
               </p>
               <div class="text-sm text-[#555555]">
@@ -1978,7 +1983,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "처음에는 악기가 낯설었는데, 지금은 제일 좋아하는 취미가 되었어요. 
+                "처음에는 악기가 낯설었는데, 지금은 제일 좋아하는 취미가 되었어요.
                 선생님 감사합니다!"
               </p>
               <div class="text-sm text-[#555555]">
@@ -2005,7 +2010,7 @@ app.get('/achievements', (c) => {
                 </div>
               </div>
               <p class="text-[#555555] leading-relaxed mb-4">
-                "시설도 깨끗하고 선생님들도 친절하세요. 
+                "시설도 깨끗하고 선생님들도 친절하세요.
                 아이가 매 수업을 즐겁게 기다립니다."
               </p>
               <div class="text-sm text-[#555555]">
@@ -2029,12 +2034,12 @@ app.get('/achievements', (c) => {
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold hover:from-green-400 hover:to-green-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
+              class="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold hover:from-green-400 hover:to-green-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-calendar-check text-[20px] leading-[1.6] font-normal"></i>
               <span>네이버 예약하기</span>
             </a>
             <a href="/contact"
-               class="inline-flex items-center gap-3 bg-[#FFFFFF] text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
+              class="inline-flex items-center gap-3 bg-[#FFFFFF] text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-envelope text-[20px] leading-[1.6] font-normal"></i>
               <span>무료 상담 신청</span>
             </a>
@@ -2118,10 +2123,10 @@ app.get('/notice', (c) => {
           <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* 검색창 */}
             <div class="relative flex-1 max-w-md">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="notice-search"
-                placeholder="공지사항 검색..." 
+                placeholder="공지사항 검색..."
                 class="w-full px-4 py-3 pl-12 border-2 border-gray-300 rounded-xl focus:border-gold-500 focus:outline-none transition"
               />
               <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
@@ -2159,7 +2164,7 @@ app.get('/notice', (c) => {
               const config = typeConfig[notice.type]
 
               return (
-                <div 
+                <div
                   class={`notice-item bg-[#FFFFFF] border-2 ${config.border} rounded-xl p-6 hover:shadow-sm hover:shadow-md transition-all cursor-pointer group`}
                   data-category={notice.type}
                   data-keywords={`${notice.title} ${notice.content}`}
@@ -2182,7 +2187,7 @@ app.get('/notice', (c) => {
                           </h3>
                         </div>
                       </div>
-                      
+
                       <p class="text-[#555555] mb-3 line-clamp-2">
                         {notice.content}
                       </p>
@@ -2467,7 +2472,7 @@ app.get('/events', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <i class="fas fa-bell text-6xl mb-6 opacity-80"></i>
           <h2 class="section-title">이벤트 알림 받기</h2>
-          <p class="text-[20px] leading-[1.6] font-normal mb-8 text-white/90">네이버 예약 또는 카카오톡 채널을 추가하시면<br/>새로운 이벤트 소식을 가장 먼저 받아보실 수 있습니다!</p>
+          <p class="text-[20px] leading-[1.6] font-normal mb-8 text-white/90">네이버 예약 또는 카카오톡 채널을 추가하시면<br />새로운 이벤트 소식을 가장 먼저 받아보실 수 있습니다!</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://naver.me/xLsaIlQK" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition shadow-sm hover:shadow-md inline-flex items-center justify-center gap-2">
               <i class="fas fa-calendar-check text-[20px] leading-[1.6] font-normal"></i>
@@ -2493,7 +2498,7 @@ app.get('/contact', (c) => {
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-4">문의하기</h1>
           <p class="text-center text-[#555555] mb-12">궁금하신 사항을 남겨주시면 빠르게 답변드리겠습니다</p>
-          
+
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* 문의 폼 */}
             <div>
@@ -2588,10 +2593,10 @@ app.get('/contact', (c) => {
                       원데이 클래스는 어떻게 예약하나요?
                     </summary>
                     <p class="mt-2 text-[#555555] text-sm">
-                      30분 원데이 클래스(20,000원)를 네이버 플레이스에서 예약하실 수 있습니다. 
+                      30분 원데이 클래스(20,000원)를 네이버 플레이스에서 예약하실 수 있습니다.
                       정규 수강 등록 시 원데이 클래스 비용이 차감됩니다.
-                      <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" 
-                         class="text-purple-600 hover:text-purple-700 font-bold ml-2">
+                      <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank"
+                        class="text-purple-600 hover:text-purple-700 font-bold ml-2">
                         지금 예약하기 →
                       </a>
                     </p>
@@ -2620,18 +2625,18 @@ app.post('/api/contact', async (c) => {
   try {
     const body = await c.req.json()
     const { name, phone, email, type, message } = body
-    
+
     // 여기에 이메일 전송 또는 DB 저장 로직 추가 예정
     console.log('Contact form submission:', { name, phone, email, type, message })
-    
-    return c.json({ 
-      success: true, 
-      message: '문의가 접수되었습니다.' 
+
+    return c.json({
+      success: true,
+      message: '문의가 접수되었습니다.'
     })
   } catch (error) {
-    return c.json({ 
-      success: false, 
-      message: '문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.' 
+    return c.json({
+      success: false,
+      message: '문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.'
     }, 500)
   }
 })
@@ -2670,13 +2675,13 @@ app.notFound((c) => {
 
           {/* 버튼 그룹 */}
           <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-            <a href="/" 
-               class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-8 py-4 rounded-full font-bold hover:from-gold-400 hover:to-gold-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
+            <a href="/"
+              class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-8 py-4 rounded-full font-bold hover:from-gold-400 hover:to-gold-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-home text-[20px] leading-[1.6] font-normal"></i>
               <span>홈으로 돌아가기</span>
             </a>
-            <a href="/contact" 
-               class="inline-flex items-center gap-3 bg-[#FFFFFF] text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
+            <a href="/contact"
+              class="inline-flex items-center gap-3 bg-[#FFFFFF] text-navy-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all shadow-sm hover:shadow-md hover:scale-105">
               <i class="fas fa-envelope text-[20px] leading-[1.6] font-normal"></i>
               <span>문의하기</span>
             </a>
@@ -2740,7 +2745,7 @@ app.get('/api/blog/rss', async (c) => {
 
     while ((match = itemRegex.exec(rssText)) !== null && items.length < 10) {
       const itemContent = match[1]
-      
+
       const title = (itemContent.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || [])[1] || ''
       const link = (itemContent.match(/<link><!\[CDATA\[(.*?)\]\]><\/link>/) || [])[1] || ''
       const category = (itemContent.match(/<category><!\[CDATA\[(.*?)\]\]><\/category>/) || [])[1] || '일반'

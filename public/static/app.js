@@ -1,70 +1,91 @@
 // 모바일 메뉴 토글
 function initMobileMenu() {
   console.log('[모바일 메뉴] 초기화 시작');
-  
+
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   console.log('[모바일 메뉴] 버튼 요소:', mobileMenuButton);
   console.log('[모바일 메뉴] 메뉴 요소:', mobileMenu);
-  
+
   if (!mobileMenuButton) {
     console.error('[모바일 메뉴] 버튼 요소를 찾을 수 없습니다! (id="mobile-menu-button")');
     return;
   }
-  
+
   if (!mobileMenu) {
     console.error('[모바일 메뉴] 메뉴 요소를 찾을 수 없습니다! (id="mobile-menu")');
     return;
   }
-  
+
   // 기존 이벤트 리스너 제거 (중복 방지)
   const newButton = mobileMenuButton.cloneNode(true);
   mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
-  
+
   const button = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
-  
+
   console.log('[모바일 메뉴] 이벤트 리스너 등록 시작');
-  
-  button.addEventListener('click', function(e) {
+
+  button.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    
+
     console.log('[모바일 메뉴] 버튼 클릭 이벤트 발생');
     const isHidden = menu.classList.contains('hidden');
     console.log('[모바일 메뉴] 현재 상태 (hidden):', isHidden);
     console.log('[모바일 메뉴] 메뉴 요소 클래스:', menu.className);
-    
+
     menu.classList.toggle('hidden');
     const newState = !menu.classList.contains('hidden');
     button.setAttribute('aria-expanded', newState ? 'true' : 'false');
-    
+
     console.log('[모바일 메뉴] 토글 후 상태 (hidden):', menu.classList.contains('hidden'));
     console.log('[모바일 메뉴] 토글 후 메뉴 요소 클래스:', menu.className);
     console.log('[모바일 메뉴] aria-expanded:', button.getAttribute('aria-expanded'));
   });
-  
+
   // 버튼 내부 아이콘 클릭도 처리
   const icon = button.querySelector('i');
   if (icon) {
-    icon.addEventListener('click', function(e) {
+    icon.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
       console.log('[모바일 메뉴] 아이콘 클릭 이벤트 발생');
       button.click();
     });
   }
-  
+
   console.log('[모바일 메뉴] 이벤트 리스너 등록 완료');
+}
+
+// AnnouncementBanner 닫기
+function initAnnouncementBanner() {
+  const banner = document.getElementById('announcement-banner');
+  const closeBtn = document.getElementById('banner-close-btn');
+  const nav = document.getElementById('main-nav');
+
+  if (closeBtn && banner) {
+    closeBtn.addEventListener('click', function () {
+      banner.style.display = 'none';
+      if (nav) {
+        nav.classList.remove('top-14');
+        nav.classList.add('top-0');
+      }
+    });
+  }
 }
 
 // DOMContentLoaded 또는 이미 로드된 경우 즉시 실행
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  document.addEventListener('DOMContentLoaded', function () {
+    initMobileMenu();
+    initAnnouncementBanner();
+  });
 } else {
   // DOM이 이미 로드된 경우
   initMobileMenu();
+  initAnnouncementBanner();
 }
 
 // 나머지 페이지 스크립트는 DOMContentLoaded 이후에 실행
@@ -72,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 스크롤 진행 바
   const scrollProgress = document.getElementById('scroll-progress');
   if (scrollProgress) {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (window.scrollY / windowHeight) * 100;
       scrollProgress.style.width = scrolled + '%';
@@ -82,15 +103,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // FAQ 검색 기능
   const faqSearch = document.getElementById('faq-search');
   if (faqSearch) {
-    faqSearch.addEventListener('input', function(e) {
+    faqSearch.addEventListener('input', function (e) {
       const searchTerm = e.target.value.toLowerCase();
       const faqItems = document.querySelectorAll('.faq-item');
-      
+
       faqItems.forEach(item => {
         const summary = item.querySelector('summary').textContent.toLowerCase();
         const content = item.querySelector('div').textContent.toLowerCase();
         const keywords = item.getAttribute('data-keywords') || '';
-        
+
         if (summary.includes(searchTerm) || content.includes(searchTerm) || keywords.includes(searchTerm)) {
           item.style.display = 'block';
           if (searchTerm.length > 0) {
@@ -100,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
           item.style.display = 'none';
         }
       });
-      
+
       // 카테고리 섹션 표시/숨김
       document.querySelectorAll('[data-faq-category]').forEach(section => {
         const visibleItems = section.querySelectorAll('.faq-item[style*="display: block"]');
@@ -117,9 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const faqCategoryButtons = document.querySelectorAll('.faq-category');
   if (faqCategoryButtons.length > 0) {
     faqCategoryButtons.forEach(button => {
-      button.addEventListener('click', function() {
+      button.addEventListener('click', function () {
         const category = this.getAttribute('data-category');
-        
+
         // 버튼 스타일 업데이트
         faqCategoryButtons.forEach(btn => {
           btn.classList.remove('bg-gold-500', 'text-white', 'shadow-gold');
@@ -127,12 +148,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         this.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
         this.classList.add('bg-gold-500', 'text-white', 'shadow-gold');
-        
+
         // 검색 초기화
         if (faqSearch) {
           faqSearch.value = '';
         }
-        
+
         // 카테고리 필터링
         const sections = document.querySelectorAll('[data-faq-category]');
         if (category === 'all') {
@@ -163,12 +184,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const galleryFilters = document.querySelectorAll('.gallery-filter');
   const galleryItems = document.querySelectorAll('.gallery-item');
   const photoGallery = document.getElementById('photo-gallery');
-  
+
   if (galleryFilters.length > 0) {
     galleryFilters.forEach(filter => {
-      filter.addEventListener('click', function() {
+      filter.addEventListener('click', function () {
         const category = this.getAttribute('data-category');
-        
+
         // 버튼 스타일 업데이트
         galleryFilters.forEach(btn => {
           btn.classList.remove('bg-gold-500', 'text-white', 'shadow-gold');
@@ -176,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         this.classList.remove('bg-gray-100', 'text-gray-700');
         this.classList.add('bg-gold-500', 'text-white', 'shadow-gold');
-        
+
         // 영상 섹션 표시/숨김
         const videoSection = document.querySelector('section[data-category="video"]');
         if (videoSection) {
@@ -186,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             videoSection.style.display = 'none';
           }
         }
-        
+
         // 사진 갤러리 필터링
         if (category === 'all') {
           galleryItems.forEach(item => {
@@ -226,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
     rootMargin: '0px 0px -50px 0px'
   };
 
-  const observer = new IntersectionObserver(function(entries) {
+  const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '0';
@@ -249,14 +270,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // 문의 폼 제출
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      
+
       const submitButton = e.target.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
       submitButton.disabled = true;
       submitButton.innerHTML = '<span class="loading"></span> 전송중...';
-      
+
       const formData = {
         name: e.target.name.value,
         phone: e.target.phone.value,
@@ -276,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const result = await response.json();
         const messageDiv = document.getElementById('form-message');
-        
+
         if (result.success) {
           messageDiv.className = 'mt-4 p-4 rounded-lg bg-green-50 text-green-800 border-2 border-green-300';
           messageDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i>' + result.message;
@@ -321,10 +342,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 카드 호버 효과 강화
   document.querySelectorAll('.premium-card, .info-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-8px) scale(1.02)';
     });
-    card.addEventListener('mouseleave', function() {
+    card.addEventListener('mouseleave', function () {
       this.style.transform = 'translateY(0) scale(1)';
     });
   });
@@ -343,32 +364,32 @@ document.addEventListener('DOMContentLoaded', function () {
       if (data.success && data.posts && data.posts.length > 0) {
         // 기존 내용 제거
         blogContainer.innerHTML = '';
-        
+
         data.posts.forEach((post, index) => {
           // URL 검증
           const safeLink = isValidUrl(post.link) ? post.link : 'https://blog.naver.com/little_brass';
-          
+
           const bgColors = [
             'from-gold-400 to-gold-600',
-            'from-navy-600 to-navy-800', 
+            'from-navy-600 to-navy-800',
             'from-amber-500 to-orange-600'
           ];
           const icons = ['fa-music', 'fa-trophy', 'fa-lightbulb'];
-          
+
           const bgColor = bgColors[index % 3];
           const icon = icons[index % 3];
-          
+
           // DOM API를 사용하여 안전하게 요소 생성
           const postCard = document.createElement('a');
           postCard.href = safeLink;
           postCard.target = '_blank';
           postCard.rel = 'noopener noreferrer';
           postCard.className = 'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2';
-          
+
           // 헤더 영역
           const headerDiv = document.createElement('div');
           headerDiv.className = `h-48 bg-gradient-to-br ${bgColor} flex items-center justify-center relative`;
-          
+
           // 고정 배지 (isPinned이 true일 때만)
           if (post.isPinned) {
             const pinnedBadge = document.createElement('div');
@@ -380,17 +401,17 @@ document.addEventListener('DOMContentLoaded', function () {
             pinnedBadge.appendChild(pinnedText);
             headerDiv.appendChild(pinnedBadge);
           }
-          
+
           // 아이콘
           const iconElement = document.createElement('i');
           iconElement.className = `fas ${icon} text-white text-6xl opacity-50`;
           headerDiv.appendChild(iconElement);
           postCard.appendChild(headerDiv);
-          
+
           // 본문 영역
           const contentDiv = document.createElement('div');
           contentDiv.className = 'p-6';
-          
+
           // 카테고리
           const categoryDiv = document.createElement('div');
           categoryDiv.className = 'flex items-center gap-2 text-sm text-gray-500 mb-3';
@@ -401,19 +422,19 @@ document.addEventListener('DOMContentLoaded', function () {
           categorySpan.textContent = escapeHtml(post.category || '일반');
           categoryDiv.appendChild(categorySpan);
           contentDiv.appendChild(categoryDiv);
-          
+
           // 제목
           const titleH3 = document.createElement('h3');
           titleH3.className = 'text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition line-clamp-2';
           titleH3.textContent = escapeHtml(post.title || '제목 없음');
           contentDiv.appendChild(titleH3);
-          
+
           // 설명
           const descP = document.createElement('p');
           descP.className = 'text-gray-600 mb-4 line-clamp-3';
           descP.textContent = escapeHtml(post.description || '');
           contentDiv.appendChild(descP);
-          
+
           // 자세히 보기 링크
           const linkDiv = document.createElement('div');
           linkDiv.className = 'flex items-center text-gold-600 font-medium group-hover:gap-3 transition-all';
@@ -423,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function () {
           arrowIcon.className = 'fas fa-arrow-right ml-2';
           linkDiv.appendChild(arrowIcon);
           contentDiv.appendChild(linkDiv);
-          
+
           postCard.appendChild(contentDiv);
           blogContainer.appendChild(postCard);
         });
@@ -431,16 +452,16 @@ document.addEventListener('DOMContentLoaded', function () {
         // 에러 메시지도 DOM API로 생성
         const errorDiv = document.createElement('div');
         errorDiv.className = 'col-span-3 text-center py-12';
-        
+
         const errorIcon = document.createElement('i');
         errorIcon.className = 'fas fa-exclamation-circle text-gray-400 text-5xl mb-4';
         errorDiv.appendChild(errorIcon);
-        
+
         const errorP = document.createElement('p');
         errorP.className = 'text-gray-600';
         errorP.textContent = '최신 소식을 불러올 수 없습니다.';
         errorDiv.appendChild(errorP);
-        
+
         const errorLink = document.createElement('a');
         errorLink.href = 'https://blog.naver.com/little_brass';
         errorLink.target = '_blank';
@@ -452,25 +473,25 @@ document.addEventListener('DOMContentLoaded', function () {
         externalIcon.className = 'fas fa-external-link-alt ml-1';
         errorLink.appendChild(externalIcon);
         errorDiv.appendChild(errorLink);
-        
+
         blogContainer.appendChild(errorDiv);
       }
     } catch (error) {
       console.error('블로그 RSS 로딩 오류:', error);
-      
+
       // 에러 메시지도 DOM API로 생성
       const errorDiv = document.createElement('div');
       errorDiv.className = 'col-span-3 text-center py-12';
-      
+
       const errorIcon = document.createElement('i');
       errorIcon.className = 'fas fa-exclamation-circle text-gray-400 text-5xl mb-4';
       errorDiv.appendChild(errorIcon);
-      
+
       const errorP = document.createElement('p');
       errorP.className = 'text-gray-600';
       errorP.textContent = '최신 소식을 불러오는 중 오류가 발생했습니다.';
       errorDiv.appendChild(errorP);
-      
+
       const errorLink = document.createElement('a');
       errorLink.href = 'https://blog.naver.com/little_brass';
       errorLink.target = '_blank';
@@ -482,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function () {
       externalIcon.className = 'fas fa-external-link-alt ml-1';
       errorLink.appendChild(externalIcon);
       errorDiv.appendChild(errorLink);
-      
+
       blogContainer.appendChild(errorDiv);
     }
   }
@@ -508,15 +529,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // 공지사항 검색 기능
   const noticeSearch = document.getElementById('notice-search');
   if (noticeSearch) {
-    noticeSearch.addEventListener('input', function(e) {
+    noticeSearch.addEventListener('input', function (e) {
       const searchTerm = e.target.value.toLowerCase();
       const noticeItems = document.querySelectorAll('.notice-item');
       const noResults = document.getElementById('no-results');
       let visibleCount = 0;
-      
+
       noticeItems.forEach(item => {
         const keywords = item.getAttribute('data-keywords') || '';
-        
+
         if (keywords.toLowerCase().includes(searchTerm)) {
           item.style.display = 'block';
           visibleCount++;
@@ -537,9 +558,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const noticeFilters = document.querySelectorAll('.notice-filter');
   if (noticeFilters.length > 0) {
     noticeFilters.forEach(button => {
-      button.addEventListener('click', function() {
+      button.addEventListener('click', function () {
         const category = this.getAttribute('data-category');
-        
+
         // 버튼 스타일 업데이트
         noticeFilters.forEach(btn => {
           btn.classList.remove('bg-gold-500', 'text-white', 'shadow-md');
@@ -547,12 +568,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         this.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
         this.classList.add('bg-gold-500', 'text-white', 'shadow-md');
-        
+
         // 검색 초기화
         if (noticeSearch) {
           noticeSearch.value = '';
         }
-        
+
         // 카테고리 필터링
         const noticeItems = document.querySelectorAll('.notice-item');
         const noResults = document.getElementById('no-results');
@@ -622,7 +643,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showImage(index) {
       if (visibleImages.length === 0) return;
-      
+
       currentImageIndex = index;
       if (currentImageIndex < 0) currentImageIndex = visibleImages.length - 1;
       if (currentImageIndex >= visibleImages.length) currentImageIndex = 0;
@@ -647,7 +668,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 이미지 클릭 이벤트
     galleryImages.forEach((item, index) => {
       item.style.cursor = 'pointer';
-      item.addEventListener('click', function() {
+      item.addEventListener('click', function () {
         updateVisibleImages();
         const visibleIndex = visibleImages.findIndex(img => img.originalIndex === index);
         if (visibleIndex !== -1) {
@@ -660,25 +681,25 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 
     // 이전/다음 버튼
-    document.getElementById('lightbox-prev').addEventListener('click', function(e) {
+    document.getElementById('lightbox-prev').addEventListener('click', function (e) {
       e.stopPropagation();
       showImage(currentImageIndex - 1);
     });
 
-    document.getElementById('lightbox-next').addEventListener('click', function(e) {
+    document.getElementById('lightbox-next').addEventListener('click', function (e) {
       e.stopPropagation();
       showImage(currentImageIndex + 1);
     });
 
     // 배경 클릭 시 닫기
-    lightbox.addEventListener('click', function(e) {
+    lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) {
         closeLightbox();
       }
     });
 
     // 키보드 단축키
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (!lightbox.classList.contains('hidden')) {
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') showImage(currentImageIndex - 1);
@@ -689,23 +710,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+// Intersection Observer for scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-visible');
-      }
-    });
-  }, observerOptions);
-
-  // 애니메이션 적용할 요소들
-  const animatedElements = document.querySelectorAll('section, .premium-card, .info-card, .faq-item, .blog-card, .achievement-card, .review-card');
-  animatedElements.forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-visible');
+    }
   });
+}, observerOptions);
+
+// 애니메이션 적용할 요소들
+const animatedElements = document.querySelectorAll('section, .premium-card, .info-card, .faq-item, .blog-card, .achievement-card, .review-card');
+animatedElements.forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
