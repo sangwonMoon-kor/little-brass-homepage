@@ -60,9 +60,10 @@ app.get('/', (c) => {
         <div class="intro-section">
           <p class="handwriting-label">What We Offer</p>
           <p class="intro-text">
-            금관악기는 오랜 역사와 함께 오케스트라의 중심에서 웅장한 소리를 만들어왔습니다.
-            트럼펫, 호른, 트롬본, 튜바 — 각 악기가 가진 고유한 매력과 가능성을
-            리틀브라스가 이어갑니다. 금관악기 전문 교육의 새로운 기준을 만들어갑니다.
+            금관악기는 오랜 역사와 함께 오케스트라의 중심에서 웅장한 소리를 만들어왔습니다.<br /><br />
+            트럼펫, 호른, 트롬본, 튜바<br /><br />
+            각 악기가 가진 고유한 매력과 가능성을 리틀브라스가 이어갑니다.<br /><br />
+            금관악기 전문 교육의 새로운 기준을 만들어갑니다.
           </p>
           <p class="intro-text-italic">
             We provide professional brass instrument education with passion and dedication,

@@ -802,31 +802,34 @@ section {
 /* === Vienna Academy Intro Section === */
 .intro-section {
   text-align: left;
-  padding: 0 60px;
+  padding: 100px 60px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .handwriting-label {
   font-family: 'Dancing Script', cursive;
-  color: #C9A227;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
 .intro-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 2.2;
+  color: #1a1a1a;
   max-width: 800px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .intro-text-italic {
   font-style: italic;
   font-size: 1rem;
   color: #666;
+  margin-bottom: 60px;
 }
 
 /* === Instrument Cards Grid === */
