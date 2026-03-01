@@ -55,68 +55,54 @@ app.get('/', (c) => {
         </div>
       </section>
 
-      {/* 대학 로고 섹션 */}
-      <section class="py-20 bg-[#FFFFFF] border-b border-[#EEEEEE]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p class="section-label mb-8">Our Students Have Been Accepted To</p>
-          <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70">
-            {/* 임시 로고 대체 아이콘 및 텍스트 */}
-            <div class="logo-grayscale flex flex-col items-center">
-              <i class="fas fa-university text-4xl mb-2 text-[#999999]"></i>
-              <span class="font-serif text-[#2C2C2C] font-semibold">Seoul National Univ.</span>
+      {/* Intro Section (Vienna Academy Style) */}
+      <section class="py-24 bg-[#FFFFFF]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p class="handwriting-label">What We Offer</p>
+          <p class="intro-text-uppercase">
+            금관악기는 오랜 역사와 함께 오케스트라의 중심에서 웅장한 소리를 만들어왔습니다.
+            트럼펫, 호른, 트롬본, 튜바 - 각 악기가 가진 고유한 매력과 가능성을
+            리틀브라스가 이어갑니다. 금관악기 전문 교육의 새로운 기준을 만들어갑니다.
+          </p>
+          <p class="intro-text-italic">
+            We provide professional brass instrument education with passion and dedication,
+            nurturing the next generation of musicians.
+          </p>
+        </div>
+      </section>
+
+      {/* Instrument Cards Section (Vienna Academy Style) */}
+      <section class="py-16 bg-[#FFFFFF]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="instrument-card">
+              <div class="instrument-image-wrapper">
+                <img src="/static/images/trumpet.png" alt="트럼펫" class="instrument-image" />
+              </div>
+              <p class="instrument-name">TRUMPET</p>
             </div>
-            <div class="logo-grayscale flex flex-col items-center">
-              <i class="fas fa-university text-4xl mb-2 text-[#999999]"></i>
-              <span class="font-serif text-[#2C2C2C] font-semibold">Yonsei Univ.</span>
+            <div class="instrument-card">
+              <div class="instrument-image-wrapper">
+                <img src="/static/images/horn.png" alt="호른" class="instrument-image" />
+              </div>
+              <p class="instrument-name">HORN</p>
             </div>
-            <div class="logo-grayscale flex flex-col items-center">
-              <i class="fas fa-university text-4xl mb-2 text-[#999999]"></i>
-              <span class="font-serif text-[#2C2C2C] font-semibold">Ewha Womans Univ.</span>
+            <div class="instrument-card">
+              <div class="instrument-image-wrapper">
+                <img src="/static/images/trombone.png" alt="트롬본" class="instrument-image" />
+              </div>
+              <p class="instrument-name">TROMBONE</p>
             </div>
-            <div class="logo-grayscale flex flex-col items-center">
-              <i class="fas fa-university text-4xl mb-2 text-[#999999]"></i>
-              <span class="font-serif text-[#2C2C2C] font-semibold">KNUA</span>
+            <div class="instrument-card">
+              <div class="instrument-image-wrapper">
+                <img src="/static/images/tuba.png" alt="튜바" class="instrument-image" />
+              </div>
+              <p class="instrument-name">TUBA</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4개 아이콘 섹션 */}
-      <section class="py-24 bg-[#FFFFFF]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="inline-block bg-[#C9A227] text-[#2C2C2C] px-6 py-2 rounded-full text-sm font-bold mb-8 mx-auto block text-center w-fit">
-            <i class="fas fa-star mr-2"></i>리틀브라스만의 특별함
-          </div>
-          <h2 class="section-title">금관악기 전문 교육의 리더</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
-              <div class="bg-[#C9A227] w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
-                <i class="fas fa-trumpet text-white text-5xl"></i>
-              </div>
-              <h3 class="text-lg font-bold mb-2">트럼펫</h3>
-              <p class="text-[#555555] text-sm">전문 트럼펫 교육</p>
-            </div>
-            <div class="card-classic p-8 text-center card-classic bg-[#FFFFFF]"><div class="mb-4"><i class="fas fa-music text-[40px] text-[#C9A227]"></i></div>
-              <h3 class="text-lg font-bold mb-2">호른</h3>
-              <p class="text-[#555555] text-sm">프렌치 호른 레슨</p>
-            </div>
-            <div class="text-center">
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE]0 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
-                <i class="fas fa-drum text-white text-5xl"></i>
-              </div>
-              <h3 class="text-lg font-bold mb-2">트롬본</h3>
-              <p class="text-[#555555] text-sm">트롬본 전문 교육</p>
-            </div>
-            <div class="text-center">
-              <div class="bg-[#FFFFFF]0 w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 transition">
-                <i class="fas fa-guitar text-white text-5xl"></i>
-              </div>
-              <h3 class="text-lg font-bold mb-2">튜바</h3>
-              <p class="text-[#555555] text-sm">튜바 개인 레슨</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* POINT 섹션 01 - 좌우 교차 레이아웃 */}
       <section class="py-24 bg-[#FFFFFF]">
