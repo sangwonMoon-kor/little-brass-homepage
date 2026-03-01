@@ -809,7 +809,7 @@ section {
 
 .handwriting-label {
   font-family: 'Dancing Script', cursive;
-  color: #1a1a1a;
+  color: #B8941C;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -819,7 +819,7 @@ section {
 .intro-text {
   font-size: 1.25rem;
   font-weight: 600;
-  line-height: 2.2;
+  line-height: 1.6;
   color: #1a1a1a;
   max-width: 800px;
   margin-bottom: 2rem;
