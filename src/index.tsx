@@ -56,12 +56,12 @@ app.get('/', (c) => {
       </section>
 
       {/* Intro Section (Vienna Academy Style) */}
-      <section class="py-24 bg-[#FFFFFF]">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section class="py-20 bg-[#FFFFFF]">
+        <div class="intro-section">
           <p class="handwriting-label">What We Offer</p>
-          <p class="intro-text-uppercase">
+          <p class="intro-text">
             금관악기는 오랜 역사와 함께 오케스트라의 중심에서 웅장한 소리를 만들어왔습니다.
-            트럼펫, 호른, 트롬본, 튜바 - 각 악기가 가진 고유한 매력과 가능성을
+            트럼펫, 호른, 트롬본, 튜바 — 각 악기가 가진 고유한 매력과 가능성을
             리틀브라스가 이어갑니다. 금관악기 전문 교육의 새로운 기준을 만들어갑니다.
           </p>
           <p class="intro-text-italic">
@@ -72,37 +72,42 @@ app.get('/', (c) => {
       </section>
 
       {/* Instrument Cards Section (Vienna Academy Style) */}
-      <section class="py-16 bg-[#FFFFFF]">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="instrument-card">
-              <div class="instrument-image-wrapper">
-                <img src="/static/images/trumpet.png" alt="트럼펫" class="instrument-image" />
+      <section class="bg-[#FFFFFF]">
+        <div class="instruments-grid">
+          <div class="instrument-card">
+            <div class="instrument-image-wrapper">
+              <img src="/static/images/trumpet.png" alt="Trumpet" />
+              <div class="instrument-overlay">
+                <span class="instrument-label">Trumpet Lessons</span>
               </div>
-              <p class="instrument-name">TRUMPET</p>
             </div>
-            <div class="instrument-card">
-              <div class="instrument-image-wrapper">
-                <img src="/static/images/horn.png" alt="호른" class="instrument-image" />
+          </div>
+          <div class="instrument-card">
+            <div class="instrument-image-wrapper">
+              <img src="/static/images/horn.png" alt="Horn" />
+              <div class="instrument-overlay">
+                <span class="instrument-label">Horn Lessons</span>
               </div>
-              <p class="instrument-name">HORN</p>
             </div>
-            <div class="instrument-card">
-              <div class="instrument-image-wrapper">
-                <img src="/static/images/trombone.png" alt="트롬본" class="instrument-image" />
+          </div>
+          <div class="instrument-card">
+            <div class="instrument-image-wrapper">
+              <img src="/static/images/trombone.png" alt="Trombone" />
+              <div class="instrument-overlay">
+                <span class="instrument-label">Trombone Lessons</span>
               </div>
-              <p class="instrument-name">TROMBONE</p>
             </div>
-            <div class="instrument-card">
-              <div class="instrument-image-wrapper">
-                <img src="/static/images/tuba.png" alt="튜바" class="instrument-image" />
+          </div>
+          <div class="instrument-card">
+            <div class="instrument-image-wrapper">
+              <img src="/static/images/tuba.png" alt="Tuba" />
+              <div class="instrument-overlay">
+                <span class="instrument-label">Tuba Lessons</span>
               </div>
-              <p class="instrument-name">TUBA</p>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* POINT 섹션 01 - 좌우 교차 레이아웃 */}
       <section class="py-24 bg-[#FFFFFF]">

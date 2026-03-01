@@ -800,59 +800,102 @@ section {
 }
 
 /* === Vienna Academy Intro Section === */
+.intro-section {
+  text-align: left;
+  padding: 0 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .handwriting-label {
   font-family: 'Dancing Script', cursive;
   color: #C9A227;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-.intro-text-uppercase {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  line-height: 2;
-  color: #555;
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 0.95rem;
+.intro-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin-bottom: 1rem;
 }
 
 .intro-text-italic {
   font-style: italic;
-  color: #777;
-  margin-top: 1.5rem;
   font-size: 1rem;
+  color: #666;
+}
+
+/* === Instrument Cards Grid === */
+.instruments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .instruments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro-section {
+    padding: 0 24px;
+  }
 }
 
 /* === Instrument Cards === */
 .instrument-card {
-  text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
 }
 
-.instrument-card:hover {
-  transform: scale(1.02);
-}
-
 .instrument-image-wrapper {
-  aspect-ratio: 3/4;
-  border-radius: 8px;
+  position: relative;
+  aspect-ratio: 2/3;
   overflow: hidden;
   background-color: #E8E8E8;
 }
 
-.instrument-image {
+.instrument-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
+.instrument-card:hover .instrument-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Hover Overlay */
+.instrument-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instrument-card:hover .instrument-overlay {
+  opacity: 1;
+}
+
+.instrument-label {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Hide old instrument-name if still present */
 .instrument-name {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.875rem;
-  margin-top: 1rem;
-  color: #333;
-  font-weight: 500;
+  display: none;
 }
