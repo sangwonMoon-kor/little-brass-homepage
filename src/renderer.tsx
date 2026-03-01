@@ -49,103 +49,72 @@ export const renderer = jsxRenderer(
           {/* 스크롤 진행 바 */}
           <div class="scroll-progress" id="scroll-progress"></div>
 
-          {/* AnnouncementBanner */}
-          <div id="announcement-banner" class="sticky top-0 z-[100] flex h-14 items-center justify-between bg-[#C9A227] px-5 lg:px-8">
-            <p class="text-white sm:text-base font-medium">
-              원데이 클래스 20,000원 - 금관악기의 매력을 경험해보세요
-            </p>
-            <div class="flex items-center gap-3">
-              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white text-[#B8941C] font-medium h-10 lg:h-12 px-6 lg:px-8 hover:opacity-90 transition-opacity">
-                지금 예약하기
-              </a>
-              <button id="banner-close-btn" class="flex items-center justify-center text-white/70 hover:text-white transition-colors" aria-label="배너 닫기">
-                <i class="fas fa-times text-sm"></i>
-              </button>
+
+          {/* Top Info Bar (Vienna Academy Style) */}
+          <div class="absolute top-0 left-0 right-0 z-50 hidden lg:block" id="top-info-bar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex items-center justify-between h-10 text-white/80 text-xs border-b border-white/10">
+                <div class="flex items-center gap-1.5">
+                  <i class="fas fa-map-marker-alt text-[10px]"></i>
+                  <span>서울시 양천구 목동</span>
+                </div>
+                <a href="mailto:Littlebrass.edu@gmail.com" class="flex items-center gap-1.5 hover:text-white transition">
+                  <i class="fas fa-envelope text-[10px]"></i>
+                  <span>Littlebrass.edu@gmail.com</span>
+                </a>
+                <div class="flex items-center gap-3">
+                  <a href="https://instagram.com/littlebrass_music" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" class="text-white/60 hover:text-white transition"><i class="fab fa-instagram text-sm"></i></a>
+                  <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" class="text-white/60 hover:text-white transition"><i class="fab fa-youtube text-sm"></i></a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <nav class="absolute top-14 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+          {/* Main Navigation (Vienna Academy Style) */}
+          <nav class="absolute top-0 lg:top-10 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                  <a href="/" class="flex items-center space-x-3 group">
-                    <div>
-                      <span class="text-2xl font-display font-bold text-white block leading-tight" style="font-family: 'Playfair Display', serif;">Little Brass</span>
-                      <span class="text-xs text-white/70 font-medium">Premium Music Academy</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="hidden lg:flex items-center space-x-1">
-                  <a href="/" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">홈</a>
-                  <a href="/curriculum" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">커리큘럼</a>
-                  <a href="/online" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">온라인과정</a>
-                  <a href="/teachers" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">강사진</a>
-                  <a href="/gallery" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">갤러리</a>
-                  <a href="/achievements" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">학생성과</a>
+              <div class="flex justify-between items-center h-16 lg:h-20">
+                {/* Logo */}
+                <a href="/" class="nav-logo">
+                  <span class="text-xl lg:text-2xl font-bold text-white tracking-[0.15em]" style="font-family: 'Playfair Display', serif;">LITTLE BRASS</span>
+                </a>
 
-                  {/* 더보기 드롭다운 */}
-                  <div class="relative group">
-                    <button class="ml-2 flex items-center gap-1.5 rounded-full border-2 border-white/50 h-9 px-5 text-sm font-medium text-white/90 hover:border-white hover:text-white transition-all">
-                      더보기
-                      <i class="fas fa-chevron-down text-xs"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 overflow-hidden">
-                      <div class="py-2">
-                        <a href="/about" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">학원소개</a>
-                        <a href="/faq" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">FAQ</a>
-                        <a href="/notice" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">
-                          <i class="fas fa-bullhorn mr-2 text-xs"></i>공지사항
-                        </a>
-                        <a href="/events" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">
-                          <i class="fas fa-gift mr-2 text-xs"></i>이벤트
-                        </a>
-                        <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">
-                          <i class="fas fa-blog mr-2 text-xs"></i>블로그
-                        </a>
-                        <a href="/location" class="block px-4 py-2.5 text-[#555555] hover:bg-gray-50 hover:text-[#C9A227] transition text-sm">오시는길</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="ml-3 inline-flex items-center justify-center rounded-full bg-[#C9A227] text-white h-10 px-6 hover:bg-[#B8941C] transition-colors text-sm font-medium gap-2">
-                    <i class="fas fa-ticket-alt"></i>
-                    원데이 클래스
-                  </a>
-                  <a href="/contact" class="inline-flex items-center justify-center rounded-full border-2 border-white text-white h-10 px-6 hover:bg-white hover:text-[#2C2C2C] transition-colors text-sm font-medium">
-                    문의하기
-                  </a>
+                {/* Desktop Menu */}
+                <div class="hidden lg:flex items-center">
+                  <a href="/about" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">학원소개</a>
+                  <a href="/curriculum" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">레슨안내</a>
+                  <a href="/online" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">온라인과정</a>
+                  <a href="/teachers" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">강사진</a>
+                  <a href="/gallery" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">갤러리</a>
+                  <a href="/contact" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide">문의하기</a>
                 </div>
+
+                {/* Mobile Menu Button */}
                 <button id="mobile-menu-button" class="lg:hidden text-white hover:text-white/80 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
                   <i class="fas fa-bars text-2xl"></i>
                 </button>
               </div>
             </div>
-            <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm border-t border-white/20">
+
+            {/* Mobile Menu */}
+            <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm">
               <div class="px-4 py-3 space-y-1">
                 <a href="/" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">홈</a>
                 <a href="/about" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">학원소개</a>
-                <a href="/teachers" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">강사소개</a>
-                <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">커리큘럼</a>
+                <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">레슨안내</a>
+                <a href="/online" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">온라인과정</a>
+                <a href="/teachers" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">강사진</a>
                 <a href="/gallery" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">갤러리</a>
                 <a href="/achievements" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">학생성과</a>
                 <a href="/faq" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">FAQ</a>
-                <a href="/notice" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">
-                  <i class="fas fa-bullhorn mr-2"></i>공지사항
-                </a>
-                <a href="/events" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">
-                  <i class="fas fa-gift mr-2"></i>이벤트
-                </a>
                 <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">
                   <i class="fas fa-blog mr-2"></i>블로그
                 </a>
-                <a href="/online" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">온라인과정</a>
                 <a href="/location" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">오시는길</a>
+                <a href="/contact" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">문의하기</a>
                 <div class="mt-3 flex flex-col gap-3 border-t border-gray-100 pt-4">
                   <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-full bg-[#C9A227] text-white h-12 px-6 hover:bg-[#B8941C] transition-colors text-base font-medium">
                     <i class="fas fa-ticket-alt mr-2"></i>원데이 클래스
-                  </a>
-                  <a href="/contact" class="flex items-center justify-center rounded-full border-2 border-[#2C2C2C] text-[#2C2C2C] h-12 px-6 hover:bg-[#2C2C2C] hover:text-white transition-colors text-base font-medium">
-                    문의하기
                   </a>
                 </div>
               </div>

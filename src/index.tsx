@@ -29,7 +29,7 @@ app.get('/', (c) => {
         {/* Centered Text Content */}
         <div class="relative z-10 text-center px-6 max-w-[700px]">
           {/* Main Title */}
-          <h1 class="hero-title tracking-wide text-white text-5xl md:text-7xl" style="font-family: 'Playfair Display', serif; font-style: italic;">
+          <h1 class="hero-title tracking-wide text-white text-6xl md:text-7xl lg:text-8xl" style="font-family: 'Playfair Display', serif; font-style: italic;">
             Little Brass
           </h1>
 

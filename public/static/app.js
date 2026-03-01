@@ -59,33 +59,16 @@ function initMobileMenu() {
   console.log('[모바일 메뉴] 이벤트 리스너 등록 완료');
 }
 
-// AnnouncementBanner 닫기
-function initAnnouncementBanner() {
-  const banner = document.getElementById('announcement-banner');
-  const closeBtn = document.getElementById('banner-close-btn');
-  const nav = document.getElementById('main-nav');
-
-  if (closeBtn && banner) {
-    closeBtn.addEventListener('click', function () {
-      banner.style.display = 'none';
-      if (nav) {
-        nav.classList.remove('top-14');
-        nav.classList.add('top-0');
-      }
-    });
-  }
-}
+// (Banner removed — no longer needed)
 
 // DOMContentLoaded 또는 이미 로드된 경우 즉시 실행
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
-    initAnnouncementBanner();
   });
 } else {
   // DOM이 이미 로드된 경우
   initMobileMenu();
-  initAnnouncementBanner();
 }
 
 // 나머지 페이지 스크립트는 DOMContentLoaded 이후에 실행
@@ -93,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 스크롤 진행 바
   const scrollProgress = document.getElementById('scroll-progress');
   const mainNav = document.getElementById('main-nav');
+  const topInfoBar = document.getElementById('top-info-bar');
 
   window.addEventListener('scroll', function () {
     // Scroll progress bar
@@ -106,8 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mainNav) {
       if (window.scrollY > window.innerHeight * 0.6) {
         mainNav.classList.add('nav-scrolled');
+        if (topInfoBar) topInfoBar.style.display = 'none';
       } else {
         mainNav.classList.remove('nav-scrolled');
+        if (topInfoBar) topInfoBar.style.display = '';
       }
     }
   });
