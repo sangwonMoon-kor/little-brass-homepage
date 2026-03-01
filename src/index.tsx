@@ -9,39 +9,49 @@ app.use(renderer)
 app.get('/', (c) => {
   return c.render(
     <div>
-      {/* Fullscreen Hero Section */}
-      <section class="hero-container relative flex min-h-screen flex-col items-center justify-end overflow-hidden pb-16 sm:pb-20 lg:pb-24" style="background: linear-gradient(135deg, #1E3A5F 0%, #0F1E3A 100%);">
-        {/* Text content */}
-        <div class="max-w-[600px] px-6 text-center">
+      {/* Fullscreen Video Hero Section */}
+      <section class="relative h-screen overflow-hidden flex items-center justify-center">
+        {/* Video Background */}
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover"
+          style="z-index: -1;"
+        >
+          <source src="https://res.cloudinary.com/ddgt7ku2v/video/upload/v1772370250/%EB%A6%AC%ED%8B%80%EB%B8%8C%EB%9D%BC%EC%8A%A4_%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%A9%94%EC%9D%B8%EC%98%81%EC%83%81_waoubo.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark Overlay */}
+        <div class="absolute inset-0 bg-black/30"></div>
+
+        {/* Centered Text Content */}
+        <div class="relative z-10 text-center px-6 max-w-[700px]">
+          {/* Main Title */}
+          <h1 class="hero-title tracking-wide text-white text-5xl md:text-7xl" style="font-family: 'Playfair Display', serif; font-style: italic;">
+            Little Brass
+          </h1>
+
           {/* Subtitle */}
-          <p class="hero-subtitle text-lg sm:text-xl lg:text-2xl" style="font-family: 'Dancing Script', cursive; color: #D4AF37;">
+          <p class="hero-subtitle mt-4 text-xl md:text-2xl text-white/80" style="font-family: 'Dancing Script', cursive;">
             Premium Brass Education
           </p>
 
-          {/* Main heading */}
-          <h1 class="hero-title mt-2 font-medium leading-[1.1] text-white text-4xl sm:text-5xl md:text-6xl lg:text-[70px] lg:mt-3" style="font-family: 'Playfair Display', serif;">
-            금관악기로 여는<br />새로운 음악
-          </h1>
+          {/* Vertical Line Divider */}
+          <div class="hero-divider flex justify-center my-6">
+            <div class="w-px h-[60px] bg-white/50"></div>
+          </div>
 
-          {/* Description */}
-          <p class="hero-description mt-4 text-base lg:text-lg text-white/70">
-            전문 강사진과 함께하는 최고급 음악 교육
-          </p>
-
-          {/* CTA buttons */}
-          <div class="hero-buttons mt-6 flex items-center justify-center gap-4 flex-col sm:flex-row">
-            <a href="/curriculum" class="rounded-full bg-[#C9A227] text-white h-12 px-8 hover:bg-[#B8941C] transition-colors font-medium flex items-center justify-center">
+          {/* CTA Buttons */}
+          <div class="hero-buttons flex items-center justify-center gap-4 flex-col sm:flex-row">
+            <a href="/curriculum" class="rounded-full bg-[#C9A227] text-white px-8 py-3 hover:opacity-90 transition font-medium flex items-center justify-center">
               커리큘럼 보기
             </a>
-            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white text-white h-12 px-8 hover:bg-white/10 transition-colors font-medium flex items-center justify-center">
+            <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white text-white px-8 py-3 hover:opacity-90 transition font-medium flex items-center justify-center">
               원데이 클래스 예약
             </a>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
-          <i class="fas fa-chevron-down text-white/40 text-xl"></i>
         </div>
       </section>
 

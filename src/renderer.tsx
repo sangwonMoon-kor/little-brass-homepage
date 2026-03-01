@@ -64,28 +64,28 @@ export const renderer = jsxRenderer(
             </div>
           </div>
 
-          <nav class="sticky top-14 z-50 bg-[#FFFFFF] shadow-sm border-b border-[#EEEEEE]" id="main-nav">
+          <nav class="absolute top-14 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
                   <a href="/" class="flex items-center space-x-3 group">
                     <div>
-                      <span class="text-2xl font-display font-bold text-[#2C2C2C] block leading-tight" style="font-family: 'Playfair Display', serif;">Little Brass</span>
-                      <span class="text-xs text-[#C9A227] font-medium">Premium Music Academy</span>
+                      <span class="text-2xl font-display font-bold text-white block leading-tight" style="font-family: 'Playfair Display', serif;">Little Brass</span>
+                      <span class="text-xs text-white/70 font-medium">Premium Music Academy</span>
                     </div>
                   </a>
                 </div>
                 <div class="hidden lg:flex items-center space-x-1">
-                  <a href="/" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">홈</a>
-                  <a href="/curriculum" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">커리큘럼</a>
-                  <a href="/online" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">온라인과정</a>
-                  <a href="/teachers" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">강사진</a>
-                  <a href="/gallery" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">갤러리</a>
-                  <a href="/achievements" class="text-[#555555] hover:text-[#C9A227] px-4 py-2 rounded-full transition font-medium text-sm hover:bg-gray-50">학생성과</a>
+                  <a href="/" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">홈</a>
+                  <a href="/curriculum" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">커리큘럼</a>
+                  <a href="/online" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">온라인과정</a>
+                  <a href="/teachers" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">강사진</a>
+                  <a href="/gallery" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">갤러리</a>
+                  <a href="/achievements" class="nav-link text-white/90 hover:text-white px-4 py-2 rounded-full transition font-medium text-sm">학생성과</a>
 
                   {/* 더보기 드롭다운 */}
                   <div class="relative group">
-                    <button class="ml-2 flex items-center gap-1.5 rounded-full border-2 border-gray-300 h-9 px-5 text-sm font-medium text-[#555555] hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
+                    <button class="ml-2 flex items-center gap-1.5 rounded-full border-2 border-white/50 h-9 px-5 text-sm font-medium text-white/90 hover:border-white hover:text-white transition-all">
                       더보기
                       <i class="fas fa-chevron-down text-xs"></i>
                     </button>
@@ -111,16 +111,16 @@ export const renderer = jsxRenderer(
                     <i class="fas fa-ticket-alt"></i>
                     원데이 클래스
                   </a>
-                  <a href="/contact" class="inline-flex items-center justify-center rounded-full border-2 border-[#2C2C2C] text-[#2C2C2C] h-10 px-6 hover:bg-[#2C2C2C] hover:text-white transition-colors text-sm font-medium">
+                  <a href="/contact" class="inline-flex items-center justify-center rounded-full border-2 border-white text-white h-10 px-6 hover:bg-white hover:text-[#2C2C2C] transition-colors text-sm font-medium">
                     문의하기
                   </a>
                 </div>
-                <button id="mobile-menu-button" class="lg:hidden text-[#C9A227] hover:text-yellow-700 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-button" class="lg:hidden text-white hover:text-white/80 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
                   <i class="fas fa-bars text-2xl"></i>
                 </button>
               </div>
             </div>
-            <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFFFF] border-t border-[#EEEEEE]">
+            <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm border-t border-white/20">
               <div class="px-4 py-3 space-y-1">
                 <a href="/" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">홈</a>
                 <a href="/about" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">학원소개</a>

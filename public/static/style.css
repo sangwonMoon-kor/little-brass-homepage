@@ -755,25 +755,58 @@ section {
   filter: grayscale(0%) opacity(100%);
 }
 
-/* === Hero Animation Classes (from hero-landing) === */
-.hero-subtitle {
+/* === Hero Animation Classes (Video Background Hero) === */
+.hero-title {
   animation: fadeInUp 1s ease-out 0.1s both;
 }
 
-.hero-title {
+.hero-subtitle {
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
-.hero-description {
-  animation: fadeInUp 1s ease-out 0.5s both;
+.hero-divider {
+  animation: fadeIn 1s ease-out 0.5s both;
 }
 
 .hero-buttons {
   animation: fadeInUp 1s ease-out 0.7s both;
 }
 
-.hero-container {
-  animation: fadeIn 1.2s ease-out both;
-  -webkit-mask-image: radial-gradient(circle, white, black);
-  mask-image: radial-gradient(circle, white, black);
+/* === Nav Scrolled State (restored via JS on scroll) === */
+#main-nav.nav-scrolled {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #EEEEEE;
+}
+
+#main-nav.nav-scrolled .nav-link {
+  color: #555555 !important;
+}
+
+#main-nav.nav-scrolled .nav-link:hover {
+  color: #C9A227 !important;
+}
+
+#main-nav.nav-scrolled span.text-white {
+  color: #2C2C2C !important;
+}
+
+#main-nav.nav-scrolled span.text-white\/70 {
+  color: #C9A227 !important;
+}
+
+#main-nav.nav-scrolled button.text-white {
+  color: #C9A227 !important;
+}
+
+#main-nav.nav-scrolled .border-white\/50 {
+  border-color: #d1d5db !important;
+  color: #555555 !important;
+}
+
+#main-nav.nav-scrolled .border-white {
+  border-color: #2C2C2C !important;
+  color: #2C2C2C !important;
 }

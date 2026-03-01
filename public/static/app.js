@@ -92,13 +92,25 @@ if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', function () {
   // 스크롤 진행 바
   const scrollProgress = document.getElementById('scroll-progress');
-  if (scrollProgress) {
-    window.addEventListener('scroll', function () {
+  const mainNav = document.getElementById('main-nav');
+
+  window.addEventListener('scroll', function () {
+    // Scroll progress bar
+    if (scrollProgress) {
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (window.scrollY / windowHeight) * 100;
       scrollProgress.style.width = scrolled + '%';
-    });
-  }
+    }
+
+    // Nav scrolled state: toggle white bg after scrolling past hero
+    if (mainNav) {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        mainNav.classList.add('nav-scrolled');
+      } else {
+        mainNav.classList.remove('nav-scrolled');
+      }
+    }
+  });
 
   // FAQ 검색 기능
   const faqSearch = document.getElementById('faq-search');
