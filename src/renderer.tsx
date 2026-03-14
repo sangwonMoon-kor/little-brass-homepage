@@ -134,27 +134,42 @@ export const renderer = jsxRenderer(
             <span class="hidden sm:inline">원데이 클래스</span>
           </a>
 
-          <footer class="footer-new">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-              {/* Logo */}
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem;">Little Brass</h3>
+          <footer style="background: #1a1a1a; color: #ffffff; padding: 0; margin-top: 0;">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                {/* Left: Logo + Tagline */}
+                <div>
+                  <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">Little Brass</h3>
+                  <p style="color: #999; font-size: 0.95rem; line-height: 1.8;">금관악기 전문 음악학원</p>
+                </div>
 
-              {/* Contact Info */}
-              <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center; margin-bottom: 2rem; color: #888; font-size: 0.9rem;">
-                <a href="tel:010-5819-4687" style="color: #888;">010-5819-4687</a>
-                <a href="mailto:little_brass@naver.com" style="color: #888;">little_brass@naver.com</a>
-                <p style="margin: 0;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
+                {/* Center: Contact Info */}
+                <div>
+                  <h4 style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B8941C; margin-bottom: 1rem;">Contact</h4>
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem; color: #999; font-size: 0.9rem;">
+                    <p style="margin: 0;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
+                    <a href="tel:010-5819-4687" style="color: #999;">010-5819-4687</a>
+                    <a href="mailto:little_brass@naver.com" style="color: #999;">little_brass@naver.com</a>
+                  </div>
+                </div>
+
+                {/* Right: SNS + Naver */}
+                <div>
+                  <h4 style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B8941C; margin-bottom: 1rem;">Follow Us</h4>
+                  <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
+                    <a href="https://www.instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" style="color: #999; display: flex; align-items: center; gap: 0.5rem;">
+                      <i class="fab fa-instagram"></i> @little_brass.official
+                    </a>
+                    <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" style="color: #999; display: flex; align-items: center; gap: 0.5rem;">
+                      <i class="fas fa-calendar-check"></i> 네이버 예약
+                    </a>
+                  </div>
+                </div>
               </div>
-
-              {/* SNS Icons */}
-              <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2.5rem;">
-                <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" style="color: #888; font-size: 1.25rem;"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" style="color: #888; font-size: 1.25rem;"><i class="fab fa-youtube"></i></a>
-                <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="블로그" style="color: #888; font-size: 1.25rem;"><i class="fas fa-blog"></i></a>
-              </div>
-
-              {/* Copyright */}
-              <p style="font-size: 0.75rem; color: #aaa;">&copy; 2026 Little Brass. All rights reserved.</p>
+            </div>
+            {/* Bottom Bar */}
+            <div style="border-top: 1px solid #333; padding: 1.5rem 0; text-align: center;">
+              <p style="font-size: 0.75rem; color: #666; margin: 0;">&copy; 2025 Little Brass. All rights reserved.</p>
             </div>
           </footer>
           <script src="/static/app.js"></script>

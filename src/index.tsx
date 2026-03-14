@@ -110,49 +110,77 @@ app.get('/', (c) => {
         </div>
       </section>
 
-      {/* Why Little Brass - Vienna Academy Image Card Grid */}
+      {/* Why Little Brass - Zigzag Alternating Layout */}
       <section class="bg-[#FFFFFF]">
         <p class="section-label">Why Little Brass</p>
-        <div class="image-grid">
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="Professional Education" />
-            <div class="image-overlay">
-              <span class="image-label">Professional Education</span>
-            </div>
+
+        {/* Row 1: Image Left + Text Right */}
+        <div class="zigzag-row">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80" alt="전문 금관악기 교육" />
           </div>
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="Instrument Rental" />
-            <div class="image-overlay">
-              <span class="image-label">Instrument Rental</span>
-            </div>
+          <div class="zigzag-text">
+            <p class="sub-label">Professional Education</p>
+            <h3 class="main-title">전문 금관악기 교육</h3>
+            <p class="desc">
+              트럼펫, 호른, 트롬본, 유포늄 등 모든 금관악기를 전문적으로 교육합니다.
+              입문부터 전문가 수준까지 체계적인 커리큘럼으로 진행됩니다.
+            </p>
           </div>
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="Online & Offline" />
-            <div class="image-overlay">
-              <span class="image-label">Online &amp; Offline</span>
-            </div>
+        </div>
+
+        {/* Row 2: Text Left + Image Right (reverse) */}
+        <div class="zigzag-row reverse">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80" alt="합리적인 악기 대여" />
+          </div>
+          <div class="zigzag-text">
+            <p class="sub-label">Instrument Rental</p>
+            <h3 class="main-title">합리적인 악기 대여</h3>
+            <p class="desc">
+              고가의 금관악기를 합리적인 가격으로 대여할 수 있습니다.
+              초보자도 부담 없이 시작할 수 있도록 다양한 옵션을 제공합니다.
+            </p>
+          </div>
+        </div>
+
+        {/* Row 3: Image Left + Text Right */}
+        <div class="zigzag-row">
+          <div class="zigzag-image">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80" alt="온라인 & 오프라인" />
+          </div>
+          <div class="zigzag-text">
+            <p class="sub-label">Online &amp; Offline</p>
+            <h3 class="main-title">온라인 &amp; 오프라인</h3>
+            <p class="desc">
+              원하는 방식으로 수업을 선택할 수 있습니다.
+              시간과 장소의 제약 없이 언제 어디서나 레슨이 가능합니다.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Our Space - Gallery Section */}
+      {/* Our Space - Asymmetric Gallery Grid */}
       <section class="bg-[#FFFFFF]">
-        <p class="section-label">Our Space</p>
-        <div class="image-grid">
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실" />
+        <div class="gallery-header">
+          <p class="sub-label">Our Space</p>
+          <h2 class="main-title">깨끗하고 쾌적한 학원 시설</h2>
+        </div>
+        <div class="gallery-asymmetric">
+          <div class="gallery-item large">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="레슨실" />
             <div class="image-overlay">
               <span class="image-label">Lesson Room</span>
             </div>
           </div>
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="연습실" />
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="연습실" />
             <div class="image-overlay">
               <span class="image-label">Practice Room</span>
             </div>
           </div>
-          <div class="image-card">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="대기실" />
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="대기실" />
             <div class="image-overlay">
               <span class="image-label">Lounge</span>
             </div>
@@ -164,12 +192,24 @@ app.get('/', (c) => {
       <section class="bg-[#FFFFFF]">
         <p class="section-label">Latest News</p>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          {/* 블로그 카드 - 동적 RSS 로딩 */}
-          <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* 로딩 중 표시 */}
-            <div class="col-span-3 text-center py-12">
-              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#B8941C] mx-auto mb-4"></div>
-              <p class="text-[#555555]">최신 소식을 불러오는 중...</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            {/* Card 1 */}
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
+              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.01</p>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">리틀브라스 오픈 안내</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">강동구에 새롭게 문을 연 금관악기 전문 음악학원을 소개합니다.</p>
+            </div>
+            {/* Card 2 */}
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
+              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.05</p>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">원데이 클래스 후기</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">처음 트럼펫을 불어본 학생의 생생한 원데이 클래스 체험기입니다.</p>
+            </div>
+            {/* Card 3 */}
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
+              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.10</p>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">금관악기 선택 가이드</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">트럼펫, 호른, 트롬본, 유포늄 중 나에게 맞는 악기는?</p>
             </div>
           </div>
 
@@ -184,12 +224,20 @@ app.get('/', (c) => {
       </section>
 
       {/* Start Your Journey - CTA Section */}
-      <section class="bg-[#FAFAF8] py-24">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-          <p class="section-label" style="text-align: center; padding: 0 0 20px 0;">Start Your Journey</p>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">지금 바로 시작하세요</h2>
-          <p class="text-lg text-[#555555] mb-10" style="line-height: 1.8;">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
-          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#B8941C] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#A0801A] transition-all hover:scale-105">
+      <section class="relative py-28 overflow-hidden">
+        {/* Background Image + Overlay */}
+        <div class="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80" alt="" class="w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background: rgba(0, 0, 0, 0.65);"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <p style="font-family: 'Dancing Script', cursive; color: #D4AF37; font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Start Your Journey</p>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #fff; margin-bottom: 1rem;">지금 바로 시작하세요</h2>
+          <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; background: #fff; color: #B8941C; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s; border: 2px solid #fff; text-decoration: none;"
+            onmouseover="this.style.background='#B8941C';this.style.color='#fff';"
+            onmouseout="this.style.background='#fff';this.style.color='#B8941C';">
             원데이 클래스 예약하기
             <i class="fas fa-arrow-right"></i>
           </a>
