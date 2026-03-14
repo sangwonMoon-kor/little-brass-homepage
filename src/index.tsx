@@ -61,7 +61,7 @@ app.get('/', (c) => {
           <p class="handwriting-label">What We Offer</p>
           <p class="intro-text">
             금관악기는 오랜 역사와 함께 오케스트라의 중심에서 웅장한 소리를 만들어왔습니다.<br />
-            트럼펫, 호른, 트롬본, 튜바<br />
+            트럼펫, 호른, 트롬본, 유포늄<br />
             각 악기가 가진 고유한 매력과 가능성을 리틀브라스가 이어갑니다.<br />
             금관악기 전문 교육의 새로운 기준을 만들어갑니다.
           </p>
@@ -101,9 +101,9 @@ app.get('/', (c) => {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/tuba.png" alt="Tuba" />
+              <img src="/static/images/euphonium.png" alt="Euphonium" />
               <div class="instrument-overlay">
-                <span class="instrument-label">Tuba Lessons</span>
+                <span class="instrument-label">Euphonium Lessons</span>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ app.get('/', (c) => {
               </div>
               <h3 class="section-title">전문 금관악기 교육</h3>
               <p class="text-[#555555] text-lg mb-4">
-                트럼펫, 호른, 트롬본, 튜바 등 모든 금관악기를 전문적으로 교육합니다.
+                트럼펫, 호른, 트롬본, 유포늄 등 모든 금관악기를 전문적으로 교육합니다.
               </p>
               <p class="text-[#555555]">
                 입문부터 전문가 수준까지 체계적인 커리큘럼으로 진행됩니다.
@@ -747,8 +747,8 @@ app.get('/location', (c) => {
                   <h3 class="text-[20px] leading-[1.6] font-normal font-bold text-[#2C2C2C] mb-3 flex items-center">
                     <i class="fas fa-map-marker-alt text-[#C9A227] mr-3"></i>주소
                   </h3>
-                  <p class="text-[#555555] ml-9">서울특별시 강남구 테헤란로 123</p>
-                  <p class="text-[#555555] ml-9">Little Brass 빌딩 3층</p>
+                  <p class="text-[#555555] ml-9">서울특별시 강동구 상일로12길 99</p>
+                  <p class="text-[#555555] ml-9">리엔프라자 501호</p>
                 </div>
 
                 <div>
@@ -784,8 +784,8 @@ app.get('/location', (c) => {
                   <h3 class="text-[20px] leading-[1.6] font-normal font-bold text-[#2C2C2C] mb-3 flex items-center">
                     <i class="fas fa-phone text-[#C9A227] mr-3"></i>연락처
                   </h3>
-                  <p class="text-[#555555] ml-9">전화: 02-1234-5678</p>
-                  <p class="text-[#555555] ml-9">이메일: info@littlebrass.com</p>
+                  <p class="text-[#555555] ml-9">전화: <a href="tel:010-5819-4687" class="hover:text-[#C9A227] transition">010-5819-4687</a></p>
+                  <p class="text-[#555555] ml-9">이메일: <a href="mailto:little_brass@naver.com" class="hover:text-[#C9A227] transition">little_brass@naver.com</a></p>
                 </div>
               </div>
             </div>
@@ -1498,13 +1498,13 @@ app.get('/faq', (c) => {
               <i class="fas fa-phone text-[40px] leading-[1.2] text-gold-500 mb-3"></i>
               <h3 class="font-bold text-lg mb-2">전화 문의</h3>
               <p class="text-[#555555] text-sm mb-3">평일 10:00 - 22:00</p>
-              <a href="tel:02-1234-5678" class="text-gold-600 font-semibold hover:text-gold-700">02-1234-5678</a>
+              <a href="tel:010-5819-4687" class="text-gold-600 font-semibold hover:text-gold-700">010-5819-4687</a>
             </div>
             <div class="bg-[#FFFFFF] p-6 border border-[#EEEEEE] rounded-xl shadow-md">
               <i class="fas fa-envelope text-[40px] leading-[1.2] text-gold-500 mb-3"></i>
               <h3 class="font-bold text-lg mb-2">이메일 문의</h3>
               <p class="text-[#555555] text-sm mb-3">24시간 접수</p>
-              <a href="mailto:info@littlebrass.com" class="text-gold-600 font-semibold hover:text-gold-700">info@littlebrass.com</a>
+              <a href="mailto:little_brass@naver.com" class="text-gold-600 font-semibold hover:text-gold-700">little_brass@naver.com</a>
             </div>
             <div class="bg-[#FFFFFF] p-6 border border-[#EEEEEE] rounded-xl shadow-md">
               <i class="fas fa-comments text-[40px] leading-[1.2] text-gold-500 mb-3"></i>
@@ -1649,7 +1649,7 @@ app.get('/achievements', (c) => {
                     <span class="text-xs bg-gold-100 text-gold-800 px-3 py-1 rounded-full font-semibold">대상</span>
                   </div>
                   <h3 class="font-bold text-navy-900 text-lg mb-2">한국 청소년 음악제</h3>
-                  <p class="text-[#555555] text-sm mb-3">튜바 부문</p>
+                  <p class="text-[#555555] text-sm mb-3">유포늄 부문</p>
                   <div class="flex items-center text-sm text-[#555555]">
                     <i class="fas fa-user mr-2 text-gold-500"></i>
                     <span>최○○ 학생</span>
@@ -2547,14 +2547,14 @@ app.get('/contact', (c) => {
                     <i class="fas fa-phone text-[#C9A227] text-[20px] leading-[1.6] font-normal mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-[#2C2C2C]">전화</p>
-                      <p class="text-[#555555]">02-1234-5678</p>
+                      <p class="text-[#555555]"><a href="tel:010-5819-4687" class="hover:text-[#C9A227] transition">010-5819-4687</a></p>
                     </div>
                   </div>
                   <div class="flex items-start">
                     <i class="fas fa-envelope text-[#C9A227] text-[20px] leading-[1.6] font-normal mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-[#2C2C2C]">이메일</p>
-                      <p class="text-[#555555]">info@littlebrass.com</p>
+                      <p class="text-[#555555]"><a href="mailto:little_brass@naver.com" class="hover:text-[#C9A227] transition">little_brass@naver.com</a></p>
                     </div>
                   </div>
                   <div class="flex items-start">
@@ -2570,8 +2570,8 @@ app.get('/contact', (c) => {
                     <i class="fas fa-map-marker-alt text-[#C9A227] text-[20px] leading-[1.6] font-normal mr-4 mt-1"></i>
                     <div>
                       <p class="font-semibold text-[#2C2C2C]">주소</p>
-                      <p class="text-[#555555]">서울특별시 강남구 테헤란로 123</p>
-                      <p class="text-[#555555]">Little Brass 빌딩 3층</p>
+                      <p class="text-[#555555]">서울특별시 강동구 상일로12길 99</p>
+                      <p class="text-[#555555]">리엔프라자 501호</p>
                     </div>
                   </div>
                 </div>

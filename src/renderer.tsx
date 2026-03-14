@@ -14,7 +14,7 @@ export const renderer = jsxRenderer(
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>{pageTitle}</title>
           <meta name="description" content={description} />
-          <meta name="keywords" content="Little Brass, 리틀브라스, 음악학원, 금관악기, 트럼펫, 혼, 트롬본, 튜바, 음악 레슨, 온라인 레슨, 강남 음악학원, 예고 입시, 음대 입시" />
+          <meta name="keywords" content="Little Brass, 리틀브라스, 음악학원, 금관악기, 트럼펫, 혼, 트롬본, 유포늄, 음악 레슨, 온라인 레슨, 강동구 음악학원, 예고 입시, 음대 입시" />
           <meta name="author" content="Little Brass" />
 
           {/* Open Graph / Facebook */}
@@ -56,14 +56,14 @@ export const renderer = jsxRenderer(
               <div class="flex items-center justify-between h-10 text-white/80 text-xs border-b border-white/10">
                 <div class="flex items-center gap-1.5">
                   <i class="fas fa-map-marker-alt text-[10px]"></i>
-                  <span>서울시 양천구 목동</span>
+                  <span>서울시 강동구 상일동</span>
                 </div>
-                <a href="mailto:Littlebrass.edu@gmail.com" class="flex items-center gap-1.5 hover:text-white transition">
+                <a href="mailto:little_brass@naver.com" class="flex items-center gap-1.5 hover:text-white transition">
                   <i class="fas fa-envelope text-[10px]"></i>
-                  <span>Littlebrass.edu@gmail.com</span>
+                  <span>little_brass@naver.com</span>
                 </a>
                 <div class="flex items-center gap-3">
-                  <a href="https://instagram.com/littlebrass_music" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" class="text-white/60 hover:text-white transition"><i class="fab fa-instagram text-sm"></i></a>
+                  <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" class="text-white/60 hover:text-white transition"><i class="fab fa-instagram text-sm"></i></a>
                   <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" class="text-white/60 hover:text-white transition"><i class="fab fa-youtube text-sm"></i></a>
                 </div>
               </div>
@@ -155,14 +155,11 @@ export const renderer = jsxRenderer(
                     <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
                       <i class="fas fa-blog text-[#888888] group-hover:text-[#555555]"></i>
                     </a>
-                    <a href="#" aria-label="인스타그램" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
                       <i class="fab fa-instagram text-[#888888] group-hover:text-[#555555]"></i>
                     </a>
-                    <a href="#" aria-label="유튜브" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
                       <i class="fab fa-youtube text-[#888888] group-hover:text-[#555555]"></i>
-                    </a>
-                    <a href="#" aria-label="페이스북" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                      <i class="fab fa-facebook text-[#888888] group-hover:text-[#555555]"></i>
                     </a>
                   </div>
                 </div>
@@ -183,15 +180,19 @@ export const renderer = jsxRenderer(
                   <ul class="space-y-3 text-[#888888]">
                     <li class="flex items-start">
                       <i class="fas fa-phone text-[#C9A227] mt-1 mr-3"></i>
-                      <span>02-1234-5678</span>
+                      <a href="tel:010-5819-4687" class="hover:text-[#C9A227] transition">010-5819-4687</a>
                     </li>
                     <li class="flex items-start">
                       <i class="fas fa-envelope text-[#C9A227] mt-1 mr-3"></i>
-                      <span>info@littlebrass.com</span>
+                      <a href="mailto:little_brass@naver.com" class="hover:text-[#C9A227] transition">little_brass@naver.com</a>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fab fa-instagram text-[#C9A227] mt-1 mr-3"></i>
+                      <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" class="hover:text-[#C9A227] transition">little_brass.official</a>
                     </li>
                     <li class="flex items-start">
                       <i class="fas fa-map-marker-alt text-[#C9A227] mt-1 mr-3"></i>
-                      <span>서울특별시 강남구<br />테헤란로 123</span>
+                      <span>서울특별시 강동구<br />상일로12길 99 리엔프라자 501호</span>
                     </li>
                   </ul>
                 </div>
