@@ -167,23 +167,6 @@ app.get('/', (c) => {
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-            <div class="md:w-1/2 p-4">
-              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt="학원 시설" class="rounded-2xl shadow-md w-full" />
-            </div>
-            <div class="md:w-1/2 p-4">
-              <div class="inline-block bg-[#FFFFFF]0 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-                POINT 04
-              </div>
-              <h3 class="section-title">최적의 연습 환경</h3>
-              <p class="text-[#555555] text-lg mb-4">
-                쾌적하고 전문적인 연습실과 최신 음향 시설을 갖추고 있습니다.
-              </p>
-              <p class="text-[#555555]">
-                1:1 맞춤형 레슨실과 합주실을 통해 최상의 학습 환경을 제공합니다.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
