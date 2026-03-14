@@ -110,133 +110,88 @@ app.get('/', (c) => {
         </div>
       </section>
 
-      {/* POINT 섹션 01 - 좌우 교차 레이아웃 */}
-      <section class="py-24 bg-[#FFFFFF]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-            <div class="md:w-1/2 p-4">
-              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="금관악기 레슨" class="rounded-2xl shadow-md w-full" />
-            </div>
-            <div class="md:w-1/2 p-4">
-              <div class="inline-block bg-[#C9A227] text-[#2C2C2C] px-4 py-2 rounded-full text-sm font-bold mb-4">
-                POINT 01
-              </div>
-              <h3 class="section-title">전문 금관악기 교육</h3>
-              <p class="text-[#555555] text-lg mb-4">
-                트럼펫, 호른, 트롬본, 유포늄 등 모든 금관악기를 전문적으로 교육합니다.
-              </p>
-              <p class="text-[#555555]">
-                입문부터 전문가 수준까지 체계적인 커리큘럼으로 진행됩니다.
-              </p>
+      {/* Why Little Brass - Vienna Academy Image Card Grid */}
+      <section class="bg-[#FFFFFF]">
+        <p class="section-label">Why Little Brass</p>
+        <div class="image-grid">
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="Professional Education" />
+            <div class="image-overlay">
+              <span class="image-label">Professional Education</span>
             </div>
           </div>
-
-          <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
-            <div class="md:w-1/2 p-4">
-              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="악기 대여" class="rounded-2xl shadow-md w-full" />
-            </div>
-            <div class="md:w-1/2 p-4">
-              <div class="inline-block bg-[#C9A227] text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-                POINT 02
-              </div>
-              <h3 class="section-title">합리적인 악기 대여</h3>
-              <p class="text-[#555555] text-lg mb-4">
-                고가의 금관악기를 합리적인 가격으로 대여할 수 있습니다.
-              </p>
-              <p class="text-[#555555]">
-                초보자도 부담 없이 시작할 수 있도록 다양한 옵션을 제공합니다.
-              </p>
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="Instrument Rental" />
+            <div class="image-overlay">
+              <span class="image-label">Instrument Rental</span>
             </div>
           </div>
-
-          <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-            <div class="md:w-1/2 p-4">
-              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="온라인 레슨" class="rounded-2xl shadow-md w-full" />
-            </div>
-            <div class="md:w-1/2 p-4">
-              <div class="inline-block bg-[#FFFFFF] border border-[#EEEEEE]0 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-                POINT 03
-              </div>
-              <h3 class="section-title">온라인 & 오프라인</h3>
-              <p class="text-[#555555] text-lg mb-4">
-                원하는 방식으로 수업을 선택할 수 있습니다.
-              </p>
-              <p class="text-[#555555]">
-                시간과 장소의 제약 없이 언제 어디서나 레슨이 가능합니다.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 학원 갤러리 섹션 */}
-      <section class="py-24 bg-[#FFFFFF]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <div class="inline-block bg-[#C9A227] text-[#2C2C2C] px-6 py-2 rounded-full text-sm font-bold mb-4">
-              <i class="fas fa-images mr-2"></i>GALLERY
-            </div>
-            <h2 class="section-title">깨끗하고 쾌적한 학원 시설</h2>
-            <p class="text-[#555555] text-lg">리틀브라스의 아름답고 전문적인 교육 공간을 만나보세요</p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition card-classic">
-              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실1" class="w-full h-64 object-cover" />
-            </div>
-            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition card-classic">
-              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="레슨실2" class="w-full h-64 object-cover" />
-            </div>
-            <div class="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition card-classic">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="대기실" class="w-full h-64 object-cover" />
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="Online & Offline" />
+            <div class="image-overlay">
+              <span class="image-label">Online &amp; Offline</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Latest Blog Posts Section */}
-      <section class="py-24 bg-[#FFFFFF] border-t border-[#EEEEEE]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <div class="inline-block bg-[#C9A227] text-[#2C2C2C] px-6 py-2 rounded-full text-sm font-bold mb-4">
-              <i class="fas fa-blog mr-2"></i>BLOG
+      {/* Our Space - Gallery Section */}
+      <section class="bg-[#FFFFFF]">
+        <p class="section-label">Our Space</p>
+        <div class="image-grid">
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="레슨실" />
+            <div class="image-overlay">
+              <span class="image-label">Lesson Room</span>
             </div>
-            <h2 class="section-title">리틀브라스 소식</h2>
-            <p class="text-[#555555] text-lg">학원의 최신 소식과 유용한 음악 정보를 확인하세요</p>
           </div>
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="연습실" />
+            <div class="image-overlay">
+              <span class="image-label">Practice Room</span>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="대기실" />
+            <div class="image-overlay">
+              <span class="image-label">Lounge</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Latest News - Blog Section */}
+      <section class="bg-[#FFFFFF]">
+        <p class="section-label">Latest News</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           {/* 블로그 카드 - 동적 RSS 로딩 */}
           <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* 로딩 중 표시 */}
             <div class="col-span-3 text-center py-12">
-              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto mb-4"></div>
+              <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#B8941C] mx-auto mb-4"></div>
               <p class="text-[#555555]">최신 소식을 불러오는 중...</p>
             </div>
           </div>
 
           <div class="text-center">
             <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-[#2C2C2C] px-10 py-4 rounded-full font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition-all shadow-sm hover:shadow-md hover:scale-105">
-              <i class="fas fa-blog text-[20px] leading-[1.6] font-normal"></i>
+              class="inline-flex items-center gap-3 bg-[#B8941C] text-white px-10 py-4 rounded-full font-bold hover:bg-[#A0801A] transition-all hover:scale-105">
               <span>블로그 전체 보기</span>
-              <i class="fas fa-external-link-alt"></i>
+              <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section class="py-24 bg-[#FFFFFF] border-t border-[#EEEEEE]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div class="inline-block bg-[#FFFFFF] text-yellow-700 border border-yellow-200 px-6 py-2 rounded-full text-sm font-bold mb-6">
-            <i class="fas fa-gift mr-2"></i>첫 수업 특별 혜택
-          </div>
-          <h2 class="section-title">지금 바로 시작하세요!</h2>
-          <p class="text-[24px] leading-[1.4] text-[#555555] mb-8">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
-          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white px-10 py-4 rounded-lg font-bold hover:from-[#E6C86F] hover:to-[#D4AF37] transition inline-block shadow-sm hover:shadow-md text-lg">
-            <i class="fas fa-ticket-alt mr-2"></i>
+      {/* Start Your Journey - CTA Section */}
+      <section class="bg-[#FAFAF8] py-24">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+          <p class="section-label" style="text-align: center; padding: 0 0 20px 0;">Start Your Journey</p>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">지금 바로 시작하세요</h2>
+          <p class="text-lg text-[#555555] mb-10" style="line-height: 1.8;">원데이 클래스(20,000원/30분)로 금관악기의 매력을 경험해보세요</p>
+          <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#B8941C] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#A0801A] transition-all hover:scale-105">
             원데이 클래스 예약하기
+            <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </section>

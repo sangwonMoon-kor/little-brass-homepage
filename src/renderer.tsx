@@ -134,75 +134,27 @@ export const renderer = jsxRenderer(
             <span class="hidden sm:inline">원데이 클래스</span>
           </a>
 
-          <footer class="bg-[#F9F9F9] text-[#555555] mt-24 border-t border-[#EEEEEE]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                  <div class="flex items-center space-x-3 mb-4">
-                    <div class="bg-[#D4AF37] p-3 rounded-xl shadow-sm">
-                      <i class="fas fa-trumpet text-[#888888] text-2xl"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-2xl font-display font-bold text-[#2C2C2C]">Little Brass</h3>
-                      <p class="text-[#C9A227] text-sm font-medium">Premium Music Academy</p>
-                    </div>
-                  </div>
-                  <p class="text-[#888888] leading-relaxed mb-4">
-                    프리미엄 금관악기 교육의 새로운 기준<br />
-                    전문 강사진과 함께하는 최고급 음악 교육
-                  </p>
-                  <div class="flex space-x-3">
-                    <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="네이버 블로그" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                      <i class="fas fa-blog text-[#888888] group-hover:text-[#555555]"></i>
-                    </a>
-                    <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                      <i class="fab fa-instagram text-[#888888] group-hover:text-[#555555]"></i>
-                    </a>
-                    <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" class="w-10 h-10 bg-gray-50 hover:bg-yellow-100 border border-gray-100 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                      <i class="fab fa-youtube text-[#888888] group-hover:text-[#555555]"></i>
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold mb-4 text-[#C9A227]">바로가기</h3>
-                  <ul class="space-y-2">
-                    <li><a href="/about" class="text-[#888888] hover:text-[#C9A227] transition">학원소개</a></li>
-                    <li><a href="/teachers" class="text-[#888888] hover:text-[#C9A227] transition">강사소개</a></li>
-                    <li><a href="/curriculum" class="text-[#888888] hover:text-[#C9A227] transition">커리큘럼</a></li>
-                    <li><a href="/gallery" class="text-[#888888] hover:text-[#C9A227] transition">갤러리</a></li>
-                    <li><a href="/achievements" class="text-[#888888] hover:text-[#C9A227] transition">학생성과</a></li>
-                    <li><a href="/faq" class="text-[#888888] hover:text-[#C9A227] transition">FAQ</a></li>
-                    <li><a href="/online" class="text-[#888888] hover:text-[#C9A227] transition">온라인과정</a></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold mb-4 text-[#C9A227]">연락처</h3>
-                  <ul class="space-y-3 text-[#888888]">
-                    <li class="flex items-start">
-                      <i class="fas fa-phone text-[#C9A227] mt-1 mr-3"></i>
-                      <a href="tel:010-5819-4687" class="hover:text-[#C9A227] transition">010-5819-4687</a>
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-envelope text-[#C9A227] mt-1 mr-3"></i>
-                      <a href="mailto:little_brass@naver.com" class="hover:text-[#C9A227] transition">little_brass@naver.com</a>
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fab fa-instagram text-[#C9A227] mt-1 mr-3"></i>
-                      <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" class="hover:text-[#C9A227] transition">little_brass.official</a>
-                    </li>
-                    <li class="flex items-start">
-                      <i class="fas fa-map-marker-alt text-[#C9A227] mt-1 mr-3"></i>
-                      <span>서울특별시 강동구<br />상일로12길 99 리엔프라자 501호</span>
-                    </li>
-                  </ul>
-                </div>
+          <footer class="footer-new">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+              {/* Logo */}
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem;">Little Brass</h3>
+
+              {/* Contact Info */}
+              <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center; margin-bottom: 2rem; color: #888; font-size: 0.9rem;">
+                <a href="tel:010-5819-4687" style="color: #888;">010-5819-4687</a>
+                <a href="mailto:little_brass@naver.com" style="color: #888;">little_brass@naver.com</a>
+                <p style="margin: 0;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
               </div>
-              <div class="border-t border-gray-300 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-[#888888]">
-                  <p>&copy; 2026 Little Brass. All rights reserved.</p>
-                  <p class="mt-2 md:mt-0">Designed with <i class="fas fa-heart text-[#C9A227]"></i> for music lovers</p>
-                </div>
+
+              {/* SNS Icons */}
+              <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2.5rem;">
+                <a href="https://instagram.com/little_brass.official" target="_blank" rel="noopener noreferrer" aria-label="인스타그램" style="color: #888; font-size: 1.25rem;"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@Littlebrass" target="_blank" rel="noopener noreferrer" aria-label="유튜브" style="color: #888; font-size: 1.25rem;"><i class="fab fa-youtube"></i></a>
+                <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" aria-label="블로그" style="color: #888; font-size: 1.25rem;"><i class="fas fa-blog"></i></a>
               </div>
+
+              {/* Copyright */}
+              <p style="font-size: 0.75rem; color: #aaa;">&copy; 2026 Little Brass. All rights reserved.</p>
             </div>
           </footer>
           <script src="/static/app.js"></script>
