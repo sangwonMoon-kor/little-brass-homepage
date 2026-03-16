@@ -1133,6 +1133,10 @@ section {
   .gallery-header {
     padding: 40px 24px 20px;
   }
+
+  .gallery-moments-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* === Clean Footer (Vienna Style) === */

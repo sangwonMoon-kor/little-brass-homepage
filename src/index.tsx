@@ -324,105 +324,456 @@ app.get('/', async (c) => {
 app.get('/curriculum', (c) => {
   return c.render(
     <div>
-      <section class="py-24 bg-[#FFFFFF]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 class="text-[48px] leading-[1.2] font-bold text-center text-[#2C2C2C] mb-4">커리큘럼</h1>
-          <p class="text-center text-[#555555] mb-12">체계적이고 단계적인 교육 프로그램</p>
+      {/* 페이지 헤더 */}
+      <section style="padding-top: 120px; padding-bottom: 40px; background: #FFFFFF;">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Curriculum</p>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">커리큘럼</h1>
+          <p style="color: #555; font-size: 1rem; line-height: 1.8;">리틀브라스의 체계적인 금관악기 교육 과정을 소개합니다</p>
+        </div>
+      </section>
 
-          {/* 피아노 커리큘럼 */}
-          <div class="mb-12">
-            <h2 class="text-[24px] leading-[1.4] font-bold text-[#C9A227] mb-6 flex items-center">
-              <i class="fas fa-music mr-3"></i>피아노 과정
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#D4AF37]">
-                <h3 class="font-bold text-lg mb-2">입문 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">악보 읽기, 기본 자세, 손가락 운지법</p>
-                <p class="text-xs text-[#555555]">4주 과정</p>
+      {/* 실기 과정 */}
+      <section style="background: #FFFFFF; padding: 40px 0 60px;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">실기 과정</h2>
+          <p style="color: #555; font-size: 0.95rem; margin-bottom: 2.5rem;">1:1 맞춤 레슨으로 기초부터 전문가 수준까지</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* 트럼펫 */}
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 32px;">
+              <h3 style="color: #B8941C; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-music"></i> 트럼펫 과정
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">입문 (1~3개월)</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 버징, 호흡법, 기본 음역 연습</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">초급 (3~6개월)</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 간단한 에튀드, 텅잉 기초</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">중급 (6~12개월)</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">다양한 조성의 스케일, 에튀드 심화, 앙상블 참여</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">고급 (12개월~)</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">협주곡, 콩쿨/입시 준비, 오케스트라 레퍼토리</p>
+                  </div>
+                </div>
               </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#B8941C]">
-                <h3 class="font-bold text-lg mb-2">초급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">스케일, 아르페지오, 간단한 곡 연주</p>
-                <p class="text-xs text-[#555555]">12주 과정</p>
+            </div>
+
+            {/* 호른 */}
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 32px;">
+              <h3 style="color: #B8941C; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-music"></i> 호른 과정
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">입문</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 적응, 호흡법, 기본 음역</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">초급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">자연 배음 연습, 기초 스케일, 간단한 멜로디</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">중급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">조옮김 연습, 에튀드 심화, 앙상블</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">고급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">오케스트라 발췌곡, 입시/콩쿨 준비</p>
+                  </div>
+                </div>
               </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#B8941C]">
-                <h3 class="font-bold text-lg mb-2">중급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">다양한 장르, 리듬 패턴, 표현력 향상</p>
-                <p class="text-xs text-[#555555]">24주 과정</p>
+            </div>
+
+            {/* 트롬본 */}
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 32px;">
+              <h3 style="color: #B8941C; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-music"></i> 트롬본 과정
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">입문</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">슬라이드 포지션 익히기, 호흡법, 기본 음역</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">초급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 레가토/스타카토 주법, 에튀드</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">중급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">다양한 조성, 앙상블 참여, 표현력 향상</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">고급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">협주곡, 오케스트라 레퍼토리, 입시 준비</p>
+                  </div>
+                </div>
               </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#B8941C]">
-                <h3 class="font-bold text-lg mb-2">고급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">클래식 명곡, 콩쿨 준비, 입시 대비</p>
-                <p class="text-xs text-[#555555]">48주 이상</p>
+            </div>
+
+            {/* 유포늄 */}
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 32px;">
+              <h3 style="color: #B8941C; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-music"></i> 유포늄 과정
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">입문</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 버징, 호흡법, 기본 음역</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">초급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 기초 에튀드, 음색 만들기</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">중급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">에튀드 심화, 다양한 장르, 앙상블</p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #B8941C; margin-top: 7px;"></div>
+                  <div>
+                    <p style="font-weight: 600; color: #333; font-size: 0.95rem;">고급</p>
+                    <p style="color: #666; font-size: 0.85rem; line-height: 1.6;">솔로곡, 콩쿨 준비, 전문 레퍼토리</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* 바이올린 커리큘럼 */}
-          <div class="mb-12">
-            <h2 class="text-[24px] leading-[1.4] font-bold text-[#C9A227] mb-6 flex items-center">
-              <i class="fas fa-music mr-3"></i>바이올린 과정
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#B8941C]">
-                <h3 class="font-bold text-lg mb-2">입문 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">악기 다루기, 활 사용법, 기본 음계</p>
-                <p class="text-xs text-[#555555]">4주 과정</p>
+      {/* 이론 과정 */}
+      <section style="background: #f9f9f9; padding: 60px 0;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem;">이론 과정</h2>
+          <p style="color: #555; font-size: 0.95rem; margin-bottom: 2rem;">악보를 읽고 음악을 이해하는 기초 체력</p>
+
+          <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 32px; max-width: 640px;">
+            <h3 style="color: #B8941C; font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-book-open"></i> 뮤토랑 음악이론반
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                <span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">대상</span>
+                <span style="color: #555; font-size: 0.9rem;">초등 고학년 ~ 중학생</span>
               </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-[#D4AF37]">
-                <h3 class="font-bold text-lg mb-2">초급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">1st 포지션, 간단한 멜로디 연주</p>
-                <p class="text-xs text-[#555555]">12주 과정</p>
+              <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                <span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">내용</span>
+                <span style="color: #555; font-size: 0.9rem; line-height: 1.6;">악보 읽기(독보력), 음악 기초 이론, 리듬 훈련, 음정/화성 기초</span>
               </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-blue-500">
-                <h3 class="font-bold text-lg mb-2">중급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">3rd 포지션, 비브라토, 다양한 곡</p>
-                <p class="text-xs text-[#555555]">24주 과정</p>
-              </div>
-              <div class="bg-[#FFFFFF] border border-[#EEEEEE] p-6 rounded-lg border-l-4 border-blue-400">
-                <h3 class="font-bold text-lg mb-2">고급 과정</h3>
-                <p class="text-sm text-[#555555] mb-3">협주곡, 실내악, 오케스트라 참여</p>
-                <p class="text-xs text-[#555555]">48주 이상</p>
+              <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                <span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">특징</span>
+                <span style="color: #555; font-size: 0.9rem;">실기 병행 없이 이론만 수강 가능</span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* 수업 정보 */}
-          <div class="bg-[#FFFFFF] p-8 rounded-lg">
-            <h2 class="text-[24px] leading-[1.4] font-bold text-[#2C2C2C] mb-6">수업 안내</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-user text-[#C9A227] mr-2"></i>개인 레슨
-                </h3>
-                <ul class="space-y-2 text-[#555555]">
-                  <li>• 주 1회 (40분/회)</li>
-                  <li>• 1:1 맞춤 레슨</li>
-                  <li>• 월 20만원~</li>
-                </ul>
+      {/* 수업 안내 */}
+      <section style="background: #FFFFFF; padding: 60px 0;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-bottom: 2rem;">수업 안내</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="margin-bottom: 2rem;">
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 28px;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <i class="fas fa-user" style="color: #B8941C; font-size: 1.1rem;"></i>
+                <h3 style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a;">개인 레슨</h3>
               </div>
-              <div>
-                <h3 class="font-bold text-lg mb-3 flex items-center">
-                  <i class="fas fa-users text-[#C9A227] mr-2"></i>그룹 레슨
-                </h3>
-                <ul class="space-y-2 text-[#555555]">
-                  <li>• 주 1회 (60분/회)</li>
-                  <li>• 2~4명 소그룹</li>
-                  <li>• 월 15만원~</li>
-                </ul>
+              <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li style="color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #B8941C;">•</span> 주 1회 (40분/회)
+                </li>
+                <li style="color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #B8941C;">•</span> 1:1 맞춤 레슨
+                </li>
+              </ul>
+            </div>
+            <div style="background: #fff; border: 1px solid #EEEEEE; border-radius: 12px; padding: 28px;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <i class="fas fa-ticket-alt" style="color: #B8941C; font-size: 1.1rem;"></i>
+                <h3 style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a;">원데이 클래스</h3>
               </div>
+              <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li style="color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #B8941C;">•</span> 20,000원 / 30분
+                </li>
+                <li style="color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #B8941C;">•</span> 악기 체험 수업
+                </li>
+              </ul>
             </div>
-            <div class="mt-6 p-4 bg-[#FFFFFF] border border-[#EEEEEE] rounded border-l-4 border-[#D4AF37]">
-              <p class="text-sm text-[#555555]">
-                <i class="fas fa-info-circle text-[#C9A227] mr-2"></i>
-                <strong>참고:</strong> 수강료는 악기 및 레벨에 따라 상이할 수 있습니다. 자세한 상담은 문의 페이지를 이용해주세요.
-              </p>
-            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="/location"
+              style="display: inline-flex; align-items: center; gap: 0.75rem; background: #B8941C; color: #fff; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s;"
+              onmouseover="this.style.background='#A0801A'; this.style.transform='translateY(-2px)'"
+              onmouseout="this.style.background='#B8941C'; this.style.transform='translateY(0)'">
+              <i class="fas fa-phone-alt"></i> 상담 문의하기
+            </a>
           </div>
         </div>
       </section>
     </div>,
     { title: '커리큘럼 - Little Brass' }
+  )
+})
+
+// 교육철학 페이지
+app.get('/philosophy', (c) => {
+  return c.render(
+    <div>
+      {/* 페이지 헤더 */}
+      <section style="padding-top: 120px; padding-bottom: 40px; background: #FFFFFF;">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Philosophy</p>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">교육철학</h1>
+          <p style="color: #555; font-size: 1rem; line-height: 1.8;">리틀브라스가 추구하는 음악 교육의 가치</p>
+        </div>
+      </section>
+
+      {/* 원장 소개 */}
+      <section style="background: #FFFFFF; padding: 60px 0;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div style="display: flex; gap: 0; min-height: 420px;" class="flex-col md:flex-row">
+            {/* 왼쪽: 사진 placeholder */}
+            <div style="flex: 1; background: linear-gradient(135deg, #B8941C 0%, #D4AF37 50%, #C9A227 100%); display: flex; align-items: center; justify-content: center; min-height: 320px;">
+              <i class="fas fa-music" style="font-size: 5rem; color: rgba(255,255,255,0.3);"></i>
+            </div>
+            {/* 오른쪽: 텍스트 */}
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 48px;">
+              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">About the Director</p>
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1.25rem;">골드쌤 원장</h2>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.9;">
+                안녕하세요. 리틀브라스 음악학원 원장 골드쌤입니다.
+                <br/><br/>
+                금관악기의 아름다운 소리와 가능성을 더 많은 분들에게 전하고 싶어 리틀브라스를 열게 되었습니다. 아이들부터 성인까지, 처음 악기를 잡는 순간부터 무대에 서는 그날까지 함께하겠습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 교육 철학 */}
+      <section style="background: #f9f9f9; padding: 80px 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-bottom: 3rem; text-align: center;">우리의 교육 철학</h2>
+
+          {/* 01 */}
+          <div style="display: flex; gap: 2rem; align-items: flex-start; padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid #eee;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; color: #B8941C; opacity: 0.3; line-height: 1; min-width: 80px;">01</span>
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">기초에 충실한 교육</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">화려한 테크닉보다 탄탄한 기본기를 먼저 다집니다. 호흡, 앙부쉬르, 음색 — 기초가 단단해야 음악이 자유로워집니다.</p>
+            </div>
+          </div>
+
+          {/* 02 */}
+          <div style="display: flex; gap: 2rem; align-items: flex-start; padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid #eee;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; color: #B8941C; opacity: 0.3; line-height: 1; min-width: 80px;">02</span>
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">학생 중심 맞춤 교육</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">같은 악기라도 학생마다 신체 조건, 성향, 목표가 다릅니다. 획일적인 커리큘럼이 아닌 개인별 맞춤 지도를 합니다.</p>
+            </div>
+          </div>
+
+          {/* 03 */}
+          <div style="display: flex; gap: 2rem; align-items: flex-start;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; color: #B8941C; opacity: 0.3; line-height: 1; min-width: 80px;">03</span>
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">음악을 즐기는 경험</h3>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">연습은 때로 힘들지만, 음악은 결국 즐거워야 합니다. 연주회, 앙상블, 다양한 장르 경험을 통해 음악의 즐거움을 느끼게 합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 차별화 포인트 */}
+      <section style="background: #FFFFFF; padding: 80px 0;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem; text-align: center;">리틀브라스가 특별한 이유</h2>
+          <p style="color: #555; font-size: 0.95rem; margin-bottom: 3rem; text-align: center;">다른 음악학원과는 다릅니다</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* 카드 1 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s;"
+              onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.15)'"
+              onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
+              <i class="fas fa-music" style="color: #B8941C; font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">금관악기 전문</h3>
+              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">피아노 학원이 아닙니다. 트럼펫, 호른, 트롬본, 유포늄 금관악기만 전문으로 교육합니다.</p>
+            </div>
+
+            {/* 카드 2 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s;"
+              onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.15)'"
+              onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
+              <i class="fas fa-medal" style="color: #B8941C; font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">군악대 입시 100% 합격</h3>
+              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">실전 중심 커리큘럼으로 군악대 입시 준비반을 운영하며, 높은 합격률을 자랑합니다.</p>
+            </div>
+
+            {/* 카드 3 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s;"
+              onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.15)'"
+              onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
+              <i class="fas fa-video" style="color: #B8941C; font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">온라인 레슨 가능</h3>
+              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">해외·지방 거주 학생도 Zoom을 통한 실시간 온라인 레슨으로 수업받을 수 있습니다.</p>
+            </div>
+
+            {/* 카드 4 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s;"
+              onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.15)'"
+              onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
+              <i class="fas fa-theater-masks" style="color: #B8941C; font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">정기 연주회 개최</h3>
+              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">3개월 배운 학생부터 2년차 학생까지, 모두가 무대에 서는 정기 연주회를 매년 개최합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: '교육철학 - Little Brass' }
+  )
+})
+
+// 갤러리 페이지
+app.get('/gallery', (c) => {
+  return c.render(
+    <div>
+      {/* 페이지 헤더 */}
+      <section style="padding-top: 120px; padding-bottom: 40px; background: #FFFFFF;">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Gallery</p>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">갤러리</h1>
+          <p style="color: #555; font-size: 1rem; line-height: 1.8;">리틀브라스의 교육 공간과 활동을 만나보세요</p>
+        </div>
+      </section>
+
+      {/* Our Space - 학원 시설 */}
+      <section class="bg-[#FFFFFF]" style="padding-bottom: 60px;">
+        <div class="gallery-header">
+          <p class="sub-label">Our Space</p>
+          <h2 class="main-title">교육 공간</h2>
+        </div>
+        <div class="gallery-asymmetric">
+          <div class="gallery-item large">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="레슨실" />
+            <div class="image-overlay">
+              <span class="image-label">Lesson Room</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="연습실" />
+            <div class="image-overlay">
+              <span class="image-label">Practice Room</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="대기실" />
+            <div class="image-overlay">
+              <span class="image-label">Lounge</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Moments - 수업 & 연주회 */}
+      <section style="background: #FFFFFF; padding: 60px 0;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div style="text-align: center; margin-bottom: 2.5rem;">
+            <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Moments</p>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a;">수업 & 연주회</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;" class="gallery-moments-grid">
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=600&q=80" alt="수업 장면 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="수업 장면 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="연주회 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="연주회 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80" alt="연주회 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+            <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="수업 장면 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 블로그 안내 */}
+      <section style="background: #f9f9f9; padding: 60px 0;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center; padding: 0 1.5rem;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">더 많은 이야기가 궁금하시다면</h2>
+          <p style="color: #555; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">리틀브라스 블로그에서 수업 후기, 연주회 소식, 음악 이야기를 확인하세요</p>
+          <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 0.75rem; background: #B8941C; color: #fff; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s;"
+            onmouseover="this.style.background='#A0801A'; this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.background='#B8941C'; this.style.transform='translateY(0)'">
+            <i class="fas fa-blog"></i> 블로그 바로가기
+          </a>
+        </div>
+      </section>
+    </div>,
+    { title: '갤러리 - Little Brass' }
   )
 })
 
