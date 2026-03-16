@@ -1,12 +1,86 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 
+// RSS 피드 파싱 헬퍼 함수들
+function extractCDATA(text: string): string {
+  const match = text.match(/<!\[CDATA\[([\s\S]*?)\]\]>/)
+  return match ? match[1].trim() : text.trim()
+}
+
+function stripHtmlTags(html: string): string {
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').trim()
+}
+
+function extractThumbnail(description: string): string | null {
+  const match = description.match(/<img\s+[^>]*src="([^"]+)"/)
+  return match ? match[1] : null
+}
+
+function formatDate(pubDate: string): string {
+  try {
+    const date = new Date(pubDate)
+    const y = date.getFullYear()
+    const m = String(date.getMonth() + 1).padStart(2, '0')
+    const d = String(date.getDate()).padStart(2, '0')
+    return `${y}.${m}.${d}`
+  } catch {
+    return pubDate
+  }
+}
+
+interface BlogPost {
+  title: string
+  link: string
+  description: string
+  date: string
+  thumbnail: string | null
+}
+
+async function fetchBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const res = await fetch('https://rss.blog.naver.com/little_brass.xml')
+    if (!res.ok) return []
+    const xml = await res.text()
+
+    const items: BlogPost[] = []
+    const itemRegex = /<item>([\s\S]*?)<\/item>/g
+    let match
+    while ((match = itemRegex.exec(xml)) !== null && items.length < 3) {
+      const itemXml = match[1]
+
+      const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/)
+      const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/)
+      const descMatch = itemXml.match(/<description>([\s\S]*?)<\/description>/)
+      const dateMatch = itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/)
+
+      if (titleMatch && linkMatch) {
+        const rawDesc = descMatch ? extractCDATA(descMatch[1]) : ''
+        const plainText = stripHtmlTags(rawDesc)
+        const truncated = plainText.length > 100 ? plainText.substring(0, 100) + '...' : plainText
+
+        items.push({
+          title: extractCDATA(titleMatch[1]),
+          link: extractCDATA(linkMatch[1]),
+          description: truncated,
+          date: dateMatch ? formatDate(dateMatch[1].trim()) : '',
+          thumbnail: extractThumbnail(rawDesc),
+        })
+      }
+    }
+    return items
+  } catch {
+    return []
+  }
+}
+
 const app = new Hono()
 
 app.use(renderer)
 
 // 메인 페이지
-app.get('/', (c) => {
+app.get('/', async (c) => {
+  const blogPosts = await fetchBlogPosts()
+
   return c.render(
     <div>
       {/* Fullscreen Video Hero Section */}
@@ -192,26 +266,36 @@ app.get('/', (c) => {
       <section class="bg-[#FFFFFF]">
         <p class="section-label">Latest News</p>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-            {/* Card 1 */}
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
-              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.01</p>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">리틀브라스 오픈 안내</h3>
-              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">강동구에 새롭게 문을 연 금관악기 전문 음악학원을 소개합니다.</p>
+          {blogPosts.length > 0 ? (
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+              {blogPosts.map((post) => (
+                <a href={post.link} target="_blank" rel="noopener noreferrer"
+                  style="display: block; background: #f9f9f9; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.3s ease, transform 0.3s ease;"
+                  onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)';"
+                  onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)';">
+                  {/* Thumbnail */}
+                  {post.thumbnail ? (
+                    <div style="width: 100%; height: 200px; overflow: hidden;">
+                      <img src={post.thumbnail} alt={post.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+                  ) : (
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #B8941C, #D4AF37); display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-music" style="font-size: 2.5rem; color: rgba(255,255,255,0.4);"></i>
+                    </div>
+                  )}
+                  <div style="padding: 24px;">
+                    <p style="color: #B8941C; font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 600;">{post.date}</p>
+                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.5;">{post.title}</h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.7;">{post.description}</p>
+                  </div>
+                </a>
+              ))}
             </div>
-            {/* Card 2 */}
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
-              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.05</p>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">원데이 클래스 후기</h3>
-              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">처음 트럼펫을 불어본 학생의 생생한 원데이 클래스 체험기입니다.</p>
+          ) : (
+            <div style="text-align: center; padding: 48px 0; margin-bottom: 2rem;">
+              <p style="color: #555; font-size: 1rem; margin-bottom: 1.5rem;">블로그에서 최신 소식을 확인하세요</p>
             </div>
-            {/* Card 3 */}
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 32px;">
-              <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 0.85rem; margin-bottom: 0.75rem;">2025.03.10</p>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem;">금관악기 선택 가이드</h3>
-              <p style="color: #555; font-size: 0.95rem; line-height: 1.8;">트럼펫, 호른, 트롬본, 유포늄 중 나에게 맞는 악기는?</p>
-            </div>
-          </div>
+          )}
 
           <div class="text-center">
             <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
