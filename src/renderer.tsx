@@ -81,12 +81,11 @@ export const renderer = jsxRenderer(
 
                 {/* Desktop Menu */}
                 <div class="hidden lg:flex items-center">
-                  <a href="/about" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">학원소개</a>
-                  <a href="/curriculum" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">레슨안내</a>
-                  <a href="/online" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">온라인과정</a>
-                  <a href="/teachers" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">강사진</a>
+                  <a href="/" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">홈</a>
+                  <a href="/curriculum" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">커리큘럼</a>
+                  <a href="/philosophy" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">교육철학</a>
                   <a href="/gallery" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide border-r border-white/20">갤러리</a>
-                  <a href="/contact" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide">문의하기</a>
+                  <a href="/location" class="nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide">찾아오시는 길</a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -100,18 +99,10 @@ export const renderer = jsxRenderer(
             <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm">
               <div class="px-4 py-3 space-y-1">
                 <a href="/" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">홈</a>
-                <a href="/about" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">학원소개</a>
-                <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">레슨안내</a>
-                <a href="/online" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">온라인과정</a>
-                <a href="/teachers" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">강사진</a>
+                <a href="/curriculum" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">커리큘럼</a>
+                <a href="/philosophy" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">교육철학</a>
                 <a href="/gallery" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">갤러리</a>
-                <a href="/achievements" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">학생성과</a>
-                <a href="/faq" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">FAQ</a>
-                <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">
-                  <i class="fas fa-blog mr-2"></i>블로그
-                </a>
-                <a href="/location" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">오시는길</a>
-                <a href="/contact" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">문의하기</a>
+                <a href="/location" class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">찾아오시는 길</a>
                 <div class="mt-3 flex flex-col gap-3 border-t border-gray-100 pt-4">
                   <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-full bg-[#C9A227] text-white h-12 px-6 hover:bg-[#B8941C] transition-colors text-base font-medium">
                     <i class="fas fa-ticket-alt mr-2"></i>원데이 클래스
