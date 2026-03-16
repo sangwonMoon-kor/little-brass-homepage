@@ -78,7 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainNav = document.getElementById('main-nav');
   const topInfoBar = document.getElementById('top-info-bar');
 
-  window.addEventListener('scroll', function () {
+    // Non-homepage: immediately apply scrolled nav
+    if (mainNav && window.location.pathname !== '/') {
+      mainNav.classList.add('nav-scrolled');
+      if (topInfoBar) topInfoBar.style.display = 'none';
+    }
+
+    window.addEventListener('scroll', function () {
     // Scroll progress bar
     if (scrollProgress) {
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -86,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
       scrollProgress.style.width = scrolled + '%';
     }
 
-    // Nav scrolled state: toggle white bg after scrolling past hero
-    if (mainNav) {
+    // Nav scrolled state: toggle white bg after scrolling past hero (homepage only)
+    if (mainNav && window.location.pathname === '/') {
       if (window.scrollY > window.innerHeight * 0.6) {
         mainNav.classList.add('nav-scrolled');
         if (topInfoBar) topInfoBar.style.display = 'none';

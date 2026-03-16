@@ -426,6 +426,134 @@ app.get('/curriculum', (c) => {
   )
 })
 
+// 찾아오시는 길 페이지
+app.get('/location', (c) => {
+  return c.render(
+    <div>
+      {/* 페이지 헤더 */}
+      <section style="padding-top: 120px; padding-bottom: 40px; background: #FFFFFF;">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;">Location</p>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">찾아오시는 길</h1>
+          <p style="color: #555; font-size: 1rem; line-height: 1.8;">리틀브라스 음악학원으로 오시는 길을 안내합니다</p>
+        </div>
+      </section>
+
+      {/* 네이버지도 임베드 */}
+      <section>
+        <iframe
+          src="https://map.naver.com/p/entry/place/1094694626?c=15.00,0,0,0,dh"
+          style="width: 100%; height: 450px; border: none;"
+          allowfullscreen
+          loading="lazy"
+          title="리틀브라스 음악학원 위치"
+        ></iframe>
+      </section>
+
+      {/* 학원 정보 섹션 */}
+      <section style="background: #FFFFFF; padding: 60px 0;">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* 왼쪽: 연락처 정보 */}
+            <div>
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1.5rem;">연락처 정보</h2>
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <i class="fas fa-map-marker-alt" style="color: #B8941C; margin-top: 4px; width: 20px; text-align: center;"></i>
+                  <div>
+                    <p style="color: #333; font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;">주소</p>
+                    <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <i class="fas fa-phone-alt" style="color: #B8941C; margin-top: 4px; width: 20px; text-align: center;"></i>
+                  <div>
+                    <p style="color: #333; font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;">전화</p>
+                    <a href="tel:010-5819-4687" style="color: #555; font-size: 0.95rem; text-decoration: none;">010-5819-4687</a>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <i class="fas fa-envelope" style="color: #B8941C; margin-top: 4px; width: 20px; text-align: center;"></i>
+                  <div>
+                    <p style="color: #333; font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;">이메일</p>
+                    <a href="mailto:little_brass@naver.com" style="color: #555; font-size: 0.95rem; text-decoration: none;">little_brass@naver.com</a>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <i class="fas fa-clock" style="color: #B8941C; margin-top: 4px; width: 20px; text-align: center;"></i>
+                  <div>
+                    <p style="color: #333; font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;">운영시간</p>
+                    <p style="color: #555; font-size: 0.95rem; line-height: 2;">평일 14:00 - 21:00<br/>토요일 10:00 - 18:00<br/>일요일 휴무</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 오른쪽: 액션 버튼 */}
+            <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center;">
+              {/* 원데이 클래스 예약 */}
+              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5"
+                target="_blank" rel="noopener noreferrer"
+                style="display: flex; align-items: center; gap: 1rem; background: #B8941C; color: #fff; padding: 24px; border-radius: 12px; text-decoration: none; transition: all 0.3s;"
+                onmouseover="this.style.background='#A0801A'; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.background='#B8941C'; this.style.transform='translateY(0)'">
+                <i class="fas fa-ticket-alt" style="font-size: 1.75rem;"></i>
+                <div>
+                  <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">원데이 클래스 예약하기</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7;">네이버에서 간편하게 예약하세요</p>
+                </div>
+              </a>
+
+              {/* 카카오톡 문의 */}
+              <a href="#"
+                style="display: flex; align-items: center; gap: 1rem; background: #FEE500; color: #3C1E1E; padding: 24px; border-radius: 12px; text-decoration: none; transition: all 0.3s;"
+                onmouseover="this.style.background='#EDDA00'; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.background='#FEE500'; this.style.transform='translateY(0)'">
+                <i class="fas fa-comment" style="font-size: 1.75rem;"></i>
+                <div>
+                  <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">카카오톡 문의하기</p>
+                  <p style="font-size: 0.85rem; opacity: 0.6;">1:1 채팅으로 편하게 문의하세요</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 교통편 안내 */}
+      <section style="background: #f9f9f9; padding: 48px 0;">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1.5rem;">교통편 안내</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="fas fa-subway" style="color: #B8941C; margin-top: 3px; font-size: 1.1rem;"></i>
+              <div>
+                <p style="font-weight: 600; color: #333; margin-bottom: 4px;">지하철</p>
+                <p style="color: #555; font-size: 0.9rem; line-height: 1.6;">9호선 상일동역 3번 출구 도보 5분</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="fas fa-bus" style="color: #B8941C; margin-top: 3px; font-size: 1.1rem;"></i>
+              <div>
+                <p style="font-weight: 600; color: #333; margin-bottom: 4px;">버스</p>
+                <p style="color: #555; font-size: 0.9rem; line-height: 1.6;">강동구 방면 시내버스 이용</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="fas fa-parking" style="color: #B8941C; margin-top: 3px; font-size: 1.1rem;"></i>
+              <div>
+                <p style="font-weight: 600; color: #333; margin-bottom: 4px;">주차</p>
+                <p style="color: #555; font-size: 0.9rem; line-height: 1.6;">건물 내 주차장 이용 가능</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    { title: '찾아오시는 길 - Little Brass' }
+  )
+})
+
 
 // 404 에러 페이지
 app.notFound((c) => {
