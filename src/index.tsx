@@ -270,24 +270,12 @@ app.get('/', async (c) => {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
               {blogPosts.map((post) => (
                 <a href={post.link} target="_blank" rel="noopener noreferrer"
-                  style="display: block; background: #f9f9f9; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.3s ease, transform 0.3s ease;"
+                  style="display: block; background: #f9f9f9; border-radius: 12px; border-top: 3px solid #B8941C; padding: 32px; text-decoration: none; color: inherit; transition: box-shadow 0.3s ease, transform 0.3s ease;"
                   onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)';"
                   onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)';">
-                  {/* Thumbnail */}
-                  {post.thumbnail ? (
-                    <div style="width: 100%; height: 200px; overflow: hidden;">
-                      <img src={post.thumbnail} alt={post.title} style="width: 100%; height: 100%; object-fit: cover;" />
-                    </div>
-                  ) : (
-                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #B8941C, #D4AF37); display: flex; align-items: center; justify-content: center;">
-                      <i class="fas fa-music" style="font-size: 2.5rem; color: rgba(255,255,255,0.4);"></i>
-                    </div>
-                  )}
-                  <div style="padding: 24px;">
-                    <p style="color: #B8941C; font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 600;">{post.date}</p>
-                    <h3 style="font-family: 'Noto Sans KR', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.5;">{post.title}</h3>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.7;">{post.description}</p>
-                  </div>
+                  <p style="color: #B8941C; font-size: 0.8rem; margin-bottom: 0.75rem; font-weight: 600;">{post.date}</p>
+                  <h3 style="font-family: 'Noto Sans KR', sans-serif; font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem; line-height: 1.5;">{post.title}</h3>
+                  <p style="color: #666; font-size: 0.9rem; line-height: 1.7;">{post.description}</p>
                 </a>
               ))}
             </div>
