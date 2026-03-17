@@ -1014,7 +1014,7 @@ section {
 }
 
 .zigzag-text .main-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', 'Noto Serif KR', serif;
   color: #1a1a1a;
   font-size: 2rem;
   font-weight: 600;
@@ -1109,7 +1109,7 @@ section {
 }
 
 .gallery-header .main-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', 'Noto Serif KR', serif;
   color: #1a1a1a;
   font-size: 1.75rem;
   font-weight: 600;
@@ -1153,4 +1153,147 @@ section {
 
 .footer-new a:hover {
   color: #B8941C !important;
+}
+
+/* ===== Curriculum Tab Styles ===== */
+.tab-active {
+  color: #B8941C !important;
+  border-bottom: 2px solid #B8941C !important;
+}
+.tab-inactive {
+  color: #555 !important;
+  border-bottom: 2px solid transparent !important;
+}
+.tab-inactive:hover {
+  color: #B8941C !important;
+}
+
+/* ===== Curriculum Timeline ===== */
+.curriculum-timeline {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  position: relative;
+}
+.timeline-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 12px;
+}
+.timeline-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #B8941C;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.timeline-connector {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 24px);
+  width: calc(100% - 48px);
+  height: 0;
+  border-top: 2px dashed #D4AF37;
+  z-index: 1;
+}
+.timeline-step:last-child .timeline-connector {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .curriculum-timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .timeline-step {
+    text-align: left;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .timeline-circle {
+    min-width: 48px;
+    margin: 0;
+  }
+  .timeline-connector {
+    position: absolute;
+    top: 48px;
+    left: 24px;
+    width: 0;
+    height: calc(100% + 1.5rem - 48px);
+    border-top: none;
+    border-left: 2px dashed #D4AF37;
+  }
+  .timeline-step h4,
+  .timeline-step p {
+    text-align: left;
+  }
+}
+
+/* ===== Theory Section Responsive ===== */
+@media (max-width: 768px) {
+  .theory-image-block {
+    border-radius: 12px 12px 0 0 !important;
+  }
+  .theory-text-block {
+    border-radius: 0 0 12px 12px !important;
+    border-left: 1px solid #eee !important;
+    border-top: none !important;
+  }
+}
+
+/* ===== Image Card Hover Overlay ===== */
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.image-card img {
+  transition: transform 0.4s ease;
+}
+.image-card:hover img {
+  transform: scale(1.08);
+}
+.image-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.image-card:hover .image-card-overlay {
+  background: rgba(0,0,0,0.45);
+}
+.image-card-overlay span {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+.image-card:hover .image-card-overlay span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Gallery Moments Grid Responsive ===== */
+@media (max-width: 768px) {
+  .gallery-moments-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

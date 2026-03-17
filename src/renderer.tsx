@@ -3,8 +3,8 @@ import { jsxRenderer } from 'hono/jsx-renderer'
 export const renderer = jsxRenderer(
   ({ children, title }: { children?: any; title?: string;[key: string]: any }) => {
     const pageTitle = title || 'Little Brass - 프리미엄 금관악기 교육'
-    const description = 'Little Brass 음악학원 - 전문 금관악기 교육과 온라인 레슨을 제공하는 프리미엄 음악 학원입니다.'
-    const siteUrl = 'https://littlebrass.com'
+    const description = '리틀브라스 음악학원 - 트럼펫, 호른, 트롬본, 유포늄 금관악기 전문 교육. 서울 강동구 상일동.'
+    const siteUrl = 'https://little-brass-homepage.pages.dev'
     const ogImage = `${siteUrl}/og-image.jpg`
 
     return (
@@ -43,7 +43,7 @@ export const renderer = jsxRenderer(
           <script src="/static/tailwind-config.js"></script>
           <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
           <link href="/static/style.css" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
         </head>
         <body class="bg-[#FFFFFF] text-[#555555]">
           {/* 스크롤 진행 바 */}
@@ -71,7 +71,7 @@ export const renderer = jsxRenderer(
           </div>
 
           {/* Main Navigation (Vienna Academy Style) */}
-          <nav class="absolute top-0 lg:top-10 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+          <nav class="absolute top-0 lg:top-10 left-0 right-0 z-50 transition-all duration-300 nav-scrolled" id="main-nav">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="flex justify-between items-center h-16 lg:h-20">
                 {/* Logo */}
@@ -160,7 +160,7 @@ export const renderer = jsxRenderer(
             </div>
             {/* Bottom Bar */}
             <div style="border-top: 1px solid #333; padding: 1.5rem 0; text-align: center;">
-              <p style="font-size: 0.75rem; color: #666; margin: 0;">&copy; 2025 Little Brass. All rights reserved.</p>
+              <p style="font-size: 0.75rem; color: #666; margin: 0;">&copy; {new Date().getFullYear()} Little Brass. All rights reserved.</p>
             </div>
           </footer>
           <script src="/static/app.js"></script>
