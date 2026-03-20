@@ -87,10 +87,11 @@ app.get('/', async (c) => {
       <section class="relative h-screen overflow-hidden flex items-center justify-center">
         {/* Video Background */}
         <video
-          autoplay
+          autoPlay
           muted
           loop
-          playsinline
+          playsInline
+          webkit-playsinline
           class="absolute inset-0 w-full h-full object-cover"
           style="z-index: -1;"
         >
@@ -647,15 +648,17 @@ app.get('/location', (c) => {
         </div>
       </section>
 
-      {/* 네이버지도 임베드 */}
-      <section>
-        <iframe
-          src="https://map.naver.com/p/entry/place/1094694626?c=15.00,0,0,0,dh"
-          style="width: 100%; height: 450px; border: none;"
-          allowfullscreen
-          loading="lazy"
-          title="리틀브라스 음악학원 위치"
-        ></iframe>
+      {/* 네이버지도 링크 */}
+      <section style="padding: 0 1rem;">
+        <a href="https://map.naver.com/p/entry/place/1094694626" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block; max-width: 1200px; margin: 0 auto;">
+          <div style="background: #f0f0f0; height: 400px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; transition: background 0.3s; cursor: pointer; overflow: hidden;"
+            onmouseover="this.style.background='#e5e5e5'"
+            onmouseout="this.style.background='#f0f0f0'">
+            <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #B8941C;"></i>
+            <p style="color: #333; font-size: 1rem; font-weight: 600; text-align: center; padding: 0 1rem;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
+            <p style="color: #B8941C; font-size: 0.95rem; font-weight: 600; text-decoration: underline;">네이버 지도에서 보기 →</p>
+          </div>
+        </a>
       </section>
 
       {/* 학원 정보 섹션 */}
