@@ -1,0 +1,15 @@
+a5035f1 fix: video 태그 inline style로 교체 - 배경 영상 깨짐 수정
+8cfc1a3 fix: 플로팅 버튼 제거 및 CTA 부제목 문구 변경
+1558e96 fix: 모바일 영상 자동재생 강화 - video.play() 강제 호출 및 poster 추가
+771b923 모바일 영상 자동재생 수정
+412bde3 모바일 영상 자동재생 및 지도 수정
+04a3e5c UI 전면 개편 - 네비게이션, 폰트, 서브페이지 리디자인
+b3474fc 커리큘럼 교육철학 갤러리 서브페이지 생성
+5b65cfd 찾아오시는 길 페이지 생성
+51f5a07 메뉴 5개로 개편 + 기존 서브페이지 삭제
+6d46858 블로그 카드 썸네일 제거 텍스트 전용으로 변경
+fa500cf 블로그 RSS 연동 + 네비게이션 수정
+36f0e2c Why Little Brass 지그재그 레이아웃 + Our Space 비대칭 그리드 + 푸터 복원
+ec85f49 POINT 섹션 Vienna Academy 스타일 개편
+ff63324 fix: POINT 04 삭제 및 푸터 연락처 확인
+de06bff fix: 연락처 정보 및 유포늄 변경
