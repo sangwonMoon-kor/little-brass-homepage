@@ -113,17 +113,7 @@ export const renderer = jsxRenderer(
           </nav>
           <main>{children}</main>
 
-          {/* 플로팅 원데이 클래스 버튼 */}
-          <a
-            href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="fixed bottom-6 right-6 bg-gradient-to-r from-[#D4AF37] to-[#B8941C] text-white px-6 py-4 rounded-full shadow-md hover:from-[#E6C86F] hover:to-[#D4AF37] hover:scale-110 transition-all duration-300 z-50 flex items-center gap-3 font-bold animate-bounce-slow"
-            id="floating-oneday-button"
-          >
-            <i class="fas fa-ticket-alt text-xl"></i>
-            <span class="hidden sm:inline">원데이 클래스</span>
-          </a>
+
 
           <footer style="background: #1a1a1a; color: #ffffff; padding: 0; margin-top: 0;">
             <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
