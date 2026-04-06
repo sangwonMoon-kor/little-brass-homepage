@@ -86,17 +86,13 @@ app.get('/', async (c) => {
       {/* Fullscreen Video Hero Section */}
       <section class="relative h-screen overflow-hidden flex items-center justify-center">
         {/* Video Background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline
-          class="absolute inset-0 w-full h-full object-cover"
+        <div
+          class="absolute inset-0 w-full h-full"
           style="z-index: -1;"
-        >
-          <source src="https://res.cloudinary.com/ddgt7ku2v/video/upload/v1772370250/%EB%A6%AC%ED%8B%80%EB%B8%8C%EB%9D%BC%EC%8A%A4_%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%A9%94%EC%9D%B8%EC%98%81%EC%83%81_waoubo.mp4" type="video/mp4" />
-        </video>
+          dangerouslySetInnerHTML={{
+            __html: `<video autoplay muted loop playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover" style="width:100%;height:100%;object-fit:cover;"><source src="https://res.cloudinary.com/ddgt7ku2v/video/upload/v1772370250/%EB%A6%AC%ED%8B%80%EB%B8%8C%EB%9D%BC%EC%8A%A4_%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80_%EB%A9%94%EC%9D%B8%EC%98%81%EC%83%81_waoubo.mp4" type="video/mp4"></video>`
+          }}
+        />
 
         {/* Dark Overlay */}
         <div class="absolute inset-0 bg-black/30"></div>
