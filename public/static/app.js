@@ -40,8 +40,52 @@ if (document.readyState === 'loading') {
   initMobileMenu();
 }
 
+// 히어로 배경 영상 모바일 자동재생 강제 호출
+function initHeroVideo() {
+  var video = document.getElementById('hero-video');
+  if (!video) return;
+
+  // muted 속성 재확인 (iOS 필수)
+  video.muted = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  function tryPlay() {
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function() {
+        // 자동재생 실패 시 조용히 무시 — 사용자 인터랙션 대기
+      });
+    }
+  }
+
+  // 1) 즉시 시도
+  tryPlay();
+
+  // 2) canplay 이벤트 시 재시도
+  video.addEventListener('canplay', function() {
+    tryPlay();
+  }, { once: true });
+
+  // 3) 사용자 첫 터치/스크롤 시 재시도 (iOS 최후 폴백)
+  var fallbackEvents = ['touchstart', 'scroll', 'click'];
+  function onUserInteraction() {
+    tryPlay();
+    fallbackEvents.forEach(function(evt) {
+      document.removeEventListener(evt, onUserInteraction);
+    });
+  }
+  fallbackEvents.forEach(function(evt) {
+    document.addEventListener(evt, onUserInteraction, { once: true, passive: true });
+  });
+}
+
 // 나머지 페이지 스크립트는 DOMContentLoaded 이후에 실행
 document.addEventListener('DOMContentLoaded', function () {
+  // 히어로 영상 자동재생
+  initHeroVideo();
+
   // 스크롤 진행 바
   const scrollProgress = document.getElementById('scroll-progress');
   const mainNav = document.getElementById('main-nav');
