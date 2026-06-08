@@ -8,9 +8,27 @@
   --charcoal: #2C2C2C;
   --body-text: #555555;
   --brown-label: #C9A227;
-  /* Gold label is cleaner on white than brown */
   --beige-border: #EEEEEE;
   --footer-beige: #F9F9F9;
+
+  /* Gold palette */
+  --gold-primary: #C9A227;
+  --gold-light: #D4AF37;
+  --gold-dark: #A07A15;
+  --gold-accent: #FBF3DC;
+
+  /* Navy palette */
+  --navy-primary: #1E3A5F;
+  --navy-dark: #152B47;
+
+  /* Gray palette */
+  --gray-light: #F8F9FA;
+  --gray-medium: #EEEEEE;
+  --gray-dark: #6C757D;
+
+  /* Misc */
+  --bronze: #CD7F32;
+  --cream: #FFFEF9;
 }
 
 * {

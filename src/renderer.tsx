@@ -5,7 +5,7 @@ export const renderer = jsxRenderer(
     const pageTitle = title || 'Little Brass - 프리미엄 금관악기 교육'
     const description = '리틀브라스 음악학원 - 트럼펫, 호른, 트롬본, 유포늄 금관악기 전문 교육. 서울 강동구 상일동.'
     const siteUrl = 'https://little-brass-homepage.pages.dev'
-    const ogImage = `${siteUrl}/og-image.jpg`
+    const ogImage = 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80'
 
     return (
       <html lang="ko">
