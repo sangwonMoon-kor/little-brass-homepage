@@ -572,11 +572,39 @@ app.get('/curriculum', (c) => {
             </div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px; background: #fff; border-radius: 0 12px 12px 0; border: 1px solid #eee; border-left: none;" class="theory-text-block">
               <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Theory Course</p>
-              <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 1rem;">뮤토랑 음악이론반</h2>
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <div style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">대상</span><span style="color: #555; font-size: 0.9rem;">초등 고학년 ~ 중학생</span></div>
-                <div style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">내용</span><span style="color: #555; font-size: 0.9rem; line-height: 1.6;">악보 읽기(독보력), 음악 기초 이론, 리듬 훈련, 음정/화성 기초</span></div>
-                <div style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #B8941C; font-weight: 600; font-size: 0.9rem; min-width: 48px;">특징</span><span style="color: #555; font-size: 0.9rem;">실기 병행 없이 이론만 수강 가능</span></div>
+              <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.4rem;">뮤토랑 음악이론반</h2>
+              <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.6;">음악을 더 깊이 이해하는 시작</p>
+              <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                  <span style="color: #B8941C; font-weight: 700; font-size: 0.8rem; min-width: 56px; padding-top: 1px;">대상</span>
+                  <span style="color: #555; font-size: 0.875rem;">초등 고학년 ~ 중학생</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                  <span style="color: #B8941C; font-weight: 700; font-size: 0.8rem; min-width: 56px; padding-top: 1px;">수업 시간</span>
+                  <span style="color: #555; font-size: 0.875rem;">주 1회 · 1회 50분</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                  <span style="color: #B8941C; font-weight: 700; font-size: 0.8rem; min-width: 56px; padding-top: 1px;">수강 옵션</span>
+                  <span style="color: #555; font-size: 0.875rem;">정규반 (월 단위) · 단기 특강 가능</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                  <span style="color: #B8941C; font-weight: 700; font-size: 0.8rem; min-width: 56px; padding-top: 1px;">수업 방식</span>
+                  <span style="color: #555; font-size: 0.875rem;">소그룹 (2~4인) · 1:1 개인 수업 선택 가능</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                  <span style="color: #B8941C; font-weight: 700; font-size: 0.8rem; min-width: 56px; padding-top: 1px;">특징</span>
+                  <span style="color: #555; font-size: 0.875rem;">실기 병행 없이 이론만 수강 가능</span>
+                </div>
+              </div>
+              <div style="border-top: 1px solid #f0f0f0; padding-top: 1.25rem;">
+                <p style="font-size: 0.75rem; font-weight: 700; color: #B8941C; margin-bottom: 0.75rem; letter-spacing: 0.05em;">커리큘럼</p>
+                <ul style="display: flex; flex-direction: column; gap: 0.45rem; list-style: none; padding: 0; margin: 0;">
+                  <li style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: #555;"><span style="color: #B8941C; margin-top: 2px;">·</span>악보 읽기 · 독보력 훈련 (음자리표, 박자, 박자표)</li>
+                  <li style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: #555;"><span style="color: #B8941C; margin-top: 2px;">·</span>리듬 훈련 (기초 리듬형 → 점음표 · 당김음)</li>
+                  <li style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: #555;"><span style="color: #B8941C; margin-top: 2px;">·</span>음정 · 음계 · 화성 기초 (장단음계, 3화음)</li>
+                  <li style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: #555;"><span style="color: #B8941C; margin-top: 2px;">·</span>시창 · 청음 입문 (계이름 읽기, 음정 구별)</li>
+                  <li style="display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: #555;"><span style="color: #B8941C; margin-top: 2px;">·</span>중급반: 조성 분석, 화성 진행, 악식론 기초</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -585,21 +613,53 @@ app.get('/curriculum', (c) => {
 
       {/* 수업 안내 */}
       <section style="background: #FFFFFF; padding: 60px 0;">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div style="text-align: center; margin-bottom: 2.5rem;">
             <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Lesson Info</p>
             <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a;">수업 안내</h2>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="margin-bottom: 2.5rem;">
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
-              <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-user" style="color: #B8941C; font-size: 1.5rem;"></i></div>
-              <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 1rem;">개인 레슨</h3>
-              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">주 1회 (40분/회)<br/>1:1 맞춤 레슨</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="margin-bottom: 2.5rem;">
+            {/* 개인 레슨 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-user" style="color: #B8941C; font-size: 1.35rem;"></i></div>
+              <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">개인 레슨</h3>
+              <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">1:1 맞춤 레슨</p>
+              <div style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #f0f0f0;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">수업 시간</span><span style="color: #1a1a1a; font-weight: 500;">주 1회 · 40분</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">수업 형태</span><span style="color: #1a1a1a; font-weight: 500;">1:1 개인 레슨</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">수강료</span><span style="color: #1a1a1a; font-weight: 500;">문의</span></div>
+              </div>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>전공자 출신 강사진 1:1 밀착 지도</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>개인 목표에 맞춘 진도 및 레퍼토리</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>추천 대상: 입문자 ~ 전공·입시 준비생</p>
             </div>
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'">
-              <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-ticket-alt" style="color: #B8941C; font-size: 1.5rem;"></i></div>
-              <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 1rem;">원데이 클래스</h3>
-              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">20,000원 / 30분<br/>악기 체험 수업</p>
+            {/* 원데이 클래스 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-ticket-alt" style="color: #B8941C; font-size: 1.35rem;"></i></div>
+              <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">원데이 클래스</h3>
+              <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">악기 첫 체험</p>
+              <div style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #f0f0f0;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">수업 시간</span><span style="color: #1a1a1a; font-weight: 500;">30분</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">수강료</span><span style="color: #1a1a1a; font-weight: 500;">20,000원</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">예약</span><span style="color: #1a1a1a; font-weight: 500;">카카오톡 · 전화</span></div>
+              </div>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>트럼펫 · 호른 · 트롬본 · 유포늄 선택</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>악기 사전 지식 없이도 참여 가능</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>추천 대상: 입문 전 체험, 선물용</p>
+            </div>
+            {/* 악기 대여 */}
+            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-music" style="color: #B8941C; font-size: 1.35rem;"></i></div>
+              <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">악기 대여</h3>
+              <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">수업 중 무료 제공</p>
+              <div style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #f0f0f0;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">대여료</span><span style="color: #1a1a1a; font-weight: 500;">수업 중 무료</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">보유 악기</span><span style="color: #1a1a1a; font-weight: 500;">4종 전 악기</span></div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;"><span style="color: #888;">문의</span><span style="color: #1a1a1a; font-weight: 500;">등록 시 안내</span></div>
+              </div>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>트럼펫 · 호른 · 트롬본 · 유포늄 보유</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>악기 구매 전 충분히 체험 후 결정 가능</p>
+              <p style="font-size: 0.82rem; color: #555; line-height: 1.65;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>추천 대상: 악기 없이 바로 시작하고 싶은 분</p>
             </div>
           </div>
           <div style="text-align: center;">
