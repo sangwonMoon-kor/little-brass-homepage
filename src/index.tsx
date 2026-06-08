@@ -147,7 +147,7 @@ app.get('/', async (c) => {
         <div class="instruments-grid">
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/trumpet.png" alt="Trumpet" />
+              <img src="/static/images/instruments/trumpet.png" alt="Trumpet" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Trumpet Lessons</span>
               </div>
@@ -155,7 +155,7 @@ app.get('/', async (c) => {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/horn.png" alt="Horn" />
+              <img src="/static/images/instruments/horn.png" alt="Horn" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Horn Lessons</span>
               </div>
@@ -163,7 +163,7 @@ app.get('/', async (c) => {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/trombone.png" alt="Trombone" />
+              <img src="/static/images/instruments/trombone.png" alt="Trombone" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Trombone Lessons</span>
               </div>
@@ -171,7 +171,7 @@ app.get('/', async (c) => {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/euphonium.png" alt="Euphonium" />
+              <img src="/static/images/instruments/euphonium.png" alt="Euphonium" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Euphonium Lessons</span>
               </div>
@@ -187,7 +187,7 @@ app.get('/', async (c) => {
         {/* Row 1: Image Left + Text Right */}
         <div class="zigzag-row">
           <div class="zigzag-image">
-            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80" alt="전문 금관악기 교육" />
+            <img src="/static/images/academy/display-03.jpg" alt="전문 금관악기 교육" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Professional Education</p>
@@ -202,7 +202,7 @@ app.get('/', async (c) => {
         {/* Row 2: Text Left + Image Right (reverse) */}
         <div class="zigzag-row reverse">
           <div class="zigzag-image">
-            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80" alt="합리적인 악기 대여" />
+            <img src="/static/images/academy/display-02.jpg" alt="합리적인 악기 대여" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Instrument Rental</p>
@@ -217,7 +217,7 @@ app.get('/', async (c) => {
         {/* Row 3: Image Left + Text Right */}
         <div class="zigzag-row">
           <div class="zigzag-image">
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80" alt="온라인 & 오프라인" />
+            <img src="/static/images/academy/corridor-01.jpg" alt="온라인 & 오프라인" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Online &amp; Offline</p>
@@ -238,21 +238,21 @@ app.get('/', async (c) => {
         </div>
         <div class="gallery-asymmetric">
           <div class="gallery-item large">
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="레슨실" />
+            <img src="/static/images/academy/lobby-01.jpg" alt="대기실" />
             <div class="image-overlay">
-              <span class="image-label">Lesson Room</span>
+              <span class="image-label">Lobby</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="연습실" />
+            <img src="/static/images/academy/practice-room-01.jpg" alt="연습실" />
             <div class="image-overlay">
               <span class="image-label">Practice Room</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="대기실" />
+            <img src="/static/images/academy/lesson-room-01.jpg" alt="레슨실" />
             <div class="image-overlay">
-              <span class="image-label">Lounge</span>
+              <span class="image-label">Lesson Room</span>
             </div>
           </div>
         </div>
@@ -295,7 +295,7 @@ app.get('/', async (c) => {
       <section class="relative py-28 overflow-hidden">
         {/* Background Image + Overlay */}
         <div class="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80" alt="" class="w-full h-full object-cover" />
+          <img src="/static/images/academy/yellow-door-01.jpg" alt="" class="w-full h-full object-cover" />
           <div class="absolute inset-0" style="background: rgba(0, 0, 0, 0.65);"></div>
         </div>
         <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
@@ -323,7 +323,7 @@ app.get('/curriculum', (c) => {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1400&q=80" alt="Curriculum" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/display-04.jpg" alt="Curriculum" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Curriculum</p>
@@ -350,6 +350,9 @@ app.get('/curriculum', (c) => {
 
           {/* 트럼펫 */}
           <div id="tab-content-trumpet" style="display: block;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <img src="/static/images/instruments/trumpet.png" alt="트럼펫" style="height: 120px; object-fit: contain;" />
+            </div>
             <div class="curriculum-timeline">
               <div class="timeline-step"><div class="timeline-circle">1</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">입문 (1~3개월)</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 버징, 호흡법, 기본 음역 연습</p></div>
               <div class="timeline-step"><div class="timeline-circle">2</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">초급 (3~6개월)</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 간단한 에튀드, 텅잉 기초</p></div>
@@ -359,6 +362,9 @@ app.get('/curriculum', (c) => {
           </div>
           {/* 호른 */}
           <div id="tab-content-horn" style="display: none;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <img src="/static/images/instruments/horn.png" alt="호른" style="height: 120px; object-fit: contain;" />
+            </div>
             <div class="curriculum-timeline">
               <div class="timeline-step"><div class="timeline-circle">1</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">입문</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 적응, 호흡법, 기본 음역</p></div>
               <div class="timeline-step"><div class="timeline-circle">2</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">초급</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">자연 배음 연습, 기초 스케일, 간단한 멜로디</p></div>
@@ -368,6 +374,9 @@ app.get('/curriculum', (c) => {
           </div>
           {/* 트롬본 */}
           <div id="tab-content-trombone" style="display: none;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <img src="/static/images/instruments/trombone.png" alt="트롬본" style="height: 120px; object-fit: contain;" />
+            </div>
             <div class="curriculum-timeline">
               <div class="timeline-step"><div class="timeline-circle">1</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">입문</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">슬라이드 포지션 익히기, 호흡법, 기본 음역</p></div>
               <div class="timeline-step"><div class="timeline-circle">2</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">초급</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 레가토/스타카토 주법, 에튀드</p></div>
@@ -377,6 +386,9 @@ app.get('/curriculum', (c) => {
           </div>
           {/* 유포늄 */}
           <div id="tab-content-euphonium" style="display: none;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <img src="/static/images/instruments/euphonium.png" alt="유포늄" style="height: 120px; object-fit: contain;" />
+            </div>
             <div class="curriculum-timeline">
               <div class="timeline-step"><div class="timeline-circle">1</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">입문</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">마우스피스 버징, 호흡법, 기본 음역</p></div>
               <div class="timeline-step"><div class="timeline-circle">2</div><div class="timeline-connector"></div><h4 style="font-weight: 700; color: #1a1a1a; margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">초급</h4><p style="color: #666; font-size: 0.85rem; line-height: 1.6;">스케일, 기초 에튀드, 음색 만들기</p></div>
@@ -391,8 +403,8 @@ app.get('/curriculum', (c) => {
       <section style="background: #f9f9f9; padding: 60px 0;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div style="display: flex; gap: 0; min-height: 360px;" class="flex-col md:flex-row">
-            <div style="flex: 1; background: linear-gradient(135deg, #B8941C 0%, #D4AF37 50%, #C9A227 100%); display: flex; align-items: center; justify-content: center; min-height: 280px; border-radius: 12px 0 0 12px;" class="theory-image-block">
-              <i class="fas fa-book-open" style="font-size: 5rem; color: rgba(255,255,255,0.3);"></i>
+            <div style="flex: 1; min-height: 280px; border-radius: 12px 0 0 12px; overflow: hidden;" class="theory-image-block">
+              <img src="/static/images/academy/piano-room-01.jpg" alt="뮤토랑 음악이론반" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px; background: #fff; border-radius: 0 12px 12px 0; border: 1px solid #eee; border-left: none;" class="theory-text-block">
               <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Theory Course</p>
@@ -444,7 +456,7 @@ app.get('/philosophy', (c) => {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1400&q=80" alt="Philosophy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/lobby-01.jpg" alt="Philosophy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Philosophy</p>
@@ -457,8 +469,8 @@ app.get('/philosophy', (c) => {
       <section style="background: #FFFFFF; padding: 80px 0;">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="zigzag-row">
-            <div class="zigzag-image" style="background: linear-gradient(135deg, #B8941C 0%, #D4AF37 50%, #C9A227 100%); display: flex; align-items: center; justify-content: center;">
-              <i class="fas fa-music" style="font-size: 5rem; color: rgba(255,255,255,0.3);"></i>
+            <div class="zigzag-image">
+              <img src="/static/images/academy/corridor-01.jpg" alt="리틀브라스 학원" />
             </div>
             <div class="zigzag-text">
               <p class="sub-label" style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">About the Director</p>
@@ -534,7 +546,7 @@ app.get('/gallery', (c) => {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=1400&q=80" alt="Gallery" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/corridor-02.jpg" alt="Gallery" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Gallery</p>
@@ -551,21 +563,21 @@ app.get('/gallery', (c) => {
         </div>
         <div class="gallery-asymmetric">
           <div class="gallery-item large">
-            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="레슨실" />
+            <img src="/static/images/academy/lobby-01.jpg" alt="대기실" />
             <div class="image-overlay">
-              <span class="image-label">Lesson Room</span>
+              <span class="image-label">Lobby</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="연습실" />
+            <img src="/static/images/academy/practice-room-01.jpg" alt="연습실" />
             <div class="image-overlay">
               <span class="image-label">Practice Room</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="대기실" />
+            <img src="/static/images/academy/lesson-room-01.jpg" alt="레슨실" />
             <div class="image-overlay">
-              <span class="image-label">Lounge</span>
+              <span class="image-label">Lesson Room</span>
             </div>
           </div>
         </div>
@@ -580,28 +592,28 @@ app.get('/gallery', (c) => {
           </div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;" class="gallery-moments-grid">
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=80" alt="수업 풍경" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>수업 풍경</span></div>
+              <img src="/static/images/academy/display-02.jpg" alt="악기 진열" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>악기 진열</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80" alt="앙상블 연습" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>앙상블 연습</span></div>
+              <img src="/static/images/academy/display-06.jpg" alt="악기 전시" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>악기 전시</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80" alt="개인 레슨" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>개인 레슨</span></div>
+              <img src="/static/images/academy/signage-01.jpg" alt="학원 안내" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>학원 안내</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80" alt="연주회 무대" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>연주회 무대</span></div>
+              <img src="/static/images/academy/yellow-door-02.jpg" alt="학원 입구" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>학원 입구</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80" alt="정기 연주회" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>정기 연주회</span></div>
+              <img src="/static/images/academy/lesson-room-02.jpg" alt="레슨실" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>레슨실</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80" alt="그룹 레슨" style="width: 100%; height: 100%; object-fit: cover;" />
-              <div class="image-card-overlay"><span>그룹 레슨</span></div>
+              <img src="/static/images/academy/corridor-01.jpg" alt="학원 복도" style="width: 100%; height: 100%; object-fit: cover;" />
+              <div class="image-card-overlay"><span>학원 복도</span></div>
             </div>
           </div>
         </div>
@@ -609,7 +621,7 @@ app.get('/gallery', (c) => {
 
       {/* 블로그 안내 — CTA 배경 이미지 */}
       <section style="position: relative; padding: 80px 0; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=1400&q=80" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/display-07.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.65);"></div>
         <div style="position: relative; z-index: 1; max-width: 600px; margin: 0 auto; text-align: center; padding: 0 1.5rem;">
           <p style="font-family: 'Dancing Script', cursive; color: #D4AF37; font-size: 2rem; font-weight: 600; margin-bottom: 0.75rem;">More Stories</p>
@@ -634,7 +646,7 @@ app.get('/location', (c) => {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1400&q=80" alt="Location" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/yellow-door-01.jpg" alt="Location" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Location</p>
