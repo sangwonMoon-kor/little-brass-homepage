@@ -340,6 +340,30 @@ app.get('/curriculum', (c) => {
             <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a;">실기 과정</h2>
           </div>
 
+          {/* 악기 성향별 추천 */}
+          <div style="background: #faf8f2; border: 1px solid #f0ebdd; border-radius: 16px; padding: 28px; margin-bottom: 2.5rem;">
+            <h3 style="text-align: center; font-weight: 700; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 0.4rem;">어떤 악기가 나에게 맞을까요?</h3>
+            <p style="text-align: center; color: #666; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem;">악기마다 음색과 성향이 다릅니다. 리틀브라스에서는 <strong style="color: #B8941C;">여러 악기를 직접 체험해 보고</strong> 자신에게 맞는 악기를 선택할 수 있습니다.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div style="text-align: center; padding: 1.1rem 0.75rem; background: #fff; border: 1px solid #f0ebdd; border-radius: 12px;">
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.3rem;">트럼펫</h4>
+                <p style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0;">밝고 화려한 음색</p>
+              </div>
+              <div style="text-align: center; padding: 1.1rem 0.75rem; background: #fff; border: 1px solid #f0ebdd; border-radius: 12px;">
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.3rem;">호른</h4>
+                <p style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0;">깊고 풍부한 음색</p>
+              </div>
+              <div style="text-align: center; padding: 1.1rem 0.75rem; background: #fff; border: 1px solid #f0ebdd; border-radius: 12px;">
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.3rem;">트롬본</h4>
+                <p style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0;">활동적이고 다이나믹한 음색</p>
+              </div>
+              <div style="text-align: center; padding: 1.1rem 0.75rem; background: #fff; border: 1px solid #f0ebdd; border-radius: 12px;">
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.3rem;">유포늄</h4>
+                <p style="font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0;">따뜻하고 부드러운 음색</p>
+              </div>
+            </div>
+          </div>
+
           {/* 탭 버튼 */}
           <div style="display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #eee; margin-bottom: 3rem;">
             <button data-tab="trumpet" class="tab-active" style="padding: 12px 24px; background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.3s;">트럼펫</button>
@@ -362,6 +386,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">마우스피스 버징, 자세·호흡, 한 옥타브 음역</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">처음 시작하는 분, 초등 저학년~성인 입문자</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">2회 만에 첫 소리 내기, 1개월에 예제곡 10곡 완성</p></div>
               </div>
               {/* 02 초급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -374,6 +399,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">장조 스케일, 싱글 텅잉, 기초 에튀드 (클라크, 아르방)</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">음을 안정적으로 낼 수 있는 분, 악보 기초를 배운 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">3개월에 교재 1권 마스터, 자유곡 1곡 이상 연주</p></div>
               </div>
               {/* 03 중급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -415,6 +441,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">마우스피스 버징, 호흡과 지지, 저음역 음정 익히기</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">처음 시작하는 분, 음악적 감수성이 풍부한 입문자</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">2회 만에 첫 소리 내기, 1개월에 예제곡 10곡 완성</p></div>
               </div>
               {/* 02 초급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -427,6 +454,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">자연 배음 연습, 기초 장조 스케일, 간단한 멜로디</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">기본 음을 낼 수 있는 분, 클래식 음악에 관심 있는 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">3개월에 교재 1권 마스터, 자유곡 1곡 이상 연주</p></div>
               </div>
               {/* 03 중급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -468,6 +496,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">슬라이드 1~7 포지션, 호흡법, 기본 음역 (B♭2~B♭3)</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">처음 시작하는 분, 저음역 악기에 관심 있는 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">2회 만에 첫 소리 내기, 1개월에 예제곡 10곡 완성</p></div>
               </div>
               {/* 02 초급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -480,6 +509,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">장조 스케일, 레가토·스타카토, 기초 에튀드</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">포지션에 익숙해진 분, 악보를 읽을 수 있는 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">3개월에 교재 1권 마스터, 자유곡 1곡 이상 연주</p></div>
               </div>
               {/* 03 중급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -521,6 +551,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">마우스피스 버징, 호흡·지지, 기본 음역 (B♭2~B♭3)</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">처음 시작하는 분, 깊고 따뜻한 음색을 좋아하는 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">2회 만에 첫 소리 내기, 1개월에 예제곡 10곡 완성</p></div>
               </div>
               {/* 02 초급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -533,6 +564,7 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">주요 내용</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">장조 스케일, 기초 에튀드, 음색 컨트롤 연습</p></div>
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">기본 음을 안정적으로 내는 분, 악보를 배우고 있는 분</p></div>
                 </div>
+                <div style="margin-top: 0.85rem; background: rgba(184,148,28,0.07); border-radius: 8px; padding: 0.6rem 0.7rem;"><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block; margin-bottom: 0.15rem;"><i class="fas fa-bullseye" style="margin-right: 0.3rem;"></i>성취 포인트</span><p style="font-size: 0.8rem; color: #444; margin: 0; line-height: 1.5;">3개월에 교재 1권 마스터, 자유곡 1곡 이상 연주</p></div>
               </div>
               {/* 03 중급 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -558,6 +590,18 @@ app.get('/curriculum', (c) => {
                   <div><span style="font-size: 0.7rem; font-weight: 700; color: #B8941C; display: block;">추천 대상</span><p style="font-size: 0.82rem; color: #555; margin: 0.1rem 0 0; line-height: 1.5;">중급 수료 후 전공·솔리스트·군악대를 목표로 하는 분</p></div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* 군악대·입시 전문 안내 */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5" style="margin-top: 3rem;">
+            <div style="background: #1a1a1a; border-radius: 16px; padding: 32px; color: #fff;">
+              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem;"><i class="fas fa-medal" style="color: #C9A227; font-size: 1.25rem;"></i><h3 style="font-weight: 700; font-size: 1.15rem; color: #fff; margin: 0;">군악대 오디션 준비</h3></div>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.88rem; line-height: 1.75; margin: 0;">악기별 군악대 실기시험곡 데이터를 보유하고 있어, 지원자에게 맞는 곡을 추천합니다. 현재 실력과 목표 시기에 따라 <strong style="color: #C9A227;">음역대를 조정한 맞춤 편곡</strong>까지 함께 진행하여, 행진곡·팡파레 스타일의 안정적인 사운드를 완성합니다.</p>
+            </div>
+            <div style="background: #1a1a1a; border-radius: 16px; padding: 32px; color: #fff;">
+              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem;"><i class="fas fa-graduation-cap" style="color: #C9A227; font-size: 1.25rem;"></i><h3 style="font-weight: 700; font-size: 1.15rem; color: #fff; margin: 0;">예고·음대 입시 준비</h3></div>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.88rem; line-height: 1.75; margin: 0;">음악대학 입시는 <strong style="color: #C9A227;">실기 비중이 70~80% 이상</strong>(일부 학교는 100%)으로, 곡 하나의 완성보다 탄탄한 기본기와 안정적인 연주력이 핵심입니다. 기초 훈련과 입시 레슨을 병행하여 예술고등학교·음악대학 진학을 체계적으로 준비합니다.</p>
             </div>
           </div>
         </div>
@@ -705,6 +749,16 @@ app.get('/philosophy', (c) => {
         </div>
       </section>
 
+      {/* 브랜드 스토리 — 이름의 의미 */}
+      <section style="background: #1a1a1a; padding: 80px 0;">
+        <div style="max-width: 760px; margin: 0 auto; padding: 0 1.5rem; text-align: center;">
+          <p style="font-family: 'Dancing Script', cursive; color: #C9A227; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Our Name</p>
+          <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 1.75rem;">'리틀브라스'라는 이름</h2>
+          <p style="color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 2; margin-bottom: 1.5rem;">'브라스(Brass)'는 금속으로 만들어 나팔로 소리 내는 <strong style="color: #C9A227;">금관악기</strong>를 뜻합니다.<br/>오케스트라의 금관 파트는 트럼펫, 트롬본, 호른, 튜바, 유포늄으로 이루어집니다.</p>
+          <p style="color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 2; margin: 0;">자라나는 아이들이 금관악기를 더 가까이 만나기를 바라는 마음으로<br/>이름 앞에 <strong style="color: #C9A227;">'리틀(Little)'</strong>을 붙였습니다.<br/>리틀브라스는 '작은 금관악기 연주자'라는 의미를 담고 있습니다.</p>
+        </div>
+      </section>
+
       {/* 교육 철학 3가지 */}
       <section style="background: #f9f9f9; padding: 80px 0;">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 1.5rem;">
@@ -752,8 +806,8 @@ app.get('/philosophy', (c) => {
             </div>
             <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 8px 30px rgba(184,148,28,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
               <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-theater-masks" style="color: #B8941C; font-size: 1.5rem;"></i></div>
-              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">정기 연주회 개최</h3>
-              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">3개월 배운 학생부터 2년차 학생까지, 모두가 무대에 서는 정기 연주회를 매년 개최합니다.</p>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">연 2회 정기연주회 &amp; 마스터클래스</h3>
+              <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">3개월 배운 학생부터 2년차까지 모두가 무대에 서는 정기연주회를 연 2회 개최하고, 유명 연주자를 초청한 마스터클래스·특강도 운영합니다.</p>
             </div>
           </div>
         </div>
