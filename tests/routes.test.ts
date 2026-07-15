@@ -1,3 +1,4 @@
+import { readFile } from 'node:fs/promises'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import app from '../src/index'
 
@@ -50,5 +51,33 @@ describe('public route contract', () => {
   it('uses the request origin in robots.txt before custom-domain activation', async () => {
     const response = await app.request('https://preview.example/robots.txt')
     expect(await response.text()).toContain('Sitemap: https://preview.example/sitemap.xml')
+  })
+
+  it('prefers PUBLIC_SITE_URL for canonical and sitemap output', async () => {
+    const response = await app.request(
+      'https://preview.example/gallery',
+      undefined,
+      { PUBLIC_SITE_URL: 'https://littlebrass.com' },
+    )
+    expect(await response.text()).toContain(
+      '<link rel="canonical" href="https://littlebrass.com/gallery"',
+    )
+  })
+
+  it('references and provides a branded SVG favicon', async () => {
+    const response = await app.request('https://example.com/')
+    expect(await response.text()).toContain('href="/favicon.svg"')
+
+    await expect(
+      readFile(new URL('../public/favicon.svg', import.meta.url), 'utf8'),
+    ).resolves.toContain('<svg')
+  })
+
+  it('includes verified MusicSchool structured data on the homepage', async () => {
+    const response = await app.request('https://example.com/')
+    const html = await response.text()
+    expect(html).toContain('"@type":"MusicSchool"')
+    expect(html).toContain('서울특별시 강동구 상일로12길 99')
+    expect(html).not.toContain('aggregateRating')
   })
 })

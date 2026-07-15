@@ -1,5 +1,7 @@
 import { Hono } from 'hono'
+import { absoluteUrl, PUBLIC_ROUTES, resolveSiteOrigin } from './config/site'
 import { renderer } from './renderer'
+import type { Bindings } from './types/site'
 
 // RSS 피드 파싱 헬퍼 함수들
 function extractCDATA(text: string): string {
@@ -73,9 +75,26 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
-const app = new Hono()
+const app = new Hono<{ Bindings: Bindings }>()
 
 app.use(renderer)
+
+app.get('/sitemap.xml', (c) => {
+  const origin = resolveSiteOrigin(c.req.url, c.env?.PUBLIC_SITE_URL)
+  const urls = PUBLIC_ROUTES.map(
+    ({ path }) => `  <url><loc>${absoluteUrl(origin, path)}</loc></url>`,
+  ).join('\n')
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`
+
+  return c.body(xml, 200, { 'Content-Type': 'application/xml; charset=UTF-8' })
+})
+
+app.get('/robots.txt', (c) => {
+  const origin = resolveSiteOrigin(c.req.url, c.env?.PUBLIC_SITE_URL)
+  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${absoluteUrl(origin, '/sitemap.xml')}\n`
+
+  return c.text(robots)
+})
 
 // 메인 페이지
 app.get('/', async (c) => {
@@ -1061,6 +1080,7 @@ app.get('/location', (c) => {
 
 // 404 에러 페이지
 app.notFound((c) => {
+  c.status(404)
   return c.render(
     <div>
       <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white relative overflow-hidden">

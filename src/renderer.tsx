@@ -1,11 +1,39 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
+import { absoluteUrl, getPageMeta, SITE } from './config/site'
+import type { Bindings } from './types/site'
+
+type RendererProps = {
+  children?: unknown
+  title?: string
+  description?: string
+  canonicalUrl?: string
+  ogImageUrl?: string
+  pathname?: string
+  [key: string]: unknown
+}
 
 export const renderer = jsxRenderer(
-  ({ children, title }: { children?: any; title?: string;[key: string]: any }) => {
-    const pageTitle = title || 'Little Brass - 프리미엄 금관악기 교육'
-    const description = '리틀브라스 음악학원 - 트럼펫, 호른, 트롬본, 유포늄 금관악기 전문 교육. 서울 강동구 상일동.'
-    const siteUrl = 'https://little-brass-homepage.pages.dev'
-    const ogImage = 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80'
+  (props: RendererProps, c) => {
+    const requestUrl = new URL(c.req.url)
+    const pathname = props.pathname || requestUrl.pathname
+    const pageMeta = getPageMeta(pathname)
+    const configuredOrigin = (c.env as Bindings | undefined)?.PUBLIC_SITE_URL
+    const siteOrigin = new URL(configuredOrigin || requestUrl.origin).origin
+    const pageTitle = props.title || pageMeta?.title || 'Little Brass - 프리미엄 금관악기 교육'
+    const description = props.description || pageMeta?.description || SITE.description
+    const canonicalUrl = props.canonicalUrl || absoluteUrl(siteOrigin, pathname)
+    const ogImage = props.ogImageUrl || absoluteUrl(siteOrigin, SITE.ogImagePath)
+    const structuredData = pathname === '/'
+      ? JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'MusicSchool',
+          name: SITE.name,
+          address: SITE.address,
+          telephone: SITE.phone,
+          url: canonicalUrl,
+          image: ogImage,
+        })
+      : null
 
     return (
       <html lang="ko">
@@ -19,7 +47,7 @@ export const renderer = jsxRenderer(
 
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content={siteUrl} />
+          <meta property="og:url" content={canonicalUrl} />
           <meta property="og:title" content={pageTitle} />
           <meta property="og:description" content={description} />
           <meta property="og:image" content={ogImage} />
@@ -28,16 +56,24 @@ export const renderer = jsxRenderer(
 
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content={siteUrl} />
+          <meta property="twitter:url" content={canonicalUrl} />
           <meta property="twitter:title" content={pageTitle} />
           <meta property="twitter:description" content={description} />
           <meta property="twitter:image" content={ogImage} />
 
           {/* Canonical URL */}
-          <link rel="canonical" href={siteUrl} />
+          <link rel="canonical" href={canonicalUrl} />
 
           {/* Favicon */}
-          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+          {structuredData && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: structuredData }}
+            />
+          )}
 
           <script src="https://cdn.tailwindcss.com"></script>
           <script src="/static/tailwind-config.js"></script>
@@ -111,7 +147,7 @@ export const renderer = jsxRenderer(
               </div>
             </div>
           </nav>
-          <main>{children}</main>
+          <main>{props.children}</main>
 
 
 
