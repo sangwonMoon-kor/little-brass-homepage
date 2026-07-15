@@ -35,7 +35,7 @@
 
 ## 로컬 실행
 
-Node.js와 npm이 필요합니다.
+Node.js 22 이상과 npm이 필요합니다.
 
 ```bash
 git clone https://github.com/sangwonMoon-kor/little-brass-homepage.git
