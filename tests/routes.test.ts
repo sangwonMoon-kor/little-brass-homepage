@@ -96,11 +96,11 @@ describe('public route contract', () => {
 
   it('returns a stable RSS error response when the live feed is unavailable', async () => {
     const response = await app.request('https://example.com/api/blog/rss')
-    const body = await response.json<{
+    const body = (await response.json()) as {
       success: boolean
       posts: unknown[]
       message?: string
-    }>()
+    }
 
     expect(response.status).toBe(503)
     expect(body.success).toBe(false)

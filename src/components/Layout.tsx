@@ -20,7 +20,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
   const pageMeta = getPageMeta(pathname)
   const configuredOrigin = (c.env as Bindings | undefined)?.PUBLIC_SITE_URL
   const siteOrigin = new URL(configuredOrigin || requestUrl.origin).origin
-  const title = props.title || pageMeta?.title || 'Little Brass - 프리미엄 금관악기 교육'
+  const title = props.title || pageMeta?.title || '404 - 페이지를 찾을 수 없습니다 | Little Brass'
   const description = props.description || pageMeta?.description || SITE.description
   const canonicalUrl = props.canonicalUrl || absoluteUrl(siteOrigin, pathname)
   const ogImageUrl = props.ogImageUrl || absoluteUrl(siteOrigin, SITE.ogImagePath)
@@ -37,9 +37,8 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
           ogImageUrl={ogImageUrl}
           isHome={pathname === '/'}
         />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="/static/tailwind-config.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+        <link href="/static/tailwind.css" rel="stylesheet" />
         <link href="/static/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>

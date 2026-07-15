@@ -66,10 +66,7 @@ export function createApp(dependencies: AppDependencies = {}) {
 
   app.notFound((c) => {
     c.status(404)
-    return c.render(
-      <NotFoundPage />,
-      { title: '404 - 페이지를 찾을 수 없습니다 | Little Brass' },
-    )
+    return c.render(<NotFoundPage />)
   })
 
   return app

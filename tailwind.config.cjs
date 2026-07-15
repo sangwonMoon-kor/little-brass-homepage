@@ -1,5 +1,5 @@
-// Tailwind CSS 커스텀 설정
-tailwind.config = {
+module.exports = {
+  content: ['./src/**/*.{ts,tsx}', './public/static/app.js'],
   theme: {
     extend: {
       colors: {
@@ -31,7 +31,7 @@ tailwind.config = {
           400: '#E09856',
           500: '#CD7F32',
           600: '#B56F2A',
-        }
+        },
       },
       fontFamily: {
         display: ['Playfair Display', 'Noto Sans KR', 'serif'],
@@ -40,10 +40,11 @@ tailwind.config = {
         cursive: ['Dancing Script', 'cursive'],
       },
       boxShadow: {
-        'gold': '0 4px 20px rgba(212, 175, 55, 0.2)',
-        'navy': '0 4px 20px rgba(30, 58, 95, 0.2)',
-        'premium': '0 10px 40px rgba(30, 58, 95, 0.1), 0 2px 8px rgba(212, 175, 55, 0.1)',
-      }
-    }
-  }
+        gold: '0 4px 20px rgba(212, 175, 55, 0.2)',
+        navy: '0 4px 20px rgba(30, 58, 95, 0.2)',
+        premium: '0 10px 40px rgba(30, 58, 95, 0.1), 0 2px 8px rgba(212, 175, 55, 0.1)',
+      },
+    },
+  },
+  plugins: [],
 }
