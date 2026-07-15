@@ -68,22 +68,22 @@ export function PhilosophyPage() {
             <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 1.75rem; font-weight: 600; color: #1a1a1a;">리틀브라스가 특별한 이유</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 8px 30px rgba(184,148,28,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="feature-card interactive-card">
               <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-music" style="color: #B8941C; font-size: 1.5rem;"></i></div>
               <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">금관악기 전문</h3>
               <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">피아노 학원이 아닙니다. 트럼펫, 호른, 트롬본, 유포늄 금관악기만 전문으로 교육합니다.</p>
             </div>
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 8px 30px rgba(184,148,28,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="feature-card interactive-card">
               <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-medal" style="color: #B8941C; font-size: 1.5rem;"></i></div>
               <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">군악대 입시 100% 합격</h3>
               <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">실전 중심 커리큘럼으로 군악대 입시 준비반을 운영하며, 높은 합격률을 자랑합니다.</p>
             </div>
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 8px 30px rgba(184,148,28,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="feature-card interactive-card">
               <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-video" style="color: #B8941C; font-size: 1.5rem;"></i></div>
               <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">온라인 레슨 가능</h3>
               <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">해외·지방 거주 학생도 Zoom을 통한 실시간 온라인 레슨으로 수업받을 수 있습니다.</p>
             </div>
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; transition: all 0.3s; text-align: center;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 8px 30px rgba(184,148,28,0.15)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="feature-card interactive-card">
               <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;"><i class="fas fa-theater-masks" style="color: #B8941C; font-size: 1.5rem;"></i></div>
               <h3 style="font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem;">연 2회 정기연주회 &amp; 마스터클래스</h3>
               <p style="color: #555; font-size: 0.9rem; line-height: 1.7;">3개월 배운 학생부터 2년차까지 모두가 무대에 서는 정기연주회를 연 2회 개최하고, 유명 연주자를 초청한 마스터클래스·특강도 운영합니다.</p>

@@ -45,15 +45,15 @@ export function CurriculumPage() {
           </div>
 
           {/* 탭 버튼 */}
-          <div style="display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #eee; margin-bottom: 3rem;">
-            <button data-tab="trumpet" class="tab-active" style="padding: 12px 24px; background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.3s;">트럼펫</button>
-            <button data-tab="horn" class="tab-inactive" style="padding: 12px 24px; background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.3s;">호른</button>
-            <button data-tab="trombone" class="tab-inactive" style="padding: 12px 24px; background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.3s;">트롬본</button>
-            <button data-tab="euphonium" class="tab-inactive" style="padding: 12px 24px; background: none; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.3s;">유포늄</button>
+          <div role="tablist" aria-label="악기별 실기 과정" class="curriculum-tabs">
+            <button id="tab-trumpet" role="tab" aria-controls="tab-content-trumpet" aria-selected="true" tabindex={0} data-tab="trumpet" class="curriculum-tab tab-active">트럼펫</button>
+            <button id="tab-horn" role="tab" aria-controls="tab-content-horn" aria-selected="false" tabindex={-1} data-tab="horn" class="curriculum-tab tab-inactive">호른</button>
+            <button id="tab-trombone" role="tab" aria-controls="tab-content-trombone" aria-selected="false" tabindex={-1} data-tab="trombone" class="curriculum-tab tab-inactive">트롬본</button>
+            <button id="tab-euphonium" role="tab" aria-controls="tab-content-euphonium" aria-selected="false" tabindex={-1} data-tab="euphonium" class="curriculum-tab tab-inactive">유포늄</button>
           </div>
 
           {/* 트럼펫 */}
-          <div id="tab-content-trumpet" style="display: block;">
+          <div id="tab-content-trumpet" role="tabpanel" aria-labelledby="tab-trumpet" tabindex={0}>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
               {/* 01 입문 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -108,7 +108,7 @@ export function CurriculumPage() {
             </div>
           </div>
           {/* 호른 */}
-          <div id="tab-content-horn" style="display: none;">
+          <div id="tab-content-horn" role="tabpanel" aria-labelledby="tab-horn" tabindex={0} hidden>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
               {/* 01 입문 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -163,7 +163,7 @@ export function CurriculumPage() {
             </div>
           </div>
           {/* 트롬본 */}
-          <div id="tab-content-trombone" style="display: none;">
+          <div id="tab-content-trombone" role="tabpanel" aria-labelledby="tab-trombone" tabindex={0} hidden>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
               {/* 01 입문 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -218,7 +218,7 @@ export function CurriculumPage() {
             </div>
           </div>
           {/* 유포늄 */}
-          <div id="tab-content-euphonium" style="display: none;">
+          <div id="tab-content-euphonium" role="tabpanel" aria-labelledby="tab-euphonium" tabindex={0} hidden>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
               {/* 01 입문 */}
               <div style="background: #fff; border: 1px solid #eee; border-top: 3px solid #B8941C; border-radius: 16px; padding: 28px; display: flex; flex-direction: column;">
@@ -344,7 +344,7 @@ export function CurriculumPage() {
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="margin-bottom: 2.5rem;">
             {/* 개인 레슨 */}
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="lesson-card interactive-card">
               <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-user" style="color: #B8941C; font-size: 1.35rem;"></i></div>
               <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">개인 레슨</h3>
               <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">1:1 맞춤 레슨</p>
@@ -358,7 +358,7 @@ export function CurriculumPage() {
               <p style="font-size: 0.82rem; color: #555; line-height: 1.65;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>추천 대상: 입문자 ~ 전공·입시 준비생</p>
             </div>
             {/* 원데이 클래스 */}
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="lesson-card interactive-card">
               <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-ticket-alt" style="color: #B8941C; font-size: 1.35rem;"></i></div>
               <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">원데이 클래스</h3>
               <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">악기 첫 체험</p>
@@ -372,7 +372,7 @@ export function CurriculumPage() {
               <p style="font-size: 0.82rem; color: #555; line-height: 1.65;"><i class="fas fa-check-circle" style="color: #B8941C; margin-right: 0.4rem;"></i>추천 대상: 입문 전 체험, 선물용</p>
             </div>
             {/* 악기 대여 */}
-            <div style="background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 32px; transition: all 0.3s;" onmouseover="this.style.borderColor='#B8941C'; this.style.boxShadow='0 4px 20px rgba(184,148,28,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#eee'; this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+            <div class="lesson-card interactive-card">
               <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;"><i class="fas fa-music" style="color: #B8941C; font-size: 1.35rem;"></i></div>
               <h3 style="font-weight: 700; font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.25rem;">악기 대여</h3>
               <p style="color: #B8941C; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;">수업 중 무료 제공</p>
@@ -387,7 +387,7 @@ export function CurriculumPage() {
             </div>
           </div>
           <div style="text-align: center;">
-            <a href="/location" style="display: inline-flex; align-items: center; gap: 0.75rem; background: #B8941C; color: #fff; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s;" onmouseover="this.style.background='#A0801A'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#B8941C'; this.style.transform='translateY(0)'">
+            <a href="/location" class="button button-primary">
               <i class="fas fa-phone-alt"></i> 상담 문의하기
             </a>
           </div>

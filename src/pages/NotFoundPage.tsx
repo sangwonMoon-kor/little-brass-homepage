@@ -32,7 +32,7 @@ export function NotFoundPage() {
           {/* 버튼 그룹 */}
           <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <a href="/"
-              class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 px-8 py-4 rounded-full font-bold hover:from-gold-400 hover:to-gold-500 transition-all shadow-sm hover:shadow-md hover:scale-105">
+              class="button button-primary inline-flex items-center gap-3 px-8 py-4">
               <i class="fas fa-home text-[20px] leading-[1.6] font-normal"></i>
               <span>홈으로 돌아가기</span>
             </a>
@@ -42,19 +42,19 @@ export function NotFoundPage() {
           <div class="border-t border-white/20 pt-12">
             <p class="text-gray-400 mb-6">또는 인기 페이지를 방문해보세요</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/curriculum" class="bg-[#FFFFFF]/10 backdrop-blur-sm hover:bg-[#FFFFFF]/20 border border-[#EEEEEE] rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/curriculum" class="not-found-link interactive-card">
                 <i class="fas fa-book text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
                 <p class="text-sm font-semibold">커리큘럼</p>
               </a>
-              <a href="/philosophy" class="bg-[#FFFFFF]/10 backdrop-blur-sm hover:bg-[#FFFFFF]/20 border border-[#EEEEEE] rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/philosophy" class="not-found-link interactive-card">
                 <i class="fas fa-lightbulb text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
                 <p class="text-sm font-semibold">교육철학</p>
               </a>
-              <a href="/gallery" class="bg-[#FFFFFF]/10 backdrop-blur-sm hover:bg-[#FFFFFF]/20 border border-[#EEEEEE] rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/gallery" class="not-found-link interactive-card">
                 <i class="fas fa-images text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
                 <p class="text-sm font-semibold">갤러리</p>
               </a>
-              <a href="/location" class="bg-[#FFFFFF]/10 backdrop-blur-sm hover:bg-[#FFFFFF]/20 border border-[#EEEEEE] rounded-xl p-4 transition-all hover:-translate-y-1">
+              <a href="/location" class="not-found-link interactive-card">
                 <i class="fas fa-map-marker-alt text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
                 <p class="text-sm font-semibold">찾아오시는 길</p>
               </a>

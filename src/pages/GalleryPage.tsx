@@ -84,10 +84,7 @@ export function GalleryPage() {
           <p style="font-family: 'Dancing Script', cursive; color: #D4AF37; font-size: 2rem; font-weight: 600; margin-bottom: 0.75rem;">More Stories</p>
           <h2 style="font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">더 많은 이야기가 궁금하시다면</h2>
           <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">리틀브라스 블로그에서 수업 후기, 연주회 소식, 음악 이야기를 확인하세요</p>
-          <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer"
-            style="display: inline-flex; align-items: center; gap: 0.75rem; background: #fff; color: #B8941C; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s;"
-            onmouseover="this.style.background='#B8941C'; this.style.color='#fff'; this.style.transform='translateY(-2px)'"
-            onmouseout="this.style.background='#fff'; this.style.color='#B8941C'; this.style.transform='translateY(0)'">
+          <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="button final-cta-button">
             <i class="fas fa-blog"></i> 블로그 바로가기
           </a>
         </div>

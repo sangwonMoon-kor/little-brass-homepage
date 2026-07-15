@@ -1,3 +1,5 @@
+import { SITE } from '../config/site'
+
 export function LocationPage() {
   return (
     <div>
@@ -14,10 +16,8 @@ export function LocationPage() {
 
       {/* 네이버지도 링크 */}
       <section style="padding: 0 1rem;">
-        <a href="https://map.naver.com/p/entry/place/1094694626" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block; max-width: 1200px; margin: 0 auto;">
-          <div style="background: #f0f0f0; height: 400px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; transition: background 0.3s; cursor: pointer; overflow: hidden;"
-            onmouseover="this.style.background='#e5e5e5'"
-            onmouseout="this.style.background='#f0f0f0'">
+        <a href="https://map.naver.com/p/entry/place/1094694626" target="_blank" rel="noopener noreferrer" class="map-link">
+          <div class="map-link-surface">
             <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #B8941C;"></i>
             <p style="color: #333; font-size: 1rem; font-weight: 600; text-align: center; padding: 0 1rem;">서울특별시 강동구 상일로12길 99 리엔프라자 501호</p>
             <p style="color: #B8941C; font-size: 0.95rem; font-weight: 600; text-decoration: underline;">네이버 지도에서 보기 →</p>
@@ -74,25 +74,18 @@ export function LocationPage() {
 
             {/* 오른쪽: 액션 버튼 */}
             <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center;">
-              <a href="https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5"
-                target="_blank" rel="noopener noreferrer"
-                style="display: flex; align-items: center; gap: 1rem; background: #B8941C; color: #fff; padding: 28px; border-radius: 12px; text-decoration: none; transition: all 0.3s;"
-                onmouseover="this.style.background='#A0801A'; this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
-                onmouseout="this.style.background='#B8941C'; this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer" class="contact-action contact-action-booking interactive-card">
                 <i class="fas fa-ticket-alt" style="font-size: 1.75rem;"></i>
                 <div>
                   <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">원데이 클래스 예약하기</p>
                   <p style="font-size: 0.85rem; opacity: 0.7;">네이버에서 간편하게 예약하세요</p>
                 </div>
               </a>
-              <a href="#"
-                style="display: flex; align-items: center; gap: 1rem; background: #FEE500; color: #3C1E1E; padding: 28px; border-radius: 12px; text-decoration: none; transition: all 0.3s;"
-                onmouseover="this.style.background='#EDDA00'; this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)'"
-                onmouseout="this.style.background='#FEE500'; this.style.transform='scale(1)'; this.style.boxShadow='none'">
-                <i class="fas fa-comment" style="font-size: 1.75rem;"></i>
+              <a href={`tel:${SITE.phone}`} class="contact-action contact-action-phone interactive-card">
+                <i class="fas fa-phone-alt" style="font-size: 1.75rem;"></i>
                 <div>
-                  <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">카카오톡 문의하기</p>
-                  <p style="font-size: 0.85rem; opacity: 0.6;">1:1 채팅으로 편하게 문의하세요</p>
+                  <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">전화로 상담하기</p>
+                  <p style="font-size: 0.85rem; opacity: 0.7;">{SITE.phone}</p>
                 </div>
               </a>
             </div>
@@ -113,7 +106,7 @@ export function LocationPage() {
                 <i class="fas fa-subway" style="color: #B8941C; font-size: 1.5rem;"></i>
               </div>
               <h3 style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 0.5rem;">지하철</h3>
-              <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">9호선 상일동역 3번 출구 도보 5분</p>
+              <p style="color: #555; font-size: 0.95rem; line-height: 1.6;">5호선 상일동역 3번 출구 도보 5분</p>
             </div>
             <div style="background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 32px; text-align: center;">
               <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(184,148,28,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">

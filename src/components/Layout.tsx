@@ -43,9 +43,9 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body class="bg-[#FFFFFF] text-[#555555]">
-        <div class="scroll-progress" id="scroll-progress"></div>
+        <a class="skip-link" href="#main-content">본문 바로가기</a>
         <Navigation pathname={pathname} />
-        <main>{props.children}</main>
+        <main id="main-content" tabindex={-1}>{props.children}</main>
 
         <footer style="background: #1a1a1a; color: #ffffff; padding: 0; margin-top: 0;">
           <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">

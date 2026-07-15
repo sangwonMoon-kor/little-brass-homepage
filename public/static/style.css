@@ -29,6 +29,11 @@
   /* Misc */
   --bronze: #CD7F32;
   --cream: #FFFEF9;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-press: 160ms;
+  --duration-ui: 200ms;
+  --duration-reveal: 420ms;
 }
 
 * {
@@ -72,10 +77,6 @@ h6 {
   border: 2px solid var(--gray-light);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-}
-
 /* 우아한 애니메이션 */
 @keyframes fadeInUp {
   from {
@@ -110,7 +111,7 @@ h6 {
 }
 
 .fade-in {
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp var(--duration-reveal) var(--ease-out);
 }
 
 /* 금빛 반짝임 효과 */
@@ -132,7 +133,7 @@ nav {
 nav a {
   position: relative;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), opacity var(--duration-ui) var(--ease-out);
 }
 
 nav a::after {
@@ -144,15 +145,7 @@ nav a::after {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover {
-  color: var(--gold-primary) !important;
+  transition: width var(--duration-ui) var(--ease-out);
 }
 
 /* 프리미엄 카드 스타일 */
@@ -160,30 +153,9 @@ nav a:hover {
   background: var(--white);
   border: 1px solid var(--gray-medium);
   border-radius: 12px;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out), border-color 200ms var(--ease-out);
   position: relative;
   overflow: hidden;
-}
-
-.premium-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.premium-card:hover::before {
-  left: 100%;
-}
-
-.premium-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  border-color: var(--gold-primary);
 }
 
 /* 골드 버튼 스타일 */
@@ -195,16 +167,10 @@ nav a:hover {
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   border: none;
   cursor: pointer;
-}
-
-.btn-gold:hover {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* 네이비 버튼 스타일 */
@@ -216,18 +182,10 @@ nav a:hover {
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
   box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
   border: 2px solid transparent;
   cursor: pointer;
-}
-
-.btn-navy:hover {
-  background: var(--white);
-  color: var(--navy-primary);
-  border-color: var(--navy-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
 }
 
 /* 골드 아웃라인 버튼 */
@@ -239,16 +197,9 @@ nav a:hover {
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
   border: 2px solid var(--gold-primary);
   cursor: pointer;
-}
-
-.btn-gold-outline:hover {
-  background: var(--gold-primary);
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 /* 폼 입력 스타일 */
@@ -263,14 +214,8 @@ select:focus {
 input,
 textarea,
 select {
-  transition: all 0.3s ease;
+  transition: border-color var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
   border: 2px solid var(--gray-medium);
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-  border-color: var(--gold-light);
 }
 
 /* 섹션 제목 스타일 */
@@ -363,7 +308,7 @@ select:hover {
   border: 3px solid var(--gray-medium);
   border-radius: 50%;
   border-top-color: var(--gold-primary);
-  animation: spin 1s ease-in-out infinite;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -377,12 +322,7 @@ details {
   border: 1px solid var(--gray-medium);
   border-radius: 8px;
   padding: 16px;
-  transition: all 0.3s ease;
-}
-
-details:hover {
-  border-color: var(--gold-primary);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+  transition: border-color var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
 }
 
 details summary {
@@ -391,10 +331,6 @@ details summary {
   font-weight: 600;
   color: var(--navy-primary);
   transition: color 0.3s ease;
-}
-
-details summary:hover {
-  color: var(--gold-primary);
 }
 
 details summary::-webkit-details-marker {
@@ -454,11 +390,6 @@ details[open] {
 }
 
 /* 호버 시 골드 글로우 */
-.glow-gold:hover {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-  transition: box-shadow 0.3s ease;
-}
-
 /* 구분선 */
 .divider-gold {
   height: 2px;
@@ -493,10 +424,6 @@ footer {
   background: var(--footer-beige);
 }
 
-footer a:hover {
-  color: var(--gold-light) !important;
-}
-
 /* 히어로 섹션 강화 */
 .hero-section {
   position: relative;
@@ -512,18 +439,6 @@ footer a:hover {
   bottom: 0;
   background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   opacity: 0.5;
-}
-
-/* 스크롤 진행 바 */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
-  z-index: 9999;
-  transition: width 0.1s ease;
 }
 
 /* 배지 컬렉션 */
@@ -545,13 +460,7 @@ footer a:hover {
   border-radius: 16px;
   padding: 24px;
   border: 1px solid var(--gray-medium);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  border-color: var(--gold-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+  transition: transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out), border-color var(--duration-ui) var(--ease-out);
 }
 
 /* 프리미엄 텍스처 */
@@ -588,37 +497,6 @@ footer a:hover {
 
 
 
-/* 플로팅 버튼 애니메이션 */
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 3s ease-in-out infinite;
-}
-
-#floating-naver-button:hover {
-  animation: none;
-}
-
-/* 모바일에서 플로팅 버튼 크기 조정 */
-@media (max-width: 640px) {
-  #floating-naver-button {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 1rem;
-  }
-}
-
-
 /* 404 페이지 애니메이션 */
 @keyframes spin-slow {
   from {
@@ -639,7 +517,7 @@ footer a:hover {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity var(--duration-reveal) var(--ease-out), transform var(--duration-reveal) var(--ease-out);
 }
 
 .fade-in-visible {
@@ -720,12 +598,7 @@ section {
   border: 1px solid var(--beige-border);
   border-radius: 12px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-out;
-}
-
-.card-classic:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
 }
 
 .btn-primary-classic {
@@ -734,16 +607,11 @@ section {
   border-radius: 0.5rem;
   padding: 0.75rem 2rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--classic-gold);
-}
-
-.btn-primary-classic:hover {
-  background-color: transparent;
-  color: var(--classic-gold);
 }
 
 .btn-outline-classic {
@@ -753,41 +621,32 @@ section {
   border-radius: 0.5rem;
   padding: 0.75rem 2rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.btn-outline-classic:hover {
-  background-color: var(--classic-gold);
-  color: var(--white);
-}
-
 .logo-grayscale {
   filter: grayscale(100%) opacity(60%);
-  transition: all 0.3s ease;
-}
-
-.logo-grayscale:hover {
-  filter: grayscale(0%) opacity(100%);
+  transition: filter var(--duration-ui) var(--ease-out);
 }
 
 /* === Hero Animation Classes (Video Background Hero) === */
 .hero-title {
-  animation: fadeInUp 1s ease-out 0.1s both;
+  animation: fadeInUp var(--duration-reveal) var(--ease-out) both;
 }
 
 .hero-subtitle {
-  animation: fadeInUp 1s ease-out 0.3s both;
+  animation: fadeInUp var(--duration-reveal) var(--ease-out) 60ms both;
 }
 
 .hero-divider {
-  animation: fadeIn 1s ease-out 0.5s both;
+  animation: fadeIn var(--duration-reveal) var(--ease-out) 120ms both;
 }
 
 .hero-buttons {
-  animation: fadeInUp 1s ease-out 0.7s both;
+  animation: fadeInUp var(--duration-reveal) var(--ease-out) 180ms both;
 }
 
 /* === Nav Scrolled State (restored via JS on scroll) === */
@@ -807,10 +666,6 @@ section {
 #main-nav.nav-scrolled .nav-link {
   color: #555555 !important;
   border-color: #d1d5db !important;
-}
-
-#main-nav.nav-scrolled .nav-link:hover {
-  color: #C9A227 !important;
 }
 
 #main-nav.nav-scrolled button.text-white {
@@ -886,11 +741,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.instrument-card:hover .instrument-image-wrapper img {
-  transform: scale(1.05);
+  transition: transform 240ms var(--ease-out);
 }
 
 /* Hover Overlay */
@@ -902,11 +753,7 @@ section {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.instrument-card:hover .instrument-overlay {
-  opacity: 1;
+  transition: opacity var(--duration-ui) var(--ease-out);
 }
 
 .instrument-label {
@@ -963,11 +810,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.image-card:hover img {
-  transform: scale(1.05);
+  transition: transform 240ms var(--ease-out);
 }
 
 .image-overlay {
@@ -978,11 +821,7 @@ section {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.image-card:hover .image-overlay {
-  opacity: 1;
+  transition: opacity var(--duration-ui) var(--ease-out);
 }
 
 .image-label {
@@ -1092,11 +931,7 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
-}
-
-.gallery-asymmetric .gallery-item:hover img {
-  transform: scale(1.05);
+  transition: transform 240ms var(--ease-out);
 }
 
 .gallery-asymmetric .gallery-item .image-overlay {
@@ -1107,11 +942,7 @@ section {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-asymmetric .gallery-item:hover .image-overlay {
-  opacity: 1;
+  transition: opacity var(--duration-ui) var(--ease-out);
 }
 
 .gallery-header {
@@ -1169,10 +1000,6 @@ section {
   transition: color 0.3s ease;
 }
 
-.footer-new a:hover {
-  color: #B8941C !important;
-}
-
 /* ===== Curriculum Tab Styles ===== */
 .tab-active {
   color: #B8941C !important;
@@ -1182,10 +1009,6 @@ section {
   color: #555 !important;
   border-bottom: 2px solid transparent !important;
 }
-.tab-inactive:hover {
-  color: #B8941C !important;
-}
-
 /* ===== Curriculum Timeline ===== */
 .curriculum-timeline {
   display: flex;
@@ -1278,10 +1101,7 @@ section {
   cursor: pointer;
 }
 .image-card img {
-  transition: transform 0.4s ease;
-}
-.image-card:hover img {
-  transform: scale(1.08);
+  transition: transform 240ms var(--ease-out);
 }
 .image-card-overlay {
   position: absolute;
@@ -1290,10 +1110,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease;
-}
-.image-card:hover .image-card-overlay {
-  background: rgba(0,0,0,0.45);
+  transition: background-color var(--duration-ui) var(--ease-out);
 }
 .image-card-overlay span {
   color: #fff;
@@ -1302,16 +1119,510 @@ section {
   letter-spacing: 0.05em;
   opacity: 0;
   transform: translateY(8px);
-  transition: all 0.3s ease;
-}
-.image-card:hover .image-card-overlay span {
-  opacity: 1;
-  transform: translateY(0);
+  transition: opacity var(--duration-ui) var(--ease-out), transform var(--duration-ui) var(--ease-out);
 }
 
 /* ===== Gallery Moments Grid Responsive ===== */
 @media (max-width: 768px) {
   .gallery-moments-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ===== Production UI, accessibility, and motion ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform var(--duration-ui) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+}
+
+.nav-shell {
+  transition: background-color var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out);
+}
+
+.nav-link[aria-current='page'] {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.nav-link[aria-current='page']::after {
+  width: calc(100% - 2.5rem);
+}
+
+#main-nav.nav-scrolled .nav-link[aria-current='page'] {
+  color: #a07a15 !important;
+}
+
+.mobile-nav-link {
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out);
+}
+
+.mobile-nav-link[aria-current='page'] {
+  background: #fbf3dc;
+  color: #8b6515;
+  font-weight: 700;
+}
+
+.mobile-menu-button {
+  position: relative;
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  border-radius: 50%;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out);
+}
+
+.mobile-menu-line {
+  display: block;
+  width: 23px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--duration-ui) var(--ease-out);
+}
+
+.mobile-menu-button.is-open .mobile-menu-line:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.mobile-menu-button.is-open .mobile-menu-line:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-scrim {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.38) 48%, rgba(0, 0, 0, 0.68) 100%);
+}
+
+.hero-booking-note {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.875rem;
+}
+
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: color var(--duration-ui) var(--ease-out), background-color var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+}
+
+.button:active,
+.mobile-menu-button:active,
+.contact-action:active,
+.map-link:active,
+.interactive-card:active {
+  transform: scale(0.97);
+}
+
+.button-primary {
+  background: #b8941c;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(113, 83, 10, 0.18);
+}
+
+.button-secondary {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.14);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+.button-tertiary {
+  border-color: #d8c78f;
+  background: transparent;
+  color: #5f4a0d;
+}
+
+.hero-cta {
+  min-width: 190px;
+}
+
+.offer-points {
+  display: grid;
+  gap: 0;
+  max-width: 900px;
+  list-style: none;
+  counter-reset: offer;
+}
+
+.offer-points li {
+  position: relative;
+  padding: 1.1rem 0 1.1rem 3.5rem;
+  border-bottom: 1px solid #ece7db;
+  color: #292929;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.65;
+  counter-increment: offer;
+}
+
+.offer-points li::before {
+  content: '0' counter(offer);
+  position: absolute;
+  left: 0;
+  color: #a07a15;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+}
+
+.booking-band {
+  padding: 36px 60px 72px;
+  background: #ffffff;
+}
+
+.booking-band-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border: 1px solid #e6dcc0;
+  border-radius: 20px;
+  background: #faf8f0;
+}
+
+.booking-band h2 {
+  margin: 0.15rem 0 0.5rem;
+  color: #1a1a1a;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+.booking-band p:last-child {
+  color: #555555;
+}
+
+.booking-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.blog-card,
+.feature-card,
+.lesson-card {
+  display: block;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out), border-color var(--duration-ui) var(--ease-out);
+}
+
+.blog-card {
+  padding: 32px;
+  border-top: 3px solid #b8941c;
+  background: #f9f9f9;
+}
+
+.feature-card {
+  padding: 32px;
+  text-align: center;
+}
+
+.lesson-card {
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.final-cta-button {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  color: #8b6515;
+}
+
+.map-link {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--duration-press) var(--ease-out);
+}
+
+.map-link-surface {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: background-color var(--duration-ui) var(--ease-out);
+}
+
+.contact-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 28px;
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform var(--duration-press) var(--ease-out), background-color var(--duration-ui) var(--ease-out), box-shadow var(--duration-ui) var(--ease-out);
+}
+
+.contact-action-booking {
+  background: #b8941c;
+}
+
+.contact-action-phone {
+  background: #1e3a5f;
+}
+
+.not-found-link {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 240ms var(--ease-out), background-color var(--duration-ui) var(--ease-out);
+}
+
+.curriculum-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.curriculum-tab {
+  min-height: 48px;
+  padding: 12px 24px;
+  flex: 0 0 auto;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color var(--duration-ui) var(--ease-out), border-color var(--duration-ui) var(--ease-out), transform var(--duration-press) var(--ease-out);
+}
+
+.curriculum-tab:active {
+  transform: scale(0.97);
+}
+
+[role='tabpanel'][hidden] {
+  display: none;
+}
+
+html.motion-ready .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--duration-reveal) var(--ease-out), transform var(--duration-reveal) var(--ease-out);
+}
+
+html.motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  nav a:hover,
+  #main-nav.nav-scrolled .nav-link:hover,
+  footer a:hover,
+  .tab-inactive:hover {
+    color: #c9a227 !important;
+  }
+
+  .button-primary:hover,
+  .contact-action-booking:hover {
+    background: #a07a15;
+    box-shadow: 0 10px 26px rgba(113, 83, 10, 0.25);
+  }
+
+  .button-secondary:hover {
+    border-color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .button-tertiary:hover {
+    border-color: #a07a15;
+    background: #ffffff;
+  }
+
+  .final-cta-button:hover {
+    background: #b8941c;
+    color: #ffffff;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .blog-card:hover,
+  .feature-card:hover,
+  .lesson-card:hover {
+    border-color: #c9a227;
+    box-shadow: 0 10px 28px rgba(48, 38, 12, 0.12);
+  }
+
+  .map-link-surface:hover {
+    background: #e5e5e5;
+  }
+
+  .contact-action-phone:hover {
+    background: #152b47;
+    box-shadow: 0 10px 26px rgba(21, 43, 71, 0.2);
+  }
+
+  .not-found-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .instrument-card:hover .instrument-image-wrapper img,
+  .image-card:hover img,
+  .gallery-asymmetric .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .instrument-card:hover .instrument-overlay,
+  .image-card:hover .image-overlay,
+  .gallery-asymmetric .gallery-item:hover .image-overlay {
+    opacity: 1;
+  }
+
+  .image-card:hover .image-card-overlay {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .image-card:hover .image-card-overlay span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: none) {
+  .instrument-overlay,
+  .image-overlay {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 14px;
+    background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.64));
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    width: min(100%, 320px);
+  }
+
+  .intro-section {
+    padding-top: 48px;
+  }
+
+  .booking-band {
+    padding: 24px 20px 52px;
+  }
+
+  .booking-band-content {
+    padding: 30px 24px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .booking-band-actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+
+  .booking-band-actions .button {
+    width: 100%;
+  }
+
+  .curriculum-tabs {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

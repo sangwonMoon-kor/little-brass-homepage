@@ -4,7 +4,7 @@ type NavigationProps = {
   pathname: string
 }
 
-export function Navigation({ pathname: _pathname }: NavigationProps) {
+export function Navigation({ pathname }: NavigationProps) {
   return (
     <>
       <div class="absolute top-0 left-0 right-0 z-50 hidden lg:block" id="top-info-bar">
@@ -30,7 +30,7 @@ export function Navigation({ pathname: _pathname }: NavigationProps) {
         </div>
       </div>
 
-      <nav class="absolute top-0 lg:top-10 left-0 right-0 z-50 transition-all duration-300 nav-scrolled" id="main-nav">
+      <nav class="nav-shell absolute top-0 lg:top-10 left-0 right-0 z-50 nav-scrolled" id="main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16 lg:h-20">
             <a href="/" class="nav-logo">
@@ -41,6 +41,7 @@ export function Navigation({ pathname: _pathname }: NavigationProps) {
               {PUBLIC_ROUTES.map((route, index) => (
                 <a
                   href={route.path}
+                  aria-current={pathname === route.path ? 'page' : undefined}
                   class={`nav-link text-white/90 hover:text-white px-5 py-2 transition text-sm tracking-wide${index < PUBLIC_ROUTES.length - 1 ? ' border-r border-white/20' : ''}`}
                 >
                   {route.label}
@@ -48,8 +49,9 @@ export function Navigation({ pathname: _pathname }: NavigationProps) {
               ))}
             </div>
 
-            <button id="mobile-menu-button" class="lg:hidden text-white hover:text-white/80 transition" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
-              <i class="fas fa-bars text-2xl"></i>
+            <button id="mobile-menu-button" class="mobile-menu-button lg:hidden text-white" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+              <span class="mobile-menu-line"></span>
+              <span class="mobile-menu-line"></span>
             </button>
           </div>
         </div>
@@ -57,7 +59,11 @@ export function Navigation({ pathname: _pathname }: NavigationProps) {
         <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-sm">
           <div class="px-4 py-3 space-y-1">
             {PUBLIC_ROUTES.map((route) => (
-              <a href={route.path} class="block px-4 py-3 text-[#555555] hover:bg-gray-50 rounded-xl transition">
+              <a
+                href={route.path}
+                aria-current={pathname === route.path ? 'page' : undefined}
+                class="mobile-nav-link block px-4 py-3 text-[#555555] rounded-xl"
+              >
                 {route.label}
               </a>
             ))}
