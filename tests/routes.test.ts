@@ -80,4 +80,18 @@ describe('public route contract', () => {
     expect(html).toContain('서울특별시 강동구 상일로12길 99')
     expect(html).not.toContain('aggregateRating')
   })
+
+  it('returns a stable RSS error response when the live feed is unavailable', async () => {
+    const response = await app.request('https://example.com/api/blog/rss')
+    const body = await response.json<{
+      success: boolean
+      posts: unknown[]
+      message?: string
+    }>()
+
+    expect(response.status).toBe(503)
+    expect(body.success).toBe(false)
+    expect(body.posts).toBeInstanceOf(Array)
+    expect(body.message).toBeTypeOf('string')
+  })
 })

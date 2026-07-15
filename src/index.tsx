@@ -1,79 +1,8 @@
 import { Hono } from 'hono'
 import { absoluteUrl, PUBLIC_ROUTES, resolveSiteOrigin } from './config/site'
 import { renderer } from './renderer'
+import { fetchBlogPosts } from './services/blog'
 import type { Bindings } from './types/site'
-
-// RSS 피드 파싱 헬퍼 함수들
-function extractCDATA(text: string): string {
-  const match = text.match(/<!\[CDATA\[([\s\S]*?)\]\]>/)
-  return match ? match[1].trim() : text.trim()
-}
-
-function stripHtmlTags(html: string): string {
-  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').trim()
-}
-
-function extractThumbnail(description: string): string | null {
-  const match = description.match(/<img\s+[^>]*src="([^"]+)"/)
-  return match ? match[1] : null
-}
-
-function formatDate(pubDate: string): string {
-  try {
-    const date = new Date(pubDate)
-    const y = date.getFullYear()
-    const m = String(date.getMonth() + 1).padStart(2, '0')
-    const d = String(date.getDate()).padStart(2, '0')
-    return `${y}.${m}.${d}`
-  } catch {
-    return pubDate
-  }
-}
-
-interface BlogPost {
-  title: string
-  link: string
-  description: string
-  date: string
-  thumbnail: string | null
-}
-
-async function fetchBlogPosts(): Promise<BlogPost[]> {
-  try {
-    const res = await fetch('https://rss.blog.naver.com/little_brass.xml')
-    if (!res.ok) return []
-    const xml = await res.text()
-
-    const items: BlogPost[] = []
-    const itemRegex = /<item>([\s\S]*?)<\/item>/g
-    let match
-    while ((match = itemRegex.exec(xml)) !== null && items.length < 3) {
-      const itemXml = match[1]
-
-      const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/)
-      const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/)
-      const descMatch = itemXml.match(/<description>([\s\S]*?)<\/description>/)
-      const dateMatch = itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/)
-
-      if (titleMatch && linkMatch) {
-        const rawDesc = descMatch ? extractCDATA(descMatch[1]) : ''
-        const plainText = stripHtmlTags(rawDesc)
-        const truncated = plainText.length > 100 ? plainText.substring(0, 100) + '...' : plainText
-
-        items.push({
-          title: extractCDATA(titleMatch[1]),
-          link: extractCDATA(linkMatch[1]),
-          description: truncated,
-          date: dateMatch ? formatDate(dateMatch[1].trim()) : '',
-          thumbnail: extractThumbnail(rawDesc),
-        })
-      }
-    }
-    return items
-  } catch {
-    return []
-  }
-}
 
 const app = new Hono<{ Bindings: Bindings }>()
 
@@ -98,7 +27,7 @@ app.get('/robots.txt', (c) => {
 
 // 메인 페이지
 app.get('/', async (c) => {
-  const blogPosts = await fetchBlogPosts()
+  const { posts: blogPosts } = await fetchBlogPosts()
 
   return c.render(
     <div>
@@ -1151,77 +1080,20 @@ app.notFound((c) => {
 
 // API: 네이버 블로그 RSS 피드
 app.get('/api/blog/rss', async (c) => {
-  try {
-    // 설정 (하드코딩)
-    const config = {
-      pinnedPost: {
-        enabled: true,
-        title: "[강동 강명초 예비 초등 트럼펫]3월 신학기 적응, '예체능'은 선택이 아닌 '생존 체력' 준비하기!",
-        category: "중요 공지",
-        description: "신학기 시작 전 예체능 준비의 중요성! 강명초 예비 초등 학부모님들을 위한 특별 안내",
-        link: "https://blog.naver.com/little_brass/224143518011",
-        date: "2026-01-12"
+  const result = await fetchBlogPosts()
+
+  if (result.source === 'fallback') {
+    return c.json(
+      {
+        success: false,
+        posts: result.posts,
+        message: result.message,
       },
-      rssUrl: "https://rss.blog.naver.com/little_brass.xml",
-      displayCount: 3,
-      showPinned: true
-    }
-
-    // RSS 피드 가져오기
-    const rssResponse = await fetch(config.rssUrl)
-    const rssText = await rssResponse.text()
-
-    // RSS 파싱 (간단한 정규식 방식)
-    const items: any[] = []
-    const itemRegex = /<item>([\s\S]*?)<\/item>/g
-    let match
-
-    while ((match = itemRegex.exec(rssText)) !== null && items.length < 10) {
-      const itemContent = match[1]
-
-      const title = (itemContent.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || [])[1] || ''
-      const link = (itemContent.match(/<link><!\[CDATA\[(.*?)\]\]><\/link>/) || [])[1] || ''
-      const category = (itemContent.match(/<category><!\[CDATA\[(.*?)\]\]><\/category>/) || [])[1] || '일반'
-      const description = (itemContent.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/) || [])[1] || ''
-      const pubDate = (itemContent.match(/<pubDate>(.*?)<\/pubDate>/) || [])[1] || ''
-
-      // 설명 텍스트 추출 (HTML 태그 제거)
-      const cleanDescription = description
-        .replace(/<img[^>]*>/g, '')
-        .replace(/<[^>]+>/g, '')
-        .substring(0, 100)
-        .trim()
-
-      items.push({
-        title: title.trim(),
-        link: link.trim(),
-        category: category.trim(),
-        description: cleanDescription || '최신 소식을 확인하세요',
-        pubDate: pubDate.trim()
-      })
-    }
-
-    // 최신 글 3개만 반환
-    const latestPosts = items.slice(0, 3).map(item => ({
-      title: item.title,
-      link: item.link,
-      description: item.description,
-      category: item.category,
-      isPinned: false
-    }))
-
-    return c.json({
-      success: true,
-      posts: latestPosts
-    })
-  } catch (error) {
-    console.error('RSS 파싱 오류:', error)
-    return c.json({
-      success: false,
-      message: 'RSS 피드를 가져오는데 실패했습니다.',
-      posts: []
-    }, 500)
+      503,
+    )
   }
+
+  return c.json({ success: true, posts: result.posts })
 })
 
 export default app
