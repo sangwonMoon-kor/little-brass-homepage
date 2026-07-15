@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { createApp } from '../src/app'
 
@@ -17,5 +18,13 @@ describe('production markup', () => {
     expect(html).toContain('href="/static/tailwind.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
+  })
+
+  it('keeps navigation underline motion on compositor-friendly transforms', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).not.toContain('transition: width')
+    expect(styles).toContain('.nav-link:hover::after')
+    expect(styles).toContain('transform: scaleX(1)')
   })
 })
