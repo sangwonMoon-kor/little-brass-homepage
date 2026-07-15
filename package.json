@@ -7,10 +7,10 @@
     "build": "vite build",
     "preview": "wrangler pages dev dist",
     "deploy": "npm run build && wrangler pages deploy dist",
-    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name webapp",
+    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name little-brass-homepage",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
     "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
-    "test": "curl http://localhost:3000"
+    "test": "vitest run"
   },
   "dependencies": {
     "hono": "^4.11.4"
@@ -20,6 +20,7 @@
     "@hono/vite-dev-server": "^0.18.2",
     "sharp": "^0.34.5",
     "vite": "^6.3.5",
+    "vitest": "^4.1.10",
     "wrangler": "^4.4.0"
   }
 }
