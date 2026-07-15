@@ -403,6 +403,370 @@ button {
   object-fit: cover;
 }
 
+.editorial-section {
+  padding: clamp(88px, 10vw, 136px) 0;
+}
+
+.home-hero {
+  position: relative;
+  display: flex;
+  height: clamp(620px, 82vh, 820px);
+  min-height: 620px;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--deep-ink);
+  color: #fff;
+}
+
+.hero-video,
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video {
+  object-fit: cover;
+}
+
+.hero-scrim {
+  background: rgba(12, 13, 11, 0.56);
+}
+
+.home-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 48px), var(--content-max));
+  margin-inline: auto;
+  padding-bottom: clamp(56px, 8vh, 88px);
+}
+
+.home-hero-content {
+  max-width: 780px;
+}
+
+.hero-kicker {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.home-hero h1 {
+  margin-top: 20px;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(2.7rem, 6.2vw, 5.7rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.hero-description {
+  max-width: 580px;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.96rem, 1.35vw, 1.1rem);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.hero-text-link {
+  color: #fff;
+}
+
+.hero-booking-note {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+}
+
+.home-instruments {
+  background: var(--surface);
+}
+
+.instrument-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(56px, 9vw, 128px);
+  align-items: center;
+}
+
+.instrument-feature {
+  max-width: 520px;
+}
+
+.instrument-feature img {
+  width: 100%;
+  background: #ece6da;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.instrument-feature figcaption,
+.space-caption {
+  margin-top: 12px;
+  color: var(--muted-ink);
+  font-size: 0.76rem;
+}
+
+.instrument-copy .section-title {
+  margin-top: 20px;
+}
+
+.instrument-intro {
+  max-width: 620px;
+  margin-top: 28px;
+  color: var(--muted-ink);
+}
+
+.instrument-index {
+  margin-top: 44px;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.instrument-index li {
+  display: grid;
+  grid-template-columns: 48px minmax(110px, 0.65fr) 1fr;
+  gap: 24px;
+  align-items: center;
+  min-height: 68px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.instrument-number {
+  color: var(--brass);
+  font-size: 0.7rem;
+}
+
+.instrument-index strong {
+  font-family: "Noto Serif KR", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.instrument-index li > span:last-child {
+  color: var(--muted-ink);
+  font-size: 0.84rem;
+}
+
+.home-proof {
+  background: var(--paper);
+}
+
+.proof-list {
+  margin-top: 8px;
+}
+
+.proof-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) minmax(300px, 0.72fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.proof-number {
+  align-self: start;
+  color: var(--brass);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.proof-copy {
+  max-width: 560px;
+}
+
+.proof-copy h3,
+.booking-line h2,
+.home-cta h2 {
+  font-family: "Noto Serif KR", serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.proof-copy h3 {
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+}
+
+.proof-copy > p {
+  margin-top: 18px;
+  color: var(--muted-ink);
+}
+
+.proof-copy .text-link {
+  margin-top: 24px;
+}
+
+.proof-media {
+  width: 100%;
+  height: min(34vw, var(--home-proof-image-max));
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--rule);
+  aspect-ratio: 4 / 3;
+}
+
+.proof-media-landscape {
+  aspect-ratio: 5 / 4;
+}
+
+.proof-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proof-row-text {
+  grid-template-columns: 70px minmax(0, 1fr);
+}
+
+.booking-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: clamp(40px, 8vw, 120px);
+  align-items: end;
+  padding-top: 80px;
+}
+
+.booking-line h2 {
+  margin-top: 14px;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+}
+
+.booking-line > div:first-child > p:last-child {
+  margin-top: 16px;
+  color: var(--muted-ink);
+}
+
+.booking-line-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.home-space {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.home-space-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: 28px;
+  margin-top: 56px;
+  align-items: start;
+}
+
+.space-image {
+  overflow: hidden;
+  background: var(--rule);
+}
+
+.space-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.space-lead .space-image {
+  height: min(42vw, var(--home-space-lead-max));
+  min-height: 340px;
+  aspect-ratio: 16 / 10;
+}
+
+.space-support-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.space-support .space-image {
+  height: min(22vw, var(--home-space-support-max));
+  min-height: 190px;
+  aspect-ratio: 4 / 3;
+}
+
+.space-more-link,
+.news-more-link {
+  margin-top: 36px;
+}
+
+.home-news {
+  background: var(--paper);
+}
+
+.news-list {
+  margin-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.news-row {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 32px;
+  gap: 32px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.news-row time {
+  color: var(--brass);
+  font-size: 0.75rem;
+}
+
+.news-row h3 {
+  font-family: "Noto Serif KR", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.news-row p {
+  max-width: 720px;
+  margin-top: 8px;
+  color: var(--muted-ink);
+  font-size: 0.88rem;
+}
+
+.news-row > span {
+  transition: transform var(--duration-ui) var(--ease-editorial);
+}
+
+.news-empty {
+  padding: 44px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted-ink);
+}
+
+.home-cta {
+  padding: 88px 0;
+  border-top: 1px solid var(--rule);
+  background: #e9e3d8;
+}
+
+.home-cta-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.home-cta h2 {
+  max-width: 720px;
+  margin-top: 14px;
+  font-size: clamp(1.8rem, 3.8vw, 3.1rem);
+}
+
 .site-footer {
   background: var(--deep-ink);
   color: rgba(252, 250, 246, 0.74);
@@ -482,6 +846,20 @@ button {
   .footer-contact a:hover {
     border-color: currentColor;
   }
+
+  .proof-media img,
+  .space-image img {
+    transition: transform var(--duration-media) var(--ease-editorial);
+  }
+
+  .proof-media:hover img,
+  .space-image:hover img {
+    transform: scale(1.015);
+  }
+
+  .news-row:hover > span {
+    transform: translate(3px, -3px);
+  }
 }
 
 @media (max-width: 900px) {
@@ -504,6 +882,38 @@ button {
 
   .site-footer-inner {
     gap: 34px;
+  }
+
+  .instrument-layout,
+  .booking-line,
+  .home-space-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instrument-feature {
+    max-width: 480px;
+  }
+
+  .proof-row {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  .proof-media {
+    grid-column: 2;
+    height: var(--home-proof-image-max);
+    max-width: 560px;
+  }
+
+  .space-support-stack {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .space-lead .space-image {
+    height: var(--home-space-lead-max);
+  }
+
+  .space-support .space-image {
+    height: var(--home-space-support-max);
   }
 }
 
@@ -545,6 +955,81 @@ button {
 
   .page-intro-media {
     max-height: 240px;
+  }
+
+  .home-hero {
+    height: min(760px, 88svh);
+    min-height: 620px;
+  }
+
+  .home-hero-inner {
+    width: min(calc(100% - 32px), var(--content-max));
+    padding-bottom: 48px;
+  }
+
+  .home-hero h1 br {
+    display: none;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .editorial-section {
+    padding: 76px 0;
+  }
+
+  .instrument-layout {
+    gap: 48px;
+  }
+
+  .instrument-index li {
+    grid-template-columns: 38px minmax(88px, 0.7fr) 1fr;
+    gap: 12px;
+  }
+
+  .proof-row,
+  .proof-row-text {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 48px 0;
+  }
+
+  .proof-media {
+    grid-column: 1;
+    min-height: 0;
+    height: var(--home-proof-image-max);
+    margin-top: 12px;
+  }
+
+  .booking-line {
+    gap: 32px;
+    padding-top: 64px;
+  }
+
+  .space-support-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .space-lead .space-image,
+  .space-support .space-image {
+    min-height: 0;
+  }
+
+  .news-row {
+    grid-template-columns: 1fr 24px;
+    gap: 12px;
+  }
+
+  .news-row time {
+    grid-column: 1 / -1;
+  }
+
+  .home-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .section-heading {
