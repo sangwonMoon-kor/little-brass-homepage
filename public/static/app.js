@@ -66,14 +66,12 @@ function initHeroVideo(reducedMotion) {
 
 function initNavigationScrollState() {
   const mainNav = document.getElementById('main-nav');
-  const topInfoBar = document.getElementById('top-info-bar');
   if (!mainNav || window.location.pathname !== '/') return;
 
   let framePending = false;
   function update() {
-    const scrolled = window.scrollY > window.innerHeight * 0.6;
+    const scrolled = window.scrollY > 48;
     mainNav.classList.toggle('nav-scrolled', scrolled);
-    if (topInfoBar) topInfoBar.hidden = scrolled;
     framePending = false;
   }
 

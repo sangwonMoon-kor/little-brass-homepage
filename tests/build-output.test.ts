@@ -27,4 +27,13 @@ describe('production markup', () => {
     expect(styles).toContain('.nav-link:hover::after')
     expect(styles).toContain('transform: scaleX(1)')
   })
+
+  it('removes generic premium-template typography and motion patterns', async () => {
+    const html = await (await app.request('https://example.com/')).text()
+    const styles = readFileSync('public/static/style.css', 'utf8')
+    expect(html).not.toContain('Dancing+Script')
+    expect(styles).not.toContain('transition: all')
+    expect(styles).not.toContain('linear-gradient')
+    expect(styles).not.toContain('border-radius: 9999px')
+  })
 })
