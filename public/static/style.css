@@ -1133,6 +1133,45 @@ button {
   margin-top: 40px;
 }
 
+.not-found-page {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 140px 24px 80px;
+  background: var(--paper);
+}
+
+.not-found-inner {
+  width: min(100%, 760px);
+  text-align: center;
+}
+
+.not-found-code {
+  color: var(--brass);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(5rem, 18vw, 11rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+}
+
+.not-found-inner h1 {
+  margin-top: 34px;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.not-found-inner > p:not(.not-found-code) {
+  margin-top: 20px;
+  color: var(--muted-ink);
+}
+
+.not-found-inner .button {
+  margin-top: 34px;
+}
+
 .proof-copy h3 {
   font-size: clamp(1.55rem, 3vw, 2.3rem);
 }
@@ -1429,11 +1468,14 @@ button {
 
   .instrument-layout,
   .booking-line,
-  .home-space-grid,
   .narrative-split,
   .contact-ledger,
   .theory-split {
     grid-template-columns: 1fr;
+  }
+
+  .home-space-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .instrument-feature {
@@ -1598,6 +1640,7 @@ button {
 
   .space-lead .space-image,
   .space-support .space-image {
+    width: 100%;
     min-height: 0;
   }
 
@@ -1632,7 +1675,7 @@ button {
   }
 
   .editorial-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 36px;
   }
 
@@ -1643,6 +1686,7 @@ button {
   .gallery-image,
   .gallery-figure-lead .gallery-image,
   .gallery-figure-tall .gallery-image {
+    width: 100%;
     height: min(82vw, 360px);
   }
 

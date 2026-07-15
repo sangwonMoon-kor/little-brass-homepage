@@ -1,66 +1,13 @@
 export function NotFoundPage() {
   return (
-    <div>
-      <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-          <div class="absolute inset-0 bg-navy-900"></div>
-        </div>
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-24">
-          {/* 404 애니메이션 */}
-          <div class="mb-12">
-            <div class="inline-block relative">
-              <h1 class="text-9xl font-display font-bold text-gold-400 mb-4 animate-pulse">
-                404
-              </h1>
-              <div class="absolute -top-8 -right-8">
-                <i class="fas fa-music text-gold-500 text-6xl opacity-20 animate-spin-slow"></i>
-              </div>
-            </div>
-          </div>
-
-          {/* 메시지 */}
-          <div class="mb-12">
-            <h2 class="section-title">페이지를 찾을 수 없습니다</h2>
-            <p class="text-[20px] leading-[1.6] font-normal text-gray-300 mb-2">
-              요청하신 페이지가 존재하지 않거나 이동되었습니다.
-            </p>
-            <p class="text-gray-400">
-              주소를 다시 확인하시거나 아래 버튼을 통해 홈으로 돌아가세요.
-            </p>
-          </div>
-
-          {/* 버튼 그룹 */}
-          <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-            <a href="/"
-              class="button button-primary inline-flex items-center gap-3 px-8 py-4">
-              <i class="fas fa-home text-[20px] leading-[1.6] font-normal"></i>
-              <span>홈으로 돌아가기</span>
-            </a>
-          </div>
-
-          {/* 인기 페이지 링크 */}
-          <div class="border-t border-white/20 pt-12">
-            <p class="text-gray-400 mb-6">또는 인기 페이지를 방문해보세요</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/curriculum" class="not-found-link interactive-card">
-                <i class="fas fa-book text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
-                <p class="text-sm font-semibold">커리큘럼</p>
-              </a>
-              <a href="/philosophy" class="not-found-link interactive-card">
-                <i class="fas fa-lightbulb text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
-                <p class="text-sm font-semibold">교육철학</p>
-              </a>
-              <a href="/gallery" class="not-found-link interactive-card">
-                <i class="fas fa-images text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
-                <p class="text-sm font-semibold">갤러리</p>
-              </a>
-              <a href="/location" class="not-found-link interactive-card">
-                <i class="fas fa-map-marker-alt text-gold-400 text-[24px] leading-[1.4] mb-2"></i>
-                <p class="text-sm font-semibold">찾아오시는 길</p>
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="not-found-page">
+      <section class="not-found-inner" aria-labelledby="not-found-title">
+        <p class="not-found-code" aria-hidden="true">404</p>
+        <h1 id="not-found-title">페이지를 찾을 수 없습니다</h1>
+        <p>
+          요청한 페이지가 없거나 주소가 변경되었습니다.<br />주소를 확인하거나 홈에서 다시 시작해 주세요.
+        </p>
+        <a href="/" class="button button-primary">홈으로 돌아가기</a>
       </section>
     </div>
   )
