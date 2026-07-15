@@ -12,7 +12,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
       <section class="relative h-screen overflow-hidden flex items-center justify-center">
         {/* Video Background */}
         <div class="absolute inset-0 w-full h-full">
-          <video id="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" class="hero-video">
+          <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="/static/videos/hero-poster.webp" aria-hidden="true" class="hero-video">
             <source src="/static/videos/hero-video.mp4" type="video/mp4" />
           </video>
         </div>
@@ -67,7 +67,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         <div class="instruments-grid">
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/instruments/trumpet.png" alt="Trumpet" />
+              <img src="/static/images/instruments/trumpet.webp" alt="Trumpet" width="640" height="640" loading="lazy" decoding="async" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Trumpet Lessons</span>
               </div>
@@ -75,7 +75,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/instruments/horn.png" alt="Horn" />
+              <img src="/static/images/instruments/horn.webp" alt="Horn" width="640" height="640" loading="lazy" decoding="async" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Horn Lessons</span>
               </div>
@@ -83,7 +83,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/instruments/trombone.png" alt="Trombone" />
+              <img src="/static/images/instruments/trombone.webp" alt="Trombone" width="640" height="640" loading="lazy" decoding="async" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Trombone Lessons</span>
               </div>
@@ -91,7 +91,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
           </div>
           <div class="instrument-card">
             <div class="instrument-image-wrapper">
-              <img src="/static/images/instruments/euphonium.png" alt="Euphonium" />
+              <img src="/static/images/instruments/euphonium.webp" alt="Euphonium" width="640" height="640" loading="lazy" decoding="async" />
               <div class="instrument-overlay">
                 <span class="instrument-label">Euphonium Lessons</span>
               </div>
@@ -107,7 +107,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         {/* Row 1: Image Left + Text Right */}
         <div class="zigzag-row">
           <div class="zigzag-image">
-            <img src="/static/images/academy/display-03.jpg" alt="전문 금관악기 교육" />
+            <img src="/static/images/academy/display-03.webp" alt="전문 금관악기 교육" width="1600" height="1869" loading="lazy" decoding="async" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Professional Education</p>
@@ -122,7 +122,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         {/* Row 2: Text Left + Image Right (reverse) */}
         <div class="zigzag-row reverse">
           <div class="zigzag-image">
-            <img src="/static/images/academy/display-02.jpg" alt="합리적인 악기 대여" />
+            <img src="/static/images/academy/display-02.webp" alt="합리적인 악기 대여" width="988" height="1034" loading="lazy" decoding="async" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Instrument Rental</p>
@@ -137,7 +137,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         {/* Row 3: Image Left + Text Right */}
         <div class="zigzag-row">
           <div class="zigzag-image">
-            <img src="/static/images/academy/corridor-01.jpg" alt="온라인 & 오프라인" />
+            <img src="/static/images/academy/corridor-01.webp" alt="온라인 & 오프라인" width="1432" height="2048" loading="lazy" decoding="async" />
           </div>
           <div class="zigzag-text">
             <p class="sub-label">Online &amp; Offline</p>
@@ -174,19 +174,19 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         </div>
         <div class="gallery-asymmetric">
           <div class="gallery-item large">
-            <img src="/static/images/academy/lobby-01.jpg" alt="대기실" />
+            <img src="/static/images/academy/lobby-01.webp" alt="대기실" width="1600" height="1067" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Lobby</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="/static/images/academy/practice-room-01.jpg" alt="연습실" />
+            <img src="/static/images/academy/practice-room-01.webp" alt="연습실" width="1385" height="2048" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Practice Room</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="/static/images/academy/lesson-room-01.jpg" alt="레슨실" />
+            <img src="/static/images/academy/lesson-room-01.webp" alt="레슨실" width="1600" height="1021" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Lesson Room</span>
             </div>
@@ -228,7 +228,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
       <section class="relative py-28 overflow-hidden">
         {/* Background Image + Overlay */}
         <div class="absolute inset-0">
-          <img src="/static/images/academy/yellow-door-01.jpg" alt="" class="w-full h-full object-cover" />
+          <img src="/static/images/academy/yellow-door-01.webp" alt="" width="1416" height="2048" loading="lazy" decoding="async" class="w-full h-full object-cover" />
           <div class="absolute inset-0" style="background: rgba(0, 0, 0, 0.65);"></div>
         </div>
         <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">

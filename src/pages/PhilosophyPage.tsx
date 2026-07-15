@@ -3,7 +3,7 @@ export function PhilosophyPage() {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/static/images/academy/lobby-01.jpg" alt="Philosophy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/lobby-01.webp" alt="Philosophy" width="1600" height="1067" decoding="async" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Philosophy</p>
@@ -17,7 +17,7 @@ export function PhilosophyPage() {
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="zigzag-row">
             <div class="zigzag-image">
-              <img src="/static/images/academy/corridor-01.jpg" alt="리틀브라스 학원" />
+              <img src="/static/images/academy/corridor-01.webp" alt="리틀브라스 학원" width="1432" height="2048" loading="lazy" decoding="async" />
             </div>
             <div class="zigzag-text">
               <p class="sub-label" style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">About the Director</p>

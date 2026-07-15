@@ -3,7 +3,7 @@ export function GalleryPage() {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/static/images/academy/corridor-02.jpg" alt="Gallery" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/corridor-02.webp" alt="Gallery" width="1434" height="2048" decoding="async" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Gallery</p>
@@ -20,19 +20,19 @@ export function GalleryPage() {
         </div>
         <div class="gallery-asymmetric">
           <div class="gallery-item large">
-            <img src="/static/images/academy/lobby-01.jpg" alt="대기실" />
+            <img src="/static/images/academy/lobby-01.webp" alt="대기실" width="1600" height="1067" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Lobby</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="/static/images/academy/practice-room-01.jpg" alt="연습실" />
+            <img src="/static/images/academy/practice-room-01.webp" alt="연습실" width="1385" height="2048" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Practice Room</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="/static/images/academy/lesson-room-01.jpg" alt="레슨실" />
+            <img src="/static/images/academy/lesson-room-01.webp" alt="레슨실" width="1600" height="1021" loading="lazy" decoding="async" />
             <div class="image-overlay">
               <span class="image-label">Lesson Room</span>
             </div>
@@ -49,27 +49,27 @@ export function GalleryPage() {
           </div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;" class="gallery-moments-grid">
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/display-02.jpg" alt="악기 진열" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/display-02.webp" alt="악기 진열" width="988" height="1034" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>악기 진열</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/display-06.jpg" alt="악기 전시" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/display-06.webp" alt="악기 전시" width="1402" height="2048" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>악기 전시</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/signage-01.jpg" alt="학원 안내" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/signage-01.webp" alt="학원 안내" width="1391" height="2048" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>학원 안내</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/yellow-door-02.jpg" alt="학원 입구" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/yellow-door-02.webp" alt="학원 입구" width="1366" height="2048" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>학원 입구</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/lesson-room-02.jpg" alt="레슨실" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/lesson-room-02.webp" alt="레슨실" width="1600" height="1058" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>레슨실</span></div>
             </div>
             <div class="image-card" style="aspect-ratio: 1/1;">
-              <img src="/static/images/academy/corridor-01.jpg" alt="학원 복도" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/corridor-01.webp" alt="학원 복도" width="1432" height="2048" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
               <div class="image-card-overlay"><span>학원 복도</span></div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export function GalleryPage() {
 
       {/* 블로그 안내 — CTA 배경 이미지 */}
       <section style="position: relative; padding: 80px 0; overflow: hidden;">
-        <img src="/static/images/academy/display-07.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/display-07.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.65);"></div>
         <div style="position: relative; z-index: 1; max-width: 600px; margin: 0 auto; text-align: center; padding: 0 1.5rem;">
           <p style="font-family: 'Dancing Script', cursive; color: #D4AF37; font-size: 2rem; font-weight: 600; margin-bottom: 0.75rem;">More Stories</p>

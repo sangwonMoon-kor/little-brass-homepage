@@ -5,7 +5,7 @@ export function LocationPage() {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/static/images/academy/yellow-door-01.jpg" alt="Location" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/yellow-door-01.webp" alt="Location" width="1416" height="2048" decoding="async" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Location</p>

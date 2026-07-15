@@ -3,7 +3,7 @@ export function CurriculumPage() {
     <div>
       {/* 배너 헤더 */}
       <section style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/static/images/academy/display-04.jpg" alt="Curriculum" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <img src="/static/images/academy/display-04.webp" alt="Curriculum" width="1541" height="2048" decoding="async" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
         <div style="position: relative; z-index: 1; text-align: center; padding-top: 40px;">
           <p style="font-family: 'Dancing Script', cursive; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem;">Curriculum</p>
@@ -292,7 +292,7 @@ export function CurriculumPage() {
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div style="display: flex; gap: 0; min-height: 360px;" class="flex-col md:flex-row">
             <div style="flex: 1; min-height: 280px; border-radius: 12px 0 0 12px; overflow: hidden;" class="theory-image-block">
-              <img src="/static/images/academy/piano-room-01.jpg" alt="뮤토랑 음악이론반" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/static/images/academy/piano-room-01.webp" alt="뮤토랑 음악이론반" width="1385" height="2048" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px; background: #fff; border-radius: 0 12px 12px 0; border: 1px solid #eee; border-left: none;" class="theory-text-block">
               <p style="font-family: 'Dancing Script', cursive; color: #B8941C; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Theory Course</p>

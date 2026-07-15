@@ -3,49 +3,52 @@ import { mkdir, readdir, stat } from 'fs/promises'
 import { dirname, extname, join, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
-const MAX_WIDTH = 1600
-const QUALITY = 85
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const PUBLIC_ROOT = resolve(__dirname, '../public')
-const IMAGES_ROOT = resolve(__dirname, '../public/static/images')
-const OG_SOURCE = resolve(IMAGES_ROOT, 'academy/yellow-door-01.jpg')
+const IMAGES_ROOT = resolve(PUBLIC_ROOT, 'static/images')
+const ACADEMY_ROOT = resolve(IMAGES_ROOT, 'academy')
+const INSTRUMENTS_ROOT = resolve(IMAGES_ROOT, 'instruments')
+const OG_SOURCE = resolve(ACADEMY_ROOT, 'yellow-door-01.jpg')
 const OG_OUTPUT = resolve(IMAGES_ROOT, 'og/little-brass-og.jpg')
 const APPLE_ICON_OUTPUT = resolve(PUBLIC_ROOT, 'apple-touch-icon.png')
+const POSTER_OUTPUT = resolve(PUBLIC_ROOT, 'static/videos/hero-poster.webp')
 
-async function optimizeJpg(filePath) {
-  const before = (await stat(filePath)).size
-  const img = sharp(filePath)
-  const meta = await img.metadata()
+const kb = (bytes) => `${(bytes / 1024).toFixed(0)}KB`
 
-  const needsResize = meta.width > MAX_WIDTH
+async function convertToWebp(filePath, { maxWidth, quality }) {
+  const sourceSize = (await stat(filePath)).size
+  const outputPath = filePath.replace(/\.[^.]+$/, '.webp')
+  const metadata = await sharp(filePath).metadata()
 
-  await img
-    .resize(needsResize ? { width: MAX_WIDTH, withoutEnlargement: true } : undefined)
-    .jpeg({ quality: QUALITY, mozjpeg: true })
-    .toFile(filePath + '.tmp')
+  await sharp(filePath)
+    .resize(metadata.width > maxWidth ? { width: maxWidth, withoutEnlargement: true } : undefined)
+    .webp({ quality, effort: 6 })
+    .toFile(outputPath)
 
-  // replace original with optimized
-  const { rename, unlink } = await import('fs/promises')
-  await unlink(filePath)
-  await rename(filePath + '.tmp', filePath)
-
-  const after = (await stat(filePath)).size
-  const pct = (((before - after) / before) * 100).toFixed(1)
-  const kb = (n) => (n / 1024).toFixed(0) + 'KB'
-  const flag = after > 500_000 ? ' ⚠ >500KB' : ''
-  console.log(`  ${filePath.split(/[\\/]/).slice(-2).join('/')}  ${kb(before)} → ${kb(after)}  (-${pct}%)${flag}`)
+  const outputSize = (await stat(outputPath)).size
+  console.log(`  ${filePath.split(/[\\/]/).slice(-2).join('/')}  ${kb(sourceSize)} → ${kb(outputSize)}`)
 }
 
-async function processDir(dir) {
+async function processDir(dir, extensions, options) {
   const entries = await readdir(dir, { withFileTypes: true })
-  for (const e of entries) {
-    const full = join(dir, e.name)
-    if (e.isDirectory()) {
-      await processDir(full)
-    } else if (['.jpg', '.jpeg'].includes(extname(e.name).toLowerCase())) {
-      await optimizeJpg(full)
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name)
+    if (entry.isDirectory()) {
+      await processDir(fullPath, extensions, options)
+    } else if (extensions.includes(extname(entry.name).toLowerCase())) {
+      await convertToWebp(fullPath, options)
     }
   }
+}
+
+async function generatePoster(sourcePath) {
+  await mkdir(dirname(POSTER_OUTPUT), { recursive: true })
+  await sharp(sourcePath)
+    .resize({ width: 1280, withoutEnlargement: true })
+    .webp({ quality: 76, effort: 6 })
+    .toFile(POSTER_OUTPUT)
+
+  console.log(`Generated ${POSTER_OUTPUT} (${kb((await stat(POSTER_OUTPUT)).size)})`)
 }
 
 async function generateBrandAssets() {
@@ -85,10 +88,17 @@ async function generateBrandAssets() {
   console.log(`Generated ${APPLE_ICON_OUTPUT}`)
 }
 
+const posterFlagIndex = process.argv.indexOf('--poster')
+
 if (process.argv.includes('--og-only')) {
   await generateBrandAssets()
+} else if (posterFlagIndex !== -1) {
+  const sourcePath = process.argv[posterFlagIndex + 1]
+  if (!sourcePath) throw new Error('--poster requires a source image path')
+  await generatePoster(resolve(sourcePath))
 } else {
-  console.log('Optimizing images (max 1600px, quality 85)...\n')
-  await processDir(IMAGES_ROOT)
+  console.log('Generating responsive WebP assets...\n')
+  await processDir(ACADEMY_ROOT, ['.jpg', '.jpeg'], { maxWidth: 1600, quality: 80 })
+  await processDir(INSTRUMENTS_ROOT, ['.png'], { maxWidth: 1200, quality: 82 })
   console.log('\nDone.')
 }
