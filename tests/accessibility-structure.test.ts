@@ -56,4 +56,20 @@ describe('accessible page structure', () => {
     expect(html).toContain('5호선 상일동역')
     expect(html).not.toContain('9호선 상일동역')
   })
+
+  it('uses Korean-first editorial page introductions', async () => {
+    for (const path of ['/curriculum', '/philosophy', '/gallery', '/location']) {
+      const html = await page(path)
+      expect(html).toContain('class="page-intro')
+      expect(html).not.toContain('Dancing Script')
+    }
+  })
+
+  it('keeps the homepage booking path explicit without competing primary buttons', async () => {
+    const html = await page('/')
+    expect(html).toContain('금관악기를 처음 만나는 곳')
+    expect(html).toContain('원데이 클래스 예약')
+    expect(html).toContain('네이버 예약으로 이동합니다')
+    expect(html).toContain('class="text-link')
+  })
 })
