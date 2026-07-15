@@ -17,26 +17,31 @@ export const SITE = {
 export const PUBLIC_ROUTES: readonly PageMeta[] = [
   {
     path: '/',
+    label: '홈',
     title: 'Little Brass - 음악이 흐르는 공간',
     description: SITE.description,
   },
   {
     path: '/curriculum',
+    label: '커리큘럼',
     title: '커리큘럼 - Little Brass',
     description: '트럼펫, 호른, 트롬본, 유포늄 실기 과정과 음악이론 수업을 안내합니다.',
   },
   {
     path: '/philosophy',
+    label: '교육철학',
     title: '교육철학 - Little Brass',
     description: '리틀브라스의 금관악기 전문 교육 철학과 수업 방향을 소개합니다.',
   },
   {
     path: '/gallery',
+    label: '갤러리',
     title: '갤러리 - Little Brass',
     description: '리틀브라스의 레슨실, 연습실, 악기와 학원 공간을 확인하세요.',
   },
   {
     path: '/location',
+    label: '찾아오시는 길',
     title: '찾아오시는 길 - Little Brass',
     description: '서울 강동구 상일동 리틀브라스 위치와 교통, 주차 정보를 안내합니다.',
   },

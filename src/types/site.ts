@@ -2,6 +2,7 @@ export type PublicPath = '/' | '/curriculum' | '/philosophy' | '/gallery' | '/lo
 
 export interface PageMeta {
   path: PublicPath
+  label: string
   title: string
   description: string
 }

@@ -15,6 +15,19 @@ beforeEach(() => {
 })
 
 describe('public route contract', () => {
+  const contentMarkers = [
+    ['/', '금관악기 전문 교육'],
+    ['/curriculum', '실기 과정'],
+    ['/philosophy', '교육철학'],
+    ['/gallery', '교육 공간'],
+    ['/location', '찾아오시는 길'],
+  ] as const
+
+  it.each(contentMarkers)('preserves route content for %s', async (path, marker) => {
+    const response = await app.request(`https://example.com${path}`)
+    expect(await response.text()).toContain(marker)
+  })
+
   it.each(routes)('renders %s with unique metadata', async (path, title) => {
     const response = await app.request(`https://little-brass-homepage.pages.dev${path}`)
     const html = await response.text()
