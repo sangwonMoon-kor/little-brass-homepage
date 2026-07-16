@@ -100,7 +100,7 @@ function initReveals(reducedMotion) {
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -48px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px -48px' });
 
   elements.forEach((element) => observer.observe(element));
 }

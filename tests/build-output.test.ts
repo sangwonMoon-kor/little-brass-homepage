@@ -46,4 +46,10 @@ describe('production markup', () => {
       /\.name-story\s*\{[^}]*background:\s*var\(--home-navy\);/s,
     )
   })
+
+  it('reveals tall editorial groups as soon as visible content enters the viewport', () => {
+    const script = readFileSync('public/static/app.js', 'utf8')
+
+    expect(script).toContain("threshold: 0.06")
+  })
 })
