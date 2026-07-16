@@ -1838,6 +1838,7 @@ button {
   color: var(--home-deep-navy);
   font-size: clamp(2.1rem, 3.4vw, 3rem);
   line-height: 1.38;
+  word-break: keep-all;
 }
 
 .home-video-stage {
@@ -1891,6 +1892,7 @@ button {
   letter-spacing: -0.05em;
   line-height: 1.28;
   text-wrap: balance;
+  word-break: keep-all;
 }
 
 .home-hero-details > p:first-child {
@@ -2077,6 +2079,7 @@ button {
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 1.4;
+  word-break: keep-all;
 }
 
 .education-intro {
@@ -2114,6 +2117,7 @@ button {
   font-size: clamp(1.18rem, 1.7vw, 1.48rem);
   font-weight: 600;
   letter-spacing: -0.025em;
+  word-break: keep-all;
 }
 
 .education-points p {
@@ -2275,6 +2279,7 @@ button {
   color: #fff;
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   line-height: 1.38;
+  word-break: keep-all;
 }
 
 .home-cta-actions > p {
@@ -2398,14 +2403,7 @@ button {
   }
 
   .home-hero-intro h1 {
-    font-size: clamp(2.15rem, 10.5vw, 2.9rem);
-  }
-
-  .home-hero-intro h1 br,
-  .home-section-heading .section-title br,
-  .education-copy h2 br,
-  .home-cta h2 br {
-    display: none;
+    font-size: clamp(2rem, 8.8vw, 2.25rem);
   }
 
   .home-hero-details .hero-actions {
@@ -2422,6 +2420,15 @@ button {
 
   .home-page .editorial-section {
     padding: 76px 0;
+  }
+
+  .home-page .home-instruments {
+    padding-bottom: 56px;
+  }
+
+  .home-page .home-education {
+    padding-top: 56px;
+    padding-bottom: 64px;
   }
 
   .home-page .section-title {
