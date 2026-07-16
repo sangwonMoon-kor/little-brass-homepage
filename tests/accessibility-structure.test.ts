@@ -36,7 +36,8 @@ describe('accessible page structure', () => {
     const html = await page('/')
 
     expect(html).toContain('네이버 예약으로 이동합니다')
-    expect(html).toContain('어떤 악기로 시작할지 함께 찾아드립니다')
+    expect(html).toContain('어떤 악기로 시작할지')
+    expect(html).toContain('함께 찾아드립니다')
     expect(html).not.toContain('class="booking-line')
   })
 
@@ -90,10 +91,10 @@ describe('accessible page structure', () => {
       'class="home-video-stage"',
       'class="home-hero-intro"',
       'class="instrument-band"',
-      'class="instrument-cards"',
-      'class="home-education"',
-      'class="home-space"',
-      'class="home-news"',
+      'class="instrument-cards',
+      'class="editorial-section home-education"',
+      'class="editorial-section home-space"',
+      'class="editorial-section home-news"',
       'class="home-cta"',
     ]
 

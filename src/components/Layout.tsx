@@ -17,6 +17,7 @@ type RendererProps = {
 export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
   const requestUrl = new URL(c.req.url)
   const pathname = props.pathname || requestUrl.pathname
+  const isHome = pathname === '/'
   const pageMeta = getPageMeta(pathname)
   const configuredOrigin = (c.env as Bindings | undefined)?.PUBLIC_SITE_URL
   const siteOrigin = new URL(configuredOrigin || requestUrl.origin).origin
@@ -43,6 +44,14 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
       </head>
       <body>
         <a class="skip-link" href="#main-content">본문 바로가기</a>
+        {isHome && (
+          <div class="site-info-bar">
+            <div>
+              <span>{SITE.address}</span>
+              <a href={`tel:${SITE.phone}`}>상담 {SITE.phone}</a>
+            </div>
+          </div>
+        )}
         <Navigation pathname={pathname} />
         <main id="main-content" tabindex={-1}>{props.children}</main>
 
@@ -58,7 +67,9 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             </address>
             <div class="footer-actions">
-              <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a>
+              {!isHome && (
+                <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a>
+              )}
               <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">인스타그램</a>
               <a href={SITE.youtubeUrl} target="_blank" rel="noopener noreferrer">유튜브</a>
             </div>

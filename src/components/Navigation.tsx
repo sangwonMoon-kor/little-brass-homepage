@@ -23,14 +23,16 @@ export function Navigation({ pathname }: NavigationProps) {
               {route.label}
             </a>
           ))}
-          <a
-            href={SITE.reservationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="nav-booking-link"
-          >
-            원데이 클래스
-          </a>
+          {pathname !== '/' && (
+            <a
+              href={SITE.reservationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-booking-link"
+            >
+              원데이 클래스
+            </a>
+          )}
         </div>
 
         <button
@@ -56,14 +58,16 @@ export function Navigation({ pathname }: NavigationProps) {
               {route.label}
             </a>
           ))}
-          <a
-            href={SITE.reservationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mobile-booking-link"
-          >
-            원데이 클래스 예약
-          </a>
+          {pathname !== '/' && (
+            <a
+              href={SITE.reservationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mobile-booking-link"
+            >
+              원데이 클래스 예약
+            </a>
+          )}
         </div>
       </div>
     </nav>
