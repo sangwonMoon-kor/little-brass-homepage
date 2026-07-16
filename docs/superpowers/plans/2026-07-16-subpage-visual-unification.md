@@ -31,7 +31,7 @@
 - Consumes: `createApp()`가 반환하는 `/curriculum`, `/philosophy`, `/gallery`, `/location` HTML과 `public/static/style.css`
 - Produces: 페이지 variant, 커리큘럼 중복 제거, 방문 행동, 화이트·Navy 시각 계약
 
-- [ ] **Step 1: 페이지별 첫 화면과 커리큘럼 중복 제거 테스트를 작성한다**
+- [x] **Step 1: 페이지별 첫 화면과 커리큘럼 중복 제거 테스트를 작성한다**
 
 ```ts
 it('uses page-specific subpage introductions', async () => {
@@ -62,13 +62,13 @@ it('puts visit actions before transport details', async () => {
 })
 ```
 
-- [ ] **Step 2: 테스트를 실행해 현재 공통 인트로와 중복 목록 때문에 실패하는지 확인한다**
+- [x] **Step 2: 테스트를 실행해 현재 공통 인트로와 중복 목록 때문에 실패하는지 확인한다**
 
 Run: `npm test -- tests/accessibility-structure.test.ts`
 
 Expected: FAIL — `page-intro-gallery`, `location-hero-actions`와 통합된 커리큘럼 탭 마크업이 아직 없다.
 
-- [ ] **Step 3: 자산과 시각 토큰 회귀 테스트를 작성한다**
+- [x] **Step 3: 자산과 시각 토큰 회귀 테스트를 작성한다**
 
 ```ts
 it('uses the approved brand wall image in the curriculum intro', async () => {
@@ -85,7 +85,7 @@ it('maps subpages to the homepage white navy brass palette', () => {
 })
 ```
 
-- [ ] **Step 4: 테스트만 커밋한다**
+- [x] **Step 4: 테스트만 커밋한다**
 
 ```bash
 git add tests/accessibility-structure.test.ts tests/assets.test.ts tests/build-output.test.ts
@@ -106,7 +106,7 @@ git commit -m "test: define subpage visual contracts"
 - Consumes: `PageIntroProps`, `SITE`, 기존 `instrumentCurricula`, `galleryImages`, `transport`
 - Produces: `PageIntroVariant`, 선택적 `actions`, 페이지별 클래스와 중복 없는 콘텐츠 흐름
 
-- [ ] **Step 1: `PageIntro`에 variant와 actions를 추가한다**
+- [x] **Step 1: `PageIntro`에 variant와 actions를 추가한다**
 
 ```tsx
 import type { Child } from 'hono/jsx'
@@ -153,7 +153,7 @@ export function PageIntro(props: PageIntroProps) {
 }
 ```
 
-- [ ] **Step 2: 커리큘럼 인트로 사진을 승인 이미지로 바꾸고 `instrument-guide`를 제거한다**
+- [x] **Step 2: 커리큘럼 인트로 사진을 승인 이미지로 바꾸고 `instrument-guide`를 제거한다**
 
 ```tsx
 <PageIntro
@@ -170,7 +170,7 @@ export function PageIntro(props: PageIntroProps) {
 
 각 `.curriculum-tab` 안에는 번호, 악기명과 `instrument.character`를 렌더링하고 별도 `instrument-guide` 목록은 삭제한다.
 
-- [ ] **Step 3: 교육철학과 갤러리 구조를 페이지 목적에 맞게 변경한다**
+- [x] **Step 3: 교육철학과 갤러리 구조를 페이지 목적에 맞게 변경한다**
 
 ```tsx
 <PageIntro
@@ -188,7 +188,7 @@ export function PageIntro(props: PageIntroProps) {
 
 교육철학의 `name-story`는 선언형 Navy 영역으로 유지하고, 갤러리는 인트로 직후 `editorial-gallery`가 시작되도록 중복 섹션 헤딩을 간결하게 만든다.
 
-- [ ] **Step 4: 찾아오시는 길을 주소·지도 행동 중심으로 재구성한다**
+- [x] **Step 4: 찾아오시는 길을 주소·지도 행동 중심으로 재구성한다**
 
 ```tsx
 <PageIntro
@@ -207,19 +207,19 @@ export function PageIntro(props: PageIntroProps) {
 
 본문 하단에는 `yellow-door-01.webp`, `5층 501호`, 방문 전 연락 안내를 담은 `.arrival-guide`를 추가한다.
 
-- [ ] **Step 5: 서브 페이지 내비게이션 예약 링크에 낮은 위계 클래스를 적용한다**
+- [x] **Step 5: 서브 페이지 내비게이션 예약 링크에 낮은 위계 클래스를 적용한다**
 
 ```tsx
 class="nav-booking-link nav-booking-link-subtle"
 ```
 
-- [ ] **Step 6: 구조 테스트를 실행한다**
+- [x] **Step 6: 구조 테스트를 실행한다**
 
 Run: `npm test -- tests/accessibility-structure.test.ts tests/assets.test.ts`
 
 Expected: JSX 구조와 이미지 계약 PASS. CSS 계약은 Task 3 전까지 FAIL할 수 있다.
 
-- [ ] **Step 7: JSX 변경을 커밋한다**
+- [x] **Step 7: JSX 변경을 커밋한다**
 
 ```bash
 git add src/components/PageIntro.tsx src/components/Navigation.tsx src/pages/CurriculumPage.tsx src/pages/PhilosophyPage.tsx src/pages/GalleryPage.tsx src/pages/LocationPage.tsx
@@ -237,7 +237,7 @@ git commit -m "feat: restructure subpages around visitor intent"
 - Consumes: Task 2의 `page-intro-*`, `curriculum-tab`, `arrival-guide`, `location-hero-actions` 클래스
 - Produces: 데스크톱·태블릿·모바일 레이아웃, 220ms 이하 상태 전환, reduced-motion 처리
 
-- [ ] **Step 1: 공통 토큰을 홈 팔레트로 재매핑한다**
+- [x] **Step 1: 공통 토큰을 홈 팔레트로 재매핑한다**
 
 ```css
 :root {
@@ -253,7 +253,7 @@ git commit -m "feat: restructure subpages around visitor intent"
 }
 ```
 
-- [ ] **Step 2: 공통 인트로와 페이지 variant를 구현한다**
+- [x] **Step 2: 공통 인트로와 페이지 variant를 구현한다**
 
 ```css
 .page-intro { padding: 150px 0 80px; background: var(--home-white); border-bottom: 1px solid var(--home-rule); }
@@ -265,7 +265,7 @@ git commit -m "feat: restructure subpages around visitor intent"
 .page-intro-location .page-intro-inner { grid-template-columns: 1fr; }
 ```
 
-- [ ] **Step 3: 페이지별 핵심 영역을 구현한다**
+- [x] **Step 3: 페이지별 핵심 영역을 구현한다**
 
 ```css
 .name-story { background: var(--home-navy); color: var(--home-white); border: 0; }
@@ -278,7 +278,7 @@ git commit -m "feat: restructure subpages around visitor intent"
 .arrival-guide { display: grid; grid-template-columns: minmax(280px,.8fr) minmax(0,1.2fr); gap: clamp(48px,8vw,112px); align-items: center; }
 ```
 
-- [ ] **Step 4: 모바일 `390px` 레이아웃을 구현한다**
+- [x] **Step 4: 모바일 `390px` 레이아웃을 구현한다**
 
 ```css
 @media (max-width: 640px) {
@@ -292,7 +292,7 @@ git commit -m "feat: restructure subpages around visitor intent"
 }
 ```
 
-- [ ] **Step 5: 스크롤 진입 이동을 줄이고 키보드 탭 전환에 이동 모션을 추가하지 않는다**
+- [x] **Step 5: 스크롤 진입 이동을 줄이고 키보드 탭 전환에 이동 모션을 추가하지 않는다**
 
 ```css
 .motion-ready .reveal { opacity: 0; transform: translateY(10px); transition: opacity 240ms var(--ease-editorial), transform 240ms var(--ease-editorial); }
@@ -300,13 +300,13 @@ git commit -m "feat: restructure subpages around visitor intent"
 
 기존 `initCurriculumTabs()`의 즉시 panel 전환과 키보드 처리는 유지하고 JavaScript 애니메이션은 추가하지 않는다.
 
-- [ ] **Step 6: CSS와 모션 테스트를 실행한다**
+- [x] **Step 6: CSS와 모션 테스트를 실행한다**
 
 Run: `npm test -- tests/build-output.test.ts tests/assets.test.ts`
 
 Expected: 화이트·Navy 토큰, 금지 패턴과 반응형 계약 PASS.
 
-- [ ] **Step 7: 스타일 변경을 커밋한다**
+- [x] **Step 7: 스타일 변경을 커밋한다**
 
 ```bash
 git add public/static/style.css public/static/app.js tests/build-output.test.ts tests/assets.test.ts
@@ -323,13 +323,13 @@ git commit -m "feat: unify subpage visual system"
 - Consumes: Tasks 1–3의 최종 구현
 - Produces: 테스트·빌드·1440/768/390 시각 검증을 통과한 배포 가능한 `dist`
 
-- [ ] **Step 1: 정적 검증을 실행한다**
+- [x] **Step 1: 정적 검증을 실행한다**
 
 Run: `npm run typecheck && npm test && npm run build`
 
 Expected: 세 명령 모두 exit code 0.
 
-- [ ] **Step 2: 로컬 미리보기에서 모든 공개 경로를 확인한다**
+- [x] **Step 2: 로컬 미리보기에서 모든 공개 경로를 확인한다**
 
 Run:
 
@@ -341,21 +341,21 @@ done
 
 Expected: 공개 다섯 경로 `200`, `/missing-page` `404`.
 
-- [ ] **Step 3: 브라우저에서 데스크톱 1440px를 확인한다**
+- [x] **Step 3: 브라우저에서 데스크톱 1440px를 확인한다**
 
 확인 항목: 화이트 기본 면, 페이지별 다른 첫 화면, 4열 커리큘럼 탭, Navy 교육철학 선언, 갤러리 직접 시작, 찾아오시는 길의 주소·지도 우선순위.
 
-- [ ] **Step 4: 브라우저에서 모바일 390×844를 확인한다**
+- [x] **Step 4: 브라우저에서 모바일 390×844를 확인한다**
 
 확인 항목: 가로 넘침 없음, `찾아오시는 길` 자연스러운 줄바꿈, 커리큘럼 탭 2×2, 모바일 메뉴, 44px 터치 영역, 이미지 비율.
 
-- [ ] **Step 5: 발견한 결함을 최소 범위로 수정하고 전체 검증을 다시 실행한다**
+- [x] **Step 5: 발견한 결함을 최소 범위로 수정하고 전체 검증을 다시 실행한다**
 
 Run: `npm run typecheck && npm test && npm run build`
 
 Expected: exit code 0이며 브라우저에서 데스크톱·모바일 결함이 재현되지 않는다.
 
-- [ ] **Step 6: 계획 체크박스를 완료 상태로 갱신하고 커밋한다**
+- [x] **Step 6: 계획 체크박스를 완료 상태로 갱신하고 커밋한다**
 
 ```bash
 git add docs/superpowers/plans/2026-07-16-subpage-visual-unification.md
