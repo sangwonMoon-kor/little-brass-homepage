@@ -28,7 +28,7 @@ export function Navigation({ pathname }: NavigationProps) {
               href={SITE.reservationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="nav-booking-link"
+              class="nav-booking-link nav-booking-link-subtle"
             >
               원데이 클래스
             </a>

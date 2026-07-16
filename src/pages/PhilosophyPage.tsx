@@ -27,10 +27,11 @@ export function PhilosophyPage() {
     <div class="philosophy-page">
       <PageIntro
         index="02"
+        variant="philosophy"
         title="교육철학"
         description="소리를 서두르지 않고, 한 사람의 호흡과 목표에 맞춰 음악을 오래 이어갈 힘을 만듭니다."
         image="/static/images/academy/lobby-01.webp"
-        imageAlt="리틀브라스 학원 내부"
+        imageAlt="리틀브라스 학원 대기 공간"
         imageWidth={1600}
         imageHeight={1067}
       />

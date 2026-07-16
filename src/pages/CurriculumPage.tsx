@@ -160,12 +160,13 @@ export function CurriculumPage() {
     <div class="curriculum-page">
       <PageIntro
         index="01"
+        variant="curriculum"
         title="커리큘럼"
         description="처음 소리를 내는 과정부터 무대와 입시·오디션까지, 현재 수준과 목표에 맞춰 이어갑니다."
-        image="/static/images/academy/display-04.webp"
-        imageAlt="리틀브라스에 전시된 금관악기"
-        imageWidth={1541}
-        imageHeight={2048}
+        image="/static/images/academy/brand-wall-01.webp"
+        imageAlt="리틀브라스 로고와 금관악기가 보이는 학원 진열 공간"
+        imageWidth={1155}
+        imageHeight={1362}
       />
 
       <section class="editorial-section curriculum-practical" aria-labelledby="practical-title">
@@ -178,16 +179,6 @@ export function CurriculumPage() {
             <p>악기마다 음색과 연주 방식은 다르지만, 바른 호흡과 자세에서 시작해 네 단계로 깊어집니다.</p>
           </div>
 
-          <ul class="instrument-guide reveal" aria-label="악기별 음색 안내">
-            {instrumentCurricula.map((instrument, index) => (
-              <li>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{instrument.name}</strong>
-                <p>{instrument.character}</p>
-              </li>
-            ))}
-          </ul>
-
           <div role="tablist" aria-label="악기별 실기 과정" class="curriculum-tabs reveal">
             {instrumentCurricula.map((instrument, index) => (
               <button
@@ -199,7 +190,9 @@ export function CurriculumPage() {
                 data-tab={instrument.id}
                 class={`curriculum-tab ${index === 0 ? 'tab-active' : 'tab-inactive'}`}
               >
-                {instrument.name}
+                <span class="curriculum-tab-index">{String(index + 1).padStart(2, '0')}</span>
+                <strong>{instrument.name}</strong>
+                <small>{instrument.character}</small>
               </button>
             ))}
           </div>

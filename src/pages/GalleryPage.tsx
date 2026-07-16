@@ -14,17 +14,14 @@ export function GalleryPage() {
     <div class="gallery-page">
       <PageIntro
         index="03"
+        variant="gallery"
         title="갤러리"
-        description="사진으로 먼저 만나는 리틀브라스의 레슨실, 연습실과 악기들입니다."
-        image="/static/images/academy/corridor-02.webp"
-        imageAlt="리틀브라스 학원 복도와 안내판"
-        imageWidth={1434}
-        imageHeight={2048}
+        description="사진으로 먼저 만나는 리틀브라스의 실제 레슨실과 연습 공간입니다."
       />
 
-      <section class="editorial-section" aria-labelledby="gallery-title">
+      <section class="editorial-section gallery-content" aria-labelledby="gallery-title">
         <div class="editorial-container">
-          <div class="section-heading reveal">
+          <div class="section-heading gallery-heading reveal">
             <div>
               <p class="section-kicker">실제 학원 공간</p>
               <h2 id="gallery-title" class="section-title">교육 공간</h2>
