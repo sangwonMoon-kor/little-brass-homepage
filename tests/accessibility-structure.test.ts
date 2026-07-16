@@ -50,6 +50,37 @@ describe('accessible page structure', () => {
     expect(html).toContain('role="tabpanel"')
   })
 
+  it('uses page-specific subpage introductions', async () => {
+    const curriculum = await page('/curriculum')
+    const gallery = await page('/gallery')
+    const location = await page('/location')
+
+    expect(curriculum).toContain('page-intro-curriculum')
+    expect(gallery).toContain('page-intro-gallery')
+    expect(location).toContain('page-intro-location')
+    expect(gallery).not.toContain('page-intro-with-image')
+    expect(location).not.toContain('page-intro-with-image')
+  })
+
+  it('combines instrument character and selection in one curriculum control', async () => {
+    const html = await page('/curriculum')
+
+    expect(html).not.toContain('class="instrument-guide')
+    expect(html.match(/class="curriculum-tab /g)).toHaveLength(4)
+    expect(html).toContain('선명하고 곧은 소리')
+    expect(html).toContain('깊고 따뜻한 울림')
+  })
+
+  it('puts visit actions before transport details', async () => {
+    const html = await page('/location')
+
+    expect(html).toContain('class="location-hero-actions')
+    expect(html.indexOf('네이버 지도에서 보기')).toBeLessThan(
+      html.indexOf('학원까지 오는 방법'),
+    )
+    expect(html).toContain('5층 501호')
+  })
+
   it('lists the correct subway line', async () => {
     const html = await page('/location')
 

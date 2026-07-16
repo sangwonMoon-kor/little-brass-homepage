@@ -37,6 +37,14 @@ describe('media budgets', () => {
     expect(statSync(imagePath).size).toBeLessThanOrEqual(400_000)
   })
 
+  it('uses the approved brand wall image in the curriculum intro', async () => {
+    const curriculum = await (
+      await app.request('https://example.com/curriculum')
+    ).text()
+
+    expect(curriculum).toContain('/static/images/academy/brand-wall-01.webp')
+  })
+
   it('defines the approved homepage palette', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
     expect(styles).toContain('--home-navy: #102b4e;')

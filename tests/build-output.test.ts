@@ -36,4 +36,14 @@ describe('production markup', () => {
     expect(styles).not.toContain('linear-gradient')
     expect(styles).not.toContain('border-radius: 9999px')
   })
+
+  it('maps subpages to the homepage white navy brass palette', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toContain('--paper: var(--home-white);')
+    expect(styles).toContain('--ink: var(--home-ink);')
+    expect(styles).toMatch(
+      /\.name-story\s*\{[^}]*background:\s*var\(--home-navy\);/s,
+    )
+  })
 })
