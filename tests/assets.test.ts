@@ -23,6 +23,7 @@ describe('media budgets', () => {
 
     expect(home).toContain('poster="/static/videos/hero-poster.webp"')
     expect(home).toContain('/static/images/instruments/trumpet.webp')
+    expect(home).toContain('/static/images/academy/brand-wall-01.webp')
     expect(home).toContain('loading="lazy"')
     expect(home).toContain('decoding="async"')
     expect(home).toMatch(/<img[^>]+width="\d+"[^>]+height="\d+"/)
@@ -30,13 +31,18 @@ describe('media budgets', () => {
     expect(gallery).not.toContain('/static/images/academy/display-02.jpg')
   })
 
-  it('bounds homepage academy photography at desktop and mobile sizes', () => {
+  it('ships the approved education photograph as an optimized WebP', () => {
+    const imagePath = 'public/static/images/academy/brand-wall-01.webp'
+    expect(existsSync(imagePath)).toBe(true)
+    expect(statSync(imagePath).size).toBeLessThanOrEqual(400_000)
+  })
+
+  it('defines the approved homepage palette', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
-    expect(styles).toContain('--home-proof-image-max: 420px;')
-    expect(styles).toContain('--home-space-lead-max: 500px;')
-    expect(styles).toContain('--home-space-support-max: 280px;')
-    expect(styles).toContain('--home-proof-image-max: 320px;')
-    expect(styles).toContain('--home-space-support-max: 240px;')
+    expect(styles).toContain('--home-navy: #102b4e;')
+    expect(styles).toContain('--home-deep-navy: #0a1c33;')
+    expect(styles).toContain('--home-brass: #b79035;')
+    expect(styles).toContain('--home-rule: #dedede;')
   })
 
   it('uses a bounded captioned academy gallery on the homepage', async () => {
@@ -44,6 +50,13 @@ describe('media budgets', () => {
     expect(home).toContain('class="home-space-grid')
     expect(home).toContain('class="space-caption')
     expect(home).not.toContain('class="image-overlay')
+  })
+
+  it('uses the approved 2:1:1 desktop space grid with shrinkable tracks', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+    expect(styles).toContain(
+      'grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);',
+    )
   })
 
   it('allows the mobile space gallery track to shrink below image aspect width', () => {

@@ -32,13 +32,12 @@ describe('accessible page structure', () => {
     expect(activeLinks.every((link) => link.includes('href="/gallery"'))).toBe(true)
   })
 
-  it('explains external booking and includes the inline consultation choice', async () => {
+  it('explains external booking at the first entry point and closes with the final invitation', async () => {
     const html = await page('/')
 
     expect(html).toContain('네이버 예약으로 이동합니다')
-    expect(html).toContain('처음이라도 괜찮습니다')
-    expect(html).toContain('네이버에서 원데이 클래스 예약')
-    expect(html).toContain('전화로 상담하기')
+    expect(html).toContain('어떤 악기로 시작할지 함께 찾아드립니다')
+    expect(html).not.toContain('class="booking-line')
   })
 
   it('uses an accessible curriculum tab pattern', async () => {
@@ -67,9 +66,40 @@ describe('accessible page structure', () => {
 
   it('keeps the homepage booking path explicit without competing primary buttons', async () => {
     const html = await page('/')
-    expect(html).toContain('금관악기를 처음 만나는 곳')
+    expect(html).toContain('금관악기의 첫 소리부터')
     expect(html).toContain('원데이 클래스 예약')
     expect(html).toContain('네이버 예약으로 이동합니다')
     expect(html).toContain('class="text-link')
+  })
+
+  it('shows exactly two booking links on the homepage', async () => {
+    const html = await page('/')
+    const bookingLinks = html.match(
+      /href="https:\/\/map\.naver\.com\/p\/entry\/place\/1094694626[^\"]*"/g,
+    ) ?? []
+
+    expect(bookingLinks).toHaveLength(2)
+    expect(html).not.toContain('class="nav-booking-link"')
+    expect(html).not.toContain('class="mobile-booking-link"')
+    expect(html).not.toContain('>네이버 예약</a>')
+  })
+
+  it('uses the approved homepage sequence', async () => {
+    const html = await page('/')
+    const markers = [
+      'class="home-video-stage"',
+      'class="home-hero-intro"',
+      'class="instrument-band"',
+      'class="instrument-cards"',
+      'class="home-education"',
+      'class="home-space"',
+      'class="home-news"',
+      'class="home-cta"',
+    ]
+
+    for (const marker of markers) expect(html).toContain(marker)
+    expect(markers.map((marker) => html.indexOf(marker))).toEqual(
+      [...markers.map((marker) => html.indexOf(marker))].sort((a, b) => a - b),
+    )
   })
 })
