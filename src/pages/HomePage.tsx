@@ -50,7 +50,7 @@ const educationPoints = [
 export function HomePage({ posts: blogPosts }: HomePageProps) {
   return (
     <div class="home-page">
-      <section class="home-video-stage" aria-label="리틀브라스 실제 수업 영상">
+      <section class="home-video-stage" aria-label="금관악기 연주 영상">
         <video
           id="hero-video"
           autoplay
@@ -64,7 +64,6 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         >
           <source src="/static/videos/hero-video.mp4" type="video/mp4" />
         </video>
-        <p class="video-badge">리틀브라스 실제 수업 영상</p>
       </section>
 
       <section class="home-hero-intro" aria-labelledby="home-hero-title">

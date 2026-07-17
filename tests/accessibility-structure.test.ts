@@ -134,4 +134,12 @@ describe('accessible page structure', () => {
       [...markers.map((marker) => html.indexOf(marker))].sort((a, b) => a - b),
     )
   })
+
+  it('does not present generated hero media as actual lesson footage', async () => {
+    const html = await page('/')
+
+    expect(html).toContain('aria-label="금관악기 연주 영상"')
+    expect(html).not.toContain('리틀브라스 실제 수업 영상')
+    expect(html).not.toContain('class="video-badge"')
+  })
 })
