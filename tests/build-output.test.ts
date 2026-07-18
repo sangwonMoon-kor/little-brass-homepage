@@ -53,14 +53,18 @@ describe('production markup', () => {
     expect(script).toContain("threshold: 0.06")
   })
 
-  it('uses bounded editorial frames for instrument and education photography', () => {
+  it('uses compact, consistent editorial frames for homepage photography', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
 
     expect(styles).toMatch(
-      /\.instrument-card-media\s*\{[^}]*aspect-ratio:\s*4\s*\/\s*5;/s,
+      /\.instrument-card-media\s*\{[^}]*aspect-ratio:\s*5\s*\/\s*4;/s,
     )
-    expect(styles).toContain('.education-photo-stack')
-    expect(styles).toContain('.education-photo-secondary')
+    expect(styles).toMatch(
+      /\.education-photo-stack\s*\{[^}]*position:\s*relative;[^}]*aspect-ratio:\s*5\s*\/\s*6;/s,
+    )
+    expect(styles).toMatch(
+      /\.education-photo\s*\{[^}]*position:\s*absolute;/s,
+    )
   })
 
   it('normalizes real instrument photography without cropping it', () => {
@@ -80,6 +84,20 @@ describe('production markup', () => {
 
     expect(styles).toMatch(
       /\.education-photo-secondary img\s*\{[^}]*object-position:\s*center 34%;/s,
+    )
+  })
+
+  it('keeps both co-directors in one restrained desktop row', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.director-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*400px\)\);/s,
+    )
+    expect(styles).toMatch(
+      /\.director-grid\s*\{[^}]*justify-content:\s*center;/s,
+    )
+    expect(styles).toMatch(
+      /\.director-profile figure\s*\{[^}]*aspect-ratio:\s*4\s*\/\s*5;/s,
     )
   })
 

@@ -2524,9 +2524,9 @@ body {
   display: grid;
   overflow: hidden;
   place-items: center;
-  padding: clamp(18px, 2.2vw, 32px);
+  padding: clamp(14px, 1.6vw, 22px);
   background: #fff;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 4;
 }
 
 .instrument-card-media img {
@@ -2537,17 +2537,17 @@ body {
 
 .instrument-card-wide .instrument-card-media img {
   max-width: 100%;
-  max-height: 72%;
+  max-height: 86%;
 }
 
 .instrument-card-round .instrument-card-media img {
-  max-width: 96%;
-  max-height: 82%;
+  max-width: 92%;
+  max-height: 92%;
 }
 
 .instrument-card-tall .instrument-card-media img {
-  max-width: 82%;
-  max-height: 92%;
+  max-width: 72%;
+  max-height: 96%;
 }
 
 .instrument-card figcaption {
@@ -2602,28 +2602,36 @@ body {
 }
 
 .education-photo-stack {
-  display: grid;
+  --education-stack-inset: 18px;
+  position: relative;
   min-width: 0;
-  gap: 18px;
-  padding-left: 18px;
+  width: 100%;
+  max-height: 620px;
+  padding-left: var(--education-stack-inset);
   border-left: 1px solid var(--home-navy);
+  aspect-ratio: 5 / 6;
 }
 
 .education-photo {
-  width: 100%;
+  position: absolute;
   overflow: hidden;
   background: var(--home-soft);
-  aspect-ratio: 4 / 3;
 }
 
 .education-photo-primary {
-  width: 100%;
+  top: 0;
+  right: 0;
+  left: var(--education-stack-inset);
+  height: 58%;
 }
 
 .education-photo-secondary {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   width: 74%;
-  justify-self: end;
-  aspect-ratio: 4 / 3;
+  height: 48%;
+  border: 8px solid var(--home-white);
 }
 
 .education-photo img {
@@ -3001,20 +3009,22 @@ body {
   }
 
   .instrument-card-media {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 5 / 4;
   }
 
   .education-photo-stack {
-    gap: 12px;
-    padding-left: 12px;
+    --education-stack-inset: 12px;
+    max-width: 520px;
   }
 
   .education-photo-primary {
-    width: 100%;
+    height: 58%;
   }
 
   .education-photo-secondary {
-    width: 82%;
+    width: 76%;
+    height: 48%;
+    border-width: 6px;
   }
 
   .education-copy h2 {
@@ -3266,8 +3276,9 @@ body {
 
 .director-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: repeat(2, minmax(0, 400px));
+  justify-content: center;
+  gap: clamp(24px, 4vw, 48px);
   margin-top: clamp(42px, 6vw, 72px);
 }
 
@@ -3309,7 +3320,8 @@ body {
 
 @media (max-width: 640px) {
   .director-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 400px);
+    justify-content: center;
     gap: 36px;
     margin-top: 36px;
   }
