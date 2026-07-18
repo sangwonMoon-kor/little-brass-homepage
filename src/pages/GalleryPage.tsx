@@ -132,7 +132,7 @@ export function GalleryPage() {
         index="03"
         variant="gallery"
         title="갤러리"
-        description="학원 공간에서 시작한 소리가 합주와 연주회 무대로 이어지는 순간들을 모았습니다."
+        description="교육 공간에서 시작한 소리가 합주와 연주회 무대로 이어지는 순간들을 모았습니다."
       />
 
       <section
