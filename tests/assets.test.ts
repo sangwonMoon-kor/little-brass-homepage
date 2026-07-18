@@ -28,7 +28,7 @@ describe('media budgets', () => {
     expect(home).toContain('decoding="async"')
     expect(home).toMatch(/<img[^>]+width="\d+"[^>]+height="\d+"/)
     expect(gallery).toContain('/static/images/academy/academy-concert-group-01.webp')
-    expect(gallery).not.toContain('/static/images/academy/lobby-01.webp')
+    expect(gallery).toContain('/static/images/academy/lobby-01.webp')
   })
 
   it('ships the homepage education photograph as an optimized WebP', () => {
@@ -131,5 +131,16 @@ describe('media budgets', () => {
     expect(styles).toContain(
       '.gallery-image,\n  .gallery-figure-lead .gallery-image,\n  .gallery-figure-tall .gallery-image {\n    width: 100%;',
     )
+  })
+
+  it('separates academy spaces from lesson and stage records', async () => {
+    const gallery = await (await app.request('https://example.com/gallery')).text()
+
+    expect(gallery).toContain('/static/images/academy/brand-wall-01.webp')
+    expect(gallery).toContain('/static/images/academy/lobby-01.webp')
+    expect(gallery).toContain('/static/images/academy/practice-room-01.webp')
+    expect(gallery).toContain('/static/images/academy/lesson-room-01.webp')
+    expect(gallery).toContain('/static/images/academy/academy-concert-group-01.webp')
+    expect(gallery).toContain('/static/images/academy/ensemble-lesson-02.webp')
   })
 })

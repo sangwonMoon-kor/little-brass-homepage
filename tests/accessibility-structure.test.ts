@@ -91,6 +91,14 @@ describe('accessible page structure', () => {
     expect(html).not.toContain('골드쌤 원장')
   })
 
+  it('labels academy space before lesson and stage gallery records', async () => {
+    const html = await page('/gallery')
+
+    expect(html).toContain('id="gallery-space-title"')
+    expect(html).toContain('id="gallery-stage-title"')
+    expect(html.indexOf('학원 공간')).toBeLessThan(html.indexOf('수업과 무대'))
+  })
+
   it('puts visit actions before transport details', async () => {
     const html = await page('/location')
 
