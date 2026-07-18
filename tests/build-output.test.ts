@@ -63,6 +63,25 @@ describe('production markup', () => {
     expect(styles).toContain('.education-photo-secondary')
   })
 
+  it('normalizes real instrument photography without cropping it', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(/\.instrument-card-media\s*\{[^}]*display:\s*grid;/s)
+    expect(styles).toMatch(/\.instrument-card-media\s*\{[^}]*padding:\s*clamp\(/s)
+    expect(styles).toMatch(/\.instrument-card-media img\s*\{[^}]*object-fit:\s*contain;/s)
+    expect(styles).toContain('.instrument-card-wide .instrument-card-media img')
+    expect(styles).toContain('.instrument-card-round .instrument-card-media img')
+    expect(styles).toContain('.instrument-card-tall .instrument-card-media img')
+  })
+
+  it('uses a stable character-ready supporting frame', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.education-photo-secondary img\s*\{[^}]*object-position:\s*center 34%;/s,
+    )
+  })
+
   it('keeps curriculum lesson copy readable', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
 

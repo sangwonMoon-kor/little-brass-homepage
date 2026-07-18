@@ -10,25 +10,37 @@ const instruments = [
     name: '트럼펫',
     english: 'TRUMPET',
     note: '선명하고 곧은 소리',
-    image: '/static/images/instruments/trumpet-no-hands.webp',
+    image: '/static/images/instruments/real/trumpet-yamaha-ytr-8335la.webp',
+    shape: 'wide',
+    imageWidth: 1280,
+    imageHeight: 698,
   },
   {
     name: '호른',
     english: 'HORN',
     note: '깊고 따뜻한 울림',
-    image: '/static/images/instruments/horn.webp',
+    image: '/static/images/instruments/real/horn-yamaha-yhr-667v.webp',
+    shape: 'round',
+    imageWidth: 1280,
+    imageHeight: 821,
   },
   {
     name: '트롬본',
     english: 'TROMBONE',
     note: '넓고 힘 있는 음색',
-    image: '/static/images/instruments/trombone.webp',
+    image: '/static/images/instruments/real/trombone-yamaha-ysl-891z.webp',
+    shape: 'wide',
+    imageWidth: 1280,
+    imageHeight: 446,
   },
   {
     name: '유포늄',
     english: 'EUPHONIUM',
     note: '부드럽고 풍성한 소리',
-    image: '/static/images/instruments/euphonium.webp',
+    image: '/static/images/instruments/real/euphonium-yamaha-yep-621.webp',
+    shape: 'tall',
+    imageWidth: 1062,
+    imageHeight: 1798,
   },
 ]
 
@@ -123,13 +135,13 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
 
           <div class="instrument-cards reveal">
             {instruments.map((instrument) => (
-              <figure class="instrument-card">
+              <figure class={`instrument-card instrument-card-${instrument.shape}`}>
                 <div class="instrument-card-media">
                   <img
                     src={instrument.image}
                     alt={`리틀브라스에서 배우는 ${instrument.name}`}
-                    width="1024"
-                    height="1024"
+                    width={instrument.imageWidth}
+                    height={instrument.imageHeight}
                     loading="lazy"
                     decoding="async"
                   />
@@ -149,7 +161,7 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
 
       <section class="editorial-section home-education" aria-labelledby="education-title">
         <div class="editorial-container home-education-inner">
-          <div class="education-photo-stack reveal" aria-label="리틀브라스 합주 수업과 학원 악기 전시">
+          <div class="education-photo-stack reveal" aria-label="리틀브라스 합주 수업과 학생 시상식">
             <figure class="education-photo education-photo-primary">
               <img
                 src="/static/images/academy/ensemble-lesson-01-neutral.webp"
@@ -162,10 +174,10 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
             </figure>
             <figure class="education-photo education-photo-secondary">
               <img
-                src="/static/images/academy/display-02.webp"
-                alt="리틀브라스 학원에 전시된 금관악기"
-                width="988"
-                height="1034"
+                src="/static/images/academy/award-ceremony-01.webp"
+                alt="연주회를 마친 리틀브라스 학생과 함께한 시상식"
+                width="1536"
+                height="2048"
                 loading="lazy"
                 decoding="async"
               />
