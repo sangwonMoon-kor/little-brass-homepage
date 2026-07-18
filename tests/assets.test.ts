@@ -6,6 +6,13 @@ const app = createApp({
   getBlogPosts: async () => ({ posts: [], source: 'fallback', message: 'offline' }),
 })
 
+const licensedInstrumentPaths = [
+  '/static/images/instruments/real/trumpet-yamaha-ytr-8335la.webp',
+  '/static/images/instruments/real/horn-yamaha-yhr-667v.webp',
+  '/static/images/instruments/real/trombone-yamaha-ysl-891z.webp',
+  '/static/images/instruments/real/euphonium-yamaha-yep-621.webp',
+]
+
 describe('media budgets', () => {
   it('keeps the hero video within the transfer budget', () => {
     expect(statSync('public/static/videos/hero-video.mp4').size).toBeLessThanOrEqual(3_500_000)
@@ -22,7 +29,7 @@ describe('media budgets', () => {
     const gallery = await (await app.request('https://example.com/gallery')).text()
 
     expect(home).toContain('poster="/static/videos/hero-poster.webp"')
-    expect(home).toContain('/static/images/instruments/trumpet-no-hands.webp')
+    expect(home).toContain(licensedInstrumentPaths[0])
     expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
     expect(home).toContain('loading="lazy"')
     expect(home).toContain('decoding="async"')
@@ -71,7 +78,8 @@ describe('media budgets', () => {
     const home = await (await app.request('https://example.com/')).text()
 
     expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
-    expect(home).toContain('/static/images/academy/display-02.webp')
+    expect(home).toContain('/static/images/academy/award-ceremony-01.webp')
+    expect(home).not.toContain('/static/images/academy/display-02.webp')
     expect(home).not.toContain('/static/images/academy/faculty-duo-brass-01.webp')
     expect(home).toContain('/static/images/academy/academy-concert-group-01.webp')
     expect(home).toContain('/static/images/academy/student-performance-01.webp')
@@ -81,12 +89,41 @@ describe('media budgets', () => {
     expect(home).not.toContain('/static/images/academy/lesson-room-01.webp')
   })
 
-  it('pairs a corrected real lesson with the academy instrument display', async () => {
+  it('pairs a corrected real lesson with the academy award ceremony', async () => {
     const home = await (await app.request('https://example.com/')).text()
 
     expect(home).toContain('class="education-photo-stack')
     expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
-    expect(home).toContain('/static/images/academy/display-02.webp')
+    expect(home).toContain('/static/images/academy/award-ceremony-01.webp')
+    expect(home).not.toContain('/static/images/academy/display-02.webp')
+  })
+
+  it('uses licensed real Yamaha photographs for every instrument card', async () => {
+    const home = await (await app.request('https://example.com/')).text()
+
+    for (const imagePath of licensedInstrumentPaths) {
+      expect(home).toContain(imagePath)
+      const diskPath = `public${imagePath}`
+      expect(existsSync(diskPath)).toBe(true)
+      expect(statSync(diskPath).size).toBeLessThanOrEqual(350_000)
+    }
+
+    expect(home).not.toContain('/static/images/instruments/trumpet-no-hands.webp')
+    expect(home).not.toContain('/static/images/instruments/horn.webp')
+    expect(home).not.toContain('/static/images/instruments/trombone.webp')
+    expect(home).not.toContain('/static/images/instruments/euphonium.webp')
+  })
+
+  it('credits the licensed Yamaha instrument photography', async () => {
+    const home = await (await app.request('https://example.com/')).text()
+
+    expect(home).toContain('class="footer-photo-credit"')
+    expect(home).toContain('Yamaha Corporation')
+    expect(home).toContain('CC BY-SA 4.0')
+    expect(home).toContain('Yamaha_Trumpet_YTR-8335LA_crop.jpg')
+    expect(home).toContain('Yamaha_Horn_YHR-667V.png')
+    expect(home).toContain('Yamaha_Tenor_trombone_YSL-891Z_')
+    expect(home).toContain('Yamaha_Euphonium_YEP-621_transparent.png')
   })
 
   it('defines the approved homepage palette', () => {
@@ -168,6 +205,8 @@ describe('media budgets', () => {
     expect(styles).toMatch(
       /\.gallery-space-grid \.gallery-figure-front img\s*\{[^}]*object-fit:\s*contain;/s,
     )
-    expect(styles).not.toContain('object-position: center 34%')
+    expect(styles).not.toMatch(
+      /\.gallery-space-grid \.gallery-figure-front img\s*\{[^}]*object-position:\s*center 34%;/s,
+    )
   })
 })
