@@ -62,4 +62,18 @@ describe('production markup', () => {
     expect(styles).toContain('.education-photo-stack')
     expect(styles).toContain('.education-photo-secondary')
   })
+
+  it('keeps curriculum lesson copy readable', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.stage-summary\s*\{[^}]*font-size:\s*(?:15|16)px;/s,
+    )
+    expect(styles).toMatch(
+      /\.lesson-heading h3\s*\{[^}]*font-size:\s*(?:21|22|23|24)px;/s,
+    )
+    expect(styles).toMatch(
+      /\.lesson-description\s*\{[^}]*font-size:\s*(?:15|16)px;/s,
+    )
+  })
 })

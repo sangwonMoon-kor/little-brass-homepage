@@ -71,6 +71,17 @@ describe('accessible page structure', () => {
     expect(html).toContain('깊고 따뜻한 울림')
   })
 
+  it('orders the text-led curriculum from practice to theory and lesson guidance', async () => {
+    const html = await page('/curriculum')
+    const headings = ['실기 과정', '뮤토랑 음악이론반', '수업 안내']
+    const positions = headings.map((heading) => html.indexOf(heading))
+
+    expect(positions.every((position) => position >= 0)).toBe(true)
+    expect(positions).toEqual([...positions].sort((a, b) => a - b))
+    expect(html).toContain('aria-labelledby="theory-title"')
+    expect(html).toContain('aria-labelledby="lesson-title"')
+  })
+
   it('puts visit actions before transport details', async () => {
     const html = await page('/location')
 

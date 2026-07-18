@@ -163,10 +163,6 @@ export function CurriculumPage() {
         variant="curriculum"
         title="커리큘럼"
         description="처음 소리를 내는 과정부터 무대와 입시·오디션까지, 현재 수준과 목표에 맞춰 이어갑니다."
-        image="/static/images/academy/instructor-trumpet-portrait-02.webp"
-        imageAlt="트럼펫을 든 리틀브라스 강사"
-        imageWidth={1365}
-        imageHeight={2048}
       />
 
       <section class="editorial-section curriculum-practical" aria-labelledby="practical-title">
@@ -224,22 +220,13 @@ export function CurriculumPage() {
       </section>
 
       <section class="editorial-section theory-section" aria-labelledby="theory-title">
-        <div class="editorial-container theory-split">
-          <figure class="theory-media reveal">
-            <img
-              src="/static/images/academy/faculty-duo-presentation-01.webp"
-              alt="수업 자료를 함께 소개하는 리틀브라스 강사진"
-              width="1600"
-              height="2400"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>실기와 음악이론 수업을 함께 준비하는 리틀브라스 강사진</figcaption>
-          </figure>
-          <div class="theory-copy reveal">
+        <div class="theory-ledger editorial-container">
+          <div class="theory-overview reveal">
             <p class="section-kicker">음악을 읽는 힘</p>
             <h2 id="theory-title" class="section-title">뮤토랑 음악이론반</h2>
             <p class="theory-intro">악보를 읽고 듣고 이해하는 힘을 실기와 별도로 또는 함께 배울 수 있습니다.</p>
+          </div>
+          <div class="theory-information reveal">
             <dl class="theory-facts">
               <div><dt>대상</dt><dd>초등 고학년~중학생</dd></div>
               <div><dt>시간</dt><dd>주 1회 · 50분</dd></div>

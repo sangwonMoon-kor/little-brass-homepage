@@ -37,20 +37,19 @@ describe('media budgets', () => {
     expect(statSync(imagePath).size).toBeLessThanOrEqual(700_000)
   })
 
-  it('uses academy teaching photographs in the curriculum', async () => {
+  it('keeps the curriculum text-led without unrelated portraits', async () => {
     const curriculum = await (
       await app.request('https://example.com/curriculum')
     ).text()
 
-    expect(curriculum).toContain('/static/images/academy/instructor-trumpet-portrait-02.webp')
-    expect(curriculum).toContain('/static/images/academy/faculty-duo-presentation-01.webp')
-    expect(curriculum).not.toContain('/static/images/academy/brand-wall-01.webp')
-    expect(curriculum).not.toContain('/static/images/academy/piano-room-01.webp')
-  })
-
-  it('keeps both instructors visible in the curriculum theory photograph', () => {
-    const styles = readFileSync('public/static/style.css', 'utf8')
-    expect(styles).toContain('object-position: center 28%;')
+    expect(curriculum).not.toContain(
+      '/static/images/academy/instructor-trumpet-portrait-02.webp',
+    )
+    expect(curriculum).not.toContain(
+      '/static/images/academy/faculty-duo-presentation-01.webp',
+    )
+    expect(curriculum).not.toContain('class="theory-media')
+    expect(curriculum).toContain('class="theory-ledger')
   })
 
   it('uses academy faculty photographs in the philosophy page', async () => {

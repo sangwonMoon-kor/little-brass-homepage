@@ -3013,3 +3013,192 @@ body {
     transform: none;
   }
 }
+
+/* Approved curriculum readability polish */
+
+.curriculum-page .page-intro {
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.curriculum-page .page-intro-copy {
+  max-width: 920px;
+}
+
+.curriculum-page .page-intro-copy > p:last-child {
+  max-width: 760px;
+}
+
+.curriculum-page .section-title {
+  font-size: clamp(2.75rem, 4.1vw, 3.25rem);
+  line-height: 1.24;
+}
+
+.curriculum-practical {
+  padding-top: clamp(56px, 6vw, 88px);
+}
+
+.curriculum-tabs {
+  margin-top: 44px;
+}
+
+.curriculum-tab strong,
+.stage-heading h3 {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.curriculum-tab small,
+.stage-heading p,
+.stage-details dt {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.stage-row {
+  padding: 38px 0;
+}
+
+.stage-summary {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.stage-details {
+  margin-top: 22px;
+}
+
+.stage-details dd {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.focus-ledger {
+  margin-top: 56px;
+}
+
+.focus-ledger dt {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.focus-ledger dd {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.theory-section {
+  border-block: 1px solid var(--home-rule);
+  background: var(--home-white);
+}
+
+.theory-ledger {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 7vw, 96px);
+  align-items: start;
+}
+
+.theory-overview .section-title {
+  margin-top: 18px;
+}
+
+.theory-intro {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.theory-information {
+  padding-left: clamp(28px, 4vw, 56px);
+  border-left: 1px solid var(--home-rule);
+}
+
+.theory-information .theory-facts {
+  margin-top: 0;
+}
+
+.theory-facts dt {
+  font-size: 14px;
+}
+
+.theory-facts dd,
+.theory-topics {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.lesson-section {
+  border-top: 1px solid var(--home-rule);
+}
+
+.lesson-ledger article {
+  padding: 30px 0;
+}
+
+.lesson-heading h3 {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.lesson-heading p,
+.lesson-ledger dt,
+.lesson-ledger dd {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.lesson-description {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .theory-ledger {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .theory-information {
+    padding-top: 34px;
+    padding-left: 0;
+    border-top: 1px solid var(--home-rule);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .curriculum-page .page-intro {
+    padding-bottom: 52px;
+  }
+
+  .curriculum-page .section-title {
+    font-size: clamp(2rem, 9vw, 2.25rem);
+    line-height: 1.3;
+  }
+
+  .curriculum-practical {
+    padding-top: 56px;
+  }
+
+  .curriculum-tabs {
+    margin-top: 34px;
+  }
+
+  .curriculum-tab strong,
+  .stage-heading h3 {
+    font-size: 20px;
+  }
+
+  .stage-row {
+    padding: 32px 0;
+  }
+
+  .focus-ledger {
+    margin-top: 44px;
+  }
+
+  .theory-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
