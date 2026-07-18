@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { createApp } from '../src/app'
 
@@ -16,8 +16,18 @@ describe('production markup', () => {
     const html = await response.text()
 
     expect(html).toContain('href="/static/tailwind.css"')
+    expect(html).toContain('href="/static/style.css?v=20260718-photo-layout"')
+    expect(html).not.toContain('href="/static/style.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
+  })
+
+  it('revalidates the layout stylesheet after each deployment', () => {
+    expect(existsSync('public/_headers')).toBe(true)
+    const headers = readFileSync('public/_headers', 'utf8')
+
+    expect(headers).toContain('/static/style.css')
+    expect(headers).toContain('Cache-Control: public, max-age=0, must-revalidate')
   })
 
   it('keeps navigation underline motion on compositor-friendly transforms', () => {
