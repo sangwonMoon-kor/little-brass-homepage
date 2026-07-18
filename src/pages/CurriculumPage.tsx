@@ -163,10 +163,10 @@ export function CurriculumPage() {
         variant="curriculum"
         title="커리큘럼"
         description="처음 소리를 내는 과정부터 무대와 입시·오디션까지, 현재 수준과 목표에 맞춰 이어갑니다."
-        image="/static/images/academy/brand-wall-01.webp"
-        imageAlt="리틀브라스 로고와 금관악기가 보이는 학원 진열 공간"
-        imageWidth={1155}
-        imageHeight={1362}
+        image="/static/images/academy/instructor-trumpet-portrait-02.webp"
+        imageAlt="트럼펫을 든 리틀브라스 강사"
+        imageWidth={1365}
+        imageHeight={2048}
       />
 
       <section class="editorial-section curriculum-practical" aria-labelledby="practical-title">
@@ -227,14 +227,14 @@ export function CurriculumPage() {
         <div class="editorial-container theory-split">
           <figure class="theory-media reveal">
             <img
-              src="/static/images/academy/piano-room-01.webp"
-              alt="리틀브라스 음악이론 수업 공간"
-              width="1385"
-              height="2048"
+              src="/static/images/academy/faculty-duo-presentation-01.webp"
+              alt="수업 자료를 함께 소개하는 리틀브라스 강사진"
+              width="1600"
+              height="2400"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>악보 읽기와 듣기를 함께 배우는 이론 수업 공간</figcaption>
+            <figcaption>실기와 음악이론 수업을 함께 준비하는 리틀브라스 강사진</figcaption>
           </figure>
           <div class="theory-copy reveal">
             <p class="section-kicker">음악을 읽는 힘</p>

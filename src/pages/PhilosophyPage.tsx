@@ -30,24 +30,24 @@ export function PhilosophyPage() {
         variant="philosophy"
         title="교육철학"
         description="소리를 서두르지 않고, 한 사람의 호흡과 목표에 맞춰 음악을 오래 이어갈 힘을 만듭니다."
-        image="/static/images/academy/lobby-01.webp"
-        imageAlt="리틀브라스 학원 대기 공간"
+        image="/static/images/academy/faculty-duo-standing-01.webp"
+        imageAlt="함께 서 있는 리틀브라스 강사진"
         imageWidth={1600}
-        imageHeight={1067}
+        imageHeight={2400}
       />
 
       <section class="editorial-section" aria-labelledby="director-title">
         <div class="editorial-container narrative-split">
           <figure class="narrative-media reveal">
             <img
-              src="/static/images/academy/corridor-01.webp"
-              alt="리틀브라스 레슨실로 이어지는 복도"
-              width="1432"
+              src="/static/images/academy/instructor-portrait-01.webp"
+              alt="리틀브라스 골드쌤 원장 프로필"
+              width="1365"
               height="2048"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>서울 강동구 상일동 리틀브라스</figcaption>
+            <figcaption>리틀브라스 음악학원 골드쌤 원장</figcaption>
           </figure>
           <div class="narrative-copy reveal">
             <p class="section-kicker">원장 소개</p>

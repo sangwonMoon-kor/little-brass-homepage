@@ -1,12 +1,12 @@
 import { PageIntro } from '../components/PageIntro'
 
 const galleryImages = [
-  { src: '/static/images/academy/lobby-01.webp', alt: '리틀브라스 대기 공간', caption: '수업 전후 머무는 대기 공간', width: 1600, height: 1067, className: 'gallery-figure gallery-figure-lead' },
-  { src: '/static/images/academy/practice-room-01.webp', alt: '리틀브라스 개인 연습실', caption: '개인 연습실', width: 1385, height: 2048, className: 'gallery-figure gallery-figure-tall' },
-  { src: '/static/images/academy/lesson-room-01.webp', alt: '리틀브라스 금관악기 레슨실', caption: '금관악기 레슨실', width: 1600, height: 1021, className: 'gallery-figure' },
-  { src: '/static/images/academy/display-02.webp', alt: '리틀브라스 금관악기 진열', caption: '수업을 기다리는 악기들', width: 988, height: 1034, className: 'gallery-figure' },
-  { src: '/static/images/academy/yellow-door-02.webp', alt: '리틀브라스 노란색 출입문', caption: '리틀브라스 입구', width: 1366, height: 2048, className: 'gallery-figure gallery-figure-tall' },
-  { src: '/static/images/academy/corridor-01.webp', alt: '리틀브라스 학원 복도', caption: '레슨실로 이어지는 복도', width: 1432, height: 2048, className: 'gallery-figure' },
+  { src: '/static/images/academy/academy-concert-group-01.webp', alt: '리틀브라스 정기 연주회 단체 사진', caption: '함께 만든 정기 연주회', width: 2400, height: 1351, className: 'gallery-figure gallery-figure-lead' },
+  { src: '/static/images/academy/recital-solo-performance-01.webp', alt: '무대에서 독주하는 리틀브라스 연주자', caption: '무대에서 완성하는 한 곡', width: 1800, height: 2400, className: 'gallery-figure gallery-figure-tall' },
+  { src: '/static/images/academy/faculty-recital-stage-01.webp', alt: '리틀브라스 강사진의 연주회 무대', caption: '강사진 연주회', width: 2048, height: 1365, className: 'gallery-figure' },
+  { src: '/static/images/academy/ensemble-lesson-02.webp', alt: '함께 금관악기를 연주하는 리틀브라스 학생들', caption: '서로의 소리를 듣는 합주 수업', width: 2400, height: 1800, className: 'gallery-figure' },
+  { src: '/static/images/academy/award-ceremony-01.webp', alt: '연주회에서 상장을 받은 리틀브라스 학생', caption: '연습이 기록으로 남는 순간', width: 1800, height: 2400, className: 'gallery-figure gallery-figure-tall' },
+  { src: '/static/images/academy/awards-display-01.webp', alt: '리틀브라스 연주 활동의 트로피', caption: '차곡차곡 쌓이는 무대의 기록', width: 1081, height: 1440, className: 'gallery-figure' },
 ]
 
 export function GalleryPage() {
@@ -16,17 +16,17 @@ export function GalleryPage() {
         index="03"
         variant="gallery"
         title="갤러리"
-        description="사진으로 먼저 만나는 리틀브라스의 실제 레슨실과 연습 공간입니다."
+        description="교육 공간에서 시작한 소리가 합주와 연주회 무대로 이어지는 순간들을 모았습니다."
       />
 
       <section class="editorial-section gallery-content" aria-labelledby="gallery-title">
         <div class="editorial-container">
           <div class="section-heading gallery-heading reveal">
             <div>
-              <p class="section-kicker">실제 학원 공간</p>
-              <h2 id="gallery-title" class="section-title">교육 공간</h2>
+              <p class="section-kicker">LESSON &amp; STAGE</p>
+              <h2 id="gallery-title" class="section-title">수업과 연주회의 기록</h2>
             </div>
-            <p>모든 사진은 서울 강동구 상일동에 있는 리틀브라스에서 촬영했습니다.</p>
+            <p>합주 수업, 학생 연주와 정기 연주회까지 리틀브라스가 함께한 실제 기록입니다.</p>
           </div>
 
           <div class="editorial-gallery reveal">

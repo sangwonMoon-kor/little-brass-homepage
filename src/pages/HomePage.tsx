@@ -149,10 +149,10 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         <div class="editorial-container home-education-inner">
           <figure class="education-photo reveal">
             <img
-              src="/static/images/academy/brand-wall-01.webp"
-              alt="리틀브라스 로고와 금관악기가 보이는 학원 진열 공간"
-              width="1155"
-              height="1362"
+              src="/static/images/academy/ensemble-lesson-01.webp"
+              alt="리틀브라스 학생들이 함께 금관악기를 연주하는 합주 수업"
+              width="2400"
+              height="1800"
               loading="lazy"
               decoding="async"
             />
@@ -184,54 +184,54 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
         <div class="editorial-container">
           <div class="home-section-heading reveal">
             <div>
-              <p class="section-kicker">OUR SPACE</p>
-              <h2 id="space-title" class="section-title">연주와 수업에 집중하는<br />리틀브라스의 공간</h2>
+              <p class="section-kicker">LESSON &amp; STAGE</p>
+              <h2 id="space-title" class="section-title">함께 맞추고,<br />무대에서 완성합니다</h2>
             </div>
-            <p>레슨실과 개인 연습실, 수업 전후 편안히 머물 수 있는 대기 공간을 갖추고 있습니다.</p>
+            <p>합주 수업에서 서로의 소리를 듣고, 정기 연주회에서 배운 음악을 관객과 나눕니다.</p>
           </div>
 
           <div class="home-space-grid reveal">
             <figure class="space-figure space-lead">
               <div class="space-image">
                 <img
-                  src="/static/images/academy/lobby-01.webp"
-                  alt="리틀브라스 학원 대기 공간"
-                  width="1600"
-                  height="1067"
+                  src="/static/images/academy/academy-concert-group-01.webp"
+                  alt="리틀브라스 정기 연주회를 마친 학생과 연주자들의 단체 사진"
+                  width="2400"
+                  height="1351"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <figcaption class="space-caption">Lobby · 대기 공간</figcaption>
+              <figcaption class="space-caption">Academy Concert · 정기 연주회</figcaption>
             </figure>
             <figure class="space-figure space-support">
               <div class="space-image">
                 <img
-                  src="/static/images/academy/practice-room-01.webp"
-                  alt="리틀브라스 개인 연습실"
-                  width="1385"
-                  height="2048"
+                  src="/static/images/academy/student-performance-01.webp"
+                  alt="무대에서 금관악기를 연주하는 리틀브라스 학생"
+                  width="1800"
+                  height="2400"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <figcaption class="space-caption">Practice Room</figcaption>
+              <figcaption class="space-caption">Student Stage · 학생 연주</figcaption>
             </figure>
             <figure class="space-figure space-support">
               <div class="space-image">
                 <img
-                  src="/static/images/academy/lesson-room-01.webp"
-                  alt="리틀브라스 금관악기 레슨실"
-                  width="1600"
-                  height="1021"
+                  src="/static/images/academy/student-performance-02.webp"
+                  alt="피아노와 함께 금관악기를 연주하는 리틀브라스 학생"
+                  width="1800"
+                  height="2400"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <figcaption class="space-caption">Lesson Room</figcaption>
+              <figcaption class="space-caption">Recital · 무대 경험</figcaption>
             </figure>
           </div>
-          <a href="/gallery" class="text-link space-more-link">공간 사진 더 보기</a>
+          <a href="/gallery" class="text-link space-more-link">수업과 공연 사진 더 보기</a>
         </div>
       </section>
 
