@@ -22,8 +22,8 @@ describe('media budgets', () => {
     const gallery = await (await app.request('https://example.com/gallery')).text()
 
     expect(home).toContain('poster="/static/videos/hero-poster.webp"')
-    expect(home).toContain('/static/images/instruments/trumpet.webp')
-    expect(home).toContain('/static/images/academy/ensemble-lesson-01.webp')
+    expect(home).toContain('/static/images/instruments/trumpet-no-hands.webp')
+    expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
     expect(home).toContain('loading="lazy"')
     expect(home).toContain('decoding="async"')
     expect(home).toMatch(/<img[^>]+width="\d+"[^>]+height="\d+"/)
@@ -32,7 +32,7 @@ describe('media budgets', () => {
   })
 
   it('ships the homepage education photograph as an optimized WebP', () => {
-    const imagePath = 'public/static/images/academy/ensemble-lesson-01.webp'
+    const imagePath = 'public/static/images/academy/ensemble-lesson-01-neutral.webp'
     expect(existsSync(imagePath)).toBe(true)
     expect(statSync(imagePath).size).toBeLessThanOrEqual(700_000)
   })
@@ -52,12 +52,13 @@ describe('media budgets', () => {
     expect(curriculum).toContain('class="theory-ledger')
   })
 
-  it('uses academy faculty photographs in the philosophy page', async () => {
+  it('keeps the philosophy intro text-led and uses individual director portraits', async () => {
     const philosophy = await (
       await app.request('https://example.com/philosophy')
     ).text()
 
-    expect(philosophy).toContain('/static/images/academy/faculty-duo-standing-01.webp')
+    expect(philosophy).not.toContain('/static/images/academy/faculty-duo-standing-01.webp')
+    expect(philosophy).not.toContain('page-intro-with-image')
     expect(philosophy).toContain('/static/images/academy/instructor-portrait-01.webp')
     expect(philosophy).toContain(
       '/static/images/academy/instructor-trumpet-portrait-01.webp',
@@ -69,8 +70,9 @@ describe('media budgets', () => {
   it('uses academy lesson and stage photographs on the homepage', async () => {
     const home = await (await app.request('https://example.com/')).text()
 
-    expect(home).toContain('/static/images/academy/ensemble-lesson-01.webp')
-    expect(home).toContain('/static/images/academy/faculty-duo-brass-01.webp')
+    expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
+    expect(home).toContain('/static/images/academy/display-02.webp')
+    expect(home).not.toContain('/static/images/academy/faculty-duo-brass-01.webp')
     expect(home).toContain('/static/images/academy/academy-concert-group-01.webp')
     expect(home).toContain('/static/images/academy/student-performance-01.webp')
     expect(home).not.toContain('/static/images/academy/brand-wall-01.webp')
@@ -79,12 +81,12 @@ describe('media budgets', () => {
     expect(home).not.toContain('/static/images/academy/lesson-room-01.webp')
   })
 
-  it('pairs a real lesson with both directors in the homepage education story', async () => {
+  it('pairs a corrected real lesson with the academy instrument display', async () => {
     const home = await (await app.request('https://example.com/')).text()
 
     expect(home).toContain('class="education-photo-stack')
-    expect(home).toContain('/static/images/academy/ensemble-lesson-01.webp')
-    expect(home).toContain('/static/images/academy/faculty-duo-brass-01.webp')
+    expect(home).toContain('/static/images/academy/ensemble-lesson-01-neutral.webp')
+    expect(home).toContain('/static/images/academy/display-02.webp')
   })
 
   it('defines the approved homepage palette', () => {
@@ -142,5 +144,30 @@ describe('media budgets', () => {
     expect(gallery).toContain('/static/images/academy/lesson-room-01.webp')
     expect(gallery).toContain('/static/images/academy/academy-concert-group-01.webp')
     expect(gallery).toContain('/static/images/academy/ensemble-lesson-02.webp')
+    expect(gallery).toContain('class="editorial-gallery gallery-space-grid reveal"')
+  })
+
+  it('shows the full academy front in the gallery and arrival guide', async () => {
+    const gallery = await (await app.request('https://example.com/gallery')).text()
+    const location = await (await app.request('https://example.com/location')).text()
+
+    expect(gallery).toContain('class="gallery-figure gallery-figure-lead gallery-figure-front"')
+    expect(location).toContain('/static/images/academy/brand-wall-01.webp')
+    expect(location).toContain('리엔프라자 5층 리틀브라스 정면')
+    expect(location).not.toContain('/static/images/academy/yellow-door-01.webp')
+  })
+
+  it('uses a dense academy-space grid without cropping the lead frontage', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toContain('.gallery-space-grid {')
+    expect(styles).toContain('grid-template-columns: repeat(12, minmax(0, 1fr));')
+    expect(styles).toMatch(
+      /\.gallery-space-grid \.gallery-figure-front \.gallery-image\s*\{[^}]*height:\s*auto;/s,
+    )
+    expect(styles).toMatch(
+      /\.gallery-space-grid \.gallery-figure-front img\s*\{[^}]*object-fit:\s*contain;/s,
+    )
+    expect(styles).not.toContain('object-position: center 34%')
   })
 })

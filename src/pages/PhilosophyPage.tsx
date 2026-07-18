@@ -49,10 +49,6 @@ export function PhilosophyPage() {
         variant="philosophy"
         title="교육철학"
         description="소리를 서두르지 않고, 한 사람의 호흡과 목표에 맞춰 음악을 오래 이어갈 힘을 만듭니다."
-        image="/static/images/academy/faculty-duo-standing-01.webp"
-        imageAlt="함께 서 있는 리틀브라스 강사진"
-        imageWidth={1600}
-        imageHeight={2400}
       />
 
       <section class="editorial-section director-section" aria-labelledby="director-title">

@@ -52,12 +52,15 @@ describe('accessible page structure', () => {
 
   it('uses page-specific subpage introductions', async () => {
     const curriculum = await page('/curriculum')
+    const philosophy = await page('/philosophy')
     const gallery = await page('/gallery')
     const location = await page('/location')
 
     expect(curriculum).toContain('page-intro-curriculum')
+    expect(philosophy).toContain('page-intro-philosophy')
     expect(gallery).toContain('page-intro-gallery')
     expect(location).toContain('page-intro-location')
+    expect(philosophy).not.toContain('page-intro-with-image')
     expect(gallery).not.toContain('page-intro-with-image')
     expect(location).not.toContain('page-intro-with-image')
   })

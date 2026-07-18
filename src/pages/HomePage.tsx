@@ -10,7 +10,7 @@ const instruments = [
     name: '트럼펫',
     english: 'TRUMPET',
     note: '선명하고 곧은 소리',
-    image: '/static/images/instruments/trumpet.webp',
+    image: '/static/images/instruments/trumpet-no-hands.webp',
   },
   {
     name: '호른',
@@ -149,23 +149,23 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
 
       <section class="editorial-section home-education" aria-labelledby="education-title">
         <div class="editorial-container home-education-inner">
-          <div class="education-photo-stack reveal" aria-label="리틀브라스 수업과 공동원장">
+          <div class="education-photo-stack reveal" aria-label="리틀브라스 합주 수업과 학원 악기 전시">
             <figure class="education-photo education-photo-primary">
               <img
-                src="/static/images/academy/ensemble-lesson-01.webp"
+                src="/static/images/academy/ensemble-lesson-01-neutral.webp"
                 alt="리틀브라스 학생들의 금관악기 합주 수업"
-                width="2400"
-                height="1800"
+                width="1448"
+                height="1086"
                 loading="lazy"
                 decoding="async"
               />
             </figure>
             <figure class="education-photo education-photo-secondary">
               <img
-                src="/static/images/academy/faculty-duo-brass-01.webp"
-                alt="금관악기와 함께한 리틀브라스 공동원장"
-                width="1365"
-                height="2048"
+                src="/static/images/academy/display-02.webp"
+                alt="리틀브라스 학원에 전시된 금관악기"
+                width="988"
+                height="1034"
                 loading="lazy"
                 decoding="async"
               />

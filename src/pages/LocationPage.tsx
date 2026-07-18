@@ -90,19 +90,19 @@ export function LocationPage() {
         <div class="editorial-container arrival-guide">
           <figure class="arrival-media reveal">
             <img
-              src="/static/images/academy/yellow-door-01.webp"
-              alt="리틀브라스 음악학원 노란색 출입문"
-              width="1416"
-              height="2048"
+              src="/static/images/academy/brand-wall-01.webp"
+              alt="리틀브라스 로고와 금관악기 전시가 보이는 학원 정면"
+              width="1155"
+              height="1362"
               loading="lazy"
               decoding="async"
             />
-            <figcaption>리엔프라자 5층 리틀브라스 입구</figcaption>
+            <figcaption>리엔프라자 5층 리틀브라스 정면</figcaption>
           </figure>
           <div class="arrival-copy reveal">
             <p class="section-kicker">도착 안내</p>
             <h2 id="arrival-title" class="section-title">5층 501호에서<br />만나요</h2>
-            <p>엘리베이터에서 내린 뒤 노란색 문과 리틀브라스 로고를 찾아오시면 됩니다.</p>
+            <p>엘리베이터에서 내린 뒤 리틀브라스 로고와 곡선형 악기 전시창을 찾아오시면 됩니다.</p>
             <a href={`tel:${SITE.phone}`} class="text-link">도착 문의 {SITE.phone}</a>
           </div>
         </div>

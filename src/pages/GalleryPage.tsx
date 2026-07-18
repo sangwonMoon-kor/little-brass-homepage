@@ -16,7 +16,7 @@ const spaceImages = [
     caption: 'Brand Wall · 리틀브라스의 첫인상',
     width: 1155,
     height: 1362,
-    className: 'gallery-figure gallery-figure-lead',
+    className: 'gallery-figure gallery-figure-lead gallery-figure-front',
   },
   {
     src: '/static/images/academy/lobby-01.webp',
@@ -27,20 +27,20 @@ const spaceImages = [
     className: 'gallery-figure',
   },
   {
-    src: '/static/images/academy/practice-room-01.webp',
-    alt: '방음 설비를 갖춘 리틀브라스 개인 연습실',
-    caption: 'Practice Room · 개인 연습실',
-    width: 1385,
-    height: 2048,
-    className: 'gallery-figure gallery-figure-tall',
-  },
-  {
     src: '/static/images/academy/lesson-room-01.webp',
     alt: '금관악기 수업을 진행하는 리틀브라스 레슨실',
     caption: 'Lesson Room · 레슨실',
     width: 1600,
     height: 1021,
     className: 'gallery-figure',
+  },
+  {
+    src: '/static/images/academy/practice-room-01.webp',
+    alt: '방음 설비를 갖춘 리틀브라스 개인 연습실',
+    caption: 'Practice Room · 개인 연습실',
+    width: 1385,
+    height: 2048,
+    className: 'gallery-figure gallery-figure-tall',
   },
   {
     src: '/static/images/academy/corridor-01.webp',
@@ -103,9 +103,19 @@ const lessonStageImages = [
   },
 ] satisfies readonly GalleryImage[]
 
-function GalleryGrid({ images }: { images: readonly GalleryImage[] }) {
+function GalleryGrid({
+  images,
+  className = '',
+}: {
+  images: readonly GalleryImage[]
+  className?: string
+}) {
+  const gridClassName = className
+    ? `editorial-gallery ${className} reveal`
+    : 'editorial-gallery reveal'
+
   return (
-    <div class="editorial-gallery reveal">
+    <div class={gridClassName}>
       {images.map((image) => (
         <figure class={image.className}>
           <div class="gallery-image">
@@ -147,7 +157,7 @@ export function GalleryPage() {
             </div>
             <p>수업과 개인 연습에 집중하고, 수업 전후 편안히 머물 수 있도록 준비한 공간입니다.</p>
           </div>
-          <GalleryGrid images={spaceImages} />
+          <GalleryGrid images={spaceImages} className="gallery-space-grid" />
         </div>
       </section>
 
