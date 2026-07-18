@@ -68,6 +68,7 @@ describe('production markup', () => {
 
     expect(styles).toMatch(/\.instrument-card-media\s*\{[^}]*display:\s*grid;/s)
     expect(styles).toMatch(/\.instrument-card-media\s*\{[^}]*padding:\s*clamp\(/s)
+    expect(styles).toMatch(/\.instrument-card-media\s*\{[^}]*background:\s*#fff;/s)
     expect(styles).toMatch(/\.instrument-card-media img\s*\{[^}]*object-fit:\s*contain;/s)
     expect(styles).toContain('.instrument-card-wide .instrument-card-media img')
     expect(styles).toContain('.instrument-card-round .instrument-card-media img')

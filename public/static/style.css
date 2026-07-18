@@ -2525,7 +2525,7 @@ body {
   overflow: hidden;
   place-items: center;
   padding: clamp(18px, 2.2vw, 32px);
-  background: #f7f6f2;
+  background: #fff;
   aspect-ratio: 4 / 5;
 }
 
