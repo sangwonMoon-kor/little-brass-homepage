@@ -52,4 +52,14 @@ describe('production markup', () => {
 
     expect(script).toContain("threshold: 0.06")
   })
+
+  it('uses bounded editorial frames for instrument and education photography', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.instrument-card-media\s*\{[^}]*aspect-ratio:\s*4\s*\/\s*5;/s,
+    )
+    expect(styles).toContain('.education-photo-stack')
+    expect(styles).toContain('.education-photo-secondary')
+  })
 })

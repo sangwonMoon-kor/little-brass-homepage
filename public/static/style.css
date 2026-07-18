@@ -2475,30 +2475,30 @@ body {
 }
 
 .instrument-card {
-  position: relative;
+  min-width: 0;
+  background: var(--home-white);
+}
+
+.instrument-card-media {
   overflow: hidden;
-  background: var(--home-soft);
+  background: #f7f6f2;
   aspect-ratio: 4 / 5;
 }
 
-.instrument-card img {
+.instrument-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .instrument-card figcaption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
-  min-height: 94px;
-  align-items: flex-end;
+  min-height: 86px;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 18px 17px;
-  background: rgba(16, 43, 78, 0.94);
+  padding: 16px 18px;
+  background: var(--home-navy);
   color: #fff;
 }
 
@@ -2542,6 +2542,14 @@ body {
   align-items: center;
 }
 
+.education-photo-stack {
+  display: grid;
+  min-width: 0;
+  gap: 18px;
+  padding-left: 18px;
+  border-left: 1px solid var(--home-navy);
+}
+
 .education-photo {
   width: 100%;
   overflow: hidden;
@@ -2549,11 +2557,25 @@ body {
   aspect-ratio: 4 / 3;
 }
 
+.education-photo-primary {
+  width: 92%;
+}
+
+.education-photo-secondary {
+  width: 72%;
+  justify-self: end;
+  aspect-ratio: 16 / 10;
+}
+
 .education-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.education-photo-secondary img {
+  object-position: center 28%;
 }
 
 .education-copy h2 {
@@ -2842,8 +2864,8 @@ body {
     gap: 54px;
   }
 
-  .education-photo {
-    max-width: 560px;
+  .education-photo-stack {
+    max-width: 620px;
   }
 
   .home-space-grid {
@@ -2919,8 +2941,21 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .instrument-card {
-    aspect-ratio: 4 / 4.6;
+  .instrument-card-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .education-photo-stack {
+    gap: 12px;
+    padding-left: 12px;
+  }
+
+  .education-photo-primary {
+    width: 100%;
+  }
+
+  .education-photo-secondary {
+    width: 82%;
   }
 
   .education-copy h2 {

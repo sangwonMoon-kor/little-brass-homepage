@@ -124,14 +124,16 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
           <div class="instrument-cards reveal">
             {instruments.map((instrument) => (
               <figure class="instrument-card">
-                <img
-                  src={instrument.image}
-                  alt={`리틀브라스에서 배우는 ${instrument.name}`}
-                  width="1024"
-                  height="1024"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div class="instrument-card-media">
+                  <img
+                    src={instrument.image}
+                    alt={`리틀브라스에서 배우는 ${instrument.name}`}
+                    width="1024"
+                    height="1024"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <figcaption>
                   <div>
                     <strong>{instrument.name}</strong>
@@ -147,16 +149,28 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
 
       <section class="editorial-section home-education" aria-labelledby="education-title">
         <div class="editorial-container home-education-inner">
-          <figure class="education-photo reveal">
-            <img
-              src="/static/images/academy/ensemble-lesson-01.webp"
-              alt="리틀브라스 학생들이 함께 금관악기를 연주하는 합주 수업"
-              width="2400"
-              height="1800"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
+          <div class="education-photo-stack reveal" aria-label="리틀브라스 수업과 공동원장">
+            <figure class="education-photo education-photo-primary">
+              <img
+                src="/static/images/academy/ensemble-lesson-01.webp"
+                alt="리틀브라스 학생들의 금관악기 합주 수업"
+                width="2400"
+                height="1800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="education-photo education-photo-secondary">
+              <img
+                src="/static/images/academy/faculty-duo-brass-01.webp"
+                alt="금관악기와 함께한 리틀브라스 공동원장"
+                width="1365"
+                height="2048"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
 
           <div class="education-copy reveal">
             <p class="section-kicker">WHY LITTLE BRASS</p>

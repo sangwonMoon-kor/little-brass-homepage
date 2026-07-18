@@ -68,12 +68,21 @@ describe('media budgets', () => {
     const home = await (await app.request('https://example.com/')).text()
 
     expect(home).toContain('/static/images/academy/ensemble-lesson-01.webp')
+    expect(home).toContain('/static/images/academy/faculty-duo-brass-01.webp')
     expect(home).toContain('/static/images/academy/academy-concert-group-01.webp')
     expect(home).toContain('/static/images/academy/student-performance-01.webp')
     expect(home).not.toContain('/static/images/academy/brand-wall-01.webp')
     expect(home).not.toContain('/static/images/academy/lobby-01.webp')
     expect(home).not.toContain('/static/images/academy/practice-room-01.webp')
     expect(home).not.toContain('/static/images/academy/lesson-room-01.webp')
+  })
+
+  it('pairs a real lesson with both directors in the homepage education story', async () => {
+    const home = await (await app.request('https://example.com/')).text()
+
+    expect(home).toContain('class="education-photo-stack')
+    expect(home).toContain('/static/images/academy/ensemble-lesson-01.webp')
+    expect(home).toContain('/static/images/academy/faculty-duo-brass-01.webp')
   })
 
   it('defines the approved homepage palette', () => {
