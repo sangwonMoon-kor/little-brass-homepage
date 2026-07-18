@@ -1399,6 +1399,46 @@ button {
   font-size: 0.72rem;
 }
 
+.footer-photo-credit {
+  width: min(calc(100% - 48px), var(--content-max));
+  margin: 0 auto;
+  padding: 18px 0 24px;
+  border-top: 1px solid rgba(252, 250, 246, 0.16);
+  color: rgba(252, 250, 246, 0.58);
+  font-size: 0.72rem;
+}
+
+.footer-photo-credit summary {
+  width: fit-content;
+  cursor: pointer;
+  color: rgba(252, 250, 246, 0.72);
+}
+
+.footer-photo-credit summary:focus-visible {
+  outline: 2px solid var(--home-brass);
+  outline-offset: 4px;
+}
+
+.footer-photo-credit div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.footer-photo-credit a {
+  color: rgba(252, 250, 246, 0.78);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .footer-photo-credit {
+    width: min(calc(100% - 32px), var(--content-max));
+  }
+}
+
 .reveal {
   opacity: 1;
   transform: none;

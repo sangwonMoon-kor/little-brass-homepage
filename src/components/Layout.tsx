@@ -78,6 +78,17 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
             <p>&copy; {new Date().getFullYear()} Little Brass</p>
             <p>서울 강동구 상일동</p>
           </div>
+          <details class="footer-photo-credit">
+            <summary>악기 사진 출처</summary>
+            <div>
+              <span>Yamaha Corporation · WebP 변환 및 크기 조정</span>
+              <a href="https://commons.wikimedia.org/wiki/File:Yamaha_Trumpet_YTR-8335LA_crop.jpg" target="_blank" rel="noopener noreferrer">트럼펫</a>
+              <a href="https://commons.wikimedia.org/wiki/File:Yamaha_Horn_YHR-667V.png" target="_blank" rel="noopener noreferrer">호른</a>
+              <a href="https://commons.wikimedia.org/wiki/File:Yamaha_Tenor_trombone_YSL-891Z_(re-crop).jpg" target="_blank" rel="noopener noreferrer">트롬본</a>
+              <a href="https://commons.wikimedia.org/wiki/File:Yamaha_Euphonium_YEP-621_transparent.png" target="_blank" rel="noopener noreferrer">유포늄</a>
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+            </div>
+          </details>
         </footer>
         <script src="/static/app.js"></script>
       </body>
