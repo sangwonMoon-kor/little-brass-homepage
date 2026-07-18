@@ -90,8 +90,31 @@ describe('accessible page structure', () => {
 
     expect(html).toContain('김효민 원장')
     expect(html).toContain('안세은 원장')
+    expect(html).toContain('리틀브라스를 함께<br/>이끄는 두 원장')
     expect(html.match(/class="director-role"/g)).toHaveLength(2)
     expect(html).not.toContain('골드쌤 원장')
+  })
+
+  it('shares the current visit hours and asks visitors to confirm before arriving', async () => {
+    const html = await page('/location')
+
+    expect(html).toContain('14:00–19:00')
+    expect(html).toContain('10:00–13:00')
+    expect(html).toContain('수업 일정에 따라 운영시간이 달라질 수 있으니 방문 전 예약 또는 문의해 주세요.')
+    expect(html).not.toContain('14:00–21:00')
+    expect(html).not.toContain('10:00–18:00')
+  })
+
+  it('shows verifiable academy information in the shared footer', async () => {
+    const html = await page('/curriculum')
+
+    expect(html).toContain('리틀브라스 음악학원')
+    expect(html).toContain('공동원장 김효민 · 안세은')
+    expect(html).toContain('운영시간')
+    expect(html).toMatch(/<dt>평일<\/dt><dd>14:00–19:00<\/dd>/)
+    expect(html).toMatch(/<dt>토요일<\/dt><dd>10:00–13:00<\/dd>/)
+    expect(html).toContain('네이버 예약')
+    expect(html).not.toContain('사업자등록번호')
   })
 
   it('labels academy space before lesson and stage gallery records', async () => {

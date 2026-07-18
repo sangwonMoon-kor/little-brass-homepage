@@ -3422,3 +3422,468 @@ body {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* Curriculum hierarchy, Korean wrapping, and academy information */
+
+.section-title,
+.page-intro h1,
+.stage-summary,
+.lesson-heading h3 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.section-heading h2,
+.director-profile h3,
+.numbered-list h3,
+.definition-ledger dt,
+.transport-list h3 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.curriculum-practical .section-heading {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--home-navy);
+}
+
+.curriculum-tabs {
+  gap: 1px;
+  padding: 1px;
+  border: 0;
+  background: var(--home-rule);
+}
+
+.curriculum-tab {
+  min-height: 136px;
+  padding: 24px 26px;
+  border: 0;
+}
+
+.curriculum-tab::after {
+  right: 24px;
+  bottom: 17px;
+  left: 24px;
+  height: 2px;
+}
+
+.curriculum-tab.tab-active {
+  background: var(--home-navy);
+}
+
+.curriculum-tab.tab-active .curriculum-tab-index {
+  color: #e2bd4f;
+}
+
+.curriculum-panel {
+  margin-top: 18px;
+  padding: clamp(14px, 2vw, 24px);
+  border: 1px solid var(--home-rule);
+  background: var(--home-soft);
+}
+
+.stage-list {
+  display: grid;
+  gap: 14px;
+}
+
+.stage-row,
+.stage-row:first-child {
+  grid-template-columns: minmax(165px, 0.34fr) minmax(0, 1.66fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(28px, 3.6vw, 44px);
+  border: 1px solid var(--home-rule);
+  border-left: 3px solid var(--home-brass);
+  background: var(--home-white);
+}
+
+.stage-heading > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--home-brass);
+  place-items: center;
+  color: var(--home-muted-brass);
+}
+
+.stage-heading h3 {
+  color: var(--home-deep-navy);
+}
+
+.stage-summary {
+  max-width: 740px;
+  color: var(--home-navy);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.stage-details {
+  gap: 0;
+  border-top: 1px solid var(--home-rule);
+}
+
+.stage-details > div {
+  padding: 20px 22px 0;
+  border-left: 1px solid var(--home-rule);
+}
+
+.stage-details > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.stage-details dt {
+  color: var(--home-muted-brass);
+  letter-spacing: 0.06em;
+}
+
+.focus-ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border: 0;
+  background: var(--home-navy);
+}
+
+.focus-ledger > div {
+  display: block;
+  min-height: 218px;
+  padding: clamp(32px, 4vw, 48px);
+  border: 0;
+}
+
+.focus-ledger > div + div {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.focus-ledger dt {
+  color: var(--home-white);
+  font-size: 22px;
+  word-break: keep-all;
+}
+
+.focus-ledger dt::before {
+  display: block;
+  margin-bottom: 20px;
+  color: #e2bd4f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  content: "SPECIAL COURSE";
+}
+
+.focus-ledger dd {
+  max-width: 520px;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.theory-section {
+  background: var(--home-soft);
+}
+
+.theory-ledger {
+  gap: 0;
+  border: 1px solid var(--home-rule);
+  border-top: 3px solid var(--home-brass);
+  background: var(--home-white);
+}
+
+.theory-overview,
+.theory-information {
+  padding: clamp(34px, 5vw, 64px);
+}
+
+.theory-overview {
+  background: var(--home-navy);
+}
+
+.theory-overview .section-kicker {
+  color: #e2bd4f;
+}
+
+.theory-overview .section-title {
+  color: var(--home-white);
+}
+
+.theory-overview .theory-intro {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.theory-information {
+  border-left: 0;
+}
+
+.theory-facts {
+  border-top-color: var(--home-navy);
+}
+
+.theory-topics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  padding-left: 0;
+  list-style: none;
+  border-top: 1px solid var(--home-rule);
+}
+
+.theory-topics li {
+  position: relative;
+  padding: 17px 16px 17px 28px;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.theory-topics li::before {
+  position: absolute;
+  top: 25px;
+  left: 8px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--home-brass);
+  content: "";
+}
+
+.lesson-section {
+  background: var(--home-soft);
+}
+
+.lesson-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 44px;
+  border-top: 0;
+}
+
+.lesson-ledger article {
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  gap: 0;
+  padding: 32px 30px;
+  border: 1px solid var(--home-rule);
+  border-top: 3px solid var(--home-brass);
+  background: var(--home-white);
+}
+
+.lesson-number {
+  color: var(--home-muted-brass);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+}
+
+.lesson-heading {
+  margin-top: 30px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--home-navy);
+}
+
+.lesson-heading h3 {
+  color: var(--home-deep-navy);
+  font-size: 24px;
+}
+
+.lesson-ledger dl {
+  gap: 0;
+  margin-top: 20px;
+}
+
+.lesson-ledger dl > div {
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.lesson-ledger dt {
+  color: var(--home-muted-brass);
+}
+
+.lesson-description {
+  margin-top: auto;
+  padding-top: 28px;
+  color: var(--home-muted);
+}
+
+.contact-detail-panel {
+  min-width: 0;
+}
+
+.contact-hours-note {
+  max-width: 520px;
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid var(--home-brass);
+  color: var(--home-muted);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.site-footer-inner {
+  grid-template-columns: 1.1fr 1.35fr 1fr 0.7fr;
+  gap: clamp(32px, 4vw, 64px);
+  padding-block: 64px 58px;
+}
+
+.footer-business-name {
+  margin-top: 14px;
+  color: rgba(252, 250, 246, 0.82);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.footer-directors {
+  margin-top: 5px;
+  color: rgba(252, 250, 246, 0.56);
+  font-size: 0.76rem;
+}
+
+.footer-section-title {
+  margin-bottom: 16px;
+  color: #e2bd4f;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.footer-information,
+.footer-hours {
+  min-width: 0;
+}
+
+.footer-contact {
+  gap: 10px;
+  line-height: 1.65;
+}
+
+.footer-hours dl {
+  display: grid;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.footer-hours dl > div {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.footer-hours dt {
+  color: rgba(252, 250, 246, 0.5);
+}
+
+.footer-hours dd {
+  color: rgba(252, 250, 246, 0.82);
+}
+
+.footer-hours > p:last-child {
+  margin-top: 14px;
+  color: rgba(252, 250, 246, 0.48);
+  font-size: 0.68rem;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.footer-actions {
+  gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  .site-footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .stage-row,
+  .stage-row:first-child {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .lesson-ledger {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-ledger article {
+    min-height: 0;
+  }
+
+  .lesson-description {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .curriculum-practical .section-heading {
+    padding-bottom: 20px;
+  }
+
+  .curriculum-tabs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .curriculum-tab {
+    min-height: 104px;
+  }
+
+  .curriculum-tab::after {
+    right: 24px;
+    bottom: 14px;
+    left: 24px;
+  }
+
+  .curriculum-panel {
+    padding: 10px;
+  }
+
+  .stage-row,
+  .stage-row:first-child {
+    padding: 26px 22px;
+  }
+
+  .stage-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stage-details > div,
+  .stage-details > div:first-child {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--home-rule);
+    border-left: 0;
+  }
+
+  .focus-ledger {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .focus-ledger > div {
+    min-height: 0;
+  }
+
+  .focus-ledger > div + div {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 0;
+  }
+
+  .theory-overview,
+  .theory-information {
+    padding: 30px 24px;
+  }
+
+  .theory-topics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-ledger article {
+    padding: 28px 24px;
+  }
+
+  .site-footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+    padding-block: 52px 44px;
+  }
+}

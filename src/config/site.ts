@@ -2,6 +2,8 @@ import type { PageMeta } from '../types/site'
 
 export const SITE = {
   name: 'Little Brass',
+  businessName: '리틀브라스 음악학원',
+  directors: '김효민 · 안세은',
   description:
     '리틀브라스 음악학원 - 트럼펫, 호른, 트롬본, 유포늄 금관악기 전문 교육. 서울 강동구 상일동.',
   phone: '010-5819-4687',
@@ -12,6 +14,12 @@ export const SITE = {
   instagramUrl: 'https://www.instagram.com/little_brass.official',
   youtubeUrl: 'https://youtube.com/@Littlebrass',
   ogImagePath: '/static/images/og/little-brass-og.jpg',
+  hours: {
+    weekday: '14:00–19:00',
+    saturday: '10:00–13:00',
+    sunday: '휴무',
+  },
+  hoursNote: '수업 일정에 따라 운영시간이 달라질 수 있으니 방문 전 예약 또는 문의해 주세요.',
 } as const
 
 export const PUBLIC_ROUTES: readonly PageMeta[] = [

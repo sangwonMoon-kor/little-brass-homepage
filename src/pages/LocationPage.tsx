@@ -40,28 +40,31 @@ export function LocationPage() {
             </div>
           </div>
 
-          <dl class="contact-detail-list reveal">
-            <div>
-              <dt>전화</dt>
-              <dd><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></dd>
-            </div>
-            <div>
-              <dt>이메일</dt>
-              <dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd>
-            </div>
-            <div>
-              <dt>평일</dt>
-              <dd>14:00–21:00</dd>
-            </div>
-            <div>
-              <dt>토요일</dt>
-              <dd>10:00–18:00</dd>
-            </div>
-            <div>
-              <dt>일요일</dt>
-              <dd>휴무</dd>
-            </div>
-          </dl>
+          <div class="contact-detail-panel reveal">
+            <dl class="contact-detail-list">
+              <div>
+                <dt>전화</dt>
+                <dd><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></dd>
+              </div>
+              <div>
+                <dt>이메일</dt>
+                <dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd>
+              </div>
+              <div>
+                <dt>평일</dt>
+                <dd>{SITE.hours.weekday}</dd>
+              </div>
+              <div>
+                <dt>토요일</dt>
+                <dd>{SITE.hours.saturday}</dd>
+              </div>
+              <div>
+                <dt>일요일</dt>
+                <dd>{SITE.hours.sunday}</dd>
+              </div>
+            </dl>
+            <p class="contact-hours-note">{SITE.hoursNote}</p>
+          </div>
         </div>
       </section>
 

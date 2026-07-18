@@ -39,7 +39,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
           isHome={pathname === '/'}
         />
         <link href="/static/tailwind.css" rel="stylesheet" />
-        <link href="/static/style.css?v=20260718-photo-layout" rel="stylesheet" />
+        <link href="/static/style.css?v=20260719-curriculum-footer" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body>
@@ -59,14 +59,28 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
           <div class="site-footer-inner">
             <div class="footer-identity">
               <p class="footer-wordmark">Little Brass</p>
-              <p>금관악기 전문 음악학원</p>
+              <p class="footer-business-name">{SITE.businessName}</p>
+              <p class="footer-directors">공동원장 {SITE.directors}</p>
             </div>
-            <address class="footer-contact">
-              <span>{SITE.address}</span>
-              <a href={`tel:${SITE.phone}`}>{SITE.phone}</a>
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </address>
+            <div class="footer-information">
+              <p class="footer-section-title">학원 정보</p>
+              <address class="footer-contact">
+                <span>{SITE.address}</span>
+                <a href={`tel:${SITE.phone}`}>{SITE.phone}</a>
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </address>
+            </div>
+            <div class="footer-hours">
+              <p class="footer-section-title">운영시간</p>
+              <dl>
+                <div><dt>평일</dt><dd>{SITE.hours.weekday}</dd></div>
+                <div><dt>토요일</dt><dd>{SITE.hours.saturday}</dd></div>
+                <div><dt>일요일</dt><dd>{SITE.hours.sunday}</dd></div>
+              </dl>
+              <p>{SITE.hoursNote}</p>
+            </div>
             <div class="footer-actions">
+              <p class="footer-section-title">바로가기</p>
               {!isHome && (
                 <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a>
               )}

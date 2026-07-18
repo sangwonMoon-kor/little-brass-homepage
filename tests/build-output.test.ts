@@ -16,7 +16,7 @@ describe('production markup', () => {
     const html = await response.text()
 
     expect(html).toContain('href="/static/tailwind.css"')
-    expect(html).toContain('href="/static/style.css?v=20260718-photo-layout"')
+    expect(html).toContain('href="/static/style.css?v=20260719-curriculum-footer"')
     expect(html).not.toContain('href="/static/style.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
@@ -123,5 +123,41 @@ describe('production markup', () => {
     expect(styles).toMatch(
       /\.lesson-description\s*\{[^}]*font-size:\s*(?:15|16)px;/s,
     )
+  })
+
+  it('keeps Korean editorial headings on word boundaries', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.section-title,\s*\n\.page-intro h1,\s*\n\.stage-summary,\s*\n\.lesson-heading h3\s*\{[^}]*word-break:\s*keep-all;/s,
+    )
+    expect(styles).toContain('overflow-wrap: break-word;')
+  })
+
+  it('gives the text-led curriculum clear navy and brass hierarchy', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.curriculum-tab\.tab-active\s*\{[^}]*background:\s*var\(--home-navy\);/s,
+    )
+    expect(styles).toMatch(
+      /\.stage-row,\s*\n\.stage-row:first-child\s*\{[^}]*border-left:\s*3px solid var\(--home-brass\);/s,
+    )
+    expect(styles).toMatch(
+      /\.focus-ledger\s*\{[^}]*background:\s*var\(--home-navy\);/s,
+    )
+    expect(styles).toMatch(
+      /\.lesson-ledger article\s*\{[^}]*background:\s*var\(--home-white\);/s,
+    )
+  })
+
+  it('uses a structured responsive business-information footer', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toMatch(
+      /\.site-footer-inner\s*\{[^}]*grid-template-columns:\s*1\.1fr 1\.35fr 1fr 0\.7fr;/s,
+    )
+    expect(styles).toContain('.footer-section-title')
+    expect(styles).toContain('.footer-hours')
   })
 })

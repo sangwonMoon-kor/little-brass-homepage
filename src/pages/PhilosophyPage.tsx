@@ -56,7 +56,7 @@ export function PhilosophyPage() {
           <div class="section-heading reveal">
             <div>
               <p class="section-kicker">공동원장 소개</p>
-              <h2 id="director-title" class="section-title">리틀브라스를 함께 이끄는 두 원장</h2>
+              <h2 id="director-title" class="section-title">리틀브라스를 함께<br />이끄는 두 원장</h2>
             </div>
             <p>
               두 원장은 한 사람의 호흡과 속도를 존중하며,
