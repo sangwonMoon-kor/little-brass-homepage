@@ -59,6 +59,9 @@ describe('media budgets', () => {
 
     expect(philosophy).toContain('/static/images/academy/faculty-duo-standing-01.webp')
     expect(philosophy).toContain('/static/images/academy/instructor-portrait-01.webp')
+    expect(philosophy).toContain(
+      '/static/images/academy/instructor-trumpet-portrait-01.webp',
+    )
     expect(philosophy).not.toContain('/static/images/academy/lobby-01.webp')
     expect(philosophy).not.toContain('/static/images/academy/corridor-01.webp')
   })

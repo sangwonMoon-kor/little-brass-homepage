@@ -22,6 +22,25 @@ const differences = [
   ['연주와 마스터클래스', '정기연주회와 초청 수업을 통해 배운 음악을 무대와 새로운 연주자에게 연결합니다.'],
 ] as const
 
+const directors = [
+  {
+    name: '김효민 원장',
+    role: '공동원장',
+    image: '/static/images/academy/instructor-portrait-01.webp',
+    imageAlt: '리틀브라스 김효민 공동원장',
+    width: 1365,
+    height: 2048,
+  },
+  {
+    name: '안세은 원장',
+    role: '공동원장',
+    image: '/static/images/academy/instructor-trumpet-portrait-01.webp',
+    imageAlt: '리틀브라스 안세은 공동원장',
+    width: 1365,
+    height: 2048,
+  },
+] as const
+
 export function PhilosophyPage() {
   return (
     <div class="philosophy-page">
@@ -36,30 +55,35 @@ export function PhilosophyPage() {
         imageHeight={2400}
       />
 
-      <section class="editorial-section" aria-labelledby="director-title">
-        <div class="editorial-container narrative-split">
-          <figure class="narrative-media reveal">
-            <img
-              src="/static/images/academy/instructor-portrait-01.webp"
-              alt="리틀브라스 골드쌤 원장 프로필"
-              width="1365"
-              height="2048"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>리틀브라스 음악학원 골드쌤 원장</figcaption>
-          </figure>
-          <div class="narrative-copy reveal">
-            <p class="section-kicker">원장 소개</p>
-            <h2 id="director-title" class="section-title">골드쌤 원장</h2>
+      <section class="editorial-section director-section" aria-labelledby="director-title">
+        <div class="editorial-container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="section-kicker">공동원장 소개</p>
+              <h2 id="director-title" class="section-title">리틀브라스를 함께 이끄는 두 원장</h2>
+            </div>
             <p>
-              안녕하세요. 리틀브라스 음악학원 원장 골드쌤입니다.
-              금관악기의 아름다운 소리와 가능성을 더 많은 분에게 전하고 싶어 리틀브라스를 열었습니다.
+              두 원장은 한 사람의 호흡과 속도를 존중하며,
+              첫 소리부터 무대까지 함께 지도합니다.
             </p>
-            <p>
-              아이부터 성인까지, 처음 악기를 잡는 순간부터 무대에 서는 날까지 함께합니다.
-              빠른 진도보다 올바른 호흡과 자신만의 소리를 찾는 과정을 중요하게 생각합니다.
-            </p>
+          </div>
+          <div class="director-grid reveal">
+            {directors.map((director) => (
+              <article class="director-profile">
+                <figure>
+                  <img
+                    src={director.image}
+                    alt={director.imageAlt}
+                    width={director.width}
+                    height={director.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <p class="director-role">{director.role}</p>
+                <h3>{director.name}</h3>
+              </article>
+            ))}
           </div>
         </div>
       </section>

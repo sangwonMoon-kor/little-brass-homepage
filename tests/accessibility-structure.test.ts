@@ -82,6 +82,15 @@ describe('accessible page structure', () => {
     expect(html).toContain('aria-labelledby="lesson-title"')
   })
 
+  it('introduces both Little Brass co-directors with equal roles', async () => {
+    const html = await page('/philosophy')
+
+    expect(html).toContain('김효민 원장')
+    expect(html).toContain('안세은 원장')
+    expect(html.match(/class="director-role"/g)).toHaveLength(2)
+    expect(html).not.toContain('골드쌤 원장')
+  })
+
   it('puts visit actions before transport details', async () => {
     const html = await page('/location')
 
