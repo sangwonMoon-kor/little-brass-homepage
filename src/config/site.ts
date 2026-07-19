@@ -11,8 +11,7 @@ export const SITE = {
   address: '서울특별시 강동구 상일로12길 99 리엔프라자 501호',
   reservationUrl:
     'https://map.naver.com/p/entry/place/1094694626?placePath=/ticket&from=map&fromPanelNum=1&additionalHeight=76&locale=ko&svcName=map_pcv5',
-  instagramUrl: 'https://www.instagram.com/little_brass.official',
-  youtubeUrl: 'https://youtube.com/@Littlebrass',
+  instagramUrl: 'https://www.instagram.com/little_brass.official/',
   ogImagePath: '/static/images/og/little-brass-og.jpg',
   hours: {
     weekday: '14:00–19:00',

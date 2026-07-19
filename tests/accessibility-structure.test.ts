@@ -117,6 +117,16 @@ describe('accessible page structure', () => {
     expect(html).not.toContain('사업자등록번호')
   })
 
+  it('uses the verified Instagram profile without a popup-only social link', async () => {
+    const html = await page('/')
+
+    expect(html).toContain(
+      '<a href="https://www.instagram.com/little_brass.official/">인스타그램</a>',
+    )
+    expect(html).not.toContain('youtube.com')
+    expect(html).not.toContain('>유튜브</a>')
+  })
+
   it('labels academy space before lesson and stage gallery records', async () => {
     const html = await page('/gallery')
 

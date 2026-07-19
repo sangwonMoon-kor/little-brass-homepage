@@ -84,8 +84,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
               {!isHome && (
                 <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a>
               )}
-              <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">인스타그램</a>
-              <a href={SITE.youtubeUrl} target="_blank" rel="noopener noreferrer">유튜브</a>
+              <a href={SITE.instagramUrl}>인스타그램</a>
             </div>
           </div>
           <div class="site-footer-bottom">

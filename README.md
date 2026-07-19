@@ -116,7 +116,6 @@ wrangler.jsonc              # Cloudflare Pages 설정
 - 전화: 010-5819-4687
 - 이메일: little_brass@naver.com
 - 네이버 블로그: <https://blog.naver.com/little_brass>
-- Instagram: <https://www.instagram.com/little_brass.official>
-- YouTube: <https://youtube.com/@Littlebrass>
+- Instagram: <https://www.instagram.com/little_brass.official/>
 
 © 2026 Little Brass. All rights reserved.
