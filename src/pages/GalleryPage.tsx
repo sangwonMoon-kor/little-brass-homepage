@@ -116,7 +116,7 @@ function GalleryGrid({
 
   return (
     <div class={gridClassName}>
-      {images.map((image) => (
+      {images.map((image, index) => (
         <figure class={image.className}>
           <div class="gallery-image">
             <img
@@ -124,7 +124,8 @@ function GalleryGrid({
               alt={image.alt}
               width={image.width}
               height={image.height}
-              loading="lazy"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : 'auto'}
               decoding="async"
             />
           </div>

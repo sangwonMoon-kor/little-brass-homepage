@@ -3028,7 +3028,12 @@ body {
   }
 
   .education-copy h2 {
-    font-size: clamp(2.15rem, 10vw, 2.8rem);
+    font-size: clamp(1.8rem, 8.5vw, 2.3rem);
+  }
+
+  .education-title-line {
+    display: inline-block;
+    white-space: nowrap;
   }
 
   .education-points li {
@@ -3822,7 +3827,7 @@ body {
   }
 
   .curriculum-tabs {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .curriculum-tab {
@@ -3885,5 +3890,14 @@ body {
     grid-template-columns: minmax(0, 1fr);
     gap: 38px;
     padding-block: 52px 44px;
+  }
+
+  .footer-contact a,
+  .footer-actions a,
+  .footer-photo-credit summary,
+  .footer-photo-credit a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
   }
 }

@@ -186,7 +186,10 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
 
           <div class="education-copy reveal">
             <p class="section-kicker">WHY LITTLE BRASS</p>
-            <h2 id="education-title">악기를 배우는 시간에<br />집중할 수 있도록</h2>
+            <h2 id="education-title">
+              <span class="education-title-line">악기를 배우는 시간에</span><br />
+              집중할 수 있도록
+            </h2>
             <p class="education-intro">
               처음 악기를 잡는 순간부터 연주회, 입시와 오디션을 준비하는 과정까지
               한 사람의 속도에 맞춰 이어갑니다.

@@ -184,6 +184,14 @@ describe('media budgets', () => {
     expect(gallery).toContain('class="editorial-gallery gallery-space-grid reveal"')
   })
 
+  it('loads the first photograph in each gallery section without a blank lazy state', async () => {
+    const gallery = await (await app.request('https://example.com/gallery')).text()
+
+    expect(gallery.match(/loading="eager"/g)).toHaveLength(2)
+    expect(gallery.match(/fetchpriority="high"/g)).toHaveLength(2)
+    expect(gallery.match(/loading="lazy"/g)).toHaveLength(9)
+  })
+
   it('shows the full academy front in the gallery and arrival guide', async () => {
     const gallery = await (await app.request('https://example.com/gallery')).text()
     const location = await (await app.request('https://example.com/location')).text()

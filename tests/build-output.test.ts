@@ -16,7 +16,7 @@ describe('production markup', () => {
     const html = await response.text()
 
     expect(html).toContain('href="/static/tailwind.css"')
-    expect(html).toContain('href="/static/style.css?v=20260719-curriculum-footer"')
+    expect(html).toContain('href="/static/style.css?v=20260719-mobile-polish"')
     expect(html).not.toContain('href="/static/style.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
@@ -159,5 +159,35 @@ describe('production markup', () => {
     )
     expect(styles).toContain('.footer-section-title')
     expect(styles).toContain('.footer-hours')
+  })
+
+  it('keeps the homepage education title balanced on narrow screens', async () => {
+    const home = await (await app.request('https://example.com/')).text()
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(home).toContain(
+      '<span class="education-title-line">악기를 배우는 시간에</span>',
+    )
+    expect(styles).toContain(
+      'font-size: clamp(1.8rem, 8.5vw, 2.3rem);',
+    )
+    expect(styles).toContain('.education-title-line')
+  })
+
+  it('uses a compact two-by-two curriculum selector on mobile', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toContain(
+      '.curriculum-tabs {\n    grid-template-columns: repeat(2, minmax(0, 1fr));',
+    )
+  })
+
+  it('provides full-size mobile touch targets throughout the footer', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    expect(styles).toContain(
+      '.footer-contact a,\n  .footer-actions a,\n  .footer-photo-credit summary,\n  .footer-photo-credit a',
+    )
+    expect(styles).toContain('min-height: 44px;')
   })
 })
