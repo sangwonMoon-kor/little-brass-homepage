@@ -1439,6 +1439,105 @@ button {
   }
 }
 
+/* Official Instagram profile links */
+
+.instagram-profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 44px;
+  padding: 24px 0;
+  border-top: 1px solid var(--home-rule);
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.instagram-profile-row .section-kicker {
+  margin-bottom: 6px;
+}
+
+.instagram-profile-row > div > p:last-child {
+  color: var(--home-muted);
+  font-size: 0.84rem;
+}
+
+.instagram-profile-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid currentColor;
+  color: var(--home-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: transform 160ms var(--ease-editorial), color 160ms var(--ease-editorial), border-color 160ms var(--ease-editorial);
+}
+
+.footer-instagram-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: transform 160ms var(--ease-editorial), color 160ms var(--ease-editorial), border-color 160ms var(--ease-editorial);
+}
+
+.instagram-profile-link:active,
+.footer-instagram-link:active {
+  transform: scale(0.97);
+}
+
+.gallery-journal-actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.gallery-journal-inner h2 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.gallery-journal-line .instagram-profile-link {
+  color: var(--home-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .instagram-profile-link:hover,
+  .footer-instagram-link:hover {
+    color: var(--home-muted-brass);
+  }
+}
+
+@media (max-width: 640px) {
+  .instagram-profile-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 32px;
+    padding: 22px 0;
+  }
+
+  .instagram-profile-link,
+  .footer-instagram-link {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .gallery-journal-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
 .reveal {
   opacity: 1;
   transform: none;

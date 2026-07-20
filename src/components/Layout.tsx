@@ -40,7 +40,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
           isHome={pathname === '/'}
         />
         <link href="/static/tailwind.css" rel="stylesheet" />
-        <link href="/static/style.css?v=20260719-mobile-polish" rel="stylesheet" />
+        <link href="/static/style.css?v=20260721-instagram-links" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body>

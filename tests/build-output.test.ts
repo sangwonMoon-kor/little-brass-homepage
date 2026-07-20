@@ -16,7 +16,7 @@ describe('production markup', () => {
     const html = await response.text()
 
     expect(html).toContain('href="/static/tailwind.css"')
-    expect(html).toContain('href="/static/style.css?v=20260719-mobile-polish"')
+    expect(html).toContain('href="/static/style.css?v=20260721-instagram-links"')
     expect(html).not.toContain('href="/static/style.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
@@ -36,6 +36,17 @@ describe('production markup', () => {
     expect(styles).not.toContain('transition: width')
     expect(styles).toContain('.nav-link:hover::after')
     expect(styles).toContain('transform: scaleX(1)')
+  })
+
+  it('includes responsive editorial styling for Instagram profile links', () => {
+    const css = readFileSync('public/static/style.css', 'utf8')
+
+    expect(css).toMatch(/\.instagram-profile-row\s*\{[^}]*display:\s*flex;[^}]*border-top:/s)
+    expect(css).toMatch(/\.instagram-profile-link\s*\{[^}]*display:\s*inline-flex;[^}]*transition:\s*transform/s)
+    expect(css).toMatch(/\.instagram-profile-link:active\s*,?[^\{]*\{[^}]*transform:\s*scale\(0\.97\)/s)
+    expect(css).toMatch(/@media \(max-width:\s*640px\)[\s\S]*\.instagram-profile-row\s*\{[^}]*flex-direction:\s*column;/s)
+    expect(css).toMatch(/\.gallery-journal-actions\s*\{[^}]*flex-direction:\s*column;/s)
+    expect(css).toMatch(/\.gallery-journal-inner h2\s*\{[^}]*word-break:\s*keep-all;/s)
   })
 
   it('removes generic premium-template typography and motion patterns', async () => {
