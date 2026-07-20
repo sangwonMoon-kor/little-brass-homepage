@@ -4,9 +4,9 @@ import { SITE } from '../config/site'
 const mapUrl = 'https://map.naver.com/p/entry/place/1094694626'
 
 const transport = [
-  ['지하철', '5호선 상일동역 3번 출구에서 도보 5분'],
+  ['지하철', '5호선 강일역 4번 출구에서 도보 3분'],
   ['버스', '상일동역과 리엔파크 방면 정류장에서 도보 이동'],
-  ['주차', '리엔프라자 건물 내 주차장 이용 가능'],
+  ['주차', '리엔프라자 건물 내 주차장 이용 가능 (주차 자리 협소)'],
 ] as const
 
 export function LocationPage() {
@@ -16,7 +16,7 @@ export function LocationPage() {
         index="04"
         variant="location"
         title="찾아오시는 길"
-        description="5호선 상일동역 3번 출구에서 걸어서 5분입니다."
+        description="5호선 강일역 4번 출구에서 걸어서 3분입니다."
         actions={(
           <div class="location-hero-actions">
             <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="button button-primary">

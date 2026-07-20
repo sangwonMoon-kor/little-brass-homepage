@@ -14,7 +14,7 @@ export const SITE = {
   instagramUrl: 'https://www.instagram.com/little_brass.official/',
   ogImagePath: '/static/images/og/little-brass-og.jpg',
   hours: {
-    weekday: '14:00–19:00',
+    weekday: '12:00–18:00',
     saturday: '10:00–13:00',
     sunday: '휴무',
   },
@@ -44,7 +44,7 @@ export const PUBLIC_ROUTES: readonly PageMeta[] = [
     path: '/gallery',
     label: '갤러리',
     title: '갤러리 - Little Brass',
-    description: '리틀브라스의 레슨실, 연습실, 악기와 학원 공간을 확인하세요.',
+    description: '리틀브라스의 합주실, 연습실, 악기와 학원 공간을 확인하세요.',
   },
   {
     path: '/location',

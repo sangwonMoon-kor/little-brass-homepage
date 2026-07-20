@@ -98,9 +98,10 @@ describe('accessible page structure', () => {
   it('shares the current visit hours and asks visitors to confirm before arriving', async () => {
     const html = await page('/location')
 
-    expect(html).toContain('14:00–19:00')
+    expect(html).toContain('12:00–18:00')
     expect(html).toContain('10:00–13:00')
     expect(html).toContain('수업 일정에 따라 운영시간이 달라질 수 있으니 방문 전 예약 또는 문의해 주세요.')
+    expect(html).not.toContain('14:00–19:00')
     expect(html).not.toContain('14:00–21:00')
     expect(html).not.toContain('10:00–18:00')
   })
@@ -109,9 +110,9 @@ describe('accessible page structure', () => {
     const html = await page('/curriculum')
 
     expect(html).toContain('리틀브라스 음악학원')
-    expect(html).toContain('공동원장 김효민 · 안세은')
+    expect(html).toContain('대표원장 김효민 · 안세은')
     expect(html).toContain('운영시간')
-    expect(html).toMatch(/<dt>평일<\/dt><dd>14:00–19:00<\/dd>/)
+    expect(html).toMatch(/<dt>평일<\/dt><dd>12:00–18:00<\/dd>/)
     expect(html).toMatch(/<dt>토요일<\/dt><dd>10:00–13:00<\/dd>/)
     expect(html).toContain('네이버 예약')
     expect(html).not.toContain('사업자등록번호')
@@ -145,11 +146,32 @@ describe('accessible page structure', () => {
     expect(html).toContain('5층 501호')
   })
 
-  it('lists the correct subway line', async () => {
+  it('lists the corrected subway stop, walking time, and parking notice', async () => {
     const html = await page('/location')
 
-    expect(html).toContain('5호선 상일동역')
+    expect(html).toContain('5호선 강일역 4번 출구에서 걸어서 3분입니다.')
+    expect(html).toContain('5호선 강일역 4번 출구에서 도보 3분')
+    expect(html).toContain('리엔프라자 건물 내 주차장 이용 가능 (주차 자리 협소)')
+    expect(html).not.toContain('5호선 상일동역 3번 출구')
     expect(html).not.toContain('9호선 상일동역')
+  })
+
+  it('uses the requested student age range throughout curriculum guidance', async () => {
+    const html = await page('/curriculum')
+    const practicalTargets = html.match(
+      /<dt>추천 대상<\/dt><dd>초등 저학년~중학생<\/dd>/g,
+    ) ?? []
+
+    expect(practicalTargets).toHaveLength(16)
+    expect(html).toContain('<dt>대상</dt><dd>초등 저학년~중학생</dd>')
+  })
+
+  it('labels the former lesson room as the ensemble room', async () => {
+    const html = await page('/gallery')
+
+    expect(html).toContain('Ensemble Room · 합주실')
+    expect(html).toContain('금관악기 수업을 진행하는 리틀브라스 합주실')
+    expect(html).not.toContain('Lesson Room · 레슨실')
   })
 
   it('uses Korean-first editorial page introductions', async () => {

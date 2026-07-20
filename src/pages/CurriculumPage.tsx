@@ -16,6 +16,8 @@ type Instrument = {
   stages: Stage[]
 }
 
+const curriculumAudience = '초등 저학년~중학생'
+
 const instrumentCurricula: Instrument[] = [
   {
     id: 'trumpet',
@@ -24,19 +26,19 @@ const instrumentCurricula: Instrument[] = [
     stages: [
       {
         level: '입문', duration: '1~3개월', summary: '악기와 친해지고 기본 연주 자세를 익히는 단계',
-        goals: '악기와 친해지고 기본기 익히기', contents: '마우스피스 버징, 자세와 호흡, 한 옥타브 음역', audience: '처음 시작하는 분, 초등 저학년부터 성인 입문자',
+        goals: '악기와 친해지고 기본기 익히기', contents: '마우스피스 버징, 자세와 호흡, 한 옥타브 음역', audience: curriculumAudience,
       },
       {
         level: '초급', duration: '3~6개월', summary: '기초 주법을 다지고 간단한 곡을 연주하는 단계',
-        goals: '기초 주법 습득과 간단한 멜로디 연주', contents: '장조 스케일, 싱글 텅잉, 클라크·아르방 기초 에튀드', audience: '음을 안정적으로 내고 악보 기초를 배우는 분',
+        goals: '기초 주법 습득과 간단한 멜로디 연주', contents: '장조 스케일, 싱글 텅잉, 클라크·아르방 기초 에튀드', audience: curriculumAudience,
       },
       {
         level: '중급', duration: '6~12개월', summary: '음역을 넓히고 다양한 주법을 구사하는 단계',
-        goals: '음역 확장과 표현력 있는 연주', contents: '장·단조 스케일, 더블 텅잉, 에튀드 심화와 앙상블', audience: '기초 주법을 익히고 합주에 참여하고 싶은 분',
+        goals: '음역 확장과 표현력 있는 연주', contents: '장·단조 스케일, 더블 텅잉, 에튀드 심화와 앙상블', audience: curriculumAudience,
       },
       {
         level: '고급', duration: '12개월~', summary: '전문 레퍼토리와 입시·오디션을 준비하는 단계',
-        goals: '연주 완성도와 개인 목표 달성', contents: '협주곡, 오케스트라 발췌, 콩쿠르·군악대 입시 준비', audience: '중급 과정을 마치고 전공이나 무대를 목표로 하는 분',
+        goals: '연주 완성도와 개인 목표 달성', contents: '협주곡, 오케스트라 발췌, 콩쿠르·군악대 입시 준비', audience: curriculumAudience,
       },
     ],
   },
@@ -47,19 +49,19 @@ const instrumentCurricula: Instrument[] = [
     stages: [
       {
         level: '입문', duration: '1~3개월', summary: '좁고 깊은 마우스피스에 적응하고 기본 음을 내는 단계',
-        goals: '마우스피스 적응과 안정적인 기본 음 만들기', contents: '버징, 호흡과 지지, 저음역 음정 익히기', audience: '처음 시작하며 깊은 음색을 좋아하는 분',
+        goals: '마우스피스 적응과 안정적인 기본 음 만들기', contents: '버징, 호흡과 지지, 저음역 음정 익히기', audience: curriculumAudience,
       },
       {
         level: '초급', duration: '3~6개월', summary: '자연 배음과 기초 스케일을 익히는 단계',
-        goals: '배음 조절과 기초 음악 표현', contents: '자연 배음 연습, 기초 장조 스케일, 간단한 멜로디', audience: '기본 음을 내고 클래식 음악에 관심 있는 분',
+        goals: '배음 조절과 기초 음악 표현', contents: '자연 배음 연습, 기초 장조 스케일, 간단한 멜로디', audience: curriculumAudience,
       },
       {
         level: '중급', duration: '6~12개월', summary: '조옮김과 핸드 포지션을 익히며 표현력을 키우는 단계',
-        goals: '조옮김 읽기와 핸드 포지션 습득', contents: 'F·B♭ 이중 호른 운용, 조옮김, 에튀드와 앙상블', audience: '기초 과정을 마치고 오케스트라 연주를 준비하는 분',
+        goals: '조옮김 읽기와 핸드 포지션 습득', contents: 'F·B♭ 이중 호른 운용, 조옮김, 에튀드와 앙상블', audience: curriculumAudience,
       },
       {
         level: '고급', duration: '12개월~', summary: '오케스트라 발췌와 독주 레퍼토리를 준비하는 단계',
-        goals: '고음역 안정성과 전문 레퍼토리 완성', contents: '협주곡, 오케스트라 발췌, 예고·음대 입시 준비', audience: '전공, 입시 또는 오케스트라 오디션을 목표로 하는 분',
+        goals: '고음역 안정성과 전문 레퍼토리 완성', contents: '협주곡, 오케스트라 발췌, 예고·음대 입시 준비', audience: curriculumAudience,
       },
     ],
   },
@@ -70,19 +72,19 @@ const instrumentCurricula: Instrument[] = [
     stages: [
       {
         level: '입문', duration: '1~3개월', summary: '슬라이드 위치와 호흡을 익혀 첫 음을 만드는 단계',
-        goals: '기본 자세와 정확한 슬라이드 위치 익히기', contents: '버징, 자세와 호흡, 1~4 포지션과 기초 음정', audience: '처음 시작하며 움직임이 큰 악기를 좋아하는 분',
+        goals: '기본 자세와 정확한 슬라이드 위치 익히기', contents: '버징, 자세와 호흡, 1~4 포지션과 기초 음정', audience: curriculumAudience,
       },
       {
         level: '초급', duration: '3~6개월', summary: '일곱 포지션과 기초 스케일을 연결하는 단계',
-        goals: '슬라이드 이동과 음정 감각 안정화', contents: '전 포지션, 장조 스케일, 기초 텅잉과 멜로디', audience: '기본 음과 포지션을 익히고 곡을 시작하는 분',
+        goals: '슬라이드 이동과 음정 감각 안정화', contents: '전 포지션, 장조 스케일, 기초 텅잉과 멜로디', audience: curriculumAudience,
       },
       {
         level: '중급', duration: '6~12개월', summary: '레가토와 다양한 아티큘레이션을 배우는 단계',
-        goals: '부드러운 슬라이드와 분명한 발음 만들기', contents: '레가토 텅잉, 장·단조 스케일, 에튀드와 앙상블', audience: '취주악과 오케스트라 합주에 참여하고 싶은 분',
+        goals: '부드러운 슬라이드와 분명한 발음 만들기', contents: '레가토 텅잉, 장·단조 스케일, 에튀드와 앙상블', audience: curriculumAudience,
       },
       {
         level: '고급', duration: '12개월~', summary: '독주곡과 오케스트라·군악대 레퍼토리를 준비하는 단계',
-        goals: '전 음역의 안정성과 실전 연주력 강화', contents: '협주곡, 오케스트라 발췌, 콩쿠르·군악대 입시 준비', audience: '전공, 입시, 군악대 오디션을 목표로 하는 분',
+        goals: '전 음역의 안정성과 실전 연주력 강화', contents: '협주곡, 오케스트라 발췌, 콩쿠르·군악대 입시 준비', audience: curriculumAudience,
       },
     ],
   },
@@ -93,19 +95,19 @@ const instrumentCurricula: Instrument[] = [
     stages: [
       {
         level: '입문', duration: '1~3개월', summary: '편안한 호흡으로 따뜻한 기본 음색을 만드는 단계',
-        goals: '바른 자세와 충분한 호흡으로 첫 소리 만들기', contents: '버징, 자세와 호흡, 저·중음역 기초 운지', audience: '처음 시작하며 따뜻하고 부드러운 음색을 좋아하는 분',
+        goals: '바른 자세와 충분한 호흡으로 첫 소리 만들기', contents: '버징, 자세와 호흡, 저·중음역 기초 운지', audience: curriculumAudience,
       },
       {
         level: '초급', duration: '3~6개월', summary: '스케일과 음색을 다듬으며 기초 에튀드를 연주하는 단계',
-        goals: '음색 만들기와 기초 조성 연주', contents: '장조 스케일, 기초 에튀드, 음색 조절 연습', audience: '기본 음을 안정적으로 내고 악보를 배우는 분',
+        goals: '음색 만들기와 기초 조성 연주', contents: '장조 스케일, 기초 에튀드, 음색 조절 연습', audience: curriculumAudience,
       },
       {
         level: '중급', duration: '6~12개월', summary: '음악적 표현력을 키우고 다양한 장르를 경험하는 단계',
-        goals: '다양한 장르 연주와 앙상블 참여', contents: '장·단조 스케일, 에튀드 심화, 취주악·앙상블 파트', audience: '기초 에튀드를 마치고 취주악단에 관심 있는 분',
+        goals: '다양한 장르 연주와 앙상블 참여', contents: '장·단조 스케일, 에튀드 심화, 취주악·앙상블 파트', audience: curriculumAudience,
       },
       {
         level: '고급', duration: '12개월~', summary: '솔로 레퍼토리와 콩쿠르·입시를 준비하는 단계',
-        goals: '독주 완성도와 전문 연주 역량 강화', contents: '협주곡, 취주악 전문 레퍼토리, 콩쿠르·군악대 입시 준비', audience: '중급 수료 후 전공·솔리스트·군악대를 목표로 하는 분',
+        goals: '독주 완성도와 전문 연주 역량 강화', contents: '협주곡, 취주악 전문 레퍼토리, 콩쿠르·군악대 입시 준비', audience: curriculumAudience,
       },
     ],
   },
@@ -228,7 +230,7 @@ export function CurriculumPage() {
           </div>
           <div class="theory-information reveal">
             <dl class="theory-facts">
-              <div><dt>대상</dt><dd>초등 고학년~중학생</dd></div>
+              <div><dt>대상</dt><dd>{curriculumAudience}</dd></div>
               <div><dt>시간</dt><dd>주 1회 · 50분</dd></div>
               <div><dt>방식</dt><dd>2~4인 소그룹 또는 1:1</dd></div>
               <div><dt>수강</dt><dd>정규반 · 단기 특강</dd></div>

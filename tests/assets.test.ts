@@ -66,7 +66,10 @@ describe('media budgets', () => {
 
     expect(philosophy).not.toContain('/static/images/academy/faculty-duo-standing-01.webp')
     expect(philosophy).not.toContain('page-intro-with-image')
-    expect(philosophy).toContain('/static/images/academy/instructor-portrait-01.webp')
+    expect(philosophy).toContain(
+      '/static/images/academy/instructor-trumpet-portrait-02.webp',
+    )
+    expect(philosophy).not.toContain('/static/images/academy/instructor-portrait-01.webp')
     expect(philosophy).toContain(
       '/static/images/academy/instructor-trumpet-portrait-01.webp',
     )

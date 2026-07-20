@@ -26,7 +26,7 @@ const directors = [
   {
     name: '김효민 원장',
     role: '공동원장',
-    image: '/static/images/academy/instructor-portrait-01.webp',
+    image: '/static/images/academy/instructor-trumpet-portrait-02.webp',
     imageAlt: '리틀브라스 김효민 공동원장',
     width: 1365,
     height: 2048,

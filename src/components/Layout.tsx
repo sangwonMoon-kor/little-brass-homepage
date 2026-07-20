@@ -60,7 +60,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
             <div class="footer-identity">
               <p class="footer-wordmark">Little Brass</p>
               <p class="footer-business-name">{SITE.businessName}</p>
-              <p class="footer-directors">공동원장 {SITE.directors}</p>
+              <p class="footer-directors">대표원장 {SITE.directors}</p>
             </div>
             <div class="footer-information">
               <p class="footer-section-title">학원 정보</p>

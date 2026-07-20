@@ -28,8 +28,8 @@ const spaceImages = [
   },
   {
     src: '/static/images/academy/lesson-room-01.webp',
-    alt: '금관악기 수업을 진행하는 리틀브라스 레슨실',
-    caption: 'Lesson Room · 레슨실',
+    alt: '금관악기 수업을 진행하는 리틀브라스 합주실',
+    caption: 'Ensemble Room · 합주실',
     width: 1600,
     height: 1021,
     className: 'gallery-figure',
