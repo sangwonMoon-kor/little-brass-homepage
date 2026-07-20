@@ -1,3 +1,4 @@
+import { InstagramProfileLink } from '../components/InstagramProfileLink'
 import { SITE } from '../config/site'
 import type { BlogPost } from '../types/blog'
 
@@ -300,6 +301,13 @@ export function HomePage({ posts: blogPosts }: HomePageProps) {
           >
             네이버 블로그 전체 보기
           </a>
+          <div class="instagram-profile-row reveal">
+            <div>
+              <p class="section-kicker">INSTAGRAM</p>
+              <p>사진과 짧은 소식은 인스타그램에서도 이어집니다.</p>
+            </div>
+            <InstagramProfileLink className="instagram-profile-link" />
+          </div>
         </div>
       </section>
 

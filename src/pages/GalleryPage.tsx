@@ -1,3 +1,4 @@
+import { InstagramProfileLink } from '../components/InstagramProfileLink'
 import { PageIntro } from '../components/PageIntro'
 
 type GalleryImage = {
@@ -182,11 +183,14 @@ export function GalleryPage() {
         <div class="editorial-container gallery-journal-inner reveal">
           <div>
             <p class="section-kicker">수업과 연주회</p>
-            <h2>더 많은 기록은 블로그에 이어집니다.</h2>
+            <h2>더 많은 기록은 블로그와 인스타그램에 이어집니다.</h2>
           </div>
-          <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="text-link">
-            네이버 블로그 보기
-          </a>
+          <div class="gallery-journal-actions">
+            <a href="https://blog.naver.com/little_brass" target="_blank" rel="noopener noreferrer" class="text-link">
+              네이버 블로그 보기
+            </a>
+            <InstagramProfileLink className="instagram-profile-link" />
+          </div>
         </div>
       </section>
     </div>

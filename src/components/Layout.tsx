@@ -1,6 +1,7 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { absoluteUrl, getPageMeta, SITE } from '../config/site'
 import type { Bindings } from '../types/site'
+import { InstagramProfileLink } from './InstagramProfileLink'
 import { Navigation } from './Navigation'
 import { Seo } from './Seo'
 
@@ -84,7 +85,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
               {!isHome && (
                 <a href={SITE.reservationUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a>
               )}
-              <a href={SITE.instagramUrl}>인스타그램</a>
+              <InstagramProfileLink className="footer-instagram-link" />
             </div>
           </div>
           <div class="site-footer-bottom">

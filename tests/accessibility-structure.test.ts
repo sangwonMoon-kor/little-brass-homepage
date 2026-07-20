@@ -118,14 +118,25 @@ describe('accessible page structure', () => {
     expect(html).not.toContain('사업자등록번호')
   })
 
-  it('uses the verified Instagram profile without a popup-only social link', async () => {
-    const html = await page('/')
+  it('shows the official Instagram profile in the home journal, gallery journal, and footer', async () => {
+    const home = await page('/')
+    const gallery = await page('/gallery')
+    const safeProfileLink = /<a href="https:\/\/www\.instagram\.com\/little_brass\.official\/" target="_blank" rel="noopener noreferrer"[^>]*aria-label="리틀브라스 인스타그램 @little_brass\.official 새 창에서 열기"/g
 
-    expect(html).toContain(
-      '<a href="https://www.instagram.com/little_brass.official/">인스타그램</a>',
+    expect(home.match(safeProfileLink)).toHaveLength(2)
+    expect(gallery.match(safeProfileLink)).toHaveLength(2)
+    expect(home).toContain('사진과 짧은 소식은 인스타그램에서도 이어집니다.')
+    expect(home.indexOf('class="instagram-profile-row')).toBeGreaterThan(
+      home.indexOf('네이버 블로그 전체 보기'),
     )
-    expect(html).not.toContain('youtube.com')
-    expect(html).not.toContain('>유튜브</a>')
+    expect(home.indexOf('class="instagram-profile-row')).toBeLessThan(
+      home.indexOf('class="home-cta"'),
+    )
+    expect(gallery).toContain('더 많은 기록은 블로그와 인스타그램에 이어집니다.')
+    expect(gallery).toContain('class="gallery-journal-actions')
+    expect(home).not.toContain('>인스타그램</a>')
+    expect(home).not.toContain('youtube.com')
+    expect(home).not.toContain('>유튜브</a>')
   })
 
   it('labels academy space before lesson and stage gallery records', async () => {
