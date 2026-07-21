@@ -108,3 +108,41 @@ describe('public route contract', () => {
     expect(body.message).toBeTypeOf('string')
   })
 })
+
+describe('security response contract', () => {
+  it.each(['/', '/api/blog/rss', '/missing'])(
+    'adds baseline browser protections to %s',
+    async (path) => {
+      const response = await app.request(`https://littlebrass.com${path}`)
+
+      expect(response.headers.get('strict-transport-security')).toBe(
+        'max-age=31536000; includeSubDomains',
+      )
+      expect(response.headers.get('x-content-type-options')).toBe('nosniff')
+      expect(response.headers.get('x-frame-options')).toBe('DENY')
+      expect(response.headers.get('referrer-policy')).toBe(
+        'strict-origin-when-cross-origin',
+      )
+      expect(response.headers.get('permissions-policy')).toContain('camera=()')
+      expect(response.headers.get('permissions-policy')).toContain('geolocation=()')
+      expect(response.headers.get('permissions-policy')).toContain('microphone=()')
+      expect(response.headers.get('cross-origin-opener-policy')).toBe('same-origin')
+      expect(response.headers.get('cross-origin-resource-policy')).toBe('same-origin')
+    },
+  )
+
+  it('starts content security policy in report-only mode', async () => {
+    const response = await app.request('https://littlebrass.com/')
+    const policy = response.headers.get('content-security-policy-report-only')
+
+    expect(response.headers.get('content-security-policy')).toBeNull()
+    expect(policy).toContain("default-src 'self'")
+    expect(policy).toContain("base-uri 'self'")
+    expect(policy).toContain("frame-ancestors 'none'")
+    expect(policy).toContain("object-src 'none'")
+    expect(policy).toContain("script-src 'self'")
+    expect(policy).toContain('https://fonts.googleapis.com')
+    expect(policy).toContain('https://fonts.gstatic.com')
+    expect(policy).toContain('img-src \'self\' data: https:')
+  })
+})

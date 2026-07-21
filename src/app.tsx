@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { secureHeaders } from 'hono/secure-headers'
 import { layoutRenderer } from './components/Layout'
 import { absoluteUrl, PUBLIC_ROUTES, resolveSiteOrigin } from './config/site'
 import { CurriculumPage } from './pages/CurriculumPage'
@@ -18,6 +19,36 @@ export function createApp(dependencies: AppDependencies = {}) {
   const app = new Hono<{ Bindings: Bindings }>()
   const getBlogPosts = dependencies.getBlogPosts ?? fetchBlogPosts
 
+  app.use(
+    secureHeaders({
+      contentSecurityPolicyReportOnly: {
+        defaultSrc: ["'self'"],
+        baseUri: ["'self'"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
+        formAction: ["'none'"],
+        frameAncestors: ["'none'"],
+        frameSrc: ["'none'"],
+        imgSrc: ["'self'", 'data:', 'https:'],
+        mediaSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        scriptSrc: ["'self'"],
+        scriptSrcAttr: ["'none'"],
+        styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+        upgradeInsecureRequests: [],
+      },
+      permissionsPolicy: {
+        camera: [],
+        geolocation: [],
+        microphone: [],
+        payment: [],
+        usb: [],
+      },
+      referrerPolicy: 'strict-origin-when-cross-origin',
+      strictTransportSecurity: 'max-age=31536000; includeSubDomains',
+      xFrameOptions: 'DENY',
+    }),
+  )
   app.use(layoutRenderer)
 
   app.get('/sitemap.xml', (c) => {
