@@ -35,6 +35,10 @@
 html {
   color-scheme: light;
   scroll-behavior: smooth;
+  /* 본문 기준을 16px -> 17px 로 올렸다(+6.25%).
+     rem 으로 잡힌 크기가 모두 함께 커져서, 악기 밴드 음색 같은
+     11px 대 작은 글씨까지 한 번에 읽기 편해진다. */
+  font-size: 17px;
 }
 
 body {
@@ -42,7 +46,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.75;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -2423,7 +2427,12 @@ body {
 
 /* Approved homepage refinement */
 
+/* 주소바와 네비게이션은 스크롤해도 상단에 남는다.
+   홈은 nav 가 position: relative 라 스크롤과 함께 사라져서 메뉴 이동이 불편했다. */
 .site-info-bar {
+  position: sticky;
+  top: 0;
+  z-index: 101;
   height: 30px;
   background: var(--home-deep-navy);
   color: rgba(255, 255, 255, 0.74);
@@ -2445,9 +2454,14 @@ body {
   font-weight: 500;
 }
 
+/* 주소바(30px) 바로 아래에 붙어 따라온다. fixed 가 아니라 sticky 라
+   히어로 영상이 네비 뒤로 밀려 올라가지 않고 문서 흐름이 유지된다. */
 .site-nav.site-nav-home {
-  position: relative;
-  inset: auto;
+  position: sticky;
+  top: 30px;
+  right: auto;
+  bottom: auto;
+  left: auto;
   border-bottom: 1px solid var(--home-rule);
   background: var(--home-white);
   color: var(--home-deep-navy);
@@ -2574,11 +2588,13 @@ body {
   color: #e8c75f;
 }
 
+/* 밴드 아래쪽 설명 글씨가 11px 대라 특히 읽기 어려웠다.
+   전역 상향(+6%)만으로는 부족해서 이 자리만 한 단계 더 올린다. */
 .instrument-band-intro span,
 .instrument-band-item span {
-  margin-top: 5px;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.68rem;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
 }
 
 .instrument-band-item span {
@@ -2700,37 +2716,35 @@ body {
   align-items: center;
 }
 
+/* 사진 두 장을 겹쳐 놓던 구성을 폈다.
+   기존에는 높이 58% + 48% = 106% 라 아래 사진이 위 사진을 파고들었고,
+   고정 비율 박스에 object-fit: cover 라 원본이 잘려 나갔다.
+   이제 각 사진이 자기 원본 비율(4:3 / 3:4)을 그대로 쓰고 서로 침범하지 않는다.
+   좌측 세로 라인도 제거했다. */
 .education-photo-stack {
-  --education-stack-inset: 18px;
-  position: relative;
+  display: flex;
   min-width: 0;
   width: 100%;
-  max-height: 620px;
-  padding-left: var(--education-stack-inset);
-  border-left: 1px solid var(--home-navy);
-  aspect-ratio: 5 / 6;
+  max-width: 520px;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .education-photo {
-  position: absolute;
   overflow: hidden;
   background: var(--home-soft);
 }
 
+/* 합주 수업 사진 1448x1086 */
 .education-photo-primary {
-  top: 0;
-  right: 0;
-  left: var(--education-stack-inset);
-  height: 58%;
+  aspect-ratio: 4 / 3;
 }
 
+/* 시상식 사진 1536x2048 — 오른쪽으로 물려 편집 리듬만 남긴다 */
 .education-photo-secondary {
-  right: 0;
-  bottom: 0;
-  z-index: 1;
   width: 74%;
-  height: 48%;
-  border: 8px solid var(--home-white);
+  align-self: flex-end;
+  aspect-ratio: 3 / 4;
 }
 
 .education-photo img {
@@ -3043,7 +3057,8 @@ body {
   }
 
   .education-photo-stack {
-    max-width: 620px;
+    max-width: 560px;
+    margin-inline: auto;
   }
 
   .home-space-grid {
@@ -3066,6 +3081,11 @@ body {
 @media (max-width: 640px) {
   .site-info-bar {
     display: none;
+  }
+
+  /* 주소바가 사라지므로 네비가 화면 맨 위에 붙는다 */
+  .site-nav.site-nav-home {
+    top: 0;
   }
 
   .site-nav.site-nav-home .site-nav-inner {
@@ -3124,18 +3144,12 @@ body {
   }
 
   .education-photo-stack {
-    --education-stack-inset: 12px;
-    max-width: 520px;
-  }
-
-  .education-photo-primary {
-    height: 58%;
+    max-width: 460px;
+    gap: 14px;
   }
 
   .education-photo-secondary {
-    width: 76%;
-    height: 48%;
-    border-width: 6px;
+    width: 78%;
   }
 
   .education-copy h2 {
@@ -3229,14 +3243,14 @@ body {
 
 .curriculum-tab strong,
 .stage-heading h3 {
-  font-size: 22px;
+  font-size: 23px;
   line-height: 1.35;
 }
 
 .curriculum-tab small,
 .stage-heading p,
 .stage-details dt {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
@@ -3245,7 +3259,7 @@ body {
 }
 
 .stage-summary {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
@@ -3254,7 +3268,7 @@ body {
 }
 
 .stage-details dd {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -3263,12 +3277,12 @@ body {
 }
 
 .focus-ledger dt {
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.45;
 }
 
 .focus-ledger dd {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -3290,7 +3304,7 @@ body {
 
 .theory-intro {
   max-width: 560px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
@@ -3304,12 +3318,12 @@ body {
 }
 
 .theory-facts dt {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .theory-facts dd,
 .theory-topics {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -3322,19 +3336,19 @@ body {
 }
 
 .lesson-heading h3 {
-  font-size: 22px;
+  font-size: 23px;
   line-height: 1.35;
 }
 
 .lesson-heading p,
 .lesson-ledger dt,
 .lesson-ledger dd {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
 .lesson-description {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
@@ -3372,7 +3386,7 @@ body {
 
   .curriculum-tab strong,
   .stage-heading h3 {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .stage-row {
@@ -3420,7 +3434,7 @@ body {
 .director-role {
   margin-top: 20px;
   color: var(--home-brass);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -3630,7 +3644,7 @@ body {
 .stage-summary {
   max-width: 740px;
   color: var(--home-navy);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -3676,7 +3690,7 @@ body {
 
 .focus-ledger dt {
   color: var(--home-white);
-  font-size: 22px;
+  font-size: 23px;
   word-break: keep-all;
 }
 
@@ -3797,7 +3811,7 @@ body {
 
 .lesson-heading h3 {
   color: var(--home-deep-navy);
-  font-size: 24px;
+  font-size: 25px;
 }
 
 .lesson-ledger dl {

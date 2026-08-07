@@ -16,7 +16,9 @@ describe('production markup', () => {
     const html = await response.text()
 
     expect(html).toContain('href="/static/tailwind.css"')
-    expect(html).toContain('href="/static/style.css?v=20260721-instagram-links"')
+    // 버전 문자열 자체는 배포마다 바뀐다. 날짜를 박아두면 CSS 를 고칠 때마다
+    // 테스트가 깨지므로, "캐시 무효화 값이 붙어 있는가"만 보장한다.
+    expect(html).toMatch(/href="\/static\/style\.css\?v=[A-Za-z0-9._-]+"/)
     expect(html).not.toContain('href="/static/style.css"')
     expect(html).not.toContain('cdn.tailwindcss.com')
     expect(html).not.toContain('/static/tailwind-config.js')
@@ -80,11 +82,22 @@ describe('production markup', () => {
     expect(styles).toMatch(
       /\.instrument-card-media\s*\{[^}]*aspect-ratio:\s*5\s*\/\s*4;/s,
     )
+    // 사진 두 장은 겹치지 않고 각자 원본 비율을 유지한다.
+    // 예전에는 고정 비율 박스 안에 absolute 로 포개어 아래 사진이 위 사진을 파고들었다.
     expect(styles).toMatch(
-      /\.education-photo-stack\s*\{[^}]*position:\s*relative;[^}]*aspect-ratio:\s*5\s*\/\s*6;/s,
+      /\.education-photo-stack\s*\{[^}]*display:\s*flex;/s,
+    )
+    expect(styles).not.toMatch(
+      /\.education-photo-stack\s*\{[^}]*border-left:/s,
+    )
+    expect(styles).not.toMatch(
+      /\.education-photo\s*\{[^}]*position:\s*absolute;/s,
     )
     expect(styles).toMatch(
-      /\.education-photo\s*\{[^}]*position:\s*absolute;/s,
+      /\.education-photo-primary\s*\{[^}]*aspect-ratio:\s*4\s*\/\s*3;/s,
+    )
+    expect(styles).toMatch(
+      /\.education-photo-secondary\s*\{[^}]*aspect-ratio:\s*3\s*\/\s*4;/s,
     )
   })
 
@@ -125,14 +138,15 @@ describe('production markup', () => {
   it('keeps curriculum lesson copy readable', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
 
+    // 본문 기준을 16px -> 17px 로 올리면서 px 로 고정돼 있던 값도 같은 비율로 옮겼다.
     expect(styles).toMatch(
-      /\.stage-summary\s*\{[^}]*font-size:\s*(?:15|16)px;/s,
+      /\.stage-summary\s*\{[^}]*font-size:\s*(?:17|18|19)px;/s,
     )
     expect(styles).toMatch(
-      /\.lesson-heading h3\s*\{[^}]*font-size:\s*(?:21|22|23|24)px;/s,
+      /\.lesson-heading h3\s*\{[^}]*font-size:\s*(?:22|23|24|25)px;/s,
     )
     expect(styles).toMatch(
-      /\.lesson-description\s*\{[^}]*font-size:\s*(?:15|16)px;/s,
+      /\.lesson-description\s*\{[^}]*font-size:\s*(?:16|17|18)px;/s,
     )
   })
 
