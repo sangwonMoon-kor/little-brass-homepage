@@ -2098,6 +2098,8 @@ body {
   padding-top: clamp(72px, 8vw, 108px);
 }
 
+/* 좌측 외곽선을 없앴다. 마지막 탭의 우측 선도 같이 빼야 좌우가 어긋나지 않는다.
+   위아래 가로선과 탭 사이 구분선만으로 충분히 묶인다. */
 .curriculum-tabs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2105,7 +2107,10 @@ body {
   margin-top: 54px;
   overflow: visible;
   border-block: 1px solid var(--home-rule);
-  border-left: 1px solid var(--home-rule);
+}
+
+.curriculum-tab:last-child {
+  border-right: 0;
 }
 
 .curriculum-tab {
@@ -3612,10 +3617,11 @@ body {
   color: #e2bd4f;
 }
 
+/* 외곽선 없이 옅은 배경만으로 패널 영역을 잡는다 */
 .curriculum-panel {
   margin-top: 18px;
   padding: clamp(14px, 2vw, 24px);
-  border: 1px solid var(--home-rule);
+  border: 0;
   background: var(--home-soft);
 }
 
@@ -3624,14 +3630,18 @@ body {
   gap: 14px;
 }
 
+/* 골드 좌측 바 + 1px 외곽선을 음영으로 대체했다.
+   왼쪽에 색 막대를 세워 항목을 구분하는 건 어느 템플릿에나 있는 형태다. */
 .stage-row,
 .stage-row:first-child {
   grid-template-columns: minmax(165px, 0.34fr) minmax(0, 1.66fr);
   gap: clamp(28px, 5vw, 72px);
   padding: clamp(28px, 3.6vw, 44px);
-  border: 1px solid var(--home-rule);
-  border-left: 3px solid var(--home-brass);
+  border: 0;
   background: var(--home-white);
+  box-shadow:
+    0 1px 2px rgba(16, 43, 78, 0.05),
+    0 10px 28px rgba(16, 43, 78, 0.06);
 }
 
 .stage-heading > span {
@@ -3660,14 +3670,14 @@ body {
   border-top: 1px solid var(--home-rule);
 }
 
+/* 세 항목 사이 세로 구분선을 빼고 여백으로만 나눈다 */
 .stage-details > div {
-  padding: 20px 22px 0;
-  border-left: 1px solid var(--home-rule);
+  padding: 20px 30px 0 0;
+  border-left: 0;
 }
 
-.stage-details > div:first-child {
-  padding-left: 0;
-  border-left: 0;
+.stage-details > div:last-child {
+  padding-right: 0;
 }
 
 .stage-details dt {
@@ -3691,8 +3701,9 @@ body {
   border: 0;
 }
 
+/* 두 카드 사이 세로선 제거. 각 카드의 넉넉한 안쪽 여백이 구분을 대신한다. */
 .focus-ledger > div + div {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 0;
 }
 
 .focus-ledger dt {
@@ -3721,11 +3732,14 @@ body {
   background: var(--home-soft);
 }
 
+/* 상단 골드 라인과 외곽선을 걷어내고 음영으로 띄운다. */
 .theory-ledger {
   gap: 0;
-  border: 1px solid var(--home-rule);
-  border-top: 3px solid var(--home-brass);
+  border: 0;
   background: var(--home-white);
+  box-shadow:
+    0 1px 2px rgba(16, 43, 78, 0.05),
+    0 10px 28px rgba(16, 43, 78, 0.06);
 }
 
 .theory-overview,
@@ -3793,15 +3807,18 @@ body {
   border-top: 0;
 }
 
+/* 수업 안내 카드도 같은 처리. 골드 상단선 + 외곽선 대신 음영. */
 .lesson-ledger article {
   display: flex;
   min-height: 420px;
   flex-direction: column;
   gap: 0;
   padding: 32px 30px;
-  border: 1px solid var(--home-rule);
-  border-top: 3px solid var(--home-brass);
+  border: 0;
   background: var(--home-white);
+  box-shadow:
+    0 1px 2px rgba(16, 43, 78, 0.05),
+    0 10px 28px rgba(16, 43, 78, 0.06);
 }
 
 .lesson-number {

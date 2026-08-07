@@ -175,8 +175,13 @@ describe('production markup', () => {
     expect(styles).toMatch(
       /\.curriculum-tab\.tab-active\s*\{[^}]*background:\s*var\(--home-navy\);/s,
     )
+    // 단계 카드는 테두리가 아니라 음영으로 구분한다.
+    // 왼쪽에 골드 막대를 세우는 방식은 걷어냈다.
     expect(styles).toMatch(
-      /\.stage-row,\s*\n\.stage-row:first-child\s*\{[^}]*border-left:\s*3px solid var\(--home-brass\);/s,
+      /\.stage-row,\s*\n\.stage-row:first-child\s*\{[^}]*box-shadow:/s,
+    )
+    expect(styles).not.toMatch(
+      /\.stage-row,\s*\n\.stage-row:first-child\s*\{[^}]*border-left:\s*3px/s,
     )
     expect(styles).toMatch(
       /\.focus-ledger\s*\{[^}]*background:\s*var\(--home-navy\);/s,
