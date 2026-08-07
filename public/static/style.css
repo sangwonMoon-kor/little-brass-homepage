@@ -2492,8 +2492,15 @@ body {
   word-break: keep-all;
 }
 
+/* width: 100% 가 핵심이다.
+   폭을 auto 로 두면 min-height(480px) 로 확정된 높이에서 aspect-ratio(16/7) 를 타고
+   폭이 1097px 로 역산된다. 그래서 부모가 885px 인 900px 화면에서도 박스가 1097px 가 되고,
+   overflow: clip 에 가려 스크롤바는 없지만 영상 오른쪽이 212px 잘린 채 구도가 왼쪽으로 쏠렸다.
+   폭을 확정해 두면 높이가 비율에서 나오고, 480px 아래로는 min-height 가 받쳐주며,
+   남는 영역은 object-fit: cover 가 가운데 기준으로 채운다. */
 .home-video-stage {
   position: relative;
+  width: 100%;
   min-height: 480px;
   overflow: hidden;
   background: var(--home-deep-navy);

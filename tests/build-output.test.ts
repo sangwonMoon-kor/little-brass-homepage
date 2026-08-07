@@ -76,6 +76,16 @@ describe('production markup', () => {
     expect(script).toContain("threshold: 0.06")
   })
 
+  it('keeps the hero video inside the viewport at tablet widths', () => {
+    const styles = readFileSync('public/static/style.css', 'utf8')
+
+    // 폭을 auto 로 두면 min-height 가 aspect-ratio 를 타고 폭을 1097px 로 역산해
+    // 700~1100px 구간에서 영상 오른쪽이 잘린다. 폭을 확정해야 한다.
+    expect(styles).toMatch(
+      /\.home-video-stage\s*\{[^}]*width:\s*100%;[^}]*aspect-ratio:\s*16\s*\/\s*7;/s,
+    )
+  })
+
   it('uses compact, consistent editorial frames for homepage photography', () => {
     const styles = readFileSync('public/static/style.css', 'utf8')
 
