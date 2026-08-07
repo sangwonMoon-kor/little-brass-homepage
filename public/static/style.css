@@ -174,9 +174,20 @@ button {
   border-bottom: 1px solid var(--rule);
 }
 
+/* max-width 가 640px 이라 한 줄에 필요한 641px 에 1px 모자랐다. 매번 두 줄이 된 원인. */
 .section-heading > p:last-child {
-  max-width: 640px;
+  max-width: 760px;
   color: var(--muted-ink);
+}
+
+/* 1080px 아래로는 2단을 유지해도 우측 칼럼이 641px 밑으로 떨어져 설명문이 두 줄이 된다.
+   여기서 미리 세로로 쌓으면 문단이 컨테이너 폭을 다 써서 한 줄을 지킨다.
+   (제목 칼럼을 더 좁혀 해결하려 하면 "우리가 지키는 세 가지" 가 세 줄로 깨진다.) */
+@media (max-width: 1080px) {
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .button {
@@ -667,7 +678,7 @@ button {
 }
 
 .name-story blockquote p {
-  max-width: 720px;
+  max-width: 900px;
   margin-top: 32px;
   color: var(--muted-ink);
 }
@@ -1893,11 +1904,6 @@ button {
 
   .lesson-description {
     grid-column: auto;
-  }
-
-  .section-heading {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .site-footer-bottom {
@@ -3584,6 +3590,19 @@ body {
   overflow-wrap: break-word;
 }
 
+/* keep-all 이 제목에만 걸려 있어서 본문 한국어가 단어 한가운데서 잘렸다.
+   "금관악기를 뜻합 / 니다." 처럼 조각이 다음 줄로 넘어가던 원인이다.
+   본문에도 걸어 어절 단위로만 끊기게 한다. overflow-wrap 은 이메일·URL 처럼
+   띄어쓰기 없는 긴 문자열이 넘칠 때를 위한 안전장치다. */
+p,
+dd,
+li,
+blockquote,
+figcaption {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .curriculum-practical .section-heading {
   padding-bottom: 28px;
   border-bottom: 1px solid var(--home-navy);
@@ -3732,9 +3751,12 @@ body {
   background: var(--home-soft);
 }
 
-/* 상단 골드 라인과 외곽선을 걷어내고 음영으로 띄운다. */
+/* 상단 골드 라인과 외곽선을 걷어내고 음영으로 띄운다.
+   align-items 를 stretch 로 돌려야 남색 칼럼이 행 높이를 다 채운다.
+   start 로 두면 오른쪽 칼럼이 더 길 때 남색 블록 아래가 흰 채로 남는다. */
 .theory-ledger {
   gap: 0;
+  align-items: stretch;
   border: 0;
   background: var(--home-white);
   box-shadow:

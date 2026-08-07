@@ -41,7 +41,7 @@ export const layoutRenderer = jsxRenderer((props: RendererProps, c) => {
         />
         <link href="/static/tailwind.css" rel="stylesheet" />
         {/* style.css 를 고칠 때 이 값을 같이 올려야 재방문자 브라우저가 새 CSS 를 받는다 */}
-        <link href="/static/style.css?v=20260806-type-scale-sticky-nav" rel="stylesheet" />
+        <link href="/static/style.css?v=20260806-korean-wrap-theory-fill" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body>
